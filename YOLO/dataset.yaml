@@ -1,5 +1,0 @@
-train: ./AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images
-val: ./AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images
-
-nc: 1  # number of classes
-names: ['plankton']  # class names
