@@ -8,18 +8,18 @@ print("Working dir - ", os.getcwd())
 model = YOLO("yolo11n.pt")
 
 #results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=(1280,960), project="runs", name="exp")
-results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=1280, project="runs", name="exp")
+#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=1280, project="runs", name="exp")
 
 results = model.train(
     # Data and model settings
     data="./dataConf.yaml",       # Path to the dataset config file
-    epochs=1,                     # Number of training epochs
+    epochs=500,                     # Number of training epochs
     batch=16,                     # Batch size per iteration (reduce this if you encounter OOM errors)
-    imgsz=1280,                   # Input image size for training
+    imgsz=(960,720),                   # Input image size for training
 
     # Experiment output
     project="runs",               # Directory to save runs/experiments
-    name="exp",                   # Name of this experiment
+    name="NewImgsz960x720",                   # Name of this experiment
 
     # Optimization settings
     optimizer="auto",             # Optimizer selection (auto will choose, along with lr0 and momentum)
