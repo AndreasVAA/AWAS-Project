@@ -19,7 +19,7 @@ results = model.train(
 
     # Experiment output
     project="runs",               # Directory to save runs/experiments
-    name="NewImgsz960x720",                   # Name of this experiment
+    name="NoAugmentTest",                   # Name of this experiment
 
     # Optimization settings
     optimizer="auto",             # Optimizer selection (auto will choose, along with lr0 and momentum)
@@ -42,15 +42,23 @@ results = model.train(
     single_cls=False,             # Treat dataset as single-class
     rect=False,                   # Use rectangular training
     cos_lr=False,                 # Use cosine learning rate scheduler
-    mosaic=1.0,                   # Mosaic augmentation strength
+    mosaic=0,  #default 1         # Mosaic augmentation strength
     mixup=0.0,                    # Mixup augmentation strength
     auto_augment="randaugment",   # Auto augmentation strategy
-    erasing=0.4,                  # Random erasing augmentation probability
+    erasing=0, # default 0.4              # Random erasing augmentation probability
+    hsv_h = 0, #defualt 0.015
+    hsv_s = 0, #default 0.7
+    hsv_v = 0, #default = 0.4
+    translate = 0, #default = 0.1
+    scale = 0, #defualt = 0.5
+    fliplr = 0, # default = 0.5
+    crop_fraction = 0, # default = 1
+                                     
 
     # Loss function weights and other parameters
     lr0=0.01,                     # Initial learning rate (ignored if optimizer='auto')
     momentum=0.937,               # Momentum (ignored if optimizer='auto')
-    weight_decay=0.0005,          # Weight decay coefficient
+    weight_decay= 0, #0.0005,          # Weight decay coefficient
 
     # Inference/validation settings
     val=True,                     # Run validation during training
