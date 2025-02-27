@@ -1,0 +1,562 @@
+2025-02-27 16:59:59,579 - INFO - [Main] Initializing datasets...
+2025-02-27 16:59:59,595 - INFO - [Dataset] Initialized with 763 images having valid absolute labels.
+2025-02-27 16:59:59,597 - INFO - [Dataset] Initialized with 99 images having valid absolute labels.
+2025-02-27 17:00:00,226 - INFO - [Main] Starting training with detection metric-based model selection...
+2025-02-27 17:00:00,227 - INFO - [Training] Epoch 1/50 started...
+2025-02-27 17:01:15,319 - INFO - [Training] Epoch 1 finished: Average Loss = 0.1779, Time = 75.09s, LR = 0.005000
+2025-02-27 17:01:15,319 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:01:19,982 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:01:19,982 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:01:19,982 - INFO - [Eval] Aggregate metrics: TP=348, FP=455, FN=11
+2025-02-27 17:01:19,982 - INFO - [Eval] Overall Precision: 0.4334
+2025-02-27 17:01:19,983 - INFO - [Eval] Overall Recall:    0.9694
+2025-02-27 17:01:19,983 - INFO - [Eval] Overall F1 Score:  0.5990
+2025-02-27 17:01:19,983 - INFO - [Eval] Inference - Total time: 4.1104s, Avg time per image: 0.0415s, Max time per image: 0.0429s, FPS: 24.09
+2025-02-27 17:01:20,023 - INFO - [Eval] COCO mAP50: 0.8153
+2025-02-27 17:01:20,553 - INFO - --> [Checkpoint] Best model updated at epoch 1 with F1 = 0.5990
+2025-02-27 17:01:20,553 - INFO - [Training] Epoch 2/50 started...
+2025-02-27 17:02:37,565 - INFO - [Training] Epoch 2 finished: Average Loss = 0.1025, Time = 77.01s, LR = 0.005000
+2025-02-27 17:02:37,565 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:02:42,351 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:02:42,351 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:02:42,351 - INFO - [Eval] Aggregate metrics: TP=351, FP=483, FN=8
+2025-02-27 17:02:42,351 - INFO - [Eval] Overall Precision: 0.4209
+2025-02-27 17:02:42,351 - INFO - [Eval] Overall Recall:    0.9777
+2025-02-27 17:02:42,351 - INFO - [Eval] Overall F1 Score:  0.5884
+2025-02-27 17:02:42,351 - INFO - [Eval] Inference - Total time: 4.2218s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.45
+2025-02-27 17:02:42,390 - INFO - [Eval] COCO mAP50: 0.8707
+2025-02-27 17:02:42,391 - INFO - [Training] Epoch 3/50 started...
+2025-02-27 17:03:59,455 - INFO - [Training] Epoch 3 finished: Average Loss = 0.0822, Time = 77.06s, LR = 0.005000
+2025-02-27 17:03:59,455 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:04:04,229 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:04:04,229 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:04:04,229 - INFO - [Eval] Aggregate metrics: TP=343, FP=224, FN=16
+2025-02-27 17:04:04,229 - INFO - [Eval] Overall Precision: 0.6049
+2025-02-27 17:04:04,229 - INFO - [Eval] Overall Recall:    0.9554
+2025-02-27 17:04:04,229 - INFO - [Eval] Overall F1 Score:  0.7408
+2025-02-27 17:04:04,229 - INFO - [Eval] Inference - Total time: 4.2065s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.53
+2025-02-27 17:04:04,263 - INFO - [Eval] COCO mAP50: 0.8711
+2025-02-27 17:04:04,703 - INFO - --> [Checkpoint] Best model updated at epoch 3 with F1 = 0.7408
+2025-02-27 17:04:04,704 - INFO - [Training] Epoch 4/50 started...
+2025-02-27 17:05:21,770 - INFO - [Training] Epoch 4 finished: Average Loss = 0.0701, Time = 77.07s, LR = 0.005000
+2025-02-27 17:05:21,770 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:05:26,519 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:05:26,519 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:05:26,519 - INFO - [Eval] Aggregate metrics: TP=336, FP=111, FN=23
+2025-02-27 17:05:26,519 - INFO - [Eval] Overall Precision: 0.7517
+2025-02-27 17:05:26,519 - INFO - [Eval] Overall Recall:    0.9359
+2025-02-27 17:05:26,519 - INFO - [Eval] Overall F1 Score:  0.8337
+2025-02-27 17:05:26,520 - INFO - [Eval] Inference - Total time: 4.2034s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.55
+2025-02-27 17:05:26,552 - INFO - [Eval] COCO mAP50: 0.8526
+2025-02-27 17:05:27,020 - INFO - --> [Checkpoint] Best model updated at epoch 4 with F1 = 0.8337
+2025-02-27 17:05:27,021 - INFO - [Training] Epoch 5/50 started...
+2025-02-27 17:06:44,029 - INFO - [Training] Epoch 5 finished: Average Loss = 0.0624, Time = 77.01s, LR = 0.005000
+2025-02-27 17:06:44,029 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:06:48,802 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:06:48,802 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:06:48,802 - INFO - [Eval] Aggregate metrics: TP=345, FP=171, FN=14
+2025-02-27 17:06:48,802 - INFO - [Eval] Overall Precision: 0.6686
+2025-02-27 17:06:48,802 - INFO - [Eval] Overall Recall:    0.9610
+2025-02-27 17:06:48,802 - INFO - [Eval] Overall F1 Score:  0.7886
+2025-02-27 17:06:48,802 - INFO - [Eval] Inference - Total time: 4.2121s, Avg time per image: 0.0425s, Max time per image: 0.0440s, FPS: 23.50
+2025-02-27 17:06:48,836 - INFO - [Eval] COCO mAP50: 0.8742
+2025-02-27 17:06:48,837 - INFO - [Training] Epoch 6/50 started...
+2025-02-27 17:08:05,927 - INFO - [Training] Epoch 6 finished: Average Loss = 0.0545, Time = 77.09s, LR = 0.005000
+2025-02-27 17:08:05,927 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:08:10,696 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:08:10,696 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:08:10,696 - INFO - [Eval] Aggregate metrics: TP=336, FP=122, FN=23
+2025-02-27 17:08:10,697 - INFO - [Eval] Overall Precision: 0.7336
+2025-02-27 17:08:10,697 - INFO - [Eval] Overall Recall:    0.9359
+2025-02-27 17:08:10,697 - INFO - [Eval] Overall F1 Score:  0.8225
+2025-02-27 17:08:10,697 - INFO - [Eval] Inference - Total time: 4.2017s, Avg time per image: 0.0424s, Max time per image: 0.0435s, FPS: 23.56
+2025-02-27 17:08:10,728 - INFO - [Eval] COCO mAP50: 0.8539
+2025-02-27 17:08:10,730 - INFO - [Training] Epoch 7/50 started...
+2025-02-27 17:09:27,779 - INFO - [Training] Epoch 7 finished: Average Loss = 0.0505, Time = 77.05s, LR = 0.005000
+2025-02-27 17:09:27,779 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:09:32,542 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:09:32,542 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:09:32,542 - INFO - [Eval] Aggregate metrics: TP=339, FP=121, FN=20
+2025-02-27 17:09:32,542 - INFO - [Eval] Overall Precision: 0.7370
+2025-02-27 17:09:32,542 - INFO - [Eval] Overall Recall:    0.9443
+2025-02-27 17:09:32,542 - INFO - [Eval] Overall F1 Score:  0.8278
+2025-02-27 17:09:32,542 - INFO - [Eval] Inference - Total time: 4.2092s, Avg time per image: 0.0425s, Max time per image: 0.0432s, FPS: 23.52
+2025-02-27 17:09:32,573 - INFO - [Eval] COCO mAP50: 0.8646
+2025-02-27 17:09:32,574 - INFO - [Training] Epoch 8/50 started...
+2025-02-27 17:10:49,435 - INFO - [Training] Epoch 8 finished: Average Loss = 0.0459, Time = 76.86s, LR = 0.005000
+2025-02-27 17:10:49,435 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:10:54,230 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:10:54,230 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:10:54,230 - INFO - [Eval] Aggregate metrics: TP=336, FP=107, FN=23
+2025-02-27 17:10:54,231 - INFO - [Eval] Overall Precision: 0.7585
+2025-02-27 17:10:54,231 - INFO - [Eval] Overall Recall:    0.9359
+2025-02-27 17:10:54,231 - INFO - [Eval] Overall F1 Score:  0.8379
+2025-02-27 17:10:54,231 - INFO - [Eval] Inference - Total time: 4.2117s, Avg time per image: 0.0425s, Max time per image: 0.0442s, FPS: 23.51
+2025-02-27 17:10:54,262 - INFO - [Eval] COCO mAP50: 0.8702
+2025-02-27 17:10:54,680 - INFO - --> [Checkpoint] Best model updated at epoch 8 with F1 = 0.8379
+2025-02-27 17:10:54,681 - INFO - [Training] Epoch 9/50 started...
+2025-02-27 17:12:11,653 - INFO - [Training] Epoch 9 finished: Average Loss = 0.0435, Time = 76.97s, LR = 0.005000
+2025-02-27 17:12:11,653 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:12:16,423 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:12:16,423 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:12:16,423 - INFO - [Eval] Aggregate metrics: TP=329, FP=81, FN=30
+2025-02-27 17:12:16,423 - INFO - [Eval] Overall Precision: 0.8024
+2025-02-27 17:12:16,423 - INFO - [Eval] Overall Recall:    0.9164
+2025-02-27 17:12:16,423 - INFO - [Eval] Overall F1 Score:  0.8557
+2025-02-27 17:12:16,423 - INFO - [Eval] Inference - Total time: 4.2003s, Avg time per image: 0.0424s, Max time per image: 0.0431s, FPS: 23.57
+2025-02-27 17:12:16,454 - INFO - [Eval] COCO mAP50: 0.8531
+2025-02-27 17:12:16,925 - INFO - --> [Checkpoint] Best model updated at epoch 9 with F1 = 0.8557
+2025-02-27 17:12:16,926 - INFO - [Training] Epoch 10/50 started...
+2025-02-27 17:13:33,853 - INFO - [Training] Epoch 10 finished: Average Loss = 0.0414, Time = 76.93s, LR = 0.005000
+2025-02-27 17:13:33,853 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:13:38,655 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:13:38,655 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:13:38,663 - INFO - [Eval] Aggregate metrics: TP=327, FP=75, FN=32
+2025-02-27 17:13:38,663 - INFO - [Eval] Overall Precision: 0.8134
+2025-02-27 17:13:38,663 - INFO - [Eval] Overall Recall:    0.9109
+2025-02-27 17:13:38,663 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-02-27 17:13:38,663 - INFO - [Eval] Inference - Total time: 4.2158s, Avg time per image: 0.0426s, Max time per image: 0.0446s, FPS: 23.48
+2025-02-27 17:13:38,694 - INFO - [Eval] COCO mAP50: 0.8448
+2025-02-27 17:13:39,133 - INFO - --> [Checkpoint] Best model updated at epoch 10 with F1 = 0.8594
+2025-02-27 17:13:39,134 - INFO - [Training] Epoch 11/50 started...
+2025-02-27 17:14:55,942 - INFO - [Training] Epoch 11 finished: Average Loss = 0.0386, Time = 76.81s, LR = 0.005000
+2025-02-27 17:14:55,942 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:15:00,699 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:15:00,699 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:15:00,699 - INFO - [Eval] Aggregate metrics: TP=340, FP=147, FN=19
+2025-02-27 17:15:00,699 - INFO - [Eval] Overall Precision: 0.6982
+2025-02-27 17:15:00,699 - INFO - [Eval] Overall Recall:    0.9471
+2025-02-27 17:15:00,699 - INFO - [Eval] Overall F1 Score:  0.8038
+2025-02-27 17:15:00,699 - INFO - [Eval] Inference - Total time: 4.1988s, Avg time per image: 0.0424s, Max time per image: 0.0435s, FPS: 23.58
+2025-02-27 17:15:00,732 - INFO - [Eval] COCO mAP50: 0.8665
+2025-02-27 17:15:00,733 - INFO - [Training] Epoch 12/50 started...
+2025-02-27 17:16:17,644 - INFO - [Training] Epoch 12 finished: Average Loss = 0.0371, Time = 76.91s, LR = 0.005000
+2025-02-27 17:16:17,645 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:16:22,414 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:16:22,414 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:16:22,414 - INFO - [Eval] Aggregate metrics: TP=336, FP=98, FN=23
+2025-02-27 17:16:22,414 - INFO - [Eval] Overall Precision: 0.7742
+2025-02-27 17:16:22,414 - INFO - [Eval] Overall Recall:    0.9359
+2025-02-27 17:16:22,414 - INFO - [Eval] Overall F1 Score:  0.8474
+2025-02-27 17:16:22,414 - INFO - [Eval] Inference - Total time: 4.2172s, Avg time per image: 0.0426s, Max time per image: 0.0439s, FPS: 23.48
+2025-02-27 17:16:22,446 - INFO - [Eval] COCO mAP50: 0.8684
+2025-02-27 17:16:22,447 - INFO - [Training] Epoch 13/50 started...
+2025-02-27 17:17:39,347 - INFO - [Training] Epoch 13 finished: Average Loss = 0.0352, Time = 76.90s, LR = 0.005000
+2025-02-27 17:17:39,347 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:17:44,132 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:17:44,132 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:17:44,133 - INFO - [Eval] Aggregate metrics: TP=333, FP=74, FN=26
+2025-02-27 17:17:44,133 - INFO - [Eval] Overall Precision: 0.8182
+2025-02-27 17:17:44,133 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:17:44,133 - INFO - [Eval] Overall F1 Score:  0.8695
+2025-02-27 17:17:44,133 - INFO - [Eval] Inference - Total time: 4.1995s, Avg time per image: 0.0424s, Max time per image: 0.0437s, FPS: 23.57
+2025-02-27 17:17:44,164 - INFO - [Eval] COCO mAP50: 0.8562
+2025-02-27 17:17:44,593 - INFO - --> [Checkpoint] Best model updated at epoch 13 with F1 = 0.8695
+2025-02-27 17:17:44,594 - INFO - [Training] Epoch 14/50 started...
+2025-02-27 17:19:01,411 - INFO - [Training] Epoch 14 finished: Average Loss = 0.0351, Time = 76.82s, LR = 0.005000
+2025-02-27 17:19:01,411 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:19:06,173 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:19:06,173 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:19:06,173 - INFO - [Eval] Aggregate metrics: TP=329, FP=75, FN=30
+2025-02-27 17:19:06,173 - INFO - [Eval] Overall Precision: 0.8144
+2025-02-27 17:19:06,173 - INFO - [Eval] Overall Recall:    0.9164
+2025-02-27 17:19:06,173 - INFO - [Eval] Overall F1 Score:  0.8624
+2025-02-27 17:19:06,173 - INFO - [Eval] Inference - Total time: 4.2158s, Avg time per image: 0.0426s, Max time per image: 0.0444s, FPS: 23.48
+2025-02-27 17:19:06,204 - INFO - [Eval] COCO mAP50: 0.8664
+2025-02-27 17:19:06,205 - INFO - [Training] Epoch 15/50 started...
+2025-02-27 17:20:23,120 - INFO - [Training] Epoch 15 finished: Average Loss = 0.0328, Time = 76.92s, LR = 0.005000
+2025-02-27 17:20:23,121 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:20:27,897 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:20:27,897 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:20:27,897 - INFO - [Eval] Aggregate metrics: TP=338, FP=92, FN=21
+2025-02-27 17:20:27,897 - INFO - [Eval] Overall Precision: 0.7860
+2025-02-27 17:20:27,897 - INFO - [Eval] Overall Recall:    0.9415
+2025-02-27 17:20:27,897 - INFO - [Eval] Overall F1 Score:  0.8568
+2025-02-27 17:20:27,897 - INFO - [Eval] Inference - Total time: 4.2085s, Avg time per image: 0.0425s, Max time per image: 0.0436s, FPS: 23.52
+2025-02-27 17:20:27,928 - INFO - [Eval] COCO mAP50: 0.8731
+2025-02-27 17:20:27,929 - INFO - [Training] Epoch 16/50 started...
+2025-02-27 17:21:44,864 - INFO - [Training] Epoch 16 finished: Average Loss = 0.0315, Time = 76.93s, LR = 0.005000
+2025-02-27 17:21:44,865 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:21:49,605 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:21:49,606 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:21:49,606 - INFO - [Eval] Aggregate metrics: TP=329, FP=81, FN=30
+2025-02-27 17:21:49,606 - INFO - [Eval] Overall Precision: 0.8024
+2025-02-27 17:21:49,606 - INFO - [Eval] Overall Recall:    0.9164
+2025-02-27 17:21:49,606 - INFO - [Eval] Overall F1 Score:  0.8557
+2025-02-27 17:21:49,606 - INFO - [Eval] Inference - Total time: 4.2155s, Avg time per image: 0.0426s, Max time per image: 0.0436s, FPS: 23.48
+2025-02-27 17:21:49,636 - INFO - [Eval] COCO mAP50: 0.8579
+2025-02-27 17:21:49,637 - INFO - [Training] Epoch 17/50 started...
+2025-02-27 17:23:06,547 - INFO - [Training] Epoch 17 finished: Average Loss = 0.0307, Time = 76.91s, LR = 0.005000
+2025-02-27 17:23:06,547 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:23:11,371 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:23:11,371 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:23:11,371 - INFO - [Eval] Aggregate metrics: TP=331, FP=84, FN=28
+2025-02-27 17:23:11,371 - INFO - [Eval] Overall Precision: 0.7976
+2025-02-27 17:23:11,371 - INFO - [Eval] Overall Recall:    0.9220
+2025-02-27 17:23:11,372 - INFO - [Eval] Overall F1 Score:  0.8553
+2025-02-27 17:23:11,372 - INFO - [Eval] Inference - Total time: 4.2169s, Avg time per image: 0.0426s, Max time per image: 0.0432s, FPS: 23.48
+2025-02-27 17:23:11,402 - INFO - [Eval] COCO mAP50: 0.8579
+2025-02-27 17:23:11,403 - INFO - [Training] Epoch 18/50 started...
+2025-02-27 17:24:28,346 - INFO - [Training] Epoch 18 finished: Average Loss = 0.0290, Time = 76.94s, LR = 0.005000
+2025-02-27 17:24:28,346 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:24:33,115 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:24:33,115 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:24:33,115 - INFO - [Eval] Aggregate metrics: TP=330, FP=81, FN=29
+2025-02-27 17:24:33,115 - INFO - [Eval] Overall Precision: 0.8029
+2025-02-27 17:24:33,115 - INFO - [Eval] Overall Recall:    0.9192
+2025-02-27 17:24:33,115 - INFO - [Eval] Overall F1 Score:  0.8571
+2025-02-27 17:24:33,115 - INFO - [Eval] Inference - Total time: 4.2142s, Avg time per image: 0.0426s, Max time per image: 0.0438s, FPS: 23.49
+2025-02-27 17:24:33,146 - INFO - [Eval] COCO mAP50: 0.8574
+2025-02-27 17:24:33,147 - INFO - [Training] Epoch 19/50 started...
+2025-02-27 17:25:49,967 - INFO - [Training] Epoch 19 finished: Average Loss = 0.0275, Time = 76.82s, LR = 0.005000
+2025-02-27 17:25:49,967 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:25:54,741 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:25:54,741 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:25:54,741 - INFO - [Eval] Aggregate metrics: TP=340, FP=106, FN=19
+2025-02-27 17:25:54,741 - INFO - [Eval] Overall Precision: 0.7623
+2025-02-27 17:25:54,742 - INFO - [Eval] Overall Recall:    0.9471
+2025-02-27 17:25:54,742 - INFO - [Eval] Overall F1 Score:  0.8447
+2025-02-27 17:25:54,742 - INFO - [Eval] Inference - Total time: 4.2140s, Avg time per image: 0.0426s, Max time per image: 0.0439s, FPS: 23.49
+2025-02-27 17:25:54,773 - INFO - [Eval] COCO mAP50: 0.8793
+2025-02-27 17:25:54,774 - INFO - [Training] Epoch 20/50 started...
+2025-02-27 17:27:11,648 - INFO - [Training] Epoch 20 finished: Average Loss = 0.0232, Time = 76.87s, LR = 0.000500
+2025-02-27 17:27:11,649 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:27:16,417 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:27:16,417 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:27:16,417 - INFO - [Eval] Aggregate metrics: TP=335, FP=78, FN=24
+2025-02-27 17:27:16,417 - INFO - [Eval] Overall Precision: 0.8111
+2025-02-27 17:27:16,417 - INFO - [Eval] Overall Recall:    0.9331
+2025-02-27 17:27:16,417 - INFO - [Eval] Overall F1 Score:  0.8679
+2025-02-27 17:27:16,417 - INFO - [Eval] Inference - Total time: 4.2171s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.48
+2025-02-27 17:27:16,447 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:27:16,448 - INFO - [Training] Epoch 21/50 started...
+2025-02-27 17:28:33,223 - INFO - [Training] Epoch 21 finished: Average Loss = 0.0218, Time = 76.77s, LR = 0.000500
+2025-02-27 17:28:33,223 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:28:37,996 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:28:37,996 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:28:37,996 - INFO - [Eval] Aggregate metrics: TP=335, FP=78, FN=24
+2025-02-27 17:28:37,996 - INFO - [Eval] Overall Precision: 0.8111
+2025-02-27 17:28:37,996 - INFO - [Eval] Overall Recall:    0.9331
+2025-02-27 17:28:37,996 - INFO - [Eval] Overall F1 Score:  0.8679
+2025-02-27 17:28:37,996 - INFO - [Eval] Inference - Total time: 4.2227s, Avg time per image: 0.0427s, Max time per image: 0.0433s, FPS: 23.44
+2025-02-27 17:28:38,028 - INFO - [Eval] COCO mAP50: 0.8730
+2025-02-27 17:28:38,029 - INFO - [Training] Epoch 22/50 started...
+2025-02-27 17:29:54,926 - INFO - [Training] Epoch 22 finished: Average Loss = 0.0206, Time = 76.90s, LR = 0.000500
+2025-02-27 17:29:54,927 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:29:59,720 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:29:59,720 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:29:59,728 - INFO - [Eval] Aggregate metrics: TP=333, FP=76, FN=26
+2025-02-27 17:29:59,728 - INFO - [Eval] Overall Precision: 0.8142
+2025-02-27 17:29:59,728 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:29:59,729 - INFO - [Eval] Overall F1 Score:  0.8672
+2025-02-27 17:29:59,729 - INFO - [Eval] Inference - Total time: 4.2214s, Avg time per image: 0.0426s, Max time per image: 0.0432s, FPS: 23.45
+2025-02-27 17:29:59,760 - INFO - [Eval] COCO mAP50: 0.8651
+2025-02-27 17:29:59,761 - INFO - [Training] Epoch 23/50 started...
+2025-02-27 17:31:16,642 - INFO - [Training] Epoch 23 finished: Average Loss = 0.0201, Time = 76.88s, LR = 0.000500
+2025-02-27 17:31:16,642 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:31:21,415 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:31:21,415 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:31:21,416 - INFO - [Eval] Aggregate metrics: TP=333, FP=75, FN=26
+2025-02-27 17:31:21,416 - INFO - [Eval] Overall Precision: 0.8162
+2025-02-27 17:31:21,416 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:31:21,416 - INFO - [Eval] Overall F1 Score:  0.8683
+2025-02-27 17:31:21,416 - INFO - [Eval] Inference - Total time: 4.1997s, Avg time per image: 0.0424s, Max time per image: 0.0433s, FPS: 23.57
+2025-02-27 17:31:21,447 - INFO - [Eval] COCO mAP50: 0.8651
+2025-02-27 17:31:21,448 - INFO - [Training] Epoch 24/50 started...
+2025-02-27 17:32:38,328 - INFO - [Training] Epoch 24 finished: Average Loss = 0.0194, Time = 76.88s, LR = 0.000500
+2025-02-27 17:32:38,328 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:32:43,095 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:32:43,095 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:32:43,095 - INFO - [Eval] Aggregate metrics: TP=330, FP=72, FN=29
+2025-02-27 17:32:43,095 - INFO - [Eval] Overall Precision: 0.8209
+2025-02-27 17:32:43,095 - INFO - [Eval] Overall Recall:    0.9192
+2025-02-27 17:32:43,095 - INFO - [Eval] Overall F1 Score:  0.8673
+2025-02-27 17:32:43,095 - INFO - [Eval] Inference - Total time: 4.2100s, Avg time per image: 0.0425s, Max time per image: 0.0442s, FPS: 23.52
+2025-02-27 17:32:43,189 - INFO - [Eval] COCO mAP50: 0.8571
+2025-02-27 17:32:43,190 - INFO - [Training] Epoch 25/50 started...
+2025-02-27 17:34:00,038 - INFO - [Training] Epoch 25 finished: Average Loss = 0.0194, Time = 76.85s, LR = 0.000500
+2025-02-27 17:34:00,038 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:34:04,847 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:34:04,847 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:34:04,847 - INFO - [Eval] Aggregate metrics: TP=330, FP=76, FN=29
+2025-02-27 17:34:04,847 - INFO - [Eval] Overall Precision: 0.8128
+2025-02-27 17:34:04,847 - INFO - [Eval] Overall Recall:    0.9192
+2025-02-27 17:34:04,847 - INFO - [Eval] Overall F1 Score:  0.8627
+2025-02-27 17:34:04,847 - INFO - [Eval] Inference - Total time: 4.2162s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.48
+2025-02-27 17:34:04,878 - INFO - [Eval] COCO mAP50: 0.8649
+2025-02-27 17:34:04,879 - INFO - [Training] Epoch 26/50 started...
+2025-02-27 17:35:21,522 - INFO - [Training] Epoch 26 finished: Average Loss = 0.0191, Time = 76.64s, LR = 0.000050
+2025-02-27 17:35:21,522 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:35:26,289 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:35:26,289 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:35:26,289 - INFO - [Eval] Aggregate metrics: TP=333, FP=79, FN=26
+2025-02-27 17:35:26,289 - INFO - [Eval] Overall Precision: 0.8083
+2025-02-27 17:35:26,289 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:35:26,289 - INFO - [Eval] Overall F1 Score:  0.8638
+2025-02-27 17:35:26,289 - INFO - [Eval] Inference - Total time: 4.2108s, Avg time per image: 0.0425s, Max time per image: 0.0443s, FPS: 23.51
+2025-02-27 17:35:26,320 - INFO - [Eval] COCO mAP50: 0.8727
+2025-02-27 17:35:26,321 - INFO - [Training] Epoch 27/50 started...
+2025-02-27 17:36:43,175 - INFO - [Training] Epoch 27 finished: Average Loss = 0.0186, Time = 76.85s, LR = 0.000050
+2025-02-27 17:36:43,175 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:36:47,965 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:36:47,966 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:36:47,966 - INFO - [Eval] Aggregate metrics: TP=334, FP=78, FN=25
+2025-02-27 17:36:47,966 - INFO - [Eval] Overall Precision: 0.8107
+2025-02-27 17:36:47,966 - INFO - [Eval] Overall Recall:    0.9304
+2025-02-27 17:36:47,966 - INFO - [Eval] Overall F1 Score:  0.8664
+2025-02-27 17:36:47,966 - INFO - [Eval] Inference - Total time: 4.2005s, Avg time per image: 0.0424s, Max time per image: 0.0438s, FPS: 23.57
+2025-02-27 17:36:47,997 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:36:47,998 - INFO - [Training] Epoch 28/50 started...
+2025-02-27 17:38:04,843 - INFO - [Training] Epoch 28 finished: Average Loss = 0.0188, Time = 76.84s, LR = 0.000050
+2025-02-27 17:38:04,843 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:38:09,638 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:38:09,638 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:38:09,638 - INFO - [Eval] Aggregate metrics: TP=334, FP=78, FN=25
+2025-02-27 17:38:09,638 - INFO - [Eval] Overall Precision: 0.8107
+2025-02-27 17:38:09,638 - INFO - [Eval] Overall Recall:    0.9304
+2025-02-27 17:38:09,638 - INFO - [Eval] Overall F1 Score:  0.8664
+2025-02-27 17:38:09,638 - INFO - [Eval] Inference - Total time: 4.2167s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.48
+2025-02-27 17:38:09,669 - INFO - [Eval] COCO mAP50: 0.8727
+2025-02-27 17:38:09,670 - INFO - [Training] Epoch 29/50 started...
+2025-02-27 17:39:26,524 - INFO - [Training] Epoch 29 finished: Average Loss = 0.0195, Time = 76.85s, LR = 0.000050
+2025-02-27 17:39:26,525 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:39:31,302 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:39:31,302 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:39:31,302 - INFO - [Eval] Aggregate metrics: TP=334, FP=78, FN=25
+2025-02-27 17:39:31,302 - INFO - [Eval] Overall Precision: 0.8107
+2025-02-27 17:39:31,302 - INFO - [Eval] Overall Recall:    0.9304
+2025-02-27 17:39:31,302 - INFO - [Eval] Overall F1 Score:  0.8664
+2025-02-27 17:39:31,302 - INFO - [Eval] Inference - Total time: 4.2173s, Avg time per image: 0.0426s, Max time per image: 0.0431s, FPS: 23.47
+2025-02-27 17:39:31,333 - INFO - [Eval] COCO mAP50: 0.8727
+2025-02-27 17:39:31,334 - INFO - [Training] Epoch 30/50 started...
+2025-02-27 17:40:48,281 - INFO - [Training] Epoch 30 finished: Average Loss = 0.0187, Time = 76.95s, LR = 0.000050
+2025-02-27 17:40:48,281 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:40:53,029 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:40:53,030 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:40:53,030 - INFO - [Eval] Aggregate metrics: TP=334, FP=78, FN=25
+2025-02-27 17:40:53,030 - INFO - [Eval] Overall Precision: 0.8107
+2025-02-27 17:40:53,030 - INFO - [Eval] Overall Recall:    0.9304
+2025-02-27 17:40:53,030 - INFO - [Eval] Overall F1 Score:  0.8664
+2025-02-27 17:40:53,030 - INFO - [Eval] Inference - Total time: 4.2060s, Avg time per image: 0.0425s, Max time per image: 0.0432s, FPS: 23.54
+2025-02-27 17:40:53,061 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:40:53,062 - INFO - [Training] Epoch 31/50 started...
+2025-02-27 17:42:09,867 - INFO - [Training] Epoch 31 finished: Average Loss = 0.0187, Time = 76.80s, LR = 0.000050
+2025-02-27 17:42:09,867 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:42:14,635 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:42:14,635 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:42:14,635 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:42:14,635 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:42:14,635 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:42:14,635 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:42:14,635 - INFO - [Eval] Inference - Total time: 4.2111s, Avg time per image: 0.0425s, Max time per image: 0.0444s, FPS: 23.51
+2025-02-27 17:42:14,666 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:42:14,668 - INFO - [Training] Epoch 32/50 started...
+2025-02-27 17:43:31,524 - INFO - [Training] Epoch 32 finished: Average Loss = 0.0189, Time = 76.86s, LR = 0.000005
+2025-02-27 17:43:31,524 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:43:36,302 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:43:36,302 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:43:36,302 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:43:36,302 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:43:36,302 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:43:36,302 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:43:36,302 - INFO - [Eval] Inference - Total time: 4.2301s, Avg time per image: 0.0427s, Max time per image: 0.0436s, FPS: 23.40
+2025-02-27 17:43:36,334 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:43:36,335 - INFO - [Training] Epoch 33/50 started...
+2025-02-27 17:44:53,181 - INFO - [Training] Epoch 33 finished: Average Loss = 0.0188, Time = 76.85s, LR = 0.000005
+2025-02-27 17:44:53,182 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:44:57,967 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:44:57,967 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:44:57,967 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:44:57,967 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:44:57,967 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:44:57,967 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:44:57,967 - INFO - [Eval] Inference - Total time: 4.2261s, Avg time per image: 0.0427s, Max time per image: 0.0432s, FPS: 23.43
+2025-02-27 17:44:57,998 - INFO - [Eval] COCO mAP50: 0.8725
+2025-02-27 17:44:58,000 - INFO - [Training] Epoch 34/50 started...
+2025-02-27 17:46:14,810 - INFO - [Training] Epoch 34 finished: Average Loss = 0.0187, Time = 76.81s, LR = 0.000005
+2025-02-27 17:46:14,810 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:46:19,577 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:46:19,577 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:46:19,577 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:46:19,577 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:46:19,577 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:46:19,577 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:46:19,577 - INFO - [Eval] Inference - Total time: 4.1971s, Avg time per image: 0.0424s, Max time per image: 0.0443s, FPS: 23.59
+2025-02-27 17:46:19,609 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:46:19,610 - INFO - [Training] Epoch 35/50 started...
+2025-02-27 17:47:36,391 - INFO - [Training] Epoch 35 finished: Average Loss = 0.0188, Time = 76.78s, LR = 0.000005
+2025-02-27 17:47:36,392 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:47:41,199 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:47:41,199 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:47:41,199 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:47:41,199 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:47:41,199 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:47:41,199 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:47:41,199 - INFO - [Eval] Inference - Total time: 4.2295s, Avg time per image: 0.0427s, Max time per image: 0.0431s, FPS: 23.41
+2025-02-27 17:47:41,231 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:47:41,232 - INFO - [Training] Epoch 36/50 started...
+2025-02-27 17:48:58,017 - INFO - [Training] Epoch 36 finished: Average Loss = 0.0187, Time = 76.79s, LR = 0.000005
+2025-02-27 17:48:58,017 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:49:02,826 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:49:02,826 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:49:02,826 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:49:02,826 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:49:02,826 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:49:02,826 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:49:02,826 - INFO - [Eval] Inference - Total time: 4.2131s, Avg time per image: 0.0426s, Max time per image: 0.0446s, FPS: 23.50
+2025-02-27 17:49:02,858 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:49:02,859 - INFO - [Training] Epoch 37/50 started...
+2025-02-27 17:50:19,678 - INFO - [Training] Epoch 37 finished: Average Loss = 0.0187, Time = 76.82s, LR = 0.000005
+2025-02-27 17:50:19,678 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:50:24,478 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:50:24,478 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:50:24,478 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:50:24,478 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:50:24,478 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:50:24,478 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:50:24,478 - INFO - [Eval] Inference - Total time: 4.2175s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.47
+2025-02-27 17:50:24,509 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:50:24,510 - INFO - [Training] Epoch 38/50 started...
+2025-02-27 17:51:41,452 - INFO - [Training] Epoch 38 finished: Average Loss = 0.0187, Time = 76.94s, LR = 0.000001
+2025-02-27 17:51:41,452 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:51:46,236 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:51:46,236 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:51:46,236 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:51:46,236 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:51:46,236 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:51:46,236 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:51:46,236 - INFO - [Eval] Inference - Total time: 4.2188s, Avg time per image: 0.0426s, Max time per image: 0.0443s, FPS: 23.47
+2025-02-27 17:51:46,267 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:51:46,268 - INFO - [Training] Epoch 39/50 started...
+2025-02-27 17:53:03,126 - INFO - [Training] Epoch 39 finished: Average Loss = 0.0185, Time = 76.86s, LR = 0.000001
+2025-02-27 17:53:03,127 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:53:07,896 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:53:07,897 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:53:07,897 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:53:07,897 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:53:07,897 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:53:07,897 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:53:07,897 - INFO - [Eval] Inference - Total time: 4.2272s, Avg time per image: 0.0427s, Max time per image: 0.0436s, FPS: 23.42
+2025-02-27 17:53:07,929 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:53:07,930 - INFO - [Training] Epoch 40/50 started...
+2025-02-27 17:54:24,843 - INFO - [Training] Epoch 40 finished: Average Loss = 0.0186, Time = 76.91s, LR = 0.000001
+2025-02-27 17:54:24,843 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:54:29,618 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:54:29,618 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:54:29,618 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:54:29,618 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:54:29,619 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:54:29,619 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:54:29,619 - INFO - [Eval] Inference - Total time: 4.2139s, Avg time per image: 0.0426s, Max time per image: 0.0437s, FPS: 23.49
+2025-02-27 17:54:29,650 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:54:29,651 - INFO - [Training] Epoch 41/50 started...
+2025-02-27 17:55:46,489 - INFO - [Training] Epoch 41 finished: Average Loss = 0.0185, Time = 76.84s, LR = 0.000001
+2025-02-27 17:55:46,489 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:55:51,242 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:55:51,242 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:55:51,242 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:55:51,242 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:55:51,242 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:55:51,242 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:55:51,242 - INFO - [Eval] Inference - Total time: 4.1970s, Avg time per image: 0.0424s, Max time per image: 0.0434s, FPS: 23.59
+2025-02-27 17:55:51,273 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:55:51,274 - INFO - [Training] Epoch 42/50 started...
+2025-02-27 17:57:08,077 - INFO - [Training] Epoch 42 finished: Average Loss = 0.0185, Time = 76.80s, LR = 0.000001
+2025-02-27 17:57:08,077 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:57:12,841 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:57:12,841 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:57:12,841 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:57:12,841 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:57:12,841 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:57:12,841 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:57:12,841 - INFO - [Eval] Inference - Total time: 4.2074s, Avg time per image: 0.0425s, Max time per image: 0.0438s, FPS: 23.53
+2025-02-27 17:57:12,873 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:57:12,874 - INFO - [Training] Epoch 43/50 started...
+2025-02-27 17:58:29,721 - INFO - [Training] Epoch 43 finished: Average Loss = 0.0187, Time = 76.85s, LR = 0.000001
+2025-02-27 17:58:29,721 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:58:34,513 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:58:34,513 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:58:34,513 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:58:34,513 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:58:34,513 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:58:34,513 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:58:34,513 - INFO - [Eval] Inference - Total time: 4.2203s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.46
+2025-02-27 17:58:34,545 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:58:34,546 - INFO - [Training] Epoch 44/50 started...
+2025-02-27 17:59:51,313 - INFO - [Training] Epoch 44 finished: Average Loss = 0.0186, Time = 76.77s, LR = 0.000000
+2025-02-27 17:59:51,313 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 17:59:56,135 - INFO - [Eval] Evaluation complete!
+2025-02-27 17:59:56,135 - INFO - [Eval] Total images processed: 99
+2025-02-27 17:59:56,135 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 17:59:56,135 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 17:59:56,135 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 17:59:56,136 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 17:59:56,136 - INFO - [Eval] Inference - Total time: 4.2252s, Avg time per image: 0.0427s, Max time per image: 0.0447s, FPS: 23.43
+2025-02-27 17:59:56,166 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 17:59:56,167 - INFO - [Training] Epoch 45/50 started...
+2025-02-27 18:01:12,957 - INFO - [Training] Epoch 45 finished: Average Loss = 0.0186, Time = 76.79s, LR = 0.000000
+2025-02-27 18:01:12,957 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 18:01:17,744 - INFO - [Eval] Evaluation complete!
+2025-02-27 18:01:17,744 - INFO - [Eval] Total images processed: 99
+2025-02-27 18:01:17,744 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 18:01:17,744 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 18:01:17,744 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 18:01:17,744 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 18:01:17,744 - INFO - [Eval] Inference - Total time: 4.2104s, Avg time per image: 0.0425s, Max time per image: 0.0432s, FPS: 23.51
+2025-02-27 18:01:17,775 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 18:01:17,776 - INFO - [Training] Epoch 46/50 started...
+2025-02-27 18:02:34,539 - INFO - [Training] Epoch 46 finished: Average Loss = 0.0186, Time = 76.76s, LR = 0.000000
+2025-02-27 18:02:34,539 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 18:02:39,316 - INFO - [Eval] Evaluation complete!
+2025-02-27 18:02:39,316 - INFO - [Eval] Total images processed: 99
+2025-02-27 18:02:39,317 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 18:02:39,317 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 18:02:39,317 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 18:02:39,317 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 18:02:39,317 - INFO - [Eval] Inference - Total time: 4.2160s, Avg time per image: 0.0426s, Max time per image: 0.0440s, FPS: 23.48
+2025-02-27 18:02:39,349 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 18:02:39,350 - INFO - [Training] Epoch 47/50 started...
+2025-02-27 18:03:56,129 - INFO - [Training] Epoch 47 finished: Average Loss = 0.0185, Time = 76.78s, LR = 0.000000
+2025-02-27 18:03:56,129 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 18:04:00,966 - INFO - [Eval] Evaluation complete!
+2025-02-27 18:04:00,966 - INFO - [Eval] Total images processed: 99
+2025-02-27 18:04:00,966 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 18:04:00,966 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 18:04:00,966 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 18:04:00,966 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 18:04:00,966 - INFO - [Eval] Inference - Total time: 4.2731s, Avg time per image: 0.0432s, Max time per image: 0.0533s, FPS: 23.17
+2025-02-27 18:04:00,997 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 18:04:00,999 - INFO - [Training] Epoch 48/50 started...
+2025-02-27 18:05:17,958 - INFO - [Training] Epoch 48 finished: Average Loss = 0.0185, Time = 76.96s, LR = 0.000000
+2025-02-27 18:05:17,959 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 18:05:22,720 - INFO - [Eval] Evaluation complete!
+2025-02-27 18:05:22,720 - INFO - [Eval] Total images processed: 99
+2025-02-27 18:05:22,720 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 18:05:22,720 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 18:05:22,720 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 18:05:22,720 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 18:05:22,720 - INFO - [Eval] Inference - Total time: 4.2125s, Avg time per image: 0.0426s, Max time per image: 0.0436s, FPS: 23.50
+2025-02-27 18:05:22,751 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 18:05:22,752 - INFO - [Training] Epoch 49/50 started...
+2025-02-27 18:06:39,611 - INFO - [Training] Epoch 49 finished: Average Loss = 0.0189, Time = 76.86s, LR = 0.000000
+2025-02-27 18:06:39,611 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 18:06:44,382 - INFO - [Eval] Evaluation complete!
+2025-02-27 18:06:44,382 - INFO - [Eval] Total images processed: 99
+2025-02-27 18:06:44,382 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 18:06:44,382 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 18:06:44,382 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 18:06:44,382 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 18:06:44,382 - INFO - [Eval] Inference - Total time: 4.2134s, Avg time per image: 0.0426s, Max time per image: 0.0432s, FPS: 23.50
+2025-02-27 18:06:44,413 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 18:06:44,414 - INFO - [Training] Epoch 50/50 started...
+2025-02-27 18:08:01,280 - INFO - [Training] Epoch 50 finished: Average Loss = 0.0186, Time = 76.87s, LR = 0.000000
+2025-02-27 18:08:01,280 - INFO - [Validation] Evaluating model on validation set...
+2025-02-27 18:08:06,066 - INFO - [Eval] Evaluation complete!
+2025-02-27 18:08:06,066 - INFO - [Eval] Total images processed: 99
+2025-02-27 18:08:06,066 - INFO - [Eval] Aggregate metrics: TP=333, FP=78, FN=26
+2025-02-27 18:08:06,066 - INFO - [Eval] Overall Precision: 0.8102
+2025-02-27 18:08:06,066 - INFO - [Eval] Overall Recall:    0.9276
+2025-02-27 18:08:06,066 - INFO - [Eval] Overall F1 Score:  0.8649
+2025-02-27 18:08:06,066 - INFO - [Eval] Inference - Total time: 4.2118s, Avg time per image: 0.0425s, Max time per image: 0.0440s, FPS: 23.51
+2025-02-27 18:08:06,098 - INFO - [Eval] COCO mAP50: 0.8726
+2025-02-27 18:08:06,099 - INFO - [Training] Complete. Best epoch: 13 with F1 Score = 0.8695
