@@ -1,83 +1,57 @@
-import os
+import cv2
+import matplotlib.pyplot as plt
 
-# Path to your train labels directory
-labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax"
+def draw_annotations(image_path, txt_path, output_path="annotated_image.jpg"):
+    # Load the image
+    image = cv2.imread(image_path)
+    if image is None:
+        print(f"Error: Could not load image from {image_path}")
+        return
 
-# Initialize global counters and class set for final check
-total_annotations_before = 0
-total_annotations_after = 0
-all_classes = set()
+    # Convert the image from BGR (OpenCV default) to RGB for correct display in matplotlib
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-# Iterate over all files in the directory
-for filename in os.listdir(labels_dir):
-    if filename.lower().endswith(".txt"):
-        file_path = os.path.join(labels_dir, filename)
-        
-        with open(file_path, "r") as file:
-            lines = file.readlines()
+    # Read the annotation file
+    with open(txt_path, "r") as file:
+        lines = file.readlines()
 
-        new_lines = []
-        modified = False
-        
-        # Count annotations (only counting lines that are non-empty and properly formatted)
-        file_count_before = 0
-        file_count_after = 0
-        
-        for line in lines:
-            stripped_line = line.strip()
-            if not stripped_line:
-                new_lines.append(line)
-                continue
+    # Process each line of the annotation file
+    for line in lines:
+        parts = line.strip().split()
+        if len(parts) < 5:
+            print(f"Skipping invalid line: {line}")
+            continue
 
-            parts = stripped_line.split()
-            # Only process lines with exactly 5 tokens
-            if len(parts) != 5:
-                new_lines.append(line)
-                continue
+        label = parts[0]
+        try:
+            xmin = int(float(parts[1]))
+            ymin = int(float(parts[2]))
+            xmax = int(float(parts[3]))
+            ymax = int(float(parts[4]))
+        except Exception as e:
+            print(f"Error parsing line '{line}': {e}")
+            continue
 
-            file_count_before += 1
+        # Draw the bounding box (green, thickness=2)
+        cv2.rectangle(image_rgb, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
+        # Draw the label text above the bounding box
+        cv2.putText(image_rgb, label, (xmin, max(ymin - 10, 0)),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
-            # Check and update class id if needed
-            if parts[0] == "0":
-                parts[0] = "1"
-                modified = True
+    # Display the annotated image using matplotlib
+    plt.figure(figsize=(10, 10))
+    plt.imshow(image_rgb)
+    plt.axis('off')
+    plt.title("Annotated Image")
+    plt.show()
 
-            # Keep track of classes for the final check
-            all_classes.add(parts[0])
-            
-            # Reassemble the line and add a newline character
-            new_line = " ".join(parts) + "\n"
-            new_lines.append(new_line)
-            file_count_after += 1
+    # Optionally, save the annotated image (convert back to BGR if needed)
+    annotated_image = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
+    cv2.imwrite(output_path, annotated_image)
+    print(f"Annotated image saved to {output_path}")
 
-        # Verify that annotation counts match before and after processing
-        if file_count_before != file_count_after:
-            print(f"Error in file {filename}: annotation count before ({file_count_before}) != after ({file_count_after})")
-        else:
-            print(f"File {filename}: {file_count_before} annotations processed, unchanged count.")
-
-        total_annotations_before += file_count_before
-        total_annotations_after += file_count_after
-
-        # Write the modified content back if any changes were made
-        if modified:
-            with open(file_path, "w") as file:
-                file.writelines(new_lines)
-            print(f"Updated file: {filename}")
-        else:
-            print(f"No update needed for: {filename}")
-
-print("\n=== Summary ===")
-print(f"Total annotations before processing: {total_annotations_before}")
-print(f"Total annotations after processing:  {total_annotations_after}")
-
-if total_annotations_before != total_annotations_after:
-    print("Error: The total number of annotations changed during processing!")
-else:
-    print("Success: Total number of annotations remained the same across all files.")
-
-print(f"Unique class IDs found: {all_classes}")
-if all_classes == {"1"}:
-    print("Final check passed: Only one class (1) is present in the annotations.")
-else:
-    print("Warning: Unexpected class IDs found. Please verify your labels.")
+if __name__ == "__main__":
+    # Use your provided paths
+    image_path = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images/1.jpg"
+    txt_path = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax/1.txt"
+    draw_annotations(image_path, txt_path)

@@ -3,17 +3,38 @@ import cv2                    # OpenCV for image loading and processing
 import torch                  # PyTorch library for deep learning
 import numpy as np            # For numerical operations
 import torchvision            # For pre-trained models and vision utilities
-import torch.optim as optim   # For optimization algorithms (SGD, etc.)
+import torch.optim as optim   # For optimization algorithms
 from torch.utils.data import Dataset, DataLoader, Subset  # Data handling and batching
 import torchvision.transforms.functional as TF  # Image transformation utilities
 import time                   # For measuring training time
-from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights  # Pre-trained weights
 import logging
+import json
+from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights  # Pre-trained weights
+import random
 
-# Set up logging (this will log to both console and a file 'training.log')
+# Import augmentation pipeline from augmentations.py (assumed to be in same folder)
+from augmentations import get_train_transforms, mixup_augment
+
+#############################################
+# SINGLE PLACE TO CHANGE IMAGE SIZE
+#############################################
+TARGET_SIZE = (1280, 960)  # (width, height). Change this tuple to update image dimensions everywhere.
+
+#############################################
+# Setup Run Folder and Logging
+#############################################
+runs_dir = os.path.join(os.getcwd(), "runs")
+if not os.path.exists(runs_dir):
+    os.makedirs(runs_dir)
+
+run_name = "testing_agumentations_similar_to_YOLO"  # Change as desired for each run ###########################################################################
+run_folder = os.path.join(runs_dir, run_name)
+os.makedirs(run_folder, exist_ok=True)
+
+log_file = os.path.join(run_folder, "training.log")
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s',
-                    filename='training.log',
+                    filename=log_file,
                     filemode='w')
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
@@ -22,24 +43,19 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 #############################################
-# Dataset Definition: AbsoluteDataset
+# Dataset Definition: AbsoluteDataset (No Augmentation)
 #############################################
 class AbsoluteDataset(Dataset):
-    def __init__(self, images_dir, labels_dir, transforms=None):
+    def __init__(self, images_dir, labels_dir):
         """
-        Initializes the dataset for loading images along with their corresponding 
-        absolute coordinate labels (bounding boxes). Each label file is expected 
-        to contain lines in the format: "class_id xmin ymin xmax ymax".
+        Loads images and annotations without augmentation.
+        Expects each label file to have lines in the format:
+        "class_id xmin ymin xmax ymax"
         """
         self.images_dir = images_dir
         self.labels_dir = labels_dir
-        self.transforms = transforms
-
-        # List all image files with jpg or png extension
         all_images = [f for f in os.listdir(images_dir) if f.lower().endswith(('.jpg', '.png'))]
         valid_images = []
-        
-        # Iterate over each image to check if it has a corresponding label file
         for img in all_images:
             label_path = os.path.join(labels_dir, os.path.splitext(img)[0] + ".txt")
             if os.path.exists(label_path):
@@ -51,7 +67,6 @@ class AbsoluteDataset(Dataset):
                     logging.warning("Empty label file for image '%s'", img)
             else:
                 logging.warning("No label file for image '%s'", img)
-        
         self.images = valid_images
         logging.info("[Dataset] Initialized with %d images having valid absolute labels.", len(self.images))
 
@@ -65,11 +80,9 @@ class AbsoluteDataset(Dataset):
         if img is None:
             raise RuntimeError(f"[Dataset] Failed to load image: {img_path}")
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
         label_file = os.path.join(self.labels_dir, os.path.splitext(img_file)[0] + ".txt")
         boxes = []
         labels = []
-        
         with open(label_file, 'r') as f:
             for line in f:
                 parts = line.strip().split()
@@ -80,10 +93,8 @@ class AbsoluteDataset(Dataset):
                 xmin, ymin, xmax, ymax = map(float, parts[1:])
                 boxes.append([xmin, ymin, xmax, ymax])
                 labels.append(class_id)
-        
         boxes = torch.as_tensor(boxes, dtype=torch.float32) if boxes else torch.empty((0, 4), dtype=torch.float32)
         labels = torch.as_tensor(labels, dtype=torch.int64) if labels else torch.empty((0,), dtype=torch.int64)
-
         target = {
             "boxes": boxes,
             "labels": labels,
@@ -95,15 +106,119 @@ class AbsoluteDataset(Dataset):
             area = torch.empty((0,), dtype=torch.float32)
         target["area"] = area
         target["iscrowd"] = torch.zeros((boxes.shape[0],), dtype=torch.int64)
-
-        if self.transforms:
-            img = self.transforms(img)
-        else:
-            img = TF.to_tensor(img)
-        
+        # No augmentation; simply convert image to tensor.
+        img = TF.to_tensor(img)
         return img, target
 
-# Custom collate function
+#############################################
+# New Augmented Dataset Class: AugmentedDataset
+#############################################
+class AugmentedDataset(Dataset):
+    def __init__(self, images_dir, labels_dir, transform=None, mixup_prob=0.15, mixup_alpha=32): 
+        """
+        Loads images and annotations and applies augmentation.
+        Expects each label file to contain lines in the format:
+            "class_id xmin ymin xmax ymax"
+        Parameters:
+          images_dir: directory with images
+          labels_dir: directory with corresponding annotation text files
+          transform: Albumentations pipeline (e.g., from get_train_transforms())
+          mixup_prob: probability to apply mixup augmentation to a sample (default 0.15)
+          mixup_alpha: Alpha parameter for the Beta distribution when sampling mixup ratio (default 32)
+        """
+        self.images_dir = images_dir
+        self.labels_dir = labels_dir
+        self.transform = transform
+        self.mixup_prob = mixup_prob
+        self.mixup_alpha = mixup_alpha
+
+        all_images = [f for f in os.listdir(images_dir) if f.lower().endswith(('.jpg', '.png'))]
+        valid_images = []
+        for img in all_images:
+            label_path = os.path.join(labels_dir, os.path.splitext(img)[0] + ".txt")
+            if os.path.exists(label_path):
+                with open(label_path, 'r') as f:
+                    content = f.read().strip()
+                if content:
+                    valid_images.append(img)
+                else:
+                    print(f"Warning: Empty label file for image '{img}'")
+            else:
+                print(f"Warning: No label file for image '{img}'")
+        self.images = valid_images
+
+    def __len__(self):
+        return len(self.images)
+
+    def load_image_and_annotations(self, idx):
+        img_file = self.images[idx]
+        img_path = os.path.join(self.images_dir, img_file)
+        img = cv2.imread(img_path)
+        if img is None:
+            raise RuntimeError(f"Failed to load image: {img_path}")
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+        label_file = os.path.join(self.labels_dir, os.path.splitext(img_file)[0] + ".txt")
+        boxes = []
+        labels = []
+        with open(label_file, 'r') as f:
+            for line in f:
+                parts = line.strip().split()
+                if len(parts) != 5:
+                    continue
+                cls_id = int(parts[0])
+                xmin, ymin, xmax, ymax = map(float, parts[1:])
+                boxes.append([xmin, ymin, xmax, ymax])
+                labels.append(cls_id)
+        return img, boxes, labels
+
+    def __getitem__(self, idx):
+        # Load the primary sample.
+        img, boxes, labels = self.load_image_and_annotations(idx)
+
+        # With probability mixup_prob, select a different random sample and mix them.
+        # Choose a random index different from idx.
+        mix_idx = random.choice([i for i in range(len(self.images)) if i != idx])
+        img2, boxes2, labels2 = self.load_image_and_annotations(mix_idx)
+        # Apply mixup (force mixup by passing mixup_prob=1.0 inside the function).
+        img, boxes, labels = mixup_augment(
+            img, boxes, labels,
+            img2, boxes2, labels2,
+            mixup_prob=self.mixup_prob,
+            alpha=self.mixup_alpha
+        )
+
+        # If a transform is provided, apply the Albumentations pipeline.
+        if self.transform is not None:
+            # Albumentations expects a dictionary with "image", "bboxes", and "category_ids".
+            data = {
+                "image": img,
+                "bboxes": boxes,
+                "category_ids": labels
+            }
+            augmented = self.transform(**data)
+            img = augmented["image"]
+            boxes = augmented["bboxes"]
+            labels = augmented["category_ids"]
+            # Convert image from HWC to CHW tensor.
+            img = torch.from_numpy(img).permute(2, 0, 1).float()
+        else:
+            img = TF.to_tensor(img)
+
+        target = {
+            "boxes": torch.tensor(boxes, dtype=torch.float32) if boxes else torch.empty((0, 4), dtype=torch.float32),
+            "labels": torch.tensor(labels, dtype=torch.int64) if labels else torch.empty((0,), dtype=torch.int64),
+            "image_id": torch.tensor([idx])
+        }
+        if target["boxes"].numel() > 0:
+            area = (target["boxes"][:, 2] - target["boxes"][:, 0]) * (target["boxes"][:, 3] - target["boxes"][:, 1])
+        else:
+            area = torch.empty((0,), dtype=torch.float32)
+        target["area"] = area
+        target["iscrowd"] = torch.zeros((target["boxes"].shape[0],), dtype=torch.int64)
+        return img, target
+
+# Custom collate function (unchanged)
 def collate_fn(batch):
     return tuple(zip(*batch))
 
@@ -125,7 +240,6 @@ def compute_iou(box1, box2):
     y1 = max(box1[1], box2[1])
     x2 = min(box1[2], box2[2])
     y2 = min(box1[3], box2[3])
-    
     inter_area = max(0, x2 - x1) * max(0, y2 - y1)
     if inter_area == 0:
         return 0.0
@@ -136,14 +250,30 @@ def compute_iou(box1, box2):
 
 #############################################
 # Helper: Evaluate Model on Validation Set
+#############################################
 def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshold=0.3):
     total_tp = total_fp = total_fn = total_images = 0
+    inference_times = []
+    per_image_times = []
+    all_annotations = []
+    all_detections = []
+    image_infos = {}
+    annotation_id = 1
+
     model.eval()
     with torch.no_grad():
         for images, targets in data_loader:
             images = [img.to(device) for img in images]
+            start_inference = time.time()
             outputs = model(images)
-            for output, target in zip(outputs, targets):
+            if device.type == 'cuda':
+                torch.cuda.synchronize()
+            batch_time = time.time() - start_inference
+            inference_times.append(batch_time)
+            batch_size = len(images)
+            per_image_times.extend([batch_time / batch_size] * batch_size)
+            
+            for i, (img, target, output) in enumerate(zip(images, targets, outputs)):
                 total_images += 1
                 gt_boxes = target["boxes"].cpu().numpy()
                 num_gt = len(gt_boxes)
@@ -155,24 +285,61 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
                 tp = 0
                 matched = set()
                 for pred_box in filtered_boxes:
-                    for i, gt_box in enumerate(gt_boxes):
-                        if i in matched:
+                    for j, gt_box in enumerate(gt_boxes):
+                        if j in matched:
                             continue
                         iou = compute_iou(pred_box, gt_box)
                         if iou >= iou_threshold:
                             tp += 1
-                            matched.add(i)
+                            matched.add(j)
                             break
                 fp = num_filtered - tp
                 fn = num_gt - tp
-
                 total_tp += tp
                 total_fp += fp
                 total_fn += fn
 
+                image_id = target["image_id"].item()
+                if image_id not in image_infos:
+                    _, H, W = img.shape
+                    image_infos[image_id] = {
+                        "id": image_id,
+                        "width": W,
+                        "height": H,
+                        "file_name": f"image_{image_id}.jpg"
+                    }
+                for box in gt_boxes:
+                    w = box[2] - box[0]
+                    h = box[3] - box[1]
+                    all_annotations.append({
+                        "id": annotation_id,
+                        "image_id": image_id,
+                        "category_id": 1,
+                        "bbox": [float(box[0]), float(box[1]), float(w), float(h)],
+                        "area": float(w * h),
+                        "iscrowd": 0
+                    })
+                    annotation_id += 1
+                pred_boxes = output["boxes"].cpu().numpy()[valid_idx]
+                pred_scores = output["scores"].cpu().numpy()[valid_idx]
+                for box, score in zip(pred_boxes, pred_scores):
+                    w = box[2] - box[0]
+                    h = box[3] - box[1]
+                    all_detections.append({
+                        "image_id": image_id,
+                        "category_id": 1,
+                        "bbox": [float(box[0]), float(box[1]), float(w), float(h)],
+                        "score": float(score)
+                    })
+
     precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0.0
     recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0.0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
+
+    total_inference_time = sum(inference_times)
+    avg_inference_time = sum(per_image_times) / len(per_image_times) if per_image_times else 0.0
+    max_inference_time = max(per_image_times) if per_image_times else 0.0
+    fps = total_images / total_inference_time if total_inference_time > 0 else 0.0
 
     logging.info("[Eval] Evaluation complete!")
     logging.info("[Eval] Total images processed: %d", total_images)
@@ -180,18 +347,65 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
     logging.info("[Eval] Overall Precision: %.4f", precision)
     logging.info("[Eval] Overall Recall:    %.4f", recall)
     logging.info("[Eval] Overall F1 Score:  %.4f", f1)
+    logging.info("[Eval] Inference - Total time: %.4fs, Avg time per image: %.4fs, Max time per image: %.4fs, FPS: %.2f",
+                 total_inference_time, avg_inference_time, max_inference_time, fps)
 
-    return f1
+    eval_metrics = {
+        "f1": f1,
+        "precision": precision,
+        "recall": recall,
+        "inference": {
+            "total_time": total_inference_time,
+            "avg_time": avg_inference_time,
+            "max_time": max_inference_time,
+            "fps": fps
+        }
+    }
+    
+    try:
+        from pycocotools.coco import COCO
+        from pycocotools.cocoeval import COCOeval
+        
+        coco_gt_dict = {
+            "images": list(image_infos.values()),
+            "annotations": all_annotations,
+            "categories": [{"id": 1, "name": "object"}]
+        }
+        gt_path = os.path.join(run_folder, "temp_coco_gt.json")
+        with open(gt_path, "w") as f:
+            json.dump(coco_gt_dict, f)
+        
+        cocoGt = COCO(gt_path)
+        
+        dets_path = os.path.join(run_folder, "temp_coco_dets.json")
+        with open(dets_path, "w") as f:
+            json.dump(all_detections, f)
+        
+        cocoDt = cocoGt.loadRes(dets_path)
+        cocoEval = COCOeval(cocoGt, cocoDt, iouType='bbox')
+        cocoEval.params.iouThrs = [0.5]
+        cocoEval.evaluate()
+        cocoEval.accumulate()
+        cocoEval.summarize()
+        coco_map50 = cocoEval.stats[0]
+        eval_metrics["coco"] = {"mAP50": coco_map50}
+        logging.info("[Eval] COCO mAP50: %.4f", coco_map50)
+        os.remove(gt_path)
+        os.remove(dets_path)
+    except ImportError:
+        logging.warning("pycocotools not installed, skipping COCO metric evaluation.")
+        eval_metrics["coco"] = {}
+
+    return eval_metrics
 
 #############################################
-# Training Module with Detection Metric-Based Checkpointing
+# Training Module with Metric-Based Model Selection
 #############################################
 def train_model(train_loader, val_loader, model, device, num_epochs=10, learning_rate=0.005,
                 score_threshold=0.3, iou_threshold=0.3):
     params = [p for p in model.parameters() if p.requires_grad]
     optimizer = optim.SGD(params, lr=learning_rate, momentum=0.9, weight_decay=0.0005)
     
-    # Use ReduceLROnPlateau to reduce LR when F1 score plateaus.
     lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,
                                                               mode='max',
                                                               factor=0.1,
@@ -200,6 +414,7 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
 
     best_f1 = 0.0
     best_epoch = 0
+    best_eval_metrics = None
 
     try:
         for epoch in range(num_epochs):
@@ -233,53 +448,104 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
                          epoch+1, avg_loss, elapsed, current_lr)
 
             logging.info("[Validation] Evaluating model on validation set...")
-            current_f1 = evaluate_model(model, val_loader, device, score_threshold, iou_threshold)
+            current_eval = evaluate_model(model, val_loader, device, score_threshold, iou_threshold)
+            current_f1 = current_eval["f1"]
 
-            # Step the scheduler with the current F1 score
             lr_scheduler.step(current_f1)
 
             if current_f1 > best_f1:
                 best_f1 = current_f1
                 best_epoch = epoch + 1
+                best_eval_metrics = current_eval
+                best_model_path = os.path.join(run_folder, "best_model_absolute.pth")
                 torch.save({
                     'epoch': epoch+1,
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
                     'f1': current_f1,
-                }, "best_model_absolute.pth")
+                }, best_model_path)
                 logging.info("--> [Checkpoint] Best model updated at epoch %d with F1 = %.4f", best_epoch, best_f1)
-
-            # Optionally, save periodic checkpoints (e.g., every 10 epochs)
-            if (epoch + 1) % 10 == 0:
-                checkpoint_path = f"checkpoint_epoch_{epoch+1}_f1_{current_f1:.4f}.pth"
-                torch.save({
-                    'epoch': epoch+1,
-                    'model_state_dict': model.state_dict(),
-                    'optimizer_state_dict': optimizer.state_dict(),
-                    'f1': current_f1,
-                }, checkpoint_path)
-                logging.info("Checkpoint saved: %s", checkpoint_path)
 
     except KeyboardInterrupt:
         logging.info("Training interrupted. Saving current model state.")
-        torch.save(model.state_dict(), "model_interrupt.pth")
+        interrupt_path = os.path.join(run_folder, "model_interrupt.pth")
+        torch.save(model.state_dict(), interrupt_path)
         raise
 
     logging.info("[Training] Complete. Best epoch: %d with F1 Score = %.4f", best_epoch, best_f1)
+    
+    # Write summary files including hyperparameters for reproducibility.
+    metrics_summary_path = os.path.join(run_folder, "metrics_summary.txt")
+    with open(metrics_summary_path, "w") as f:
+        f.write(f"Best Epoch: {best_epoch}\n")
+        f.write(f"Best F1: {best_f1:.4f}\n")
+        f.write("Hyperparameters:\n")
+        f.write(f"  Batch Size: {train_loader.batch_size}\n")
+        f.write(f"  Learning Rate: {learning_rate}\n")
+        f.write(f"  Num Epochs: {num_epochs}\n")
+        f.write(f"  Score Threshold: {score_threshold}\n")
+        f.write(f"  IoU Threshold: {iou_threshold}\n")
+        if best_eval_metrics and "coco" in best_eval_metrics:
+            coco_map50 = best_eval_metrics["coco"].get("mAP50", "N/A")
+            f.write(f"  COCO mAP50: {coco_map50}\n")
+        else:
+            f.write("  COCO mAP50: N/A (pycocotools not installed or evaluation skipped)\n")
+
+    # Write a system summary including additional memory and device info.
+    system_summary_path = os.path.join(run_folder, "system_summary.txt")
+    with open(system_summary_path, "w") as f:
+        if best_eval_metrics:
+            inf = best_eval_metrics["inference"]
+            f.write("Inference Metrics:\n")
+            f.write(f"  Total Inference Time: {inf['total_time']:.4f} s\n")
+            f.write(f"  Average Inference Time per Image: {inf['avg_time']:.4f} s\n")
+            f.write(f"  Max Inference Time per Image: {inf['max_time']:.4f} s\n")
+            f.write(f"  FPS: {inf['fps']:.2f}\n")
+        else:
+            f.write("Inference Metrics: N/A\n")
+        if device.type == 'cuda':
+            max_mem = torch.cuda.max_memory_allocated(device) / (1024 * 1024)
+            f.write(f"\nGPU Memory Usage:\n")
+            f.write(f"  Max GPU Memory Allocated: {max_mem:.2f} MB\n")
+            props = torch.cuda.get_device_properties(device)
+            f.write(f"  GPU Name: {props.name}\n")
+            f.write(f"  GPU Total Memory: {props.total_memory / (1024 * 1024):.2f} MB\n")
+        try:
+            import psutil
+            process = psutil.Process(os.getpid())
+            mem_info = process.memory_info()
+            vm = psutil.virtual_memory()
+            f.write(f"\nSystem Memory:\n")
+            f.write(f"  Total System Memory: {vm.total / (1024 * 1024):.2f} MB\n")
+            f.write(f"  Available System Memory: {vm.available / (1024 * 1024):.2f} MB\n")
+            f.write(f"  CPU Memory Usage (RSS): {mem_info.rss / (1024 * 1024):.2f} MB\n")
+            f.write(f"  CPU Count: {psutil.cpu_count(logical=True)}\n")
+        except ImportError:
+            f.write("psutil not installed; additional system memory info not available.\n")
+
     return model, best_epoch
 
 #############################################
 # Main: Running the Training Pipeline
 #############################################
 if __name__ == '__main__':
+    # Define the directories for training and validation images and labels.
     train_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images"
     train_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax"
     val_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"
     val_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax"
 
     logging.info("[Main] Initializing datasets...")
-    train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
-    val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
+
+    # === Training with Augmentation ===
+    # Use AugmentedDataset to apply on-the-fly augmentation during training.
+    train_dataset = AugmentedDataset(train_images_dir, train_labels_dir, transform=get_train_transforms())
+    val_dataset = AugmentedDataset(val_images_dir, val_labels_dir, transform=get_train_transforms())
+
+    # === Training without Augmentation ===
+    # To run training without any augmentation, comment out the AugmentedDataset lines above and uncomment the following lines:
+    # train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
+    # val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
 
     batch_size = 6
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
@@ -292,6 +558,6 @@ if __name__ == '__main__':
 
     logging.info("[Main] Starting training with detection metric-based model selection...")
     trained_model, best_epoch = train_model(
-        train_loader, val_loader, model, device, num_epochs=500,
+        train_loader, val_loader, model, device, num_epochs=50,
         learning_rate=0.005, score_threshold=0.3, iou_threshold=0.3
     )
