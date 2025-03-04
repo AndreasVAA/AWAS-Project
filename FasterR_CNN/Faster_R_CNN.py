@@ -3,22 +3,22 @@ import cv2                    # OpenCV for image loading and processing
 import torch                  # PyTorch library for deep learning
 import numpy as np            # For numerical operations
 import torchvision            # For pre-trained models and vision utilities
-import torch.optim as optim   # For optimization algorithms
+import torch.optim as optim   # For optimization algorithms (SGD, etc.)
 from torch.utils.data import Dataset, DataLoader, Subset  # Data handling and batching
 import torchvision.transforms.functional as TF  # Image transformation utilities
 import time                   # For measuring training time
 import logging
 import json
-from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights  # Pre-trained weights
 import random
+from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights  # Pre-trained weights
 
-# Import augmentation pipeline from augmentations.py (assumed to be in same folder)
-from augmentations import get_train_transforms, mixup_augment
+# Import augmentation functions from augmentations.py (assumed to be in same folder)
+from augmentations import get_train_transforms, mixup_augment, get_randaugment_pipeline
 
 #############################################
 # SINGLE PLACE TO CHANGE IMAGE SIZE
 #############################################
-TARGET_SIZE = (1280, 960)  # (width, height). Change this tuple to update image dimensions everywhere.
+TARGET_SIZE = (1280, 960)  # (width, height)
 
 #############################################
 # Setup Run Folder and Logging
@@ -27,7 +27,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "testing_agumentations_similar_to_YOLO"  # Change as desired for each run ###########################################################################
+run_name = "testing_agumentations_similar_to_YOLO"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -43,15 +43,10 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 #############################################
-# Dataset Definition: AbsoluteDataset (No Augmentation)
+# Dataset Definitions
 #############################################
 class AbsoluteDataset(Dataset):
     def __init__(self, images_dir, labels_dir):
-        """
-        Loads images and annotations without augmentation.
-        Expects each label file to have lines in the format:
-        "class_id xmin ymin xmax ymax"
-        """
         self.images_dir = images_dir
         self.labels_dir = labels_dir
         all_images = [f for f in os.listdir(images_dir) if f.lower().endswith(('.jpg', '.png'))]
@@ -68,17 +63,17 @@ class AbsoluteDataset(Dataset):
             else:
                 logging.warning("No label file for image '%s'", img)
         self.images = valid_images
-        logging.info("[Dataset] Initialized with %d images having valid absolute labels.", len(self.images))
-
+        logging.info("[AbsoluteDataset] Initialized with %d images.", len(self.images))
+    
     def __len__(self):
         return len(self.images)
-
+    
     def __getitem__(self, idx):
         img_file = self.images[idx]
         img_path = os.path.join(self.images_dir, img_file)
         img = cv2.imread(img_path)
         if img is None:
-            raise RuntimeError(f"[Dataset] Failed to load image: {img_path}")
+            raise RuntimeError(f"Failed to load image: {img_path}")
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         label_file = os.path.join(self.labels_dir, os.path.splitext(img_file)[0] + ".txt")
         boxes = []
@@ -87,48 +82,41 @@ class AbsoluteDataset(Dataset):
             for line in f:
                 parts = line.strip().split()
                 if len(parts) != 5:
-                    logging.warning("[Dataset] Skipping malformed line in %s: %s", label_file, line)
+                    logging.warning("Skipping malformed line in %s: %s", label_file, line)
                     continue
                 class_id = int(parts[0])
                 xmin, ymin, xmax, ymax = map(float, parts[1:])
                 boxes.append([xmin, ymin, xmax, ymax])
                 labels.append(class_id)
-        boxes = torch.as_tensor(boxes, dtype=torch.float32) if boxes else torch.empty((0, 4), dtype=torch.float32)
+        boxes = torch.as_tensor(boxes, dtype=torch.float32) if boxes else torch.empty((0,4), dtype=torch.float32)
         labels = torch.as_tensor(labels, dtype=torch.int64) if labels else torch.empty((0,), dtype=torch.int64)
-        target = {
-            "boxes": boxes,
-            "labels": labels,
-            "image_id": torch.tensor([idx])
-        }
+        target = {"boxes": boxes, "labels": labels, "image_id": torch.tensor([idx])}
         if boxes.numel() > 0:
-            area = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+            area = (boxes[:,2]-boxes[:,0])*(boxes[:,3]-boxes[:,1])
         else:
             area = torch.empty((0,), dtype=torch.float32)
         target["area"] = area
         target["iscrowd"] = torch.zeros((boxes.shape[0],), dtype=torch.int64)
-        # No augmentation; simply convert image to tensor.
         img = TF.to_tensor(img)
         return img, target
 
-#############################################
-# New Augmented Dataset Class: AugmentedDataset
-#############################################
 class AugmentedDataset(Dataset):
-    def __init__(self, images_dir, labels_dir, transform=None, mixup_prob=0.15, mixup_alpha=32): 
+    def __init__(self, images_dir, labels_dir, transform_yolo, transform_randaug, mixup_prob=0.2, mixup_alpha=32):
         """
-        Loads images and annotations and applies augmentation.
-        Expects each label file to contain lines in the format:
-            "class_id xmin ymin xmax ymax"
+        Loads images and annotations and applies on-the-fly augmentation.
+        
         Parameters:
-          images_dir: directory with images
-          labels_dir: directory with corresponding annotation text files
-          transform: Albumentations pipeline (e.g., from get_train_transforms())
-          mixup_prob: probability to apply mixup augmentation to a sample (default 0.15)
-          mixup_alpha: Alpha parameter for the Beta distribution when sampling mixup ratio (default 32)
+          - images_dir: directory with images.
+          - labels_dir: directory with annotation files.
+          - transform_yolo: the YOLO-style augmentation pipeline (e.g., get_train_transforms()).
+          - transform_randaug: the RandAugment-like pipeline (e.g., get_randaugment_pipeline()).
+          - mixup_prob: probability (default 0.2) to apply mixup augmentation.
+          - mixup_alpha: alpha parameter for the Beta distribution in mixup.
         """
         self.images_dir = images_dir
         self.labels_dir = labels_dir
-        self.transform = transform
+        self.transform_yolo = transform_yolo
+        self.transform_randaug = transform_randaug
         self.mixup_prob = mixup_prob
         self.mixup_alpha = mixup_alpha
 
@@ -157,7 +145,6 @@ class AugmentedDataset(Dataset):
         if img is None:
             raise RuntimeError(f"Failed to load image: {img_path}")
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
         label_file = os.path.join(self.labels_dir, os.path.splitext(img_file)[0] + ".txt")
         boxes = []
         labels = []
@@ -173,41 +160,52 @@ class AugmentedDataset(Dataset):
         return img, boxes, labels
 
     def __getitem__(self, idx):
-        # Load the primary sample.
+        # Load primary image and annotations.
         img, boxes, labels = self.load_image_and_annotations(idx)
 
-        # With probability mixup_prob, select a different random sample and mix them.
-        # Choose a random index different from idx.
-        mix_idx = random.choice([i for i in range(len(self.images)) if i != idx])
-        img2, boxes2, labels2 = self.load_image_and_annotations(mix_idx)
-        # Apply mixup (force mixup by passing mixup_prob=1.0 inside the function).
-        img, boxes, labels = mixup_augment(
-            img, boxes, labels,
-            img2, boxes2, labels2,
-            mixup_prob=self.mixup_prob,
-            alpha=self.mixup_alpha
-        )
+        # --- Step 1: Apply YOLO-style augmentation pipeline.
+        data = {"image": img, "bboxes": boxes, "category_ids": labels}
+        augmented_yolo = self.transform_yolo(**data)
+        # Use the output from YOLO pipeline:
+        img_aug = augmented_yolo["image"]
+        boxes_aug = augmented_yolo["bboxes"]
+        labels_aug = augmented_yolo["category_ids"]
 
-        # If a transform is provided, apply the Albumentations pipeline.
-        if self.transform is not None:
-            # Albumentations expects a dictionary with "image", "bboxes", and "category_ids".
-            data = {
-                "image": img,
-                "bboxes": boxes,
-                "category_ids": labels
-            }
-            augmented = self.transform(**data)
-            img = augmented["image"]
-            boxes = augmented["bboxes"]
-            labels = augmented["category_ids"]
-            # Convert image from HWC to CHW tensor.
-            img = torch.from_numpy(img).permute(2, 0, 1).float()
-        else:
-            img = TF.to_tensor(img)
+        # --- Step 2: Apply RandAugment-like augmentation pipeline.
+        # (These pipelines are applied sequentially; both include a final resize.)
+        data2 = {"image": img_aug, "bboxes": boxes_aug, "category_ids": labels_aug}
+        augmented_rand = self.transform_randaug(**data2)
+        final_img = augmented_rand["image"]
+        final_boxes = augmented_rand["bboxes"]
+        final_labels = augmented_rand["category_ids"]
+
+        # --- Step 3: With probability mixup_prob (here 0.2), mixup with another sample.
+        if len(self.images) > 1 and random.random() < self.mixup_prob:
+            mix_idx = random.choice([i for i in range(len(self.images)) if i != idx])
+            img2, boxes2, labels2 = self.load_image_and_annotations(mix_idx)
+            # Process the second image through both pipelines:
+            data_mix = {"image": img2, "bboxes": boxes2, "category_ids": labels2}
+            augmented_yolo2 = self.transform_yolo(**data_mix)
+            data_mix2 = {"image": augmented_yolo2["image"],
+                         "bboxes": augmented_yolo2["bboxes"],
+                         "category_ids": augmented_yolo2["category_ids"]}
+            augmented_rand2 = self.transform_randaug(**data_mix2)
+            final_img2 = augmented_rand2["image"]
+            final_boxes2 = augmented_rand2["bboxes"]
+            final_labels2 = augmented_rand2["category_ids"]
+
+            final_img, final_boxes, final_labels = mixup_augment(
+                final_img, final_boxes, final_labels,
+                final_img2, final_boxes2, final_labels2,
+                mixup_prob=self.mixup_prob, alpha=self.mixup_alpha
+            )
+
+        # Convert final image to a torch tensor.
+        final_img_tensor = torch.from_numpy(final_img).permute(2, 0, 1).float()
 
         target = {
-            "boxes": torch.tensor(boxes, dtype=torch.float32) if boxes else torch.empty((0, 4), dtype=torch.float32),
-            "labels": torch.tensor(labels, dtype=torch.int64) if labels else torch.empty((0,), dtype=torch.int64),
+            "boxes": torch.tensor(final_boxes, dtype=torch.float32) if final_boxes else torch.empty((0, 4), dtype=torch.float32),
+            "labels": torch.tensor(final_labels, dtype=torch.int64) if final_labels else torch.empty((0,), dtype=torch.int64),
             "image_id": torch.tensor([idx])
         }
         if target["boxes"].numel() > 0:
@@ -216,9 +214,11 @@ class AugmentedDataset(Dataset):
             area = torch.empty((0,), dtype=torch.float32)
         target["area"] = area
         target["iscrowd"] = torch.zeros((target["boxes"].shape[0],), dtype=torch.int64)
-        return img, target
 
-# Custom collate function (unchanged)
+        return final_img_tensor, target
+
+
+# Custom collate function for batching.
 def collate_fn(batch):
     return tuple(zip(*batch))
 
@@ -392,9 +392,9 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
         logging.info("[Eval] COCO mAP50: %.4f", coco_map50)
         os.remove(gt_path)
         os.remove(dets_path)
-    except ImportError:
-        logging.warning("pycocotools not installed, skipping COCO metric evaluation.")
-        eval_metrics["coco"] = {}
+    except Exception as e:
+        logging.warning("COCO evaluation skipped: " + str(e))
+        eval_metrics["coco"] = {"mAP50": 0.0}
 
     return eval_metrics
 
@@ -424,6 +424,9 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
             logging.info("[Training] Epoch %d/%d started...", epoch+1, num_epochs)
 
             for batch_idx, (images, targets) in enumerate(train_loader):
+                # Optionally print augmented output from the first sample of the first batch.
+                if epoch == 0 and batch_idx == 0:
+                    print("DEBUG: First sample target in training batch:", targets[0])
                 for i, target in enumerate(targets):
                     if target["boxes"].numel() == 0:
                         logging.warning("[Training] Sample %d in batch %d has no bounding boxes!", i, batch_idx)
@@ -491,7 +494,6 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
         else:
             f.write("  COCO mAP50: N/A (pycocotools not installed or evaluation skipped)\n")
 
-    # Write a system summary including additional memory and device info.
     system_summary_path = os.path.join(run_folder, "system_summary.txt")
     with open(system_summary_path, "w") as f:
         if best_eval_metrics:
@@ -529,7 +531,6 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
 # Main: Running the Training Pipeline
 #############################################
 if __name__ == '__main__':
-    # Define the directories for training and validation images and labels.
     train_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images"
     train_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax"
     val_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"
@@ -538,14 +539,21 @@ if __name__ == '__main__':
     logging.info("[Main] Initializing datasets...")
 
     # === Training with Augmentation ===
-    # Use AugmentedDataset to apply on-the-fly augmentation during training.
-    train_dataset = AugmentedDataset(train_images_dir, train_labels_dir, transform=get_train_transforms())
-    val_dataset = AugmentedDataset(val_images_dir, val_labels_dir, transform=get_train_transforms())
+    train_dataset = AugmentedDataset(
+    train_images_dir, 
+    train_labels_dir, 
+    transform_yolo=get_train_transforms(), 
+    transform_randaug=get_randaugment_pipeline(), 
+    mixup_prob=0.2, 
+    mixup_alpha=32
+)
 
+    
     # === Training without Augmentation ===
-    # To run training without any augmentation, comment out the AugmentedDataset lines above and uncomment the following lines:
+    # Uncomment the following lines to disable augmentation:
     # train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
-    # val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
+    
+    val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
 
     batch_size = 6
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
