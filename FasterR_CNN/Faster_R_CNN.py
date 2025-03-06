@@ -13,7 +13,7 @@ import random
 from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights  # Pre-trained weights
 
 # Import augmentation functions from augmentations.py (assumed to be in same folder)
-from augmentations import get_train_transforms, mixup_augment, get_randaugment_pipeline
+from augmentations import get_train_transforms, mixup_augment, get_randaugment_pipeline, mosaic_augment
 
 #############################################
 # SINGLE PLACE TO CHANGE IMAGE SIZE
@@ -27,7 +27,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "testing_agumentations_similar_to_YOLO"  # Change as desired for each run
+run_name = "testing_agumentations_YOLO_MosaicReducesWithEpochs_rand"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -100,23 +100,19 @@ class AbsoluteDataset(Dataset):
         img = TF.to_tensor(img)
         return img, target
 
+# === Modified AugmentedDataset ===
 class AugmentedDataset(Dataset):
-    def __init__(self, images_dir, labels_dir, transform_yolo, transform_randaug, mixup_prob=0.2, mixup_alpha=32):
+    def __init__(self, images_dir, labels_dir, transform_yolo, transform_randaug, 
+                 mosaic_prob=1.0, mixup_prob=0.2, mixup_alpha=32):
         """
-        Loads images and annotations and applies on-the-fly augmentation.
-        
-        Parameters:
-          - images_dir: directory with images.
-          - labels_dir: directory with annotation files.
-          - transform_yolo: the YOLO-style augmentation pipeline (e.g., get_train_transforms()).
-          - transform_randaug: the RandAugment-like pipeline (e.g., get_randaugment_pipeline()).
-          - mixup_prob: probability (default 0.2) to apply mixup augmentation.
-          - mixup_alpha: alpha parameter for the Beta distribution in mixup.
+        mosaic_prob: probability to apply mosaic augmentation.
+        (mixup_prob and randaugment remain available and are commented out in __getitem__.)
         """
         self.images_dir = images_dir
         self.labels_dir = labels_dir
         self.transform_yolo = transform_yolo
         self.transform_randaug = transform_randaug
+        self.mosaic_prob = mosaic_prob
         self.mixup_prob = mixup_prob
         self.mixup_alpha = mixup_alpha
 
@@ -160,48 +156,56 @@ class AugmentedDataset(Dataset):
         return img, boxes, labels
 
     def __getitem__(self, idx):
-        # Load primary image and annotations.
-        img, boxes, labels = self.load_image_and_annotations(idx)
+        # Decide whether to use mosaic augmentation based on mosaic_prob.
+        if random.random() < self.mosaic_prob:
+            # Mosaic: sample 4 images (if available)
+            indices = [idx] + random.sample([i for i in range(len(self.images)) if i != idx],
+                                             min(3, len(self.images)-1))
+            while len(indices) < 4:
+                indices.append(indices[-1])
+            mosaic_imgs = []
+            mosaic_boxes_list = []
+            mosaic_labels_list = []
+            for i in indices:
+                im, b, l = self.load_image_and_annotations(i)
+                mosaic_imgs.append(im)
+                mosaic_boxes_list.append(b)
+                mosaic_labels_list.append(l)
+            # Apply mosaic augmentation.
+            mosaic_img, mosaic_boxes, mosaic_labels = mosaic_augment(
+                mosaic_imgs, mosaic_boxes_list, mosaic_labels_list, target_size=TARGET_SIZE)
+            data = {"image": mosaic_img, "bboxes": mosaic_boxes, "category_ids": mosaic_labels}
+        else:
+            # Otherwise, load just a single image.
+            im, b, l = self.load_image_and_annotations(idx)
+            data = {"image": im, "bboxes": b, "category_ids": l}
 
-        # --- Step 1: Apply YOLO-style augmentation pipeline.
-        data = {"image": img, "bboxes": boxes, "category_ids": labels}
-        augmented_yolo = self.transform_yolo(**data)
-        # Use the output from YOLO pipeline:
-        img_aug = augmented_yolo["image"]
-        boxes_aug = augmented_yolo["bboxes"]
-        labels_aug = augmented_yolo["category_ids"]
+        # Apply YOLO-style augmentation to the image (whether mosaic or single).
+        augmented = self.transform_yolo(**data)
+        img_yolo = augmented["image"]
+        boxes_yolo = augmented["bboxes"]
+        labels_yolo = augmented["category_ids"]
 
-        # --- Step 2: Apply RandAugment-like augmentation pipeline.
-        # (These pipelines are applied sequentially; both include a final resize.)
-        data2 = {"image": img_aug, "bboxes": boxes_aug, "category_ids": labels_aug}
+        # The following blocks for RandAugment and mixup are left commented out.
+        #"""
+        # RandAugment (if desired)
+        data2 = {"image": img_yolo, "bboxes": boxes_yolo, "category_ids": labels_yolo}
         augmented_rand = self.transform_randaug(**data2)
-        final_img = augmented_rand["image"]
-        final_boxes = augmented_rand["bboxes"]
-        final_labels = augmented_rand["category_ids"]
+        img_rand = augmented_rand["image"]
+        boxes_rand = augmented_rand["bboxes"]
+        labels_rand = augmented_rand["category_ids"]
+        final_img = img_rand
+        final_boxes = boxes_rand
+        final_labels = labels_rand
+        #"""
+        # In our current run, we simply use the mosaic/YOLO output.
+        final_img = img_yolo
+        final_boxes = boxes_yolo
+        final_labels = labels_yolo
 
-        # --- Step 3: With probability mixup_prob (here 0.2), mixup with another sample.
-        if len(self.images) > 1 and random.random() < self.mixup_prob:
-            mix_idx = random.choice([i for i in range(len(self.images)) if i != idx])
-            img2, boxes2, labels2 = self.load_image_and_annotations(mix_idx)
-            # Process the second image through both pipelines:
-            data_mix = {"image": img2, "bboxes": boxes2, "category_ids": labels2}
-            augmented_yolo2 = self.transform_yolo(**data_mix)
-            data_mix2 = {"image": augmented_yolo2["image"],
-                         "bboxes": augmented_yolo2["bboxes"],
-                         "category_ids": augmented_yolo2["category_ids"]}
-            augmented_rand2 = self.transform_randaug(**data_mix2)
-            final_img2 = augmented_rand2["image"]
-            final_boxes2 = augmented_rand2["bboxes"]
-            final_labels2 = augmented_rand2["category_ids"]
-
-            final_img, final_boxes, final_labels = mixup_augment(
-                final_img, final_boxes, final_labels,
-                final_img2, final_boxes2, final_labels2,
-                mixup_prob=self.mixup_prob, alpha=self.mixup_alpha
-            )
-
-        # Convert final image to a torch tensor.
-        final_img_tensor = torch.from_numpy(final_img).permute(2, 0, 1).float()
+        # Convert final image to tensor.
+        final_img = final_img.astype(np.float32) / 255.0
+        final_img_tensor = torch.from_numpy(final_img).permute(2, 0, 1)
 
         target = {
             "boxes": torch.tensor(final_boxes, dtype=torch.float32) if final_boxes else torch.empty((0, 4), dtype=torch.float32),
@@ -216,7 +220,6 @@ class AugmentedDataset(Dataset):
         target["iscrowd"] = torch.zeros((target["boxes"].shape[0],), dtype=torch.int64)
 
         return final_img_tensor, target
-
 
 # Custom collate function for batching.
 def collate_fn(batch):
@@ -401,35 +404,61 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
 #############################################
 # Training Module with Metric-Based Model Selection
 #############################################
-def train_model(train_loader, val_loader, model, device, num_epochs=10, learning_rate=0.005,
+def train_model(train_loader, val_loader, model, device, num_epochs=500, learning_rate=0.005,
                 score_threshold=0.3, iou_threshold=0.3):
     params = [p for p in model.parameters() if p.requires_grad]
     optimizer = optim.SGD(params, lr=learning_rate, momentum=0.9, weight_decay=0.0005)
     
-    lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,
-                                                              mode='max',
-                                                              factor=0.1,
-                                                              patience=5,
-                                                              verbose=True)
+    lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, mode='max', factor=0.1, patience=10, verbose=True)
 
     best_f1 = 0.0
     best_epoch = 0
     best_eval_metrics = None
+    epochs_without_improvement = 0
+    early_stop_patience = 50
+    target_decay_epoch = 20
+
+    # Define warmup epochs.
+    warmup_epochs = 3
+
+    # If the dataset supports mosaic probability, store its initial value.
+    if hasattr(train_loader.dataset, 'mosaic_prob'):
+        if not hasattr(train_loader.dataset, 'initial_mosaic_prob'):
+            train_loader.dataset.initial_mosaic_prob = train_loader.dataset.mosaic_prob
 
     try:
         for epoch in range(num_epochs):
+            # -- Warmup Learning Rate --
+            if epoch < warmup_epochs:
+                warmup_lr = learning_rate * (epoch + 1) / warmup_epochs
+                for param_group in optimizer.param_groups:
+                    param_group['lr'] = warmup_lr
+                logging.info("Epoch %d: Warmup learning rate set to %.6f", epoch+1, warmup_lr)
+            # -- Mosaic Probability Decay (Quadratic) --
+            # Set the target decay epoch to 50.
+
+
+            if hasattr(train_loader.dataset, 'mosaic_prob'):
+                init_prob = train_loader.dataset.initial_mosaic_prob  # initial mosaic probability
+                # Compute a quadratic decay factor, but don't let it fall below 0.1.
+                decay_factor = max(1 - (epoch / target_decay_epoch) ** 2, 0.1)
+                new_prob = init_prob * decay_factor
+                train_loader.dataset.mosaic_prob = new_prob
+                logging.info("Epoch %d: Updated mosaic probability to %.4f", epoch+1, new_prob)
+
+
             model.train()
             epoch_loss = 0.0
             start_time = time.time()
             logging.info("[Training] Epoch %d/%d started...", epoch+1, num_epochs)
 
             for batch_idx, (images, targets) in enumerate(train_loader):
-                # Optionally print augmented output from the first sample of the first batch.
                 if epoch == 0 and batch_idx == 0:
                     print("DEBUG: First sample target in training batch:", targets[0])
                 for i, target in enumerate(targets):
                     if target["boxes"].numel() == 0:
-                        logging.warning("[Training] Sample %d in batch %d has no bounding boxes!", i, batch_idx)
+                        logging.debug("[Training] Sample %d in batch %d has no bounding boxes!", i, batch_idx)
                 images = [img.to(device) for img in images]
                 targets = [{k: v.to(device) for k, v in target.items()} for target in targets]
 
@@ -468,6 +497,13 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
                     'f1': current_f1,
                 }, best_model_path)
                 logging.info("--> [Checkpoint] Best model updated at epoch %d with F1 = %.4f", best_epoch, best_f1)
+                epochs_without_improvement = 0  # reset counter
+            else:
+                epochs_without_improvement += 1
+                logging.info("No improvement for %d epochs", epochs_without_improvement)
+                if epochs_without_improvement >= early_stop_patience:
+                    logging.info("Early stopping triggered after %d epochs with no improvement", early_stop_patience)
+                    break
 
     except KeyboardInterrupt:
         logging.info("Training interrupted. Saving current model state.")
@@ -477,11 +513,19 @@ def train_model(train_loader, val_loader, model, device, num_epochs=10, learning
 
     logging.info("[Training] Complete. Best epoch: %d with F1 Score = %.4f", best_epoch, best_f1)
     
-    # Write summary files including hyperparameters for reproducibility.
+    # Write summary files including hyperparameters and evaluation metrics for reproducibility.
     metrics_summary_path = os.path.join(run_folder, "metrics_summary.txt")
     with open(metrics_summary_path, "w") as f:
         f.write(f"Best Epoch: {best_epoch}\n")
         f.write(f"Best F1: {best_f1:.4f}\n")
+        if best_eval_metrics:
+            precision = best_eval_metrics.get("precision", 0.0)
+            recall = best_eval_metrics.get("recall", 0.0)
+            f.write(f"Overall Precision: {precision:.4f}\n")
+            f.write(f"Overall Recall:    {recall:.4f}\n")
+        else:
+            f.write("Overall Precision: N/A\n")
+            f.write("Overall Recall:    N/A\n")
         f.write("Hyperparameters:\n")
         f.write(f"  Batch Size: {train_loader.batch_size}\n")
         f.write(f"  Learning Rate: {learning_rate}\n")
@@ -540,17 +584,17 @@ if __name__ == '__main__':
 
     # === Training with Augmentation ===
     train_dataset = AugmentedDataset(
-    train_images_dir, 
-    train_labels_dir, 
-    transform_yolo=get_train_transforms(), 
-    transform_randaug=get_randaugment_pipeline(), 
-    mixup_prob=0.2, 
-    mixup_alpha=32
-)
+        train_images_dir, 
+        train_labels_dir, 
+        transform_yolo=get_train_transforms(), 
+        transform_randaug=get_randaugment_pipeline(), 
+        mosaic_prob=1.0,    # Starting mosaic probability (e.g. 100%)
+        mixup_prob=0.2, 
+        mixup_alpha=32
+    )
 
-    
     # === Training without Augmentation ===
-    # Uncomment the following lines to disable augmentation:
+    # To disable augmentation, you could use AbsoluteDataset:
     # train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
     
     val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
@@ -566,6 +610,6 @@ if __name__ == '__main__':
 
     logging.info("[Main] Starting training with detection metric-based model selection...")
     trained_model, best_epoch = train_model(
-        train_loader, val_loader, model, device, num_epochs=50,
+        train_loader, val_loader, model, device, num_epochs=500,
         learning_rate=0.005, score_threshold=0.3, iou_threshold=0.3
     )
