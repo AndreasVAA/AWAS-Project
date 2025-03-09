@@ -1,28 +1,31 @@
+Training stopped early as no improvement observed in last 100 epochs. Best results observed at epoch 292, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
 
-from ultralytics import YOLO
-import os
+392 epochs completed in 8.533 hours.
+Optimizer stripped from runs/modelTypeX4/weights/last.pt, 114.5MB
+Optimizer stripped from runs/modelTypeX4/weights/best.pt, 114.5MB
 
-print("Working dir - ", os.getcwd())
+Validating runs/modelTypeX4/weights/best.pt...
+Ultralytics 8.3.75 🚀 Python-3.9.21 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 3070, 7871MiB)
+YOLO11x summary (fused): 464 layers, 56,828,179 parameters, 0 gradients, 194.4 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 17/17 [00:02<00:00,  7.23it/s]
+                   all         99        359       0.91      0.812      0.914      0.654
+Speed: 0.2ms preprocess, 20.9ms inference, 0.0ms loss, 1.1ms postprocess per image
 
 
-model = YOLO("yolo12m.pt")
 
-#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=(1280,960), project="runs", name="exp")
-#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=1280, project="runs", name="exp")
+#################################################### Settings for hte run ##########################################
 
-results = model.train(
-    # Data and model settings
-    data="./dataConf.yaml",       # Path to the dataset config file
-    epochs=500,                     # Number of training epochs
-    batch=1, #3 Did not work with memory                     # Batch size per iteration (reduce this if you encounter OOM errors)
-    imgsz=(1280,960),                   # Input image size for training
+ epochs=500,                     # Number of training epochs
+    batch=3,                     # Batch size per iteration (reduce this if you encounter OOM errors)
+    imgsz=(960,720),                   # Input image size for training
 
     # Experiment output
     project="runs",               # Directory to save runs/experiments
-    name="YOLO12_modelType_M_1280x960",                   # Name of this experiment
+    name="modelTypeX",                   # Name of this experiment
 
     # Optimization settings
-    optimizer="SGD",              # Optimizer selection (auto will choose, along with lr0 and momentum)
+    optimizer="auto",             # Optimizer selection (auto will choose, along with lr0 and momentum)
     seed=0,                       # Random seed for reproducibility
     pretrained=True,              # Use pretrained weights
 
@@ -39,7 +42,7 @@ results = model.train(
     deterministic=True,           # Ensure deterministic training (if possible)
     
     # Data augmentation and scheduling (most defaults shown; change as needed)
-    single_cls=True,             # Treat dataset as single-class
+    single_cls=False,             # Treat dataset as single-class
     rect=False,                   # Use rectangular training
     cos_lr=False,                 # Use cosine learning rate scheduler
     mosaic=1,  #default 1         # Mosaic augmentation strength
@@ -56,13 +59,10 @@ results = model.train(
                                      
 
     # Loss function weights and other parameters
-    lr0=0.005,                     # Initial learning rate (ignored if optimizer='auto')
-    momentum=0.9,               # Momentum (ignored if optimizer='auto')
-    weight_decay= 0.005, #0.0005,          # Weight decay coefficient
+    lr0=0.01,                     # Initial learning rate (ignored if optimizer='auto')
+    momentum=0.937,               # Momentum (ignored if optimizer='auto')
+    weight_decay= 0, #0.0005,          # Weight decay coefficient
 
     # Inference/validation settings
     val=True,                     # Run validation during training
     split="val",                  # Which split to use for validation
-
-    # And more parameters are available – see the Ultralytics documentation for the full list.
-)

@@ -1,14 +1,19 @@
+EarlyStopping: Training stopped early as no improvement observed in last 100 epochs. Best results observed at epoch 163, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
 
-from ultralytics import YOLO
-import os
+263 epochs completed in 10.647 hours.
+Optimizer stripped from runs/YOLO12_modelType_M_1280x960/weights/last.pt, 40.9MB
+Optimizer stripped from runs/YOLO12_modelType_M_1280x960/weights/best.pt, 40.9MB
 
-print("Working dir - ", os.getcwd())
+Validating runs/YOLO12_modelType_M_1280x960/weights/best.pt...
+Ultralytics 8.3.85 🚀 Python-3.9.21 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 3070, 7871MiB)
+YOLOv12m summary (fused): 169 layers, 20,105,683 parameters, 0 gradients, 67.1 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 50/50 [00:03<00:00, 12.75it/s]
+                   all         99        359      0.911      0.831      0.924      0.682
+Speed: 0.3ms preprocess, 37.0ms inference, 0.0ms loss, 0.6ms postprocess per image
+Results saved to runs/YOLO12_modelType_M_1280x960
 
 
-model = YOLO("yolo12m.pt")
-
-#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=(1280,960), project="runs", name="exp")
-#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=1280, project="runs", name="exp")
 
 results = model.train(
     # Data and model settings

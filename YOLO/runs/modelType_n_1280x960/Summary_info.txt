@@ -1,25 +1,28 @@
+EarlyStopping: Training stopped early as no improvement observed in last 100 epochs. Best results observed at epoch 220, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
 
-from ultralytics import YOLO
-import os
+320 epochs completed in 1.661 hours.
+Optimizer stripped from runs/modelType_n_1280x960/weights/last.pt, 5.6MB
+Optimizer stripped from runs/modelType_n_1280x960/weights/best.pt, 5.6MB
 
-print("Working dir - ", os.getcwd())
-
-
-model = YOLO("yolo12m.pt")
-
-#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=(1280,960), project="runs", name="exp")
-#results = model.train(data="./dataConf.yaml", epochs=1, batch=16, imgsz=1280, project="runs", name="exp")
+Validating runs/modelType_n_1280x960/weights/best.pt...
+Ultralytics 8.3.75 🚀 Python-3.9.21 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 3070, 7871MiB)
+YOLO11n summary (fused): 238 layers, 2,582,347 parameters, 0 gradients, 6.3 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 17/17 [00:00<00:00, 19.89it/s]
+                   all         99        359      0.914      0.858      0.932       0.68
+Speed: 0.3ms preprocess, 4.7ms inference, 0.0ms loss, 0.9ms postprocess per image
+Results saved to runs/modelType_n_1280x960
 
 results = model.train(
     # Data and model settings
     data="./dataConf.yaml",       # Path to the dataset config file
     epochs=500,                     # Number of training epochs
-    batch=1, #3 Did not work with memory                     # Batch size per iteration (reduce this if you encounter OOM errors)
+    batch=3,                     # Batch size per iteration (reduce this if you encounter OOM errors)
     imgsz=(1280,960),                   # Input image size for training
 
     # Experiment output
     project="runs",               # Directory to save runs/experiments
-    name="YOLO12_modelType_M_1280x960",                   # Name of this experiment
+    name="modelType_n_1280x960",                   # Name of this experiment
 
     # Optimization settings
     optimizer="SGD",              # Optimizer selection (auto will choose, along with lr0 and momentum)

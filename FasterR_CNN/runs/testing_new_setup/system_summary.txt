@@ -1,9 +1,0 @@
-Inference Metrics:
-  Total Inference Time: 4.1995 s
-  Average Inference Time per Image: 0.0424 s
-  Max Inference Time per Image: 0.0437 s
-  FPS: 23.57
-
-Memory Usage:
-  Max GPU Memory Allocated: 6103.17 MB
-  CPU Memory Usage (RSS): 2029.57 MB
