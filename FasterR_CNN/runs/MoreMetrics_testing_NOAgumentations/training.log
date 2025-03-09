@@ -1,0 +1,1227 @@
+2025-03-07 15:47:10,532 - INFO - [Main] Initializing datasets...
+2025-03-07 15:47:10,547 - INFO - [AbsoluteDataset] Initialized with 763 images.
+2025-03-07 15:47:10,549 - INFO - [AbsoluteDataset] Initialized with 99 images.
+2025-03-07 15:47:11,164 - INFO - [Main] Starting training with detection metric-based model selection...
+2025-03-07 15:47:11,165 - INFO - Epoch 1: Warmup learning rate set to 0.001667
+2025-03-07 15:47:11,166 - INFO - [Training] Epoch 1/500 started...
+2025-03-07 15:48:25,780 - INFO - [Training] Epoch 1 finished: Average Total Loss = 0.2146, Time = 74.61s, LR = 0.001667
+2025-03-07 15:48:25,780 - INFO - [Training] Epoch 1: Average loss_classifier = 0.0776
+2025-03-07 15:48:25,780 - INFO - [Training] Epoch 1: Average loss_box_reg = 0.1199
+2025-03-07 15:48:25,780 - INFO - [Training] Epoch 1: Average loss_objectness = 0.0100
+2025-03-07 15:48:25,780 - INFO - [Training] Epoch 1: Average loss_rpn_box_reg = 0.0071
+2025-03-07 15:48:25,780 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:48:30,528 - INFO - [Eval] Overall Precision: 0.3133
+2025-03-07 15:48:30,528 - INFO - [Eval] Overall Recall:    0.9582
+2025-03-07 15:48:30,528 - INFO - [Eval] Overall F1 Score:  0.4722
+2025-03-07 15:48:30,528 - INFO - [Eval] Inference - Total time: 4.1750s, Avg time per image: 0.0422s, Max time per image: 0.0539s, FPS: 23.71
+2025-03-07 15:48:30,644 - INFO - [Eval] COCO mAP50: 0.7812
+2025-03-07 15:48:30,644 - INFO - [Eval] COCO mAP50-95: 0.4940
+2025-03-07 15:48:30,939 - INFO - --> [Checkpoint] Best model updated at epoch 1 with F1 = 0.4722
+2025-03-07 15:48:30,939 - INFO - Epoch 2: Warmup learning rate set to 0.003333
+2025-03-07 15:48:30,939 - INFO - [Training] Epoch 2/500 started...
+2025-03-07 15:49:46,783 - INFO - [Training] Epoch 2 finished: Average Total Loss = 0.1182, Time = 75.84s, LR = 0.003333
+2025-03-07 15:49:46,783 - INFO - [Training] Epoch 2: Average loss_classifier = 0.0416
+2025-03-07 15:49:46,783 - INFO - [Training] Epoch 2: Average loss_box_reg = 0.0681
+2025-03-07 15:49:46,783 - INFO - [Training] Epoch 2: Average loss_objectness = 0.0031
+2025-03-07 15:49:46,783 - INFO - [Training] Epoch 2: Average loss_rpn_box_reg = 0.0053
+2025-03-07 15:49:46,784 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:49:51,583 - INFO - [Eval] Overall Precision: 0.5360
+2025-03-07 15:49:51,583 - INFO - [Eval] Overall Recall:    0.9331
+2025-03-07 15:49:51,583 - INFO - [Eval] Overall F1 Score:  0.6809
+2025-03-07 15:49:51,583 - INFO - [Eval] Inference - Total time: 4.2304s, Avg time per image: 0.0427s, Max time per image: 0.0442s, FPS: 23.40
+2025-03-07 15:49:51,665 - INFO - [Eval] COCO mAP50: 0.8053
+2025-03-07 15:49:51,665 - INFO - [Eval] COCO mAP50-95: 0.5016
+2025-03-07 15:49:52,119 - INFO - --> [Checkpoint] Best model updated at epoch 2 with F1 = 0.6809
+2025-03-07 15:49:52,119 - INFO - Epoch 3: Warmup learning rate set to 0.005000
+2025-03-07 15:49:52,120 - INFO - [Training] Epoch 3/500 started...
+2025-03-07 15:51:09,221 - INFO - [Training] Epoch 3 finished: Average Total Loss = 0.0989, Time = 77.10s, LR = 0.005000
+2025-03-07 15:51:09,222 - INFO - [Training] Epoch 3: Average loss_classifier = 0.0324
+2025-03-07 15:51:09,222 - INFO - [Training] Epoch 3: Average loss_box_reg = 0.0596
+2025-03-07 15:51:09,222 - INFO - [Training] Epoch 3: Average loss_objectness = 0.0021
+2025-03-07 15:51:09,222 - INFO - [Training] Epoch 3: Average loss_rpn_box_reg = 0.0048
+2025-03-07 15:51:09,222 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:51:13,984 - INFO - [Eval] Overall Precision: 0.7171
+2025-03-07 15:51:13,984 - INFO - [Eval] Overall Recall:    0.9248
+2025-03-07 15:51:13,984 - INFO - [Eval] Overall F1 Score:  0.8078
+2025-03-07 15:51:13,985 - INFO - [Eval] Inference - Total time: 4.1995s, Avg time per image: 0.0424s, Max time per image: 0.0432s, FPS: 23.57
+2025-03-07 15:51:14,055 - INFO - [Eval] COCO mAP50: 0.8328
+2025-03-07 15:51:14,055 - INFO - [Eval] COCO mAP50-95: 0.5580
+2025-03-07 15:51:14,485 - INFO - --> [Checkpoint] Best model updated at epoch 3 with F1 = 0.8078
+2025-03-07 15:51:14,486 - INFO - [Training] Epoch 4/500 started...
+2025-03-07 15:52:31,518 - INFO - [Training] Epoch 4 finished: Average Total Loss = 0.0781, Time = 77.03s, LR = 0.005000
+2025-03-07 15:52:31,518 - INFO - [Training] Epoch 4: Average loss_classifier = 0.0253
+2025-03-07 15:52:31,518 - INFO - [Training] Epoch 4: Average loss_box_reg = 0.0477
+2025-03-07 15:52:31,518 - INFO - [Training] Epoch 4: Average loss_objectness = 0.0013
+2025-03-07 15:52:31,518 - INFO - [Training] Epoch 4: Average loss_rpn_box_reg = 0.0039
+2025-03-07 15:52:31,518 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:52:36,363 - INFO - [Eval] Overall Precision: 0.7232
+2025-03-07 15:52:36,363 - INFO - [Eval] Overall Recall:    0.9025
+2025-03-07 15:52:36,363 - INFO - [Eval] Overall F1 Score:  0.8030
+2025-03-07 15:52:36,363 - INFO - [Eval] Inference - Total time: 4.2051s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.54
+2025-03-07 15:52:36,430 - INFO - [Eval] COCO mAP50: 0.8181
+2025-03-07 15:52:36,430 - INFO - [Eval] COCO mAP50-95: 0.5575
+2025-03-07 15:52:36,430 - INFO - No improvement for 1 epochs
+2025-03-07 15:52:36,431 - INFO - [Training] Epoch 5/500 started...
+2025-03-07 15:53:53,570 - INFO - [Training] Epoch 5 finished: Average Total Loss = 0.0651, Time = 77.14s, LR = 0.005000
+2025-03-07 15:53:53,570 - INFO - [Training] Epoch 5: Average loss_classifier = 0.0210
+2025-03-07 15:53:53,570 - INFO - [Training] Epoch 5: Average loss_box_reg = 0.0397
+2025-03-07 15:53:53,570 - INFO - [Training] Epoch 5: Average loss_objectness = 0.0010
+2025-03-07 15:53:53,570 - INFO - [Training] Epoch 5: Average loss_rpn_box_reg = 0.0035
+2025-03-07 15:53:53,570 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:53:58,353 - INFO - [Eval] Overall Precision: 0.7405
+2025-03-07 15:53:58,353 - INFO - [Eval] Overall Recall:    0.9220
+2025-03-07 15:53:58,353 - INFO - [Eval] Overall F1 Score:  0.8213
+2025-03-07 15:53:58,353 - INFO - [Eval] Inference - Total time: 4.2260s, Avg time per image: 0.0427s, Max time per image: 0.0442s, FPS: 23.43
+2025-03-07 15:53:58,425 - INFO - [Eval] COCO mAP50: 0.8495
+2025-03-07 15:53:58,425 - INFO - [Eval] COCO mAP50-95: 0.5889
+2025-03-07 15:53:58,889 - INFO - --> [Checkpoint] Best model updated at epoch 5 with F1 = 0.8213
+2025-03-07 15:53:58,889 - INFO - [Training] Epoch 6/500 started...
+2025-03-07 15:55:15,879 - INFO - [Training] Epoch 6 finished: Average Total Loss = 0.0592, Time = 76.99s, LR = 0.005000
+2025-03-07 15:55:15,879 - INFO - [Training] Epoch 6: Average loss_classifier = 0.0189
+2025-03-07 15:55:15,879 - INFO - [Training] Epoch 6: Average loss_box_reg = 0.0363
+2025-03-07 15:55:15,879 - INFO - [Training] Epoch 6: Average loss_objectness = 0.0009
+2025-03-07 15:55:15,879 - INFO - [Training] Epoch 6: Average loss_rpn_box_reg = 0.0031
+2025-03-07 15:55:15,879 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:55:20,776 - INFO - [Eval] Overall Precision: 0.7128
+2025-03-07 15:55:20,776 - INFO - [Eval] Overall Recall:    0.9331
+2025-03-07 15:55:20,776 - INFO - [Eval] Overall F1 Score:  0.8082
+2025-03-07 15:55:20,776 - INFO - [Eval] Inference - Total time: 4.2041s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.55
+2025-03-07 15:55:20,848 - INFO - [Eval] COCO mAP50: 0.8506
+2025-03-07 15:55:20,848 - INFO - [Eval] COCO mAP50-95: 0.5861
+2025-03-07 15:55:20,848 - INFO - No improvement for 1 epochs
+2025-03-07 15:55:20,849 - INFO - [Training] Epoch 7/500 started...
+2025-03-07 15:56:38,021 - INFO - [Training] Epoch 7 finished: Average Total Loss = 0.0531, Time = 77.17s, LR = 0.005000
+2025-03-07 15:56:38,022 - INFO - [Training] Epoch 7: Average loss_classifier = 0.0168
+2025-03-07 15:56:38,022 - INFO - [Training] Epoch 7: Average loss_box_reg = 0.0326
+2025-03-07 15:56:38,022 - INFO - [Training] Epoch 7: Average loss_objectness = 0.0007
+2025-03-07 15:56:38,022 - INFO - [Training] Epoch 7: Average loss_rpn_box_reg = 0.0030
+2025-03-07 15:56:38,022 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:56:42,875 - INFO - [Eval] Overall Precision: 0.7786
+2025-03-07 15:56:42,875 - INFO - [Eval] Overall Recall:    0.8914
+2025-03-07 15:56:42,875 - INFO - [Eval] Overall F1 Score:  0.8312
+2025-03-07 15:56:42,875 - INFO - [Eval] Inference - Total time: 4.1999s, Avg time per image: 0.0424s, Max time per image: 0.0429s, FPS: 23.57
+2025-03-07 15:56:42,942 - INFO - [Eval] COCO mAP50: 0.8338
+2025-03-07 15:56:42,943 - INFO - [Eval] COCO mAP50-95: 0.5784
+2025-03-07 15:56:43,398 - INFO - --> [Checkpoint] Best model updated at epoch 7 with F1 = 0.8312
+2025-03-07 15:56:43,398 - INFO - [Training] Epoch 8/500 started...
+2025-03-07 15:58:00,380 - INFO - [Training] Epoch 8 finished: Average Total Loss = 0.0493, Time = 76.98s, LR = 0.005000
+2025-03-07 15:58:00,380 - INFO - [Training] Epoch 8: Average loss_classifier = 0.0161
+2025-03-07 15:58:00,380 - INFO - [Training] Epoch 8: Average loss_box_reg = 0.0297
+2025-03-07 15:58:00,380 - INFO - [Training] Epoch 8: Average loss_objectness = 0.0007
+2025-03-07 15:58:00,380 - INFO - [Training] Epoch 8: Average loss_rpn_box_reg = 0.0027
+2025-03-07 15:58:00,380 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:58:05,180 - INFO - [Eval] Overall Precision: 0.7293
+2025-03-07 15:58:05,180 - INFO - [Eval] Overall Recall:    0.9304
+2025-03-07 15:58:05,180 - INFO - [Eval] Overall F1 Score:  0.8176
+2025-03-07 15:58:05,180 - INFO - [Eval] Inference - Total time: 4.2177s, Avg time per image: 0.0426s, Max time per image: 0.0432s, FPS: 23.47
+2025-03-07 15:58:05,251 - INFO - [Eval] COCO mAP50: 0.8639
+2025-03-07 15:58:05,252 - INFO - [Eval] COCO mAP50-95: 0.5807
+2025-03-07 15:58:05,252 - INFO - No improvement for 1 epochs
+2025-03-07 15:58:05,253 - INFO - [Training] Epoch 9/500 started...
+2025-03-07 15:59:22,272 - INFO - [Training] Epoch 9 finished: Average Total Loss = 0.0453, Time = 77.02s, LR = 0.005000
+2025-03-07 15:59:22,272 - INFO - [Training] Epoch 9: Average loss_classifier = 0.0148
+2025-03-07 15:59:22,272 - INFO - [Training] Epoch 9: Average loss_box_reg = 0.0272
+2025-03-07 15:59:22,272 - INFO - [Training] Epoch 9: Average loss_objectness = 0.0007
+2025-03-07 15:59:22,272 - INFO - [Training] Epoch 9: Average loss_rpn_box_reg = 0.0027
+2025-03-07 15:59:22,272 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 15:59:27,045 - INFO - [Eval] Overall Precision: 0.7665
+2025-03-07 15:59:27,045 - INFO - [Eval] Overall Recall:    0.9053
+2025-03-07 15:59:27,045 - INFO - [Eval] Overall F1 Score:  0.8301
+2025-03-07 15:59:27,045 - INFO - [Eval] Inference - Total time: 4.2075s, Avg time per image: 0.0425s, Max time per image: 0.0439s, FPS: 23.53
+2025-03-07 15:59:27,111 - INFO - [Eval] COCO mAP50: 0.8514
+2025-03-07 15:59:27,111 - INFO - [Eval] COCO mAP50-95: 0.5826
+2025-03-07 15:59:27,111 - INFO - No improvement for 2 epochs
+2025-03-07 15:59:27,112 - INFO - [Training] Epoch 10/500 started...
+2025-03-07 16:00:44,145 - INFO - [Training] Epoch 10 finished: Average Total Loss = 0.0417, Time = 77.03s, LR = 0.005000
+2025-03-07 16:00:44,146 - INFO - [Training] Epoch 10: Average loss_classifier = 0.0140
+2025-03-07 16:00:44,146 - INFO - [Training] Epoch 10: Average loss_box_reg = 0.0247
+2025-03-07 16:00:44,146 - INFO - [Training] Epoch 10: Average loss_objectness = 0.0007
+2025-03-07 16:00:44,146 - INFO - [Training] Epoch 10: Average loss_rpn_box_reg = 0.0024
+2025-03-07 16:00:44,146 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:00:48,906 - INFO - [Eval] Overall Precision: 0.7842
+2025-03-07 16:00:48,906 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 16:00:48,906 - INFO - [Eval] Overall F1 Score:  0.8428
+2025-03-07 16:00:48,906 - INFO - [Eval] Inference - Total time: 4.1938s, Avg time per image: 0.0424s, Max time per image: 0.0430s, FPS: 23.61
+2025-03-07 16:00:48,972 - INFO - [Eval] COCO mAP50: 0.8460
+2025-03-07 16:00:48,973 - INFO - [Eval] COCO mAP50-95: 0.5796
+2025-03-07 16:00:49,448 - INFO - --> [Checkpoint] Best model updated at epoch 10 with F1 = 0.8428
+2025-03-07 16:00:49,449 - INFO - [Training] Epoch 11/500 started...
+2025-03-07 16:02:06,364 - INFO - [Training] Epoch 11 finished: Average Total Loss = 0.0411, Time = 76.91s, LR = 0.005000
+2025-03-07 16:02:06,364 - INFO - [Training] Epoch 11: Average loss_classifier = 0.0135
+2025-03-07 16:02:06,364 - INFO - [Training] Epoch 11: Average loss_box_reg = 0.0248
+2025-03-07 16:02:06,364 - INFO - [Training] Epoch 11: Average loss_objectness = 0.0006
+2025-03-07 16:02:06,364 - INFO - [Training] Epoch 11: Average loss_rpn_box_reg = 0.0022
+2025-03-07 16:02:06,364 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:02:11,138 - INFO - [Eval] Overall Precision: 0.8122
+2025-03-07 16:02:11,138 - INFO - [Eval] Overall Recall:    0.8914
+2025-03-07 16:02:11,138 - INFO - [Eval] Overall F1 Score:  0.8499
+2025-03-07 16:02:11,138 - INFO - [Eval] Inference - Total time: 4.2095s, Avg time per image: 0.0425s, Max time per image: 0.0445s, FPS: 23.52
+2025-03-07 16:02:11,202 - INFO - [Eval] COCO mAP50: 0.8324
+2025-03-07 16:02:11,202 - INFO - [Eval] COCO mAP50-95: 0.5758
+2025-03-07 16:02:11,662 - INFO - --> [Checkpoint] Best model updated at epoch 11 with F1 = 0.8499
+2025-03-07 16:02:11,663 - INFO - [Training] Epoch 12/500 started...
+2025-03-07 16:03:28,589 - INFO - [Training] Epoch 12 finished: Average Total Loss = 0.0392, Time = 76.93s, LR = 0.005000
+2025-03-07 16:03:28,589 - INFO - [Training] Epoch 12: Average loss_classifier = 0.0126
+2025-03-07 16:03:28,589 - INFO - [Training] Epoch 12: Average loss_box_reg = 0.0239
+2025-03-07 16:03:28,589 - INFO - [Training] Epoch 12: Average loss_objectness = 0.0006
+2025-03-07 16:03:28,589 - INFO - [Training] Epoch 12: Average loss_rpn_box_reg = 0.0021
+2025-03-07 16:03:28,589 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:03:33,375 - INFO - [Eval] Overall Precision: 0.7283
+2025-03-07 16:03:33,375 - INFO - [Eval] Overall Recall:    0.9331
+2025-03-07 16:03:33,375 - INFO - [Eval] Overall F1 Score:  0.8181
+2025-03-07 16:03:33,375 - INFO - [Eval] Inference - Total time: 4.2105s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-03-07 16:03:33,444 - INFO - [Eval] COCO mAP50: 0.8702
+2025-03-07 16:03:33,444 - INFO - [Eval] COCO mAP50-95: 0.5865
+2025-03-07 16:03:33,445 - INFO - No improvement for 1 epochs
+2025-03-07 16:03:33,446 - INFO - [Training] Epoch 13/500 started...
+2025-03-07 16:04:50,648 - INFO - [Training] Epoch 13 finished: Average Total Loss = 0.0370, Time = 77.20s, LR = 0.005000
+2025-03-07 16:04:50,648 - INFO - [Training] Epoch 13: Average loss_classifier = 0.0126
+2025-03-07 16:04:50,648 - INFO - [Training] Epoch 13: Average loss_box_reg = 0.0220
+2025-03-07 16:04:50,648 - INFO - [Training] Epoch 13: Average loss_objectness = 0.0005
+2025-03-07 16:04:50,648 - INFO - [Training] Epoch 13: Average loss_rpn_box_reg = 0.0020
+2025-03-07 16:04:50,648 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:04:55,424 - INFO - [Eval] Overall Precision: 0.7931
+2025-03-07 16:04:55,424 - INFO - [Eval] Overall Recall:    0.8969
+2025-03-07 16:04:55,424 - INFO - [Eval] Overall F1 Score:  0.8418
+2025-03-07 16:04:55,424 - INFO - [Eval] Inference - Total time: 4.2145s, Avg time per image: 0.0426s, Max time per image: 0.0447s, FPS: 23.49
+2025-03-07 16:04:55,491 - INFO - [Eval] COCO mAP50: 0.8345
+2025-03-07 16:04:55,491 - INFO - [Eval] COCO mAP50-95: 0.5762
+2025-03-07 16:04:55,492 - INFO - No improvement for 2 epochs
+2025-03-07 16:04:55,492 - INFO - [Training] Epoch 14/500 started...
+2025-03-07 16:06:12,495 - INFO - [Training] Epoch 14 finished: Average Total Loss = 0.0353, Time = 77.00s, LR = 0.005000
+2025-03-07 16:06:12,495 - INFO - [Training] Epoch 14: Average loss_classifier = 0.0118
+2025-03-07 16:06:12,495 - INFO - [Training] Epoch 14: Average loss_box_reg = 0.0211
+2025-03-07 16:06:12,495 - INFO - [Training] Epoch 14: Average loss_objectness = 0.0006
+2025-03-07 16:06:12,495 - INFO - [Training] Epoch 14: Average loss_rpn_box_reg = 0.0019
+2025-03-07 16:06:12,495 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:06:17,326 - INFO - [Eval] Overall Precision: 0.8168
+2025-03-07 16:06:17,327 - INFO - [Eval] Overall Recall:    0.8942
+2025-03-07 16:06:17,327 - INFO - [Eval] Overall F1 Score:  0.8537
+2025-03-07 16:06:17,327 - INFO - [Eval] Inference - Total time: 4.2173s, Avg time per image: 0.0426s, Max time per image: 0.0442s, FPS: 23.47
+2025-03-07 16:06:17,391 - INFO - [Eval] COCO mAP50: 0.8385
+2025-03-07 16:06:17,391 - INFO - [Eval] COCO mAP50-95: 0.5775
+2025-03-07 16:06:17,857 - INFO - --> [Checkpoint] Best model updated at epoch 14 with F1 = 0.8537
+2025-03-07 16:06:17,858 - INFO - [Training] Epoch 15/500 started...
+2025-03-07 16:07:34,741 - INFO - [Training] Epoch 15 finished: Average Total Loss = 0.0335, Time = 76.88s, LR = 0.005000
+2025-03-07 16:07:34,741 - INFO - [Training] Epoch 15: Average loss_classifier = 0.0115
+2025-03-07 16:07:34,741 - INFO - [Training] Epoch 15: Average loss_box_reg = 0.0196
+2025-03-07 16:07:34,741 - INFO - [Training] Epoch 15: Average loss_objectness = 0.0005
+2025-03-07 16:07:34,741 - INFO - [Training] Epoch 15: Average loss_rpn_box_reg = 0.0019
+2025-03-07 16:07:34,741 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:07:39,525 - INFO - [Eval] Overall Precision: 0.7918
+2025-03-07 16:07:39,525 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 16:07:39,525 - INFO - [Eval] Overall F1 Score:  0.8472
+2025-03-07 16:07:39,525 - INFO - [Eval] Inference - Total time: 4.2033s, Avg time per image: 0.0425s, Max time per image: 0.0432s, FPS: 23.55
+2025-03-07 16:07:39,593 - INFO - [Eval] COCO mAP50: 0.8512
+2025-03-07 16:07:39,593 - INFO - [Eval] COCO mAP50-95: 0.5884
+2025-03-07 16:07:39,594 - INFO - No improvement for 1 epochs
+2025-03-07 16:07:39,594 - INFO - [Training] Epoch 16/500 started...
+2025-03-07 16:08:56,614 - INFO - [Training] Epoch 16 finished: Average Total Loss = 0.0328, Time = 77.02s, LR = 0.005000
+2025-03-07 16:08:56,614 - INFO - [Training] Epoch 16: Average loss_classifier = 0.0113
+2025-03-07 16:08:56,614 - INFO - [Training] Epoch 16: Average loss_box_reg = 0.0192
+2025-03-07 16:08:56,614 - INFO - [Training] Epoch 16: Average loss_objectness = 0.0005
+2025-03-07 16:08:56,614 - INFO - [Training] Epoch 16: Average loss_rpn_box_reg = 0.0018
+2025-03-07 16:08:56,614 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:09:01,419 - INFO - [Eval] Overall Precision: 0.7946
+2025-03-07 16:09:01,419 - INFO - [Eval] Overall Recall:    0.9053
+2025-03-07 16:09:01,419 - INFO - [Eval] Overall F1 Score:  0.8464
+2025-03-07 16:09:01,419 - INFO - [Eval] Inference - Total time: 4.2090s, Avg time per image: 0.0425s, Max time per image: 0.0431s, FPS: 23.52
+2025-03-07 16:09:01,487 - INFO - [Eval] COCO mAP50: 0.8455
+2025-03-07 16:09:01,487 - INFO - [Eval] COCO mAP50-95: 0.5897
+2025-03-07 16:09:01,488 - INFO - No improvement for 2 epochs
+2025-03-07 16:09:01,488 - INFO - [Training] Epoch 17/500 started...
+2025-03-07 16:10:18,555 - INFO - [Training] Epoch 17 finished: Average Total Loss = 0.0300, Time = 77.07s, LR = 0.005000
+2025-03-07 16:10:18,556 - INFO - [Training] Epoch 17: Average loss_classifier = 0.0107
+2025-03-07 16:10:18,556 - INFO - [Training] Epoch 17: Average loss_box_reg = 0.0172
+2025-03-07 16:10:18,556 - INFO - [Training] Epoch 17: Average loss_objectness = 0.0004
+2025-03-07 16:10:18,556 - INFO - [Training] Epoch 17: Average loss_rpn_box_reg = 0.0017
+2025-03-07 16:10:18,556 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:10:23,325 - INFO - [Eval] Overall Precision: 0.8065
+2025-03-07 16:10:23,325 - INFO - [Eval] Overall Recall:    0.8942
+2025-03-07 16:10:23,325 - INFO - [Eval] Overall F1 Score:  0.8481
+2025-03-07 16:10:23,325 - INFO - [Eval] Inference - Total time: 4.2042s, Avg time per image: 0.0425s, Max time per image: 0.0432s, FPS: 23.55
+2025-03-07 16:10:23,391 - INFO - [Eval] COCO mAP50: 0.8471
+2025-03-07 16:10:23,391 - INFO - [Eval] COCO mAP50-95: 0.5837
+2025-03-07 16:10:23,400 - INFO - No improvement for 3 epochs
+2025-03-07 16:10:23,400 - INFO - [Training] Epoch 18/500 started...
+2025-03-07 16:11:40,476 - INFO - [Training] Epoch 18 finished: Average Total Loss = 0.0296, Time = 77.08s, LR = 0.005000
+2025-03-07 16:11:40,476 - INFO - [Training] Epoch 18: Average loss_classifier = 0.0106
+2025-03-07 16:11:40,476 - INFO - [Training] Epoch 18: Average loss_box_reg = 0.0168
+2025-03-07 16:11:40,476 - INFO - [Training] Epoch 18: Average loss_objectness = 0.0005
+2025-03-07 16:11:40,476 - INFO - [Training] Epoch 18: Average loss_rpn_box_reg = 0.0018
+2025-03-07 16:11:40,477 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:11:45,336 - INFO - [Eval] Overall Precision: 0.7767
+2025-03-07 16:11:45,336 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 16:11:45,336 - INFO - [Eval] Overall F1 Score:  0.8385
+2025-03-07 16:11:45,336 - INFO - [Eval] Inference - Total time: 4.2147s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.49
+2025-03-07 16:11:45,403 - INFO - [Eval] COCO mAP50: 0.8438
+2025-03-07 16:11:45,403 - INFO - [Eval] COCO mAP50-95: 0.5878
+2025-03-07 16:11:45,404 - INFO - No improvement for 4 epochs
+2025-03-07 16:11:45,404 - INFO - [Training] Epoch 19/500 started...
+2025-03-07 16:13:02,383 - INFO - [Training] Epoch 19 finished: Average Total Loss = 0.0295, Time = 76.98s, LR = 0.005000
+2025-03-07 16:13:02,383 - INFO - [Training] Epoch 19: Average loss_classifier = 0.0104
+2025-03-07 16:13:02,383 - INFO - [Training] Epoch 19: Average loss_box_reg = 0.0170
+2025-03-07 16:13:02,383 - INFO - [Training] Epoch 19: Average loss_objectness = 0.0005
+2025-03-07 16:13:02,383 - INFO - [Training] Epoch 19: Average loss_rpn_box_reg = 0.0016
+2025-03-07 16:13:02,383 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:13:07,148 - INFO - [Eval] Overall Precision: 0.7608
+2025-03-07 16:13:07,148 - INFO - [Eval] Overall Recall:    0.9304
+2025-03-07 16:13:07,148 - INFO - [Eval] Overall F1 Score:  0.8371
+2025-03-07 16:13:07,148 - INFO - [Eval] Inference - Total time: 4.2058s, Avg time per image: 0.0425s, Max time per image: 0.0444s, FPS: 23.54
+2025-03-07 16:13:07,216 - INFO - [Eval] COCO mAP50: 0.8654
+2025-03-07 16:13:07,216 - INFO - [Eval] COCO mAP50-95: 0.5970
+2025-03-07 16:13:07,216 - INFO - No improvement for 5 epochs
+2025-03-07 16:13:07,217 - INFO - [Training] Epoch 20/500 started...
+2025-03-07 16:14:24,185 - INFO - [Training] Epoch 20 finished: Average Total Loss = 0.0270, Time = 76.97s, LR = 0.005000
+2025-03-07 16:14:24,185 - INFO - [Training] Epoch 20: Average loss_classifier = 0.0099
+2025-03-07 16:14:24,185 - INFO - [Training] Epoch 20: Average loss_box_reg = 0.0153
+2025-03-07 16:14:24,185 - INFO - [Training] Epoch 20: Average loss_objectness = 0.0004
+2025-03-07 16:14:24,185 - INFO - [Training] Epoch 20: Average loss_rpn_box_reg = 0.0014
+2025-03-07 16:14:24,185 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:14:28,942 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 16:14:28,942 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 16:14:28,942 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 16:14:28,942 - INFO - [Eval] Inference - Total time: 4.2147s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.49
+2025-03-07 16:14:29,007 - INFO - [Eval] COCO mAP50: 0.8605
+2025-03-07 16:14:29,007 - INFO - [Eval] COCO mAP50-95: 0.5929
+2025-03-07 16:14:29,459 - INFO - --> [Checkpoint] Best model updated at epoch 20 with F1 = 0.8594
+2025-03-07 16:14:29,460 - INFO - [Training] Epoch 21/500 started...
+2025-03-07 16:15:46,373 - INFO - [Training] Epoch 21 finished: Average Total Loss = 0.0265, Time = 76.91s, LR = 0.005000
+2025-03-07 16:15:46,373 - INFO - [Training] Epoch 21: Average loss_classifier = 0.0098
+2025-03-07 16:15:46,374 - INFO - [Training] Epoch 21: Average loss_box_reg = 0.0149
+2025-03-07 16:15:46,374 - INFO - [Training] Epoch 21: Average loss_objectness = 0.0004
+2025-03-07 16:15:46,374 - INFO - [Training] Epoch 21: Average loss_rpn_box_reg = 0.0014
+2025-03-07 16:15:46,374 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:15:51,153 - INFO - [Eval] Overall Precision: 0.7778
+2025-03-07 16:15:51,154 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:15:51,154 - INFO - [Eval] Overall F1 Score:  0.8414
+2025-03-07 16:15:51,154 - INFO - [Eval] Inference - Total time: 4.2142s, Avg time per image: 0.0426s, Max time per image: 0.0446s, FPS: 23.49
+2025-03-07 16:15:51,220 - INFO - [Eval] COCO mAP50: 0.8573
+2025-03-07 16:15:51,220 - INFO - [Eval] COCO mAP50-95: 0.5941
+2025-03-07 16:15:51,221 - INFO - No improvement for 1 epochs
+2025-03-07 16:15:51,222 - INFO - [Training] Epoch 22/500 started...
+2025-03-07 16:17:08,045 - INFO - [Training] Epoch 22 finished: Average Total Loss = 0.0258, Time = 76.82s, LR = 0.005000
+2025-03-07 16:17:08,045 - INFO - [Training] Epoch 22: Average loss_classifier = 0.0098
+2025-03-07 16:17:08,046 - INFO - [Training] Epoch 22: Average loss_box_reg = 0.0144
+2025-03-07 16:17:08,046 - INFO - [Training] Epoch 22: Average loss_objectness = 0.0004
+2025-03-07 16:17:08,046 - INFO - [Training] Epoch 22: Average loss_rpn_box_reg = 0.0013
+2025-03-07 16:17:08,046 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:17:12,864 - INFO - [Eval] Overall Precision: 0.7995
+2025-03-07 16:17:12,864 - INFO - [Eval] Overall Recall:    0.9220
+2025-03-07 16:17:12,864 - INFO - [Eval] Overall F1 Score:  0.8564
+2025-03-07 16:17:12,864 - INFO - [Eval] Inference - Total time: 4.2180s, Avg time per image: 0.0426s, Max time per image: 0.0443s, FPS: 23.47
+2025-03-07 16:17:12,931 - INFO - [Eval] COCO mAP50: 0.8575
+2025-03-07 16:17:12,931 - INFO - [Eval] COCO mAP50-95: 0.5998
+2025-03-07 16:17:12,931 - INFO - No improvement for 2 epochs
+2025-03-07 16:17:12,932 - INFO - [Training] Epoch 23/500 started...
+2025-03-07 16:18:29,901 - INFO - [Training] Epoch 23 finished: Average Total Loss = 0.0265, Time = 76.97s, LR = 0.005000
+2025-03-07 16:18:29,901 - INFO - [Training] Epoch 23: Average loss_classifier = 0.0096
+2025-03-07 16:18:29,901 - INFO - [Training] Epoch 23: Average loss_box_reg = 0.0150
+2025-03-07 16:18:29,901 - INFO - [Training] Epoch 23: Average loss_objectness = 0.0004
+2025-03-07 16:18:29,901 - INFO - [Training] Epoch 23: Average loss_rpn_box_reg = 0.0014
+2025-03-07 16:18:29,901 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:18:34,673 - INFO - [Eval] Overall Precision: 0.7874
+2025-03-07 16:18:34,673 - INFO - [Eval] Overall Recall:    0.9081
+2025-03-07 16:18:34,673 - INFO - [Eval] Overall F1 Score:  0.8435
+2025-03-07 16:18:34,673 - INFO - [Eval] Inference - Total time: 4.2111s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.51
+2025-03-07 16:18:34,741 - INFO - [Eval] COCO mAP50: 0.8588
+2025-03-07 16:18:34,741 - INFO - [Eval] COCO mAP50-95: 0.5972
+2025-03-07 16:18:34,742 - INFO - No improvement for 3 epochs
+2025-03-07 16:18:34,742 - INFO - [Training] Epoch 24/500 started...
+2025-03-07 16:19:51,769 - INFO - [Training] Epoch 24 finished: Average Total Loss = 0.0266, Time = 77.03s, LR = 0.005000
+2025-03-07 16:19:51,769 - INFO - [Training] Epoch 24: Average loss_classifier = 0.0094
+2025-03-07 16:19:51,777 - INFO - [Training] Epoch 24: Average loss_box_reg = 0.0154
+2025-03-07 16:19:51,777 - INFO - [Training] Epoch 24: Average loss_objectness = 0.0004
+2025-03-07 16:19:51,778 - INFO - [Training] Epoch 24: Average loss_rpn_box_reg = 0.0013
+2025-03-07 16:19:51,778 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:19:56,568 - INFO - [Eval] Overall Precision: 0.8168
+2025-03-07 16:19:56,568 - INFO - [Eval] Overall Recall:    0.8942
+2025-03-07 16:19:56,568 - INFO - [Eval] Overall F1 Score:  0.8537
+2025-03-07 16:19:56,568 - INFO - [Eval] Inference - Total time: 4.2146s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.49
+2025-03-07 16:19:56,634 - INFO - [Eval] COCO mAP50: 0.8422
+2025-03-07 16:19:56,634 - INFO - [Eval] COCO mAP50-95: 0.6004
+2025-03-07 16:19:56,635 - INFO - No improvement for 4 epochs
+2025-03-07 16:19:56,636 - INFO - [Training] Epoch 25/500 started...
+2025-03-07 16:21:13,582 - INFO - [Training] Epoch 25 finished: Average Total Loss = 0.0241, Time = 76.95s, LR = 0.005000
+2025-03-07 16:21:13,582 - INFO - [Training] Epoch 25: Average loss_classifier = 0.0089
+2025-03-07 16:21:13,582 - INFO - [Training] Epoch 25: Average loss_box_reg = 0.0135
+2025-03-07 16:21:13,582 - INFO - [Training] Epoch 25: Average loss_objectness = 0.0004
+2025-03-07 16:21:13,582 - INFO - [Training] Epoch 25: Average loss_rpn_box_reg = 0.0012
+2025-03-07 16:21:13,582 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:21:18,346 - INFO - [Eval] Overall Precision: 0.8030
+2025-03-07 16:21:18,346 - INFO - [Eval] Overall Recall:    0.9081
+2025-03-07 16:21:18,346 - INFO - [Eval] Overall F1 Score:  0.8523
+2025-03-07 16:21:18,346 - INFO - [Eval] Inference - Total time: 4.2016s, Avg time per image: 0.0424s, Max time per image: 0.0435s, FPS: 23.56
+2025-03-07 16:21:18,413 - INFO - [Eval] COCO mAP50: 0.8503
+2025-03-07 16:21:18,413 - INFO - [Eval] COCO mAP50-95: 0.5876
+2025-03-07 16:21:18,414 - INFO - No improvement for 5 epochs
+2025-03-07 16:21:18,414 - INFO - [Training] Epoch 26/500 started...
+2025-03-07 16:22:35,283 - INFO - [Training] Epoch 26 finished: Average Total Loss = 0.0242, Time = 76.87s, LR = 0.005000
+2025-03-07 16:22:35,283 - INFO - [Training] Epoch 26: Average loss_classifier = 0.0087
+2025-03-07 16:22:35,283 - INFO - [Training] Epoch 26: Average loss_box_reg = 0.0137
+2025-03-07 16:22:35,284 - INFO - [Training] Epoch 26: Average loss_objectness = 0.0005
+2025-03-07 16:22:35,284 - INFO - [Training] Epoch 26: Average loss_rpn_box_reg = 0.0012
+2025-03-07 16:22:35,284 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:22:40,052 - INFO - [Eval] Overall Precision: 0.7917
+2025-03-07 16:22:40,052 - INFO - [Eval] Overall Recall:    0.8997
+2025-03-07 16:22:40,052 - INFO - [Eval] Overall F1 Score:  0.8422
+2025-03-07 16:22:40,052 - INFO - [Eval] Inference - Total time: 4.2086s, Avg time per image: 0.0425s, Max time per image: 0.0437s, FPS: 23.52
+2025-03-07 16:22:40,116 - INFO - [Eval] COCO mAP50: 0.8473
+2025-03-07 16:22:40,116 - INFO - [Eval] COCO mAP50-95: 0.5855
+2025-03-07 16:22:40,117 - INFO - No improvement for 6 epochs
+2025-03-07 16:22:40,117 - INFO - [Training] Epoch 27/500 started...
+2025-03-07 16:23:56,949 - INFO - [Training] Epoch 27 finished: Average Total Loss = 0.0230, Time = 76.83s, LR = 0.005000
+2025-03-07 16:23:56,949 - INFO - [Training] Epoch 27: Average loss_classifier = 0.0086
+2025-03-07 16:23:56,949 - INFO - [Training] Epoch 27: Average loss_box_reg = 0.0128
+2025-03-07 16:23:56,949 - INFO - [Training] Epoch 27: Average loss_objectness = 0.0003
+2025-03-07 16:23:56,949 - INFO - [Training] Epoch 27: Average loss_rpn_box_reg = 0.0012
+2025-03-07 16:23:56,949 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:24:01,721 - INFO - [Eval] Overall Precision: 0.7966
+2025-03-07 16:24:01,721 - INFO - [Eval] Overall Recall:    0.9053
+2025-03-07 16:24:01,721 - INFO - [Eval] Overall F1 Score:  0.8475
+2025-03-07 16:24:01,721 - INFO - [Eval] Inference - Total time: 4.2210s, Avg time per image: 0.0426s, Max time per image: 0.0432s, FPS: 23.45
+2025-03-07 16:24:01,789 - INFO - [Eval] COCO mAP50: 0.8490
+2025-03-07 16:24:01,789 - INFO - [Eval] COCO mAP50-95: 0.5876
+2025-03-07 16:24:01,790 - INFO - No improvement for 7 epochs
+2025-03-07 16:24:01,791 - INFO - [Training] Epoch 28/500 started...
+2025-03-07 16:25:18,783 - INFO - [Training] Epoch 28 finished: Average Total Loss = 0.0245, Time = 76.99s, LR = 0.005000
+2025-03-07 16:25:18,783 - INFO - [Training] Epoch 28: Average loss_classifier = 0.0089
+2025-03-07 16:25:18,784 - INFO - [Training] Epoch 28: Average loss_box_reg = 0.0141
+2025-03-07 16:25:18,784 - INFO - [Training] Epoch 28: Average loss_objectness = 0.0004
+2025-03-07 16:25:18,784 - INFO - [Training] Epoch 28: Average loss_rpn_box_reg = 0.0011
+2025-03-07 16:25:18,784 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:25:23,538 - INFO - [Eval] Overall Precision: 0.7723
+2025-03-07 16:25:23,538 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:25:23,538 - INFO - [Eval] Overall F1 Score:  0.8382
+2025-03-07 16:25:23,538 - INFO - [Eval] Inference - Total time: 4.2029s, Avg time per image: 0.0425s, Max time per image: 0.0442s, FPS: 23.56
+2025-03-07 16:25:23,606 - INFO - [Eval] COCO mAP50: 0.8660
+2025-03-07 16:25:23,607 - INFO - [Eval] COCO mAP50-95: 0.6045
+2025-03-07 16:25:23,607 - INFO - No improvement for 8 epochs
+2025-03-07 16:25:23,608 - INFO - [Training] Epoch 29/500 started...
+2025-03-07 16:26:40,572 - INFO - [Training] Epoch 29 finished: Average Total Loss = 0.0256, Time = 76.96s, LR = 0.005000
+2025-03-07 16:26:40,572 - INFO - [Training] Epoch 29: Average loss_classifier = 0.0088
+2025-03-07 16:26:40,572 - INFO - [Training] Epoch 29: Average loss_box_reg = 0.0152
+2025-03-07 16:26:40,572 - INFO - [Training] Epoch 29: Average loss_objectness = 0.0004
+2025-03-07 16:26:40,573 - INFO - [Training] Epoch 29: Average loss_rpn_box_reg = 0.0012
+2025-03-07 16:26:40,573 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:26:45,393 - INFO - [Eval] Overall Precision: 0.8141
+2025-03-07 16:26:45,393 - INFO - [Eval] Overall Recall:    0.9025
+2025-03-07 16:26:45,393 - INFO - [Eval] Overall F1 Score:  0.8560
+2025-03-07 16:26:45,393 - INFO - [Eval] Inference - Total time: 4.2158s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.48
+2025-03-07 16:26:45,459 - INFO - [Eval] COCO mAP50: 0.8507
+2025-03-07 16:26:45,460 - INFO - [Eval] COCO mAP50-95: 0.5915
+2025-03-07 16:26:45,460 - INFO - No improvement for 9 epochs
+2025-03-07 16:26:45,461 - INFO - [Training] Epoch 30/500 started...
+2025-03-07 16:28:02,369 - INFO - [Training] Epoch 30 finished: Average Total Loss = 0.0236, Time = 76.91s, LR = 0.005000
+2025-03-07 16:28:02,369 - INFO - [Training] Epoch 30: Average loss_classifier = 0.0088
+2025-03-07 16:28:02,369 - INFO - [Training] Epoch 30: Average loss_box_reg = 0.0134
+2025-03-07 16:28:02,369 - INFO - [Training] Epoch 30: Average loss_objectness = 0.0004
+2025-03-07 16:28:02,369 - INFO - [Training] Epoch 30: Average loss_rpn_box_reg = 0.0011
+2025-03-07 16:28:02,369 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:28:07,163 - INFO - [Eval] Overall Precision: 0.8039
+2025-03-07 16:28:07,163 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 16:28:07,163 - INFO - [Eval] Overall F1 Score:  0.8553
+2025-03-07 16:28:07,163 - INFO - [Eval] Inference - Total time: 4.2082s, Avg time per image: 0.0425s, Max time per image: 0.0440s, FPS: 23.53
+2025-03-07 16:28:07,231 - INFO - [Eval] COCO mAP50: 0.8604
+2025-03-07 16:28:07,231 - INFO - [Eval] COCO mAP50-95: 0.5907
+2025-03-07 16:28:07,231 - INFO - No improvement for 10 epochs
+2025-03-07 16:28:07,232 - INFO - [Training] Epoch 31/500 started...
+2025-03-07 16:29:24,193 - INFO - [Training] Epoch 31 finished: Average Total Loss = 0.0245, Time = 76.96s, LR = 0.005000
+2025-03-07 16:29:24,193 - INFO - [Training] Epoch 31: Average loss_classifier = 0.0089
+2025-03-07 16:29:24,193 - INFO - [Training] Epoch 31: Average loss_box_reg = 0.0140
+2025-03-07 16:29:24,193 - INFO - [Training] Epoch 31: Average loss_objectness = 0.0004
+2025-03-07 16:29:24,193 - INFO - [Training] Epoch 31: Average loss_rpn_box_reg = 0.0011
+2025-03-07 16:29:24,193 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:29:28,961 - INFO - [Eval] Overall Precision: 0.8286
+2025-03-07 16:29:28,961 - INFO - [Eval] Overall Recall:    0.9025
+2025-03-07 16:29:28,961 - INFO - [Eval] Overall F1 Score:  0.8640
+2025-03-07 16:29:28,961 - INFO - [Eval] Inference - Total time: 4.2128s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.50
+2025-03-07 16:29:29,028 - INFO - [Eval] COCO mAP50: 0.8501
+2025-03-07 16:29:29,028 - INFO - [Eval] COCO mAP50-95: 0.5905
+2025-03-07 16:29:29,469 - INFO - --> [Checkpoint] Best model updated at epoch 31 with F1 = 0.8640
+2025-03-07 16:29:29,470 - INFO - [Training] Epoch 32/500 started...
+2025-03-07 16:30:46,465 - INFO - [Training] Epoch 32 finished: Average Total Loss = 0.0236, Time = 77.00s, LR = 0.005000
+2025-03-07 16:30:46,465 - INFO - [Training] Epoch 32: Average loss_classifier = 0.0085
+2025-03-07 16:30:46,466 - INFO - [Training] Epoch 32: Average loss_box_reg = 0.0136
+2025-03-07 16:30:46,466 - INFO - [Training] Epoch 32: Average loss_objectness = 0.0004
+2025-03-07 16:30:46,466 - INFO - [Training] Epoch 32: Average loss_rpn_box_reg = 0.0011
+2025-03-07 16:30:46,466 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:30:51,317 - INFO - [Eval] Overall Precision: 0.8240
+2025-03-07 16:30:51,317 - INFO - [Eval] Overall Recall:    0.8997
+2025-03-07 16:30:51,317 - INFO - [Eval] Overall F1 Score:  0.8602
+2025-03-07 16:30:51,317 - INFO - [Eval] Inference - Total time: 4.2262s, Avg time per image: 0.0427s, Max time per image: 0.0437s, FPS: 23.43
+2025-03-07 16:30:51,465 - INFO - [Eval] COCO mAP50: 0.8444
+2025-03-07 16:30:51,465 - INFO - [Eval] COCO mAP50-95: 0.5918
+2025-03-07 16:30:51,466 - INFO - No improvement for 1 epochs
+2025-03-07 16:30:51,466 - INFO - [Training] Epoch 33/500 started...
+2025-03-07 16:32:08,250 - INFO - [Training] Epoch 33 finished: Average Total Loss = 0.0228, Time = 76.78s, LR = 0.005000
+2025-03-07 16:32:08,250 - INFO - [Training] Epoch 33: Average loss_classifier = 0.0084
+2025-03-07 16:32:08,250 - INFO - [Training] Epoch 33: Average loss_box_reg = 0.0130
+2025-03-07 16:32:08,250 - INFO - [Training] Epoch 33: Average loss_objectness = 0.0003
+2025-03-07 16:32:08,250 - INFO - [Training] Epoch 33: Average loss_rpn_box_reg = 0.0011
+2025-03-07 16:32:08,250 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:32:13,010 - INFO - [Eval] Overall Precision: 0.8070
+2025-03-07 16:32:13,011 - INFO - [Eval] Overall Recall:    0.8969
+2025-03-07 16:32:13,011 - INFO - [Eval] Overall F1 Score:  0.8496
+2025-03-07 16:32:13,011 - INFO - [Eval] Inference - Total time: 4.1997s, Avg time per image: 0.0424s, Max time per image: 0.0433s, FPS: 23.57
+2025-03-07 16:32:13,076 - INFO - [Eval] COCO mAP50: 0.8488
+2025-03-07 16:32:13,076 - INFO - [Eval] COCO mAP50-95: 0.6015
+2025-03-07 16:32:13,076 - INFO - No improvement for 2 epochs
+2025-03-07 16:32:13,077 - INFO - [Training] Epoch 34/500 started...
+2025-03-07 16:33:30,034 - INFO - [Training] Epoch 34 finished: Average Total Loss = 0.0213, Time = 76.96s, LR = 0.005000
+2025-03-07 16:33:30,034 - INFO - [Training] Epoch 34: Average loss_classifier = 0.0079
+2025-03-07 16:33:30,034 - INFO - [Training] Epoch 34: Average loss_box_reg = 0.0121
+2025-03-07 16:33:30,034 - INFO - [Training] Epoch 34: Average loss_objectness = 0.0004
+2025-03-07 16:33:30,034 - INFO - [Training] Epoch 34: Average loss_rpn_box_reg = 0.0010
+2025-03-07 16:33:30,034 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:33:34,845 - INFO - [Eval] Overall Precision: 0.7801
+2025-03-07 16:33:34,845 - INFO - [Eval] Overall Recall:    0.9192
+2025-03-07 16:33:34,845 - INFO - [Eval] Overall F1 Score:  0.8440
+2025-03-07 16:33:34,845 - INFO - [Eval] Inference - Total time: 4.2122s, Avg time per image: 0.0425s, Max time per image: 0.0443s, FPS: 23.50
+2025-03-07 16:33:34,914 - INFO - [Eval] COCO mAP50: 0.8669
+2025-03-07 16:33:34,914 - INFO - [Eval] COCO mAP50-95: 0.6056
+2025-03-07 16:33:34,915 - INFO - No improvement for 3 epochs
+2025-03-07 16:33:34,915 - INFO - [Training] Epoch 35/500 started...
+2025-03-07 16:34:51,627 - INFO - [Training] Epoch 35 finished: Average Total Loss = 0.0212, Time = 76.71s, LR = 0.005000
+2025-03-07 16:34:51,627 - INFO - [Training] Epoch 35: Average loss_classifier = 0.0081
+2025-03-07 16:34:51,627 - INFO - [Training] Epoch 35: Average loss_box_reg = 0.0117
+2025-03-07 16:34:51,627 - INFO - [Training] Epoch 35: Average loss_objectness = 0.0004
+2025-03-07 16:34:51,627 - INFO - [Training] Epoch 35: Average loss_rpn_box_reg = 0.0010
+2025-03-07 16:34:51,627 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:34:56,390 - INFO - [Eval] Overall Precision: 0.7633
+2025-03-07 16:34:56,390 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:34:56,390 - INFO - [Eval] Overall F1 Score:  0.8329
+2025-03-07 16:34:56,390 - INFO - [Eval] Inference - Total time: 4.2010s, Avg time per image: 0.0424s, Max time per image: 0.0431s, FPS: 23.57
+2025-03-07 16:34:56,457 - INFO - [Eval] COCO mAP50: 0.8598
+2025-03-07 16:34:56,457 - INFO - [Eval] COCO mAP50-95: 0.6025
+2025-03-07 16:34:56,458 - INFO - No improvement for 4 epochs
+2025-03-07 16:34:56,459 - INFO - [Training] Epoch 36/500 started...
+2025-03-07 16:36:13,394 - INFO - [Training] Epoch 36 finished: Average Total Loss = 0.0202, Time = 76.94s, LR = 0.005000
+2025-03-07 16:36:13,395 - INFO - [Training] Epoch 36: Average loss_classifier = 0.0079
+2025-03-07 16:36:13,395 - INFO - [Training] Epoch 36: Average loss_box_reg = 0.0109
+2025-03-07 16:36:13,395 - INFO - [Training] Epoch 36: Average loss_objectness = 0.0004
+2025-03-07 16:36:13,395 - INFO - [Training] Epoch 36: Average loss_rpn_box_reg = 0.0010
+2025-03-07 16:36:13,395 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:36:18,144 - INFO - [Eval] Overall Precision: 0.7885
+2025-03-07 16:36:18,144 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 16:36:18,144 - INFO - [Eval] Overall F1 Score:  0.8465
+2025-03-07 16:36:18,144 - INFO - [Eval] Inference - Total time: 4.1950s, Avg time per image: 0.0424s, Max time per image: 0.0437s, FPS: 23.60
+2025-03-07 16:36:18,210 - INFO - [Eval] COCO mAP50: 0.8608
+2025-03-07 16:36:18,210 - INFO - [Eval] COCO mAP50-95: 0.5919
+2025-03-07 16:36:18,211 - INFO - No improvement for 5 epochs
+2025-03-07 16:36:18,211 - INFO - [Training] Epoch 37/500 started...
+2025-03-07 16:37:35,183 - INFO - [Training] Epoch 37 finished: Average Total Loss = 0.0208, Time = 76.97s, LR = 0.005000
+2025-03-07 16:37:35,183 - INFO - [Training] Epoch 37: Average loss_classifier = 0.0080
+2025-03-07 16:37:35,183 - INFO - [Training] Epoch 37: Average loss_box_reg = 0.0114
+2025-03-07 16:37:35,183 - INFO - [Training] Epoch 37: Average loss_objectness = 0.0004
+2025-03-07 16:37:35,183 - INFO - [Training] Epoch 37: Average loss_rpn_box_reg = 0.0010
+2025-03-07 16:37:35,183 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:37:39,992 - INFO - [Eval] Overall Precision: 0.8184
+2025-03-07 16:37:39,992 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:37:39,992 - INFO - [Eval] Overall F1 Score:  0.8647
+2025-03-07 16:37:39,992 - INFO - [Eval] Inference - Total time: 4.2196s, Avg time per image: 0.0426s, Max time per image: 0.0443s, FPS: 23.46
+2025-03-07 16:37:40,058 - INFO - [Eval] COCO mAP50: 0.8611
+2025-03-07 16:37:40,058 - INFO - [Eval] COCO mAP50-95: 0.6020
+2025-03-07 16:37:40,478 - INFO - --> [Checkpoint] Best model updated at epoch 37 with F1 = 0.8647
+2025-03-07 16:37:40,479 - INFO - [Training] Epoch 38/500 started...
+2025-03-07 16:38:57,334 - INFO - [Training] Epoch 38 finished: Average Total Loss = 0.0204, Time = 76.85s, LR = 0.005000
+2025-03-07 16:38:57,334 - INFO - [Training] Epoch 38: Average loss_classifier = 0.0080
+2025-03-07 16:38:57,334 - INFO - [Training] Epoch 38: Average loss_box_reg = 0.0111
+2025-03-07 16:38:57,334 - INFO - [Training] Epoch 38: Average loss_objectness = 0.0004
+2025-03-07 16:38:57,334 - INFO - [Training] Epoch 38: Average loss_rpn_box_reg = 0.0010
+2025-03-07 16:38:57,334 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:39:02,148 - INFO - [Eval] Overall Precision: 0.7852
+2025-03-07 16:39:02,148 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:39:02,148 - INFO - [Eval] Overall F1 Score:  0.8458
+2025-03-07 16:39:02,148 - INFO - [Eval] Inference - Total time: 4.1998s, Avg time per image: 0.0424s, Max time per image: 0.0438s, FPS: 23.57
+2025-03-07 16:39:02,220 - INFO - [Eval] COCO mAP50: 0.8593
+2025-03-07 16:39:02,220 - INFO - [Eval] COCO mAP50-95: 0.5973
+2025-03-07 16:39:02,220 - INFO - No improvement for 1 epochs
+2025-03-07 16:39:02,221 - INFO - [Training] Epoch 39/500 started...
+2025-03-07 16:40:19,114 - INFO - [Training] Epoch 39 finished: Average Total Loss = 0.0188, Time = 76.89s, LR = 0.005000
+2025-03-07 16:40:19,114 - INFO - [Training] Epoch 39: Average loss_classifier = 0.0075
+2025-03-07 16:40:19,114 - INFO - [Training] Epoch 39: Average loss_box_reg = 0.0101
+2025-03-07 16:40:19,114 - INFO - [Training] Epoch 39: Average loss_objectness = 0.0004
+2025-03-07 16:40:19,114 - INFO - [Training] Epoch 39: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:40:19,114 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:40:23,859 - INFO - [Eval] Overall Precision: 0.7928
+2025-03-07 16:40:23,860 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:40:23,860 - INFO - [Eval] Overall F1 Score:  0.8501
+2025-03-07 16:40:23,860 - INFO - [Eval] Inference - Total time: 4.2003s, Avg time per image: 0.0424s, Max time per image: 0.0443s, FPS: 23.57
+2025-03-07 16:40:23,927 - INFO - [Eval] COCO mAP50: 0.8612
+2025-03-07 16:40:23,927 - INFO - [Eval] COCO mAP50-95: 0.5998
+2025-03-07 16:40:23,927 - INFO - No improvement for 2 epochs
+2025-03-07 16:40:23,928 - INFO - [Training] Epoch 40/500 started...
+2025-03-07 16:41:40,808 - INFO - [Training] Epoch 40 finished: Average Total Loss = 0.0193, Time = 76.88s, LR = 0.005000
+2025-03-07 16:41:40,808 - INFO - [Training] Epoch 40: Average loss_classifier = 0.0074
+2025-03-07 16:41:40,808 - INFO - [Training] Epoch 40: Average loss_box_reg = 0.0106
+2025-03-07 16:41:40,808 - INFO - [Training] Epoch 40: Average loss_objectness = 0.0004
+2025-03-07 16:41:40,808 - INFO - [Training] Epoch 40: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:41:40,808 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:41:45,602 - INFO - [Eval] Overall Precision: 0.7928
+2025-03-07 16:41:45,602 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:41:45,603 - INFO - [Eval] Overall F1 Score:  0.8501
+2025-03-07 16:41:45,603 - INFO - [Eval] Inference - Total time: 4.2310s, Avg time per image: 0.0427s, Max time per image: 0.0442s, FPS: 23.40
+2025-03-07 16:41:45,669 - INFO - [Eval] COCO mAP50: 0.8606
+2025-03-07 16:41:45,669 - INFO - [Eval] COCO mAP50-95: 0.5929
+2025-03-07 16:41:45,670 - INFO - No improvement for 3 epochs
+2025-03-07 16:41:45,670 - INFO - [Training] Epoch 41/500 started...
+2025-03-07 16:43:02,567 - INFO - [Training] Epoch 41 finished: Average Total Loss = 0.0194, Time = 76.90s, LR = 0.005000
+2025-03-07 16:43:02,567 - INFO - [Training] Epoch 41: Average loss_classifier = 0.0075
+2025-03-07 16:43:02,567 - INFO - [Training] Epoch 41: Average loss_box_reg = 0.0106
+2025-03-07 16:43:02,567 - INFO - [Training] Epoch 41: Average loss_objectness = 0.0004
+2025-03-07 16:43:02,567 - INFO - [Training] Epoch 41: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:43:02,568 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:43:07,379 - INFO - [Eval] Overall Precision: 0.7506
+2025-03-07 16:43:07,379 - INFO - [Eval] Overall Recall:    0.9304
+2025-03-07 16:43:07,379 - INFO - [Eval] Overall F1 Score:  0.8308
+2025-03-07 16:43:07,379 - INFO - [Eval] Inference - Total time: 4.2133s, Avg time per image: 0.0426s, Max time per image: 0.0432s, FPS: 23.50
+2025-03-07 16:43:07,450 - INFO - [Eval] COCO mAP50: 0.8749
+2025-03-07 16:43:07,450 - INFO - [Eval] COCO mAP50-95: 0.6071
+2025-03-07 16:43:07,450 - INFO - No improvement for 4 epochs
+2025-03-07 16:43:07,451 - INFO - [Training] Epoch 42/500 started...
+2025-03-07 16:44:24,302 - INFO - [Training] Epoch 42 finished: Average Total Loss = 0.0201, Time = 76.85s, LR = 0.005000
+2025-03-07 16:44:24,302 - INFO - [Training] Epoch 42: Average loss_classifier = 0.0075
+2025-03-07 16:44:24,303 - INFO - [Training] Epoch 42: Average loss_box_reg = 0.0114
+2025-03-07 16:44:24,303 - INFO - [Training] Epoch 42: Average loss_objectness = 0.0003
+2025-03-07 16:44:24,303 - INFO - [Training] Epoch 42: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:44:24,303 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:44:29,089 - INFO - [Eval] Overall Precision: 0.7557
+2025-03-07 16:44:29,089 - INFO - [Eval] Overall Recall:    0.9220
+2025-03-07 16:44:29,089 - INFO - [Eval] Overall F1 Score:  0.8306
+2025-03-07 16:44:29,090 - INFO - [Eval] Inference - Total time: 4.2213s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.45
+2025-03-07 16:44:29,159 - INFO - [Eval] COCO mAP50: 0.8670
+2025-03-07 16:44:29,159 - INFO - [Eval] COCO mAP50-95: 0.5994
+2025-03-07 16:44:29,160 - INFO - No improvement for 5 epochs
+2025-03-07 16:44:29,161 - INFO - [Training] Epoch 43/500 started...
+2025-03-07 16:45:46,089 - INFO - [Training] Epoch 43 finished: Average Total Loss = 0.0205, Time = 76.93s, LR = 0.005000
+2025-03-07 16:45:46,089 - INFO - [Training] Epoch 43: Average loss_classifier = 0.0076
+2025-03-07 16:45:46,089 - INFO - [Training] Epoch 43: Average loss_box_reg = 0.0116
+2025-03-07 16:45:46,089 - INFO - [Training] Epoch 43: Average loss_objectness = 0.0004
+2025-03-07 16:45:46,089 - INFO - [Training] Epoch 43: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:45:46,089 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:45:50,848 - INFO - [Eval] Overall Precision: 0.7923
+2025-03-07 16:45:50,848 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 16:45:50,848 - INFO - [Eval] Overall F1 Score:  0.8486
+2025-03-07 16:45:50,848 - INFO - [Eval] Inference - Total time: 4.1981s, Avg time per image: 0.0424s, Max time per image: 0.0433s, FPS: 23.58
+2025-03-07 16:45:50,915 - INFO - [Eval] COCO mAP50: 0.8607
+2025-03-07 16:45:50,915 - INFO - [Eval] COCO mAP50-95: 0.5976
+2025-03-07 16:45:50,915 - INFO - No improvement for 6 epochs
+2025-03-07 16:45:50,916 - INFO - [Training] Epoch 44/500 started...
+2025-03-07 16:47:07,753 - INFO - [Training] Epoch 44 finished: Average Total Loss = 0.0205, Time = 76.84s, LR = 0.005000
+2025-03-07 16:47:07,753 - INFO - [Training] Epoch 44: Average loss_classifier = 0.0078
+2025-03-07 16:47:07,753 - INFO - [Training] Epoch 44: Average loss_box_reg = 0.0114
+2025-03-07 16:47:07,753 - INFO - [Training] Epoch 44: Average loss_objectness = 0.0004
+2025-03-07 16:47:07,753 - INFO - [Training] Epoch 44: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:47:07,753 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:47:12,515 - INFO - [Eval] Overall Precision: 0.7775
+2025-03-07 16:47:12,516 - INFO - [Eval] Overall Recall:    0.9248
+2025-03-07 16:47:12,516 - INFO - [Eval] Overall F1 Score:  0.8448
+2025-03-07 16:47:12,516 - INFO - [Eval] Inference - Total time: 4.2066s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.53
+2025-03-07 16:47:12,583 - INFO - [Eval] COCO mAP50: 0.8675
+2025-03-07 16:47:12,583 - INFO - [Eval] COCO mAP50-95: 0.5943
+2025-03-07 16:47:12,583 - INFO - No improvement for 7 epochs
+2025-03-07 16:47:12,584 - INFO - [Training] Epoch 45/500 started...
+2025-03-07 16:48:29,452 - INFO - [Training] Epoch 45 finished: Average Total Loss = 0.0206, Time = 76.87s, LR = 0.005000
+2025-03-07 16:48:29,452 - INFO - [Training] Epoch 45: Average loss_classifier = 0.0076
+2025-03-07 16:48:29,452 - INFO - [Training] Epoch 45: Average loss_box_reg = 0.0116
+2025-03-07 16:48:29,452 - INFO - [Training] Epoch 45: Average loss_objectness = 0.0004
+2025-03-07 16:48:29,452 - INFO - [Training] Epoch 45: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:48:29,452 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:48:34,237 - INFO - [Eval] Overall Precision: 0.8189
+2025-03-07 16:48:34,237 - INFO - [Eval] Overall Recall:    0.8942
+2025-03-07 16:48:34,237 - INFO - [Eval] Overall F1 Score:  0.8549
+2025-03-07 16:48:34,237 - INFO - [Eval] Inference - Total time: 4.2219s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.45
+2025-03-07 16:48:34,303 - INFO - [Eval] COCO mAP50: 0.8531
+2025-03-07 16:48:34,303 - INFO - [Eval] COCO mAP50-95: 0.5977
+2025-03-07 16:48:34,304 - INFO - No improvement for 8 epochs
+2025-03-07 16:48:34,304 - INFO - [Training] Epoch 46/500 started...
+2025-03-07 16:49:51,209 - INFO - [Training] Epoch 46 finished: Average Total Loss = 0.0195, Time = 76.90s, LR = 0.005000
+2025-03-07 16:49:51,209 - INFO - [Training] Epoch 46: Average loss_classifier = 0.0079
+2025-03-07 16:49:51,210 - INFO - [Training] Epoch 46: Average loss_box_reg = 0.0104
+2025-03-07 16:49:51,210 - INFO - [Training] Epoch 46: Average loss_objectness = 0.0003
+2025-03-07 16:49:51,210 - INFO - [Training] Epoch 46: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:49:51,210 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:49:55,995 - INFO - [Eval] Overall Precision: 0.7523
+2025-03-07 16:49:55,995 - INFO - [Eval] Overall Recall:    0.9304
+2025-03-07 16:49:55,995 - INFO - [Eval] Overall F1 Score:  0.8319
+2025-03-07 16:49:55,995 - INFO - [Eval] Inference - Total time: 4.2168s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.48
+2025-03-07 16:49:56,063 - INFO - [Eval] COCO mAP50: 0.8780
+2025-03-07 16:49:56,063 - INFO - [Eval] COCO mAP50-95: 0.6065
+2025-03-07 16:49:56,063 - INFO - No improvement for 9 epochs
+2025-03-07 16:49:56,064 - INFO - [Training] Epoch 47/500 started...
+2025-03-07 16:51:12,863 - INFO - [Training] Epoch 47 finished: Average Total Loss = 0.0193, Time = 76.80s, LR = 0.005000
+2025-03-07 16:51:12,863 - INFO - [Training] Epoch 47: Average loss_classifier = 0.0074
+2025-03-07 16:51:12,863 - INFO - [Training] Epoch 47: Average loss_box_reg = 0.0105
+2025-03-07 16:51:12,863 - INFO - [Training] Epoch 47: Average loss_objectness = 0.0005
+2025-03-07 16:51:12,863 - INFO - [Training] Epoch 47: Average loss_rpn_box_reg = 0.0009
+2025-03-07 16:51:12,863 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:51:17,640 - INFO - [Eval] Overall Precision: 0.7928
+2025-03-07 16:51:17,640 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:51:17,640 - INFO - [Eval] Overall F1 Score:  0.8501
+2025-03-07 16:51:17,640 - INFO - [Eval] Inference - Total time: 4.2078s, Avg time per image: 0.0425s, Max time per image: 0.0436s, FPS: 23.53
+2025-03-07 16:51:17,707 - INFO - [Eval] COCO mAP50: 0.8618
+2025-03-07 16:51:17,707 - INFO - [Eval] COCO mAP50-95: 0.5999
+2025-03-07 16:51:17,707 - INFO - No improvement for 10 epochs
+2025-03-07 16:51:17,708 - INFO - [Training] Epoch 48/500 started...
+2025-03-07 16:52:34,643 - INFO - [Training] Epoch 48 finished: Average Total Loss = 0.0184, Time = 76.94s, LR = 0.005000
+2025-03-07 16:52:34,643 - INFO - [Training] Epoch 48: Average loss_classifier = 0.0074
+2025-03-07 16:52:34,643 - INFO - [Training] Epoch 48: Average loss_box_reg = 0.0098
+2025-03-07 16:52:34,643 - INFO - [Training] Epoch 48: Average loss_objectness = 0.0004
+2025-03-07 16:52:34,644 - INFO - [Training] Epoch 48: Average loss_rpn_box_reg = 0.0008
+2025-03-07 16:52:34,644 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:52:39,416 - INFO - [Eval] Overall Precision: 0.7685
+2025-03-07 16:52:39,416 - INFO - [Eval] Overall Recall:    0.9248
+2025-03-07 16:52:39,416 - INFO - [Eval] Overall F1 Score:  0.8394
+2025-03-07 16:52:39,416 - INFO - [Eval] Inference - Total time: 4.2091s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.52
+2025-03-07 16:52:39,484 - INFO - [Eval] COCO mAP50: 0.8683
+2025-03-07 16:52:39,484 - INFO - [Eval] COCO mAP50-95: 0.6014
+2025-03-07 16:52:39,485 - INFO - No improvement for 11 epochs
+2025-03-07 16:52:39,485 - INFO - [Training] Epoch 49/500 started...
+2025-03-07 16:53:56,285 - INFO - [Training] Epoch 49 finished: Average Total Loss = 0.0153, Time = 76.80s, LR = 0.000500
+2025-03-07 16:53:56,285 - INFO - [Training] Epoch 49: Average loss_classifier = 0.0070
+2025-03-07 16:53:56,285 - INFO - [Training] Epoch 49: Average loss_box_reg = 0.0073
+2025-03-07 16:53:56,285 - INFO - [Training] Epoch 49: Average loss_objectness = 0.0004
+2025-03-07 16:53:56,285 - INFO - [Training] Epoch 49: Average loss_rpn_box_reg = 0.0006
+2025-03-07 16:53:56,286 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:54:01,063 - INFO - [Eval] Overall Precision: 0.8084
+2025-03-07 16:54:01,063 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:54:01,063 - INFO - [Eval] Overall F1 Score:  0.8590
+2025-03-07 16:54:01,063 - INFO - [Eval] Inference - Total time: 4.2164s, Avg time per image: 0.0426s, Max time per image: 0.0443s, FPS: 23.48
+2025-03-07 16:54:01,128 - INFO - [Eval] COCO mAP50: 0.8615
+2025-03-07 16:54:01,128 - INFO - [Eval] COCO mAP50-95: 0.6058
+2025-03-07 16:54:01,128 - INFO - No improvement for 12 epochs
+2025-03-07 16:54:01,129 - INFO - [Training] Epoch 50/500 started...
+2025-03-07 16:55:17,964 - INFO - [Training] Epoch 50 finished: Average Total Loss = 0.0135, Time = 76.84s, LR = 0.000500
+2025-03-07 16:55:17,965 - INFO - [Training] Epoch 50: Average loss_classifier = 0.0064
+2025-03-07 16:55:17,965 - INFO - [Training] Epoch 50: Average loss_box_reg = 0.0062
+2025-03-07 16:55:17,965 - INFO - [Training] Epoch 50: Average loss_objectness = 0.0003
+2025-03-07 16:55:17,965 - INFO - [Training] Epoch 50: Average loss_rpn_box_reg = 0.0006
+2025-03-07 16:55:17,965 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:55:22,733 - INFO - [Eval] Overall Precision: 0.8029
+2025-03-07 16:55:22,733 - INFO - [Eval] Overall Recall:    0.9192
+2025-03-07 16:55:22,733 - INFO - [Eval] Overall F1 Score:  0.8571
+2025-03-07 16:55:22,733 - INFO - [Eval] Inference - Total time: 4.2127s, Avg time per image: 0.0426s, Max time per image: 0.0444s, FPS: 23.50
+2025-03-07 16:55:22,802 - INFO - [Eval] COCO mAP50: 0.8615
+2025-03-07 16:55:22,802 - INFO - [Eval] COCO mAP50-95: 0.6065
+2025-03-07 16:55:22,803 - INFO - No improvement for 13 epochs
+2025-03-07 16:55:22,804 - INFO - [Training] Epoch 51/500 started...
+2025-03-07 16:56:39,555 - INFO - [Training] Epoch 51 finished: Average Total Loss = 0.0128, Time = 76.75s, LR = 0.000500
+2025-03-07 16:56:39,555 - INFO - [Training] Epoch 51: Average loss_classifier = 0.0062
+2025-03-07 16:56:39,555 - INFO - [Training] Epoch 51: Average loss_box_reg = 0.0058
+2025-03-07 16:56:39,555 - INFO - [Training] Epoch 51: Average loss_objectness = 0.0002
+2025-03-07 16:56:39,555 - INFO - [Training] Epoch 51: Average loss_rpn_box_reg = 0.0005
+2025-03-07 16:56:39,555 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:56:44,374 - INFO - [Eval] Overall Precision: 0.8088
+2025-03-07 16:56:44,374 - INFO - [Eval] Overall Recall:    0.9192
+2025-03-07 16:56:44,374 - INFO - [Eval] Overall F1 Score:  0.8605
+2025-03-07 16:56:44,374 - INFO - [Eval] Inference - Total time: 4.2115s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-03-07 16:56:44,439 - INFO - [Eval] COCO mAP50: 0.8613
+2025-03-07 16:56:44,439 - INFO - [Eval] COCO mAP50-95: 0.6072
+2025-03-07 16:56:44,440 - INFO - No improvement for 14 epochs
+2025-03-07 16:56:44,442 - INFO - [Training] Epoch 52/500 started...
+2025-03-07 16:58:01,206 - INFO - [Training] Epoch 52 finished: Average Total Loss = 0.0125, Time = 76.76s, LR = 0.000500
+2025-03-07 16:58:01,206 - INFO - [Training] Epoch 52: Average loss_classifier = 0.0062
+2025-03-07 16:58:01,206 - INFO - [Training] Epoch 52: Average loss_box_reg = 0.0055
+2025-03-07 16:58:01,206 - INFO - [Training] Epoch 52: Average loss_objectness = 0.0003
+2025-03-07 16:58:01,206 - INFO - [Training] Epoch 52: Average loss_rpn_box_reg = 0.0005
+2025-03-07 16:58:01,206 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:58:05,964 - INFO - [Eval] Overall Precision: 0.8139
+2025-03-07 16:58:05,964 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 16:58:05,964 - INFO - [Eval] Overall F1 Score:  0.8609
+2025-03-07 16:58:05,964 - INFO - [Eval] Inference - Total time: 4.2038s, Avg time per image: 0.0425s, Max time per image: 0.0443s, FPS: 23.55
+2025-03-07 16:58:06,028 - INFO - [Eval] COCO mAP50: 0.8618
+2025-03-07 16:58:06,028 - INFO - [Eval] COCO mAP50-95: 0.6036
+2025-03-07 16:58:06,029 - INFO - No improvement for 15 epochs
+2025-03-07 16:58:06,030 - INFO - [Training] Epoch 53/500 started...
+2025-03-07 16:59:22,778 - INFO - [Training] Epoch 53 finished: Average Total Loss = 0.0122, Time = 76.75s, LR = 0.000500
+2025-03-07 16:59:22,779 - INFO - [Training] Epoch 53: Average loss_classifier = 0.0061
+2025-03-07 16:59:22,779 - INFO - [Training] Epoch 53: Average loss_box_reg = 0.0053
+2025-03-07 16:59:22,779 - INFO - [Training] Epoch 53: Average loss_objectness = 0.0003
+2025-03-07 16:59:22,779 - INFO - [Training] Epoch 53: Average loss_rpn_box_reg = 0.0005
+2025-03-07 16:59:22,779 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 16:59:27,592 - INFO - [Eval] Overall Precision: 0.8064
+2025-03-07 16:59:27,592 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 16:59:27,592 - INFO - [Eval] Overall F1 Score:  0.8579
+2025-03-07 16:59:27,592 - INFO - [Eval] Inference - Total time: 4.2172s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.48
+2025-03-07 16:59:27,658 - INFO - [Eval] COCO mAP50: 0.8614
+2025-03-07 16:59:27,658 - INFO - [Eval] COCO mAP50-95: 0.6044
+2025-03-07 16:59:27,658 - INFO - No improvement for 16 epochs
+2025-03-07 16:59:27,659 - INFO - [Training] Epoch 54/500 started...
+2025-03-07 17:00:44,444 - INFO - [Training] Epoch 54 finished: Average Total Loss = 0.0121, Time = 76.78s, LR = 0.000500
+2025-03-07 17:00:44,444 - INFO - [Training] Epoch 54: Average loss_classifier = 0.0061
+2025-03-07 17:00:44,444 - INFO - [Training] Epoch 54: Average loss_box_reg = 0.0052
+2025-03-07 17:00:44,444 - INFO - [Training] Epoch 54: Average loss_objectness = 0.0003
+2025-03-07 17:00:44,444 - INFO - [Training] Epoch 54: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:00:44,444 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:00:49,238 - INFO - [Eval] Overall Precision: 0.8139
+2025-03-07 17:00:49,238 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 17:00:49,238 - INFO - [Eval] Overall F1 Score:  0.8609
+2025-03-07 17:00:49,238 - INFO - [Eval] Inference - Total time: 4.2056s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.54
+2025-03-07 17:00:49,313 - INFO - [Eval] COCO mAP50: 0.8620
+2025-03-07 17:00:49,313 - INFO - [Eval] COCO mAP50-95: 0.6030
+2025-03-07 17:00:49,313 - INFO - No improvement for 17 epochs
+2025-03-07 17:00:49,314 - INFO - [Training] Epoch 55/500 started...
+2025-03-07 17:02:06,080 - INFO - [Training] Epoch 55 finished: Average Total Loss = 0.0120, Time = 76.77s, LR = 0.000500
+2025-03-07 17:02:06,080 - INFO - [Training] Epoch 55: Average loss_classifier = 0.0061
+2025-03-07 17:02:06,080 - INFO - [Training] Epoch 55: Average loss_box_reg = 0.0051
+2025-03-07 17:02:06,080 - INFO - [Training] Epoch 55: Average loss_objectness = 0.0003
+2025-03-07 17:02:06,080 - INFO - [Training] Epoch 55: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:02:06,081 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:02:10,865 - INFO - [Eval] Overall Precision: 0.8064
+2025-03-07 17:02:10,865 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 17:02:10,865 - INFO - [Eval] Overall F1 Score:  0.8579
+2025-03-07 17:02:10,865 - INFO - [Eval] Inference - Total time: 4.2143s, Avg time per image: 0.0426s, Max time per image: 0.0438s, FPS: 23.49
+2025-03-07 17:02:10,932 - INFO - [Eval] COCO mAP50: 0.8621
+2025-03-07 17:02:10,932 - INFO - [Eval] COCO mAP50-95: 0.6036
+2025-03-07 17:02:10,933 - INFO - No improvement for 18 epochs
+2025-03-07 17:02:10,933 - INFO - [Training] Epoch 56/500 started...
+2025-03-07 17:03:27,739 - INFO - [Training] Epoch 56 finished: Average Total Loss = 0.0118, Time = 76.81s, LR = 0.000500
+2025-03-07 17:03:27,739 - INFO - [Training] Epoch 56: Average loss_classifier = 0.0060
+2025-03-07 17:03:27,739 - INFO - [Training] Epoch 56: Average loss_box_reg = 0.0050
+2025-03-07 17:03:27,739 - INFO - [Training] Epoch 56: Average loss_objectness = 0.0003
+2025-03-07 17:03:27,739 - INFO - [Training] Epoch 56: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:03:27,739 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:03:32,504 - INFO - [Eval] Overall Precision: 0.8144
+2025-03-07 17:03:32,504 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 17:03:32,504 - INFO - [Eval] Overall F1 Score:  0.8624
+2025-03-07 17:03:32,504 - INFO - [Eval] Inference - Total time: 4.2104s, Avg time per image: 0.0425s, Max time per image: 0.0432s, FPS: 23.51
+2025-03-07 17:03:32,572 - INFO - [Eval] COCO mAP50: 0.8619
+2025-03-07 17:03:32,572 - INFO - [Eval] COCO mAP50-95: 0.6029
+2025-03-07 17:03:32,573 - INFO - No improvement for 19 epochs
+2025-03-07 17:03:32,574 - INFO - [Training] Epoch 57/500 started...
+2025-03-07 17:04:49,420 - INFO - [Training] Epoch 57 finished: Average Total Loss = 0.0117, Time = 76.85s, LR = 0.000500
+2025-03-07 17:04:49,420 - INFO - [Training] Epoch 57: Average loss_classifier = 0.0060
+2025-03-07 17:04:49,420 - INFO - [Training] Epoch 57: Average loss_box_reg = 0.0049
+2025-03-07 17:04:49,420 - INFO - [Training] Epoch 57: Average loss_objectness = 0.0003
+2025-03-07 17:04:49,420 - INFO - [Training] Epoch 57: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:04:49,420 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:04:54,215 - INFO - [Eval] Overall Precision: 0.8099
+2025-03-07 17:04:54,215 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 17:04:54,215 - INFO - [Eval] Overall F1 Score:  0.8586
+2025-03-07 17:04:54,215 - INFO - [Eval] Inference - Total time: 4.2284s, Avg time per image: 0.0427s, Max time per image: 0.0435s, FPS: 23.41
+2025-03-07 17:04:54,282 - INFO - [Eval] COCO mAP50: 0.8624
+2025-03-07 17:04:54,282 - INFO - [Eval] COCO mAP50-95: 0.6034
+2025-03-07 17:04:54,283 - INFO - No improvement for 20 epochs
+2025-03-07 17:04:54,284 - INFO - [Training] Epoch 58/500 started...
+2025-03-07 17:06:11,136 - INFO - [Training] Epoch 58 finished: Average Total Loss = 0.0114, Time = 76.85s, LR = 0.000500
+2025-03-07 17:06:11,136 - INFO - [Training] Epoch 58: Average loss_classifier = 0.0059
+2025-03-07 17:06:11,136 - INFO - [Training] Epoch 58: Average loss_box_reg = 0.0048
+2025-03-07 17:06:11,136 - INFO - [Training] Epoch 58: Average loss_objectness = 0.0003
+2025-03-07 17:06:11,136 - INFO - [Training] Epoch 58: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:06:11,136 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:06:15,931 - INFO - [Eval] Overall Precision: 0.8144
+2025-03-07 17:06:15,931 - INFO - [Eval] Overall Recall:    0.9164
+2025-03-07 17:06:15,931 - INFO - [Eval] Overall F1 Score:  0.8624
+2025-03-07 17:06:15,931 - INFO - [Eval] Inference - Total time: 4.2241s, Avg time per image: 0.0427s, Max time per image: 0.0435s, FPS: 23.44
+2025-03-07 17:06:15,998 - INFO - [Eval] COCO mAP50: 0.8622
+2025-03-07 17:06:15,998 - INFO - [Eval] COCO mAP50-95: 0.6051
+2025-03-07 17:06:15,999 - INFO - No improvement for 21 epochs
+2025-03-07 17:06:15,999 - INFO - [Training] Epoch 59/500 started...
+2025-03-07 17:07:32,837 - INFO - [Training] Epoch 59 finished: Average Total Loss = 0.0112, Time = 76.84s, LR = 0.000500
+2025-03-07 17:07:32,837 - INFO - [Training] Epoch 59: Average loss_classifier = 0.0058
+2025-03-07 17:07:32,837 - INFO - [Training] Epoch 59: Average loss_box_reg = 0.0046
+2025-03-07 17:07:32,837 - INFO - [Training] Epoch 59: Average loss_objectness = 0.0003
+2025-03-07 17:07:32,837 - INFO - [Training] Epoch 59: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:07:32,837 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:07:37,610 - INFO - [Eval] Overall Precision: 0.8099
+2025-03-07 17:07:37,610 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 17:07:37,610 - INFO - [Eval] Overall F1 Score:  0.8586
+2025-03-07 17:07:37,610 - INFO - [Eval] Inference - Total time: 4.2240s, Avg time per image: 0.0427s, Max time per image: 0.0437s, FPS: 23.44
+2025-03-07 17:07:37,677 - INFO - [Eval] COCO mAP50: 0.8622
+2025-03-07 17:07:37,677 - INFO - [Eval] COCO mAP50-95: 0.6042
+2025-03-07 17:07:37,678 - INFO - No improvement for 22 epochs
+2025-03-07 17:07:37,679 - INFO - [Training] Epoch 60/500 started...
+2025-03-07 17:08:54,427 - INFO - [Training] Epoch 60 finished: Average Total Loss = 0.0111, Time = 76.75s, LR = 0.000050
+2025-03-07 17:08:54,427 - INFO - [Training] Epoch 60: Average loss_classifier = 0.0057
+2025-03-07 17:08:54,427 - INFO - [Training] Epoch 60: Average loss_box_reg = 0.0046
+2025-03-07 17:08:54,427 - INFO - [Training] Epoch 60: Average loss_objectness = 0.0003
+2025-03-07 17:08:54,427 - INFO - [Training] Epoch 60: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:08:54,427 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:08:59,197 - INFO - [Eval] Overall Precision: 0.8139
+2025-03-07 17:08:59,197 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 17:08:59,197 - INFO - [Eval] Overall F1 Score:  0.8609
+2025-03-07 17:08:59,197 - INFO - [Eval] Inference - Total time: 4.2152s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.49
+2025-03-07 17:08:59,265 - INFO - [Eval] COCO mAP50: 0.8622
+2025-03-07 17:08:59,265 - INFO - [Eval] COCO mAP50-95: 0.6036
+2025-03-07 17:08:59,265 - INFO - No improvement for 23 epochs
+2025-03-07 17:08:59,266 - INFO - [Training] Epoch 61/500 started...
+2025-03-07 17:10:15,942 - INFO - [Training] Epoch 61 finished: Average Total Loss = 0.0112, Time = 76.68s, LR = 0.000050
+2025-03-07 17:10:15,942 - INFO - [Training] Epoch 61: Average loss_classifier = 0.0057
+2025-03-07 17:10:15,942 - INFO - [Training] Epoch 61: Average loss_box_reg = 0.0046
+2025-03-07 17:10:15,942 - INFO - [Training] Epoch 61: Average loss_objectness = 0.0004
+2025-03-07 17:10:15,942 - INFO - [Training] Epoch 61: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:10:15,942 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:10:20,704 - INFO - [Eval] Overall Precision: 0.8139
+2025-03-07 17:10:20,704 - INFO - [Eval] Overall Recall:    0.9136
+2025-03-07 17:10:20,704 - INFO - [Eval] Overall F1 Score:  0.8609
+2025-03-07 17:10:20,705 - INFO - [Eval] Inference - Total time: 4.2034s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.55
+2025-03-07 17:10:20,772 - INFO - [Eval] COCO mAP50: 0.8624
+2025-03-07 17:10:20,772 - INFO - [Eval] COCO mAP50-95: 0.6044
+2025-03-07 17:10:20,773 - INFO - No improvement for 24 epochs
+2025-03-07 17:10:20,773 - INFO - [Training] Epoch 62/500 started...
+2025-03-07 17:11:37,476 - INFO - [Training] Epoch 62 finished: Average Total Loss = 0.0112, Time = 76.70s, LR = 0.000050
+2025-03-07 17:11:37,476 - INFO - [Training] Epoch 62: Average loss_classifier = 0.0059
+2025-03-07 17:11:37,476 - INFO - [Training] Epoch 62: Average loss_box_reg = 0.0046
+2025-03-07 17:11:37,476 - INFO - [Training] Epoch 62: Average loss_objectness = 0.0003
+2025-03-07 17:11:37,476 - INFO - [Training] Epoch 62: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:11:37,476 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:11:42,254 - INFO - [Eval] Overall Precision: 0.8155
+2025-03-07 17:11:42,254 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:11:42,254 - INFO - [Eval] Overall F1 Score:  0.8605
+2025-03-07 17:11:42,254 - INFO - [Eval] Inference - Total time: 4.2160s, Avg time per image: 0.0426s, Max time per image: 0.0442s, FPS: 23.48
+2025-03-07 17:11:42,318 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:11:42,318 - INFO - [Eval] COCO mAP50-95: 0.6037
+2025-03-07 17:11:42,319 - INFO - No improvement for 25 epochs
+2025-03-07 17:11:42,320 - INFO - [Training] Epoch 63/500 started...
+2025-03-07 17:12:59,051 - INFO - [Training] Epoch 63 finished: Average Total Loss = 0.0111, Time = 76.73s, LR = 0.000050
+2025-03-07 17:12:59,051 - INFO - [Training] Epoch 63: Average loss_classifier = 0.0058
+2025-03-07 17:12:59,051 - INFO - [Training] Epoch 63: Average loss_box_reg = 0.0045
+2025-03-07 17:12:59,051 - INFO - [Training] Epoch 63: Average loss_objectness = 0.0003
+2025-03-07 17:12:59,051 - INFO - [Training] Epoch 63: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:12:59,051 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:13:03,825 - INFO - [Eval] Overall Precision: 0.8114
+2025-03-07 17:13:03,825 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:13:03,825 - INFO - [Eval] Overall F1 Score:  0.8583
+2025-03-07 17:13:03,825 - INFO - [Eval] Inference - Total time: 4.1905s, Avg time per image: 0.0423s, Max time per image: 0.0443s, FPS: 23.62
+2025-03-07 17:13:03,891 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:13:03,891 - INFO - [Eval] COCO mAP50-95: 0.6034
+2025-03-07 17:13:03,892 - INFO - No improvement for 26 epochs
+2025-03-07 17:13:03,892 - INFO - [Training] Epoch 64/500 started...
+2025-03-07 17:14:20,659 - INFO - [Training] Epoch 64 finished: Average Total Loss = 0.0113, Time = 76.77s, LR = 0.000050
+2025-03-07 17:14:20,659 - INFO - [Training] Epoch 64: Average loss_classifier = 0.0059
+2025-03-07 17:14:20,660 - INFO - [Training] Epoch 64: Average loss_box_reg = 0.0045
+2025-03-07 17:14:20,660 - INFO - [Training] Epoch 64: Average loss_objectness = 0.0003
+2025-03-07 17:14:20,660 - INFO - [Training] Epoch 64: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:14:20,660 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:14:25,489 - INFO - [Eval] Overall Precision: 0.8150
+2025-03-07 17:14:25,490 - INFO - [Eval] Overall Recall:    0.9081
+2025-03-07 17:14:25,490 - INFO - [Eval] Overall F1 Score:  0.8590
+2025-03-07 17:14:25,490 - INFO - [Eval] Inference - Total time: 4.2168s, Avg time per image: 0.0426s, Max time per image: 0.0443s, FPS: 23.48
+2025-03-07 17:14:25,555 - INFO - [Eval] COCO mAP50: 0.8624
+2025-03-07 17:14:25,555 - INFO - [Eval] COCO mAP50-95: 0.6018
+2025-03-07 17:14:25,556 - INFO - No improvement for 27 epochs
+2025-03-07 17:14:25,556 - INFO - [Training] Epoch 65/500 started...
+2025-03-07 17:15:42,290 - INFO - [Training] Epoch 65 finished: Average Total Loss = 0.0110, Time = 76.73s, LR = 0.000050
+2025-03-07 17:15:42,290 - INFO - [Training] Epoch 65: Average loss_classifier = 0.0057
+2025-03-07 17:15:42,290 - INFO - [Training] Epoch 65: Average loss_box_reg = 0.0045
+2025-03-07 17:15:42,290 - INFO - [Training] Epoch 65: Average loss_objectness = 0.0003
+2025-03-07 17:15:42,290 - INFO - [Training] Epoch 65: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:15:42,290 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:15:47,066 - INFO - [Eval] Overall Precision: 0.8114
+2025-03-07 17:15:47,066 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:15:47,066 - INFO - [Eval] Overall F1 Score:  0.8583
+2025-03-07 17:15:47,066 - INFO - [Eval] Inference - Total time: 4.2152s, Avg time per image: 0.0426s, Max time per image: 0.0446s, FPS: 23.49
+2025-03-07 17:15:47,134 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:15:47,134 - INFO - [Eval] COCO mAP50-95: 0.6046
+2025-03-07 17:15:47,135 - INFO - No improvement for 28 epochs
+2025-03-07 17:15:47,136 - INFO - [Training] Epoch 66/500 started...
+2025-03-07 17:17:03,862 - INFO - [Training] Epoch 66 finished: Average Total Loss = 0.0111, Time = 76.73s, LR = 0.000050
+2025-03-07 17:17:03,862 - INFO - [Training] Epoch 66: Average loss_classifier = 0.0057
+2025-03-07 17:17:03,862 - INFO - [Training] Epoch 66: Average loss_box_reg = 0.0045
+2025-03-07 17:17:03,862 - INFO - [Training] Epoch 66: Average loss_objectness = 0.0003
+2025-03-07 17:17:03,862 - INFO - [Training] Epoch 66: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:17:03,862 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:17:08,685 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:17:08,686 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:17:08,686 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:17:08,686 - INFO - [Eval] Inference - Total time: 4.2155s, Avg time per image: 0.0426s, Max time per image: 0.0439s, FPS: 23.48
+2025-03-07 17:17:08,750 - INFO - [Eval] COCO mAP50: 0.8622
+2025-03-07 17:17:08,750 - INFO - [Eval] COCO mAP50-95: 0.6033
+2025-03-07 17:17:08,751 - INFO - No improvement for 29 epochs
+2025-03-07 17:17:08,752 - INFO - [Training] Epoch 67/500 started...
+2025-03-07 17:18:25,501 - INFO - [Training] Epoch 67 finished: Average Total Loss = 0.0109, Time = 76.75s, LR = 0.000050
+2025-03-07 17:18:25,502 - INFO - [Training] Epoch 67: Average loss_classifier = 0.0057
+2025-03-07 17:18:25,502 - INFO - [Training] Epoch 67: Average loss_box_reg = 0.0045
+2025-03-07 17:18:25,502 - INFO - [Training] Epoch 67: Average loss_objectness = 0.0003
+2025-03-07 17:18:25,502 - INFO - [Training] Epoch 67: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:18:25,502 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:18:30,281 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:18:30,282 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:18:30,282 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:18:30,282 - INFO - [Eval] Inference - Total time: 4.2062s, Avg time per image: 0.0425s, Max time per image: 0.0445s, FPS: 23.54
+2025-03-07 17:18:30,346 - INFO - [Eval] COCO mAP50: 0.8621
+2025-03-07 17:18:30,346 - INFO - [Eval] COCO mAP50-95: 0.6040
+2025-03-07 17:18:30,347 - INFO - No improvement for 30 epochs
+2025-03-07 17:18:30,347 - INFO - [Training] Epoch 68/500 started...
+2025-03-07 17:19:47,042 - INFO - [Training] Epoch 68 finished: Average Total Loss = 0.0111, Time = 76.69s, LR = 0.000050
+2025-03-07 17:19:47,042 - INFO - [Training] Epoch 68: Average loss_classifier = 0.0058
+2025-03-07 17:19:47,042 - INFO - [Training] Epoch 68: Average loss_box_reg = 0.0045
+2025-03-07 17:19:47,042 - INFO - [Training] Epoch 68: Average loss_objectness = 0.0003
+2025-03-07 17:19:47,042 - INFO - [Training] Epoch 68: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:19:47,042 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:19:51,807 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:19:51,808 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:19:51,808 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:19:51,808 - INFO - [Eval] Inference - Total time: 4.2100s, Avg time per image: 0.0425s, Max time per image: 0.0445s, FPS: 23.52
+2025-03-07 17:19:51,950 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:19:51,950 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:19:51,951 - INFO - No improvement for 31 epochs
+2025-03-07 17:19:51,951 - INFO - [Training] Epoch 69/500 started...
+2025-03-07 17:21:08,647 - INFO - [Training] Epoch 69 finished: Average Total Loss = 0.0110, Time = 76.70s, LR = 0.000050
+2025-03-07 17:21:08,647 - INFO - [Training] Epoch 69: Average loss_classifier = 0.0056
+2025-03-07 17:21:08,647 - INFO - [Training] Epoch 69: Average loss_box_reg = 0.0046
+2025-03-07 17:21:08,647 - INFO - [Training] Epoch 69: Average loss_objectness = 0.0003
+2025-03-07 17:21:08,647 - INFO - [Training] Epoch 69: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:21:08,647 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:21:13,404 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:21:13,404 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:21:13,405 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:21:13,405 - INFO - [Eval] Inference - Total time: 4.1992s, Avg time per image: 0.0424s, Max time per image: 0.0434s, FPS: 23.58
+2025-03-07 17:21:13,468 - INFO - [Eval] COCO mAP50: 0.8624
+2025-03-07 17:21:13,468 - INFO - [Eval] COCO mAP50-95: 0.6040
+2025-03-07 17:21:13,469 - INFO - No improvement for 32 epochs
+2025-03-07 17:21:13,470 - INFO - [Training] Epoch 70/500 started...
+2025-03-07 17:22:30,219 - INFO - [Training] Epoch 70 finished: Average Total Loss = 0.0108, Time = 76.75s, LR = 0.000050
+2025-03-07 17:22:30,219 - INFO - [Training] Epoch 70: Average loss_classifier = 0.0056
+2025-03-07 17:22:30,219 - INFO - [Training] Epoch 70: Average loss_box_reg = 0.0045
+2025-03-07 17:22:30,219 - INFO - [Training] Epoch 70: Average loss_objectness = 0.0003
+2025-03-07 17:22:30,219 - INFO - [Training] Epoch 70: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:22:30,219 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:22:35,037 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:22:35,038 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:22:35,038 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:22:35,038 - INFO - [Eval] Inference - Total time: 4.2303s, Avg time per image: 0.0427s, Max time per image: 0.0436s, FPS: 23.40
+2025-03-07 17:22:35,106 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:22:35,106 - INFO - [Eval] COCO mAP50-95: 0.6034
+2025-03-07 17:22:35,107 - INFO - No improvement for 33 epochs
+2025-03-07 17:22:35,108 - INFO - [Training] Epoch 71/500 started...
+2025-03-07 17:23:51,904 - INFO - [Training] Epoch 71 finished: Average Total Loss = 0.0109, Time = 76.80s, LR = 0.000005
+2025-03-07 17:23:51,904 - INFO - [Training] Epoch 71: Average loss_classifier = 0.0056
+2025-03-07 17:23:51,905 - INFO - [Training] Epoch 71: Average loss_box_reg = 0.0045
+2025-03-07 17:23:51,905 - INFO - [Training] Epoch 71: Average loss_objectness = 0.0003
+2025-03-07 17:23:51,905 - INFO - [Training] Epoch 71: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:23:51,905 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:23:56,688 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:23:56,688 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:23:56,688 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:23:56,688 - INFO - [Eval] Inference - Total time: 4.2131s, Avg time per image: 0.0426s, Max time per image: 0.0442s, FPS: 23.50
+2025-03-07 17:23:56,753 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:23:56,753 - INFO - [Eval] COCO mAP50-95: 0.6031
+2025-03-07 17:23:56,754 - INFO - No improvement for 34 epochs
+2025-03-07 17:23:56,754 - INFO - [Training] Epoch 72/500 started...
+2025-03-07 17:25:13,577 - INFO - [Training] Epoch 72 finished: Average Total Loss = 0.0110, Time = 76.82s, LR = 0.000005
+2025-03-07 17:25:13,577 - INFO - [Training] Epoch 72: Average loss_classifier = 0.0056
+2025-03-07 17:25:13,577 - INFO - [Training] Epoch 72: Average loss_box_reg = 0.0045
+2025-03-07 17:25:13,577 - INFO - [Training] Epoch 72: Average loss_objectness = 0.0003
+2025-03-07 17:25:13,577 - INFO - [Training] Epoch 72: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:25:13,577 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:25:18,349 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:25:18,349 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:25:18,349 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:25:18,349 - INFO - [Eval] Inference - Total time: 4.2069s, Avg time per image: 0.0425s, Max time per image: 0.0436s, FPS: 23.53
+2025-03-07 17:25:18,416 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:25:18,416 - INFO - [Eval] COCO mAP50-95: 0.6031
+2025-03-07 17:25:18,416 - INFO - No improvement for 35 epochs
+2025-03-07 17:25:18,417 - INFO - [Training] Epoch 73/500 started...
+2025-03-07 17:26:35,165 - INFO - [Training] Epoch 73 finished: Average Total Loss = 0.0111, Time = 76.75s, LR = 0.000005
+2025-03-07 17:26:35,165 - INFO - [Training] Epoch 73: Average loss_classifier = 0.0057
+2025-03-07 17:26:35,165 - INFO - [Training] Epoch 73: Average loss_box_reg = 0.0045
+2025-03-07 17:26:35,165 - INFO - [Training] Epoch 73: Average loss_objectness = 0.0004
+2025-03-07 17:26:35,165 - INFO - [Training] Epoch 73: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:26:35,165 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:26:39,930 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:26:39,931 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:26:39,931 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:26:39,931 - INFO - [Eval] Inference - Total time: 4.2214s, Avg time per image: 0.0426s, Max time per image: 0.0448s, FPS: 23.45
+2025-03-07 17:26:39,995 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:26:39,995 - INFO - [Eval] COCO mAP50-95: 0.6032
+2025-03-07 17:26:39,995 - INFO - No improvement for 36 epochs
+2025-03-07 17:26:39,996 - INFO - [Training] Epoch 74/500 started...
+2025-03-07 17:27:56,597 - INFO - [Training] Epoch 74 finished: Average Total Loss = 0.0109, Time = 76.60s, LR = 0.000005
+2025-03-07 17:27:56,597 - INFO - [Training] Epoch 74: Average loss_classifier = 0.0057
+2025-03-07 17:27:56,597 - INFO - [Training] Epoch 74: Average loss_box_reg = 0.0045
+2025-03-07 17:27:56,597 - INFO - [Training] Epoch 74: Average loss_objectness = 0.0003
+2025-03-07 17:27:56,597 - INFO - [Training] Epoch 74: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:27:56,597 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:28:01,394 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:28:01,394 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:28:01,394 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:28:01,394 - INFO - [Eval] Inference - Total time: 4.2244s, Avg time per image: 0.0427s, Max time per image: 0.0437s, FPS: 23.44
+2025-03-07 17:28:01,461 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:28:01,461 - INFO - [Eval] COCO mAP50-95: 0.6037
+2025-03-07 17:28:01,462 - INFO - No improvement for 37 epochs
+2025-03-07 17:28:01,462 - INFO - [Training] Epoch 75/500 started...
+2025-03-07 17:29:18,158 - INFO - [Training] Epoch 75 finished: Average Total Loss = 0.0110, Time = 76.70s, LR = 0.000005
+2025-03-07 17:29:18,158 - INFO - [Training] Epoch 75: Average loss_classifier = 0.0057
+2025-03-07 17:29:18,158 - INFO - [Training] Epoch 75: Average loss_box_reg = 0.0045
+2025-03-07 17:29:18,158 - INFO - [Training] Epoch 75: Average loss_objectness = 0.0003
+2025-03-07 17:29:18,158 - INFO - [Training] Epoch 75: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:29:18,158 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:29:22,925 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:29:22,925 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:29:22,925 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:29:22,925 - INFO - [Eval] Inference - Total time: 4.2048s, Avg time per image: 0.0425s, Max time per image: 0.0443s, FPS: 23.54
+2025-03-07 17:29:22,992 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:29:22,992 - INFO - [Eval] COCO mAP50-95: 0.6031
+2025-03-07 17:29:22,992 - INFO - No improvement for 38 epochs
+2025-03-07 17:29:22,993 - INFO - [Training] Epoch 76/500 started...
+2025-03-07 17:30:39,766 - INFO - [Training] Epoch 76 finished: Average Total Loss = 0.0109, Time = 76.77s, LR = 0.000005
+2025-03-07 17:30:39,766 - INFO - [Training] Epoch 76: Average loss_classifier = 0.0056
+2025-03-07 17:30:39,767 - INFO - [Training] Epoch 76: Average loss_box_reg = 0.0045
+2025-03-07 17:30:39,767 - INFO - [Training] Epoch 76: Average loss_objectness = 0.0003
+2025-03-07 17:30:39,767 - INFO - [Training] Epoch 76: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:30:39,767 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:30:44,574 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:30:44,574 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:30:44,574 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:30:44,575 - INFO - [Eval] Inference - Total time: 4.2182s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.47
+2025-03-07 17:30:44,641 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:30:44,642 - INFO - [Eval] COCO mAP50-95: 0.6037
+2025-03-07 17:30:44,642 - INFO - No improvement for 39 epochs
+2025-03-07 17:30:44,643 - INFO - [Training] Epoch 77/500 started...
+2025-03-07 17:32:01,411 - INFO - [Training] Epoch 77 finished: Average Total Loss = 0.0110, Time = 76.77s, LR = 0.000005
+2025-03-07 17:32:01,411 - INFO - [Training] Epoch 77: Average loss_classifier = 0.0057
+2025-03-07 17:32:01,411 - INFO - [Training] Epoch 77: Average loss_box_reg = 0.0045
+2025-03-07 17:32:01,411 - INFO - [Training] Epoch 77: Average loss_objectness = 0.0003
+2025-03-07 17:32:01,411 - INFO - [Training] Epoch 77: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:32:01,411 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:32:06,215 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:32:06,215 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:32:06,215 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:32:06,215 - INFO - [Eval] Inference - Total time: 4.2164s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.48
+2025-03-07 17:32:06,282 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:32:06,282 - INFO - [Eval] COCO mAP50-95: 0.6035
+2025-03-07 17:32:06,282 - INFO - No improvement for 40 epochs
+2025-03-07 17:32:06,283 - INFO - [Training] Epoch 78/500 started...
+2025-03-07 17:33:23,052 - INFO - [Training] Epoch 78 finished: Average Total Loss = 0.0108, Time = 76.77s, LR = 0.000005
+2025-03-07 17:33:23,052 - INFO - [Training] Epoch 78: Average loss_classifier = 0.0056
+2025-03-07 17:33:23,052 - INFO - [Training] Epoch 78: Average loss_box_reg = 0.0045
+2025-03-07 17:33:23,052 - INFO - [Training] Epoch 78: Average loss_objectness = 0.0002
+2025-03-07 17:33:23,052 - INFO - [Training] Epoch 78: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:33:23,052 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:33:27,812 - INFO - [Eval] Overall Precision: 0.8155
+2025-03-07 17:33:27,813 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:33:27,813 - INFO - [Eval] Overall F1 Score:  0.8605
+2025-03-07 17:33:27,813 - INFO - [Eval] Inference - Total time: 4.2017s, Avg time per image: 0.0424s, Max time per image: 0.0437s, FPS: 23.56
+2025-03-07 17:33:27,879 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:33:27,879 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:33:27,879 - INFO - No improvement for 41 epochs
+2025-03-07 17:33:27,880 - INFO - [Training] Epoch 79/500 started...
+2025-03-07 17:34:44,678 - INFO - [Training] Epoch 79 finished: Average Total Loss = 0.0110, Time = 76.80s, LR = 0.000005
+2025-03-07 17:34:44,678 - INFO - [Training] Epoch 79: Average loss_classifier = 0.0058
+2025-03-07 17:34:44,678 - INFO - [Training] Epoch 79: Average loss_box_reg = 0.0045
+2025-03-07 17:34:44,678 - INFO - [Training] Epoch 79: Average loss_objectness = 0.0002
+2025-03-07 17:34:44,678 - INFO - [Training] Epoch 79: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:34:44,678 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:34:49,450 - INFO - [Eval] Overall Precision: 0.8155
+2025-03-07 17:34:49,450 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:34:49,450 - INFO - [Eval] Overall F1 Score:  0.8605
+2025-03-07 17:34:49,451 - INFO - [Eval] Inference - Total time: 4.2135s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.50
+2025-03-07 17:34:49,516 - INFO - [Eval] COCO mAP50: 0.8624
+2025-03-07 17:34:49,516 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:34:49,517 - INFO - No improvement for 42 epochs
+2025-03-07 17:34:49,517 - INFO - [Training] Epoch 80/500 started...
+2025-03-07 17:36:06,290 - INFO - [Training] Epoch 80 finished: Average Total Loss = 0.0110, Time = 76.77s, LR = 0.000005
+2025-03-07 17:36:06,290 - INFO - [Training] Epoch 80: Average loss_classifier = 0.0056
+2025-03-07 17:36:06,290 - INFO - [Training] Epoch 80: Average loss_box_reg = 0.0045
+2025-03-07 17:36:06,291 - INFO - [Training] Epoch 80: Average loss_objectness = 0.0003
+2025-03-07 17:36:06,291 - INFO - [Training] Epoch 80: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:36:06,291 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:36:11,092 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:36:11,092 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:36:11,093 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:36:11,093 - INFO - [Eval] Inference - Total time: 4.2096s, Avg time per image: 0.0425s, Max time per image: 0.0442s, FPS: 23.52
+2025-03-07 17:36:11,159 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:36:11,159 - INFO - [Eval] COCO mAP50-95: 0.6035
+2025-03-07 17:36:11,160 - INFO - No improvement for 43 epochs
+2025-03-07 17:36:11,160 - INFO - [Training] Epoch 81/500 started...
+2025-03-07 17:37:27,967 - INFO - [Training] Epoch 81 finished: Average Total Loss = 0.0109, Time = 76.81s, LR = 0.000005
+2025-03-07 17:37:27,967 - INFO - [Training] Epoch 81: Average loss_classifier = 0.0057
+2025-03-07 17:37:27,967 - INFO - [Training] Epoch 81: Average loss_box_reg = 0.0045
+2025-03-07 17:37:27,968 - INFO - [Training] Epoch 81: Average loss_objectness = 0.0003
+2025-03-07 17:37:27,968 - INFO - [Training] Epoch 81: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:37:27,968 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:37:32,753 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:37:32,754 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:37:32,754 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:37:32,754 - INFO - [Eval] Inference - Total time: 4.2155s, Avg time per image: 0.0426s, Max time per image: 0.0436s, FPS: 23.48
+2025-03-07 17:37:32,819 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:37:32,819 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:37:32,820 - INFO - No improvement for 44 epochs
+2025-03-07 17:37:32,820 - INFO - [Training] Epoch 82/500 started...
+2025-03-07 17:38:49,698 - INFO - [Training] Epoch 82 finished: Average Total Loss = 0.0109, Time = 76.88s, LR = 0.000001
+2025-03-07 17:38:49,698 - INFO - [Training] Epoch 82: Average loss_classifier = 0.0057
+2025-03-07 17:38:49,698 - INFO - [Training] Epoch 82: Average loss_box_reg = 0.0045
+2025-03-07 17:38:49,698 - INFO - [Training] Epoch 82: Average loss_objectness = 0.0002
+2025-03-07 17:38:49,698 - INFO - [Training] Epoch 82: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:38:49,698 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:38:54,467 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:38:54,467 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:38:54,467 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:38:54,467 - INFO - [Eval] Inference - Total time: 4.2163s, Avg time per image: 0.0426s, Max time per image: 0.0437s, FPS: 23.48
+2025-03-07 17:38:54,533 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:38:54,533 - INFO - [Eval] COCO mAP50-95: 0.6035
+2025-03-07 17:38:54,533 - INFO - No improvement for 45 epochs
+2025-03-07 17:38:54,534 - INFO - [Training] Epoch 83/500 started...
+2025-03-07 17:40:11,202 - INFO - [Training] Epoch 83 finished: Average Total Loss = 0.0109, Time = 76.67s, LR = 0.000001
+2025-03-07 17:40:11,202 - INFO - [Training] Epoch 83: Average loss_classifier = 0.0057
+2025-03-07 17:40:11,202 - INFO - [Training] Epoch 83: Average loss_box_reg = 0.0044
+2025-03-07 17:40:11,202 - INFO - [Training] Epoch 83: Average loss_objectness = 0.0003
+2025-03-07 17:40:11,202 - INFO - [Training] Epoch 83: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:40:11,202 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:40:15,987 - INFO - [Eval] Overall Precision: 0.8155
+2025-03-07 17:40:15,987 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:40:15,987 - INFO - [Eval] Overall F1 Score:  0.8605
+2025-03-07 17:40:15,987 - INFO - [Eval] Inference - Total time: 4.2114s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-03-07 17:40:16,060 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:40:16,060 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:40:16,061 - INFO - No improvement for 46 epochs
+2025-03-07 17:40:16,062 - INFO - [Training] Epoch 84/500 started...
+2025-03-07 17:41:32,840 - INFO - [Training] Epoch 84 finished: Average Total Loss = 0.0109, Time = 76.78s, LR = 0.000001
+2025-03-07 17:41:32,840 - INFO - [Training] Epoch 84: Average loss_classifier = 0.0056
+2025-03-07 17:41:32,840 - INFO - [Training] Epoch 84: Average loss_box_reg = 0.0045
+2025-03-07 17:41:32,840 - INFO - [Training] Epoch 84: Average loss_objectness = 0.0003
+2025-03-07 17:41:32,840 - INFO - [Training] Epoch 84: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:41:32,840 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:41:37,608 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:41:37,609 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:41:37,609 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:41:37,609 - INFO - [Eval] Inference - Total time: 4.2216s, Avg time per image: 0.0426s, Max time per image: 0.0445s, FPS: 23.45
+2025-03-07 17:41:37,675 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:41:37,675 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:41:37,676 - INFO - No improvement for 47 epochs
+2025-03-07 17:41:37,677 - INFO - [Training] Epoch 85/500 started...
+2025-03-07 17:42:54,450 - INFO - [Training] Epoch 85 finished: Average Total Loss = 0.0109, Time = 76.77s, LR = 0.000001
+2025-03-07 17:42:54,450 - INFO - [Training] Epoch 85: Average loss_classifier = 0.0056
+2025-03-07 17:42:54,450 - INFO - [Training] Epoch 85: Average loss_box_reg = 0.0045
+2025-03-07 17:42:54,450 - INFO - [Training] Epoch 85: Average loss_objectness = 0.0003
+2025-03-07 17:42:54,450 - INFO - [Training] Epoch 85: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:42:54,450 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:42:59,220 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:42:59,220 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:42:59,220 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:42:59,220 - INFO - [Eval] Inference - Total time: 4.2046s, Avg time per image: 0.0425s, Max time per image: 0.0433s, FPS: 23.55
+2025-03-07 17:42:59,287 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:42:59,287 - INFO - [Eval] COCO mAP50-95: 0.6035
+2025-03-07 17:42:59,288 - INFO - No improvement for 48 epochs
+2025-03-07 17:42:59,289 - INFO - [Training] Epoch 86/500 started...
+2025-03-07 17:44:16,082 - INFO - [Training] Epoch 86 finished: Average Total Loss = 0.0109, Time = 76.79s, LR = 0.000001
+2025-03-07 17:44:16,083 - INFO - [Training] Epoch 86: Average loss_classifier = 0.0056
+2025-03-07 17:44:16,083 - INFO - [Training] Epoch 86: Average loss_box_reg = 0.0045
+2025-03-07 17:44:16,083 - INFO - [Training] Epoch 86: Average loss_objectness = 0.0003
+2025-03-07 17:44:16,083 - INFO - [Training] Epoch 86: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:44:16,083 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:44:20,867 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:44:20,867 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:44:20,867 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:44:20,867 - INFO - [Eval] Inference - Total time: 4.2129s, Avg time per image: 0.0426s, Max time per image: 0.0433s, FPS: 23.50
+2025-03-07 17:44:20,935 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:44:20,935 - INFO - [Eval] COCO mAP50-95: 0.6041
+2025-03-07 17:44:20,936 - INFO - No improvement for 49 epochs
+2025-03-07 17:44:20,937 - INFO - [Training] Epoch 87/500 started...
+2025-03-07 17:45:37,776 - INFO - [Training] Epoch 87 finished: Average Total Loss = 0.0110, Time = 76.84s, LR = 0.000001
+2025-03-07 17:45:37,776 - INFO - [Training] Epoch 87: Average loss_classifier = 0.0057
+2025-03-07 17:45:37,776 - INFO - [Training] Epoch 87: Average loss_box_reg = 0.0045
+2025-03-07 17:45:37,776 - INFO - [Training] Epoch 87: Average loss_objectness = 0.0003
+2025-03-07 17:45:37,776 - INFO - [Training] Epoch 87: Average loss_rpn_box_reg = 0.0005
+2025-03-07 17:45:37,776 - INFO - [Validation] Evaluating model on validation set...
+2025-03-07 17:45:42,551 - INFO - [Eval] Overall Precision: 0.8134
+2025-03-07 17:45:42,552 - INFO - [Eval] Overall Recall:    0.9109
+2025-03-07 17:45:42,552 - INFO - [Eval] Overall F1 Score:  0.8594
+2025-03-07 17:45:42,552 - INFO - [Eval] Inference - Total time: 4.2183s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.47
+2025-03-07 17:45:42,618 - INFO - [Eval] COCO mAP50: 0.8623
+2025-03-07 17:45:42,618 - INFO - [Eval] COCO mAP50-95: 0.6035
+2025-03-07 17:45:42,619 - INFO - No improvement for 50 epochs
+2025-03-07 17:45:42,619 - INFO - Early stopping triggered after 50 epochs with no improvement
+2025-03-07 17:45:42,619 - INFO - [Training] Complete. Best epoch: 37 with F1 Score = 0.8647

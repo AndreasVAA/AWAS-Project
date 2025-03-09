@@ -1,0 +1,9 @@
+Best Epoch: 33
+Best F1: 0.8669
+Hyperparameters:
+  Batch Size: 6
+  Learning Rate: 0.005
+  Num Epochs: 50
+  Score Threshold: 0.3
+  IoU Threshold: 0.3
+  COCO mAP50: 0.8778936706704027

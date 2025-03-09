@@ -1,0 +1,16 @@
+Inference Metrics:
+  Total Inference Time: 4.2301 s
+  Average Inference Time per Image: 0.0427 s
+  Max Inference Time per Image: 0.0447 s
+  FPS: 23.40
+
+GPU Memory Usage:
+  Max GPU Memory Allocated: 5316.51 MB
+  GPU Name: NVIDIA GeForce RTX 3070
+  GPU Total Memory: 7870.75 MB
+
+System Memory:
+  Total System Memory: 64179.90 MB
+  Available System Memory: 55983.28 MB
+  CPU Memory Usage (RSS): 1883.75 MB
+  CPU Count: 24
