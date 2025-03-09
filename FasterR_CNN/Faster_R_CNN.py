@@ -27,7 +27,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "testing_agumentations_YOLO_MosaicReducesWithEpochs_rand"  # Change as desired for each run
+run_name = "MoreMetrics_testing_NOAgumentations"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -344,9 +344,6 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
     max_inference_time = max(per_image_times) if per_image_times else 0.0
     fps = total_images / total_inference_time if total_inference_time > 0 else 0.0
 
-    logging.info("[Eval] Evaluation complete!")
-    logging.info("[Eval] Total images processed: %d", total_images)
-    logging.info("[Eval] Aggregate metrics: TP=%d, FP=%d, FN=%d", total_tp, total_fp, total_fn)
     logging.info("[Eval] Overall Precision: %.4f", precision)
     logging.info("[Eval] Overall Recall:    %.4f", recall)
     logging.info("[Eval] Overall F1 Score:  %.4f", f1)
@@ -365,6 +362,7 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
         }
     }
     
+    # -- Compute mAP metrics using pycocotools --
     try:
         from pycocotools.coco import COCO
         from pycocotools.cocoeval import COCOeval
@@ -386,23 +384,29 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
         
         cocoDt = cocoGt.loadRes(dets_path)
         cocoEval = COCOeval(cocoGt, cocoDt, iouType='bbox')
-        cocoEval.params.iouThrs = [0.5]
+        # Set multiple IoU thresholds for mAP50-95 (default in COCO evaluation)
+        cocoEval.params.iouThrs = np.linspace(0.5, 0.95, 10)
         cocoEval.evaluate()
         cocoEval.accumulate()
         cocoEval.summarize()
-        coco_map50 = cocoEval.stats[0]
-        eval_metrics["coco"] = {"mAP50": coco_map50}
-        logging.info("[Eval] COCO mAP50: %.4f", coco_map50)
+        mAP50 = cocoEval.stats[1]  # sometimes index 1 is used for mAP50
+        mAP50_95 = cocoEval.stats[0]  # mean AP over IoU thresholds
+        eval_metrics["coco"] = {"mAP50": mAP50, "mAP50-95": mAP50_95}
+        logging.info("[Eval] COCO mAP50: %.4f", mAP50)
+        logging.info("[Eval] COCO mAP50-95: %.4f", mAP50_95)
         os.remove(gt_path)
         os.remove(dets_path)
     except Exception as e:
         logging.warning("COCO evaluation skipped: " + str(e))
-        eval_metrics["coco"] = {"mAP50": 0.0}
+        eval_metrics["coco"] = {"mAP50": 0.0, "mAP50-95": 0.0}
 
     return eval_metrics
 
 #############################################
 # Training Module with Metric-Based Model Selection
+#############################################
+#############################################
+# Modified Training Function: Detailed Loss Tracking
 #############################################
 def train_model(train_loader, val_loader, model, device, num_epochs=500, learning_rate=0.005,
                 score_threshold=0.3, iou_threshold=0.3):
@@ -418,102 +422,97 @@ def train_model(train_loader, val_loader, model, device, num_epochs=500, learnin
     epochs_without_improvement = 0
     early_stop_patience = 50
     target_decay_epoch = 20
-
-    # Define warmup epochs.
     warmup_epochs = 3
 
-    # If the dataset supports mosaic probability, store its initial value.
+    # Store initial mosaic probability if available.
     if hasattr(train_loader.dataset, 'mosaic_prob'):
         if not hasattr(train_loader.dataset, 'initial_mosaic_prob'):
             train_loader.dataset.initial_mosaic_prob = train_loader.dataset.mosaic_prob
 
-    try:
-        for epoch in range(num_epochs):
-            # -- Warmup Learning Rate --
-            if epoch < warmup_epochs:
-                warmup_lr = learning_rate * (epoch + 1) / warmup_epochs
-                for param_group in optimizer.param_groups:
-                    param_group['lr'] = warmup_lr
-                logging.info("Epoch %d: Warmup learning rate set to %.6f", epoch+1, warmup_lr)
-            # -- Mosaic Probability Decay (Quadratic) --
-            # Set the target decay epoch to 50.
+    # For loss breakdown, we accumulate each loss component over the epoch.
+    for epoch in range(num_epochs):
+        if epoch < warmup_epochs:
+            warmup_lr = learning_rate * (epoch + 1) / warmup_epochs
+            for param_group in optimizer.param_groups:
+                param_group['lr'] = warmup_lr
+            logging.info("Epoch %d: Warmup learning rate set to %.6f", epoch+1, warmup_lr)
 
+        if hasattr(train_loader.dataset, 'mosaic_prob'):
+            init_prob = train_loader.dataset.initial_mosaic_prob
+            decay_factor = max(1 - (epoch / target_decay_epoch) ** 2, 0.1)
+            new_prob = init_prob * decay_factor
+            train_loader.dataset.mosaic_prob = new_prob
+            logging.info("Epoch %d: Updated mosaic probability to %.4f", epoch+1, new_prob)
 
-            if hasattr(train_loader.dataset, 'mosaic_prob'):
-                init_prob = train_loader.dataset.initial_mosaic_prob  # initial mosaic probability
-                # Compute a quadratic decay factor, but don't let it fall below 0.1.
-                decay_factor = max(1 - (epoch / target_decay_epoch) ** 2, 0.1)
-                new_prob = init_prob * decay_factor
-                train_loader.dataset.mosaic_prob = new_prob
-                logging.info("Epoch %d: Updated mosaic probability to %.4f", epoch+1, new_prob)
+        model.train()
+        epoch_loss = 0.0
+        # Dictionary to accumulate individual loss components.
+        epoch_loss_components = {}
+        start_time = time.time()
+        logging.info("[Training] Epoch %d/%d started...", epoch+1, num_epochs)
 
+        for batch_idx, (images, targets) in enumerate(train_loader):
+            if epoch == 0 and batch_idx == 0:
+                print("DEBUG: First sample target in training batch:", targets[0])
+            images = [img.to(device) for img in images]
+            targets = [{k: v.to(device) for k, v in target.items()} for target in targets]
 
-            model.train()
-            epoch_loss = 0.0
-            start_time = time.time()
-            logging.info("[Training] Epoch %d/%d started...", epoch+1, num_epochs)
+            loss_dict = model(images, targets)
+            if isinstance(loss_dict, list):
+                logging.error("[Training] Error: Model returned predictions during training.")
+                continue
 
-            for batch_idx, (images, targets) in enumerate(train_loader):
-                if epoch == 0 and batch_idx == 0:
-                    print("DEBUG: First sample target in training batch:", targets[0])
-                for i, target in enumerate(targets):
-                    if target["boxes"].numel() == 0:
-                        logging.debug("[Training] Sample %d in batch %d has no bounding boxes!", i, batch_idx)
-                images = [img.to(device) for img in images]
-                targets = [{k: v.to(device) for k, v in target.items()} for target in targets]
+            # Log each component (e.g., "loss_classifier", "loss_box_reg", etc.)
+            for key, loss_val in loss_dict.items():
+                epoch_loss_components.setdefault(key, 0.0)
+                epoch_loss_components[key] += loss_val.item()
 
-                loss_dict = model(images, targets)
-                if isinstance(loss_dict, list):
-                    logging.error("[Training] Error: Model returned predictions during training.")
-                    continue
-                losses = sum(loss for loss in loss_dict.values())
-                epoch_loss += losses.item()
+            batch_loss = sum(loss for loss in loss_dict.values())
+            epoch_loss += batch_loss.item()
 
-                optimizer.zero_grad()
-                losses.backward()
-                optimizer.step()
+            optimizer.zero_grad()
+            batch_loss.backward()
+            optimizer.step()
 
-            avg_loss = epoch_loss / len(train_loader)
-            elapsed = time.time() - start_time
-            current_lr = optimizer.param_groups[0]['lr']
-            logging.info("[Training] Epoch %d finished: Average Loss = %.4f, Time = %.2fs, LR = %.6f",
-                         epoch+1, avg_loss, elapsed, current_lr)
+        avg_loss = epoch_loss / len(train_loader)
+        elapsed = time.time() - start_time
+        current_lr = optimizer.param_groups[0]['lr']
+        logging.info("[Training] Epoch %d finished: Average Total Loss = %.4f, Time = %.2fs, LR = %.6f",
+                     epoch+1, avg_loss, elapsed, current_lr)
+        # Log average loss per component.
+        for key, total_val in epoch_loss_components.items():
+            avg_component = total_val / len(train_loader)
+            logging.info("[Training] Epoch %d: Average %s = %.4f", epoch+1, key, avg_component)
 
-            logging.info("[Validation] Evaluating model on validation set...")
-            current_eval = evaluate_model(model, val_loader, device, score_threshold, iou_threshold)
-            current_f1 = current_eval["f1"]
+        logging.info("[Validation] Evaluating model on validation set...")
+        current_eval = evaluate_model(model, val_loader, device, score_threshold, iou_threshold)
+        current_f1 = current_eval["f1"]
 
-            lr_scheduler.step(current_f1)
+        lr_scheduler.step(current_f1)
 
-            if current_f1 > best_f1:
-                best_f1 = current_f1
-                best_epoch = epoch + 1
-                best_eval_metrics = current_eval
-                best_model_path = os.path.join(run_folder, "best_model_absolute.pth")
-                torch.save({
-                    'epoch': epoch+1,
-                    'model_state_dict': model.state_dict(),
-                    'optimizer_state_dict': optimizer.state_dict(),
-                    'f1': current_f1,
-                }, best_model_path)
-                logging.info("--> [Checkpoint] Best model updated at epoch %d with F1 = %.4f", best_epoch, best_f1)
-                epochs_without_improvement = 0  # reset counter
-            else:
-                epochs_without_improvement += 1
-                logging.info("No improvement for %d epochs", epochs_without_improvement)
-                if epochs_without_improvement >= early_stop_patience:
-                    logging.info("Early stopping triggered after %d epochs with no improvement", early_stop_patience)
-                    break
-
-    except KeyboardInterrupt:
-        logging.info("Training interrupted. Saving current model state.")
-        interrupt_path = os.path.join(run_folder, "model_interrupt.pth")
-        torch.save(model.state_dict(), interrupt_path)
-        raise
+        if current_f1 > best_f1:
+            best_f1 = current_f1
+            best_epoch = epoch + 1
+            best_eval_metrics = current_eval
+            best_model_path = os.path.join(run_folder, "best_model_absolute.pth")
+            torch.save({
+                'epoch': epoch+1,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'f1': current_f1,
+            }, best_model_path)
+            logging.info("--> [Checkpoint] Best model updated at epoch %d with F1 = %.4f", best_epoch, best_f1)
+            epochs_without_improvement = 0
+        else:
+            epochs_without_improvement += 1
+            logging.info("No improvement for %d epochs", epochs_without_improvement)
+            if epochs_without_improvement >= early_stop_patience:
+                logging.info("Early stopping triggered after %d epochs with no improvement", early_stop_patience)
+                break
 
     logging.info("[Training] Complete. Best epoch: %d with F1 Score = %.4f", best_epoch, best_f1)
     
-    # Write summary files including hyperparameters and evaluation metrics for reproducibility.
+    # Save a detailed summary.
     metrics_summary_path = os.path.join(run_folder, "metrics_summary.txt")
     with open(metrics_summary_path, "w") as f:
         f.write(f"Best Epoch: {best_epoch}\n")
@@ -526,18 +525,28 @@ def train_model(train_loader, val_loader, model, device, num_epochs=500, learnin
         else:
             f.write("Overall Precision: N/A\n")
             f.write("Overall Recall:    N/A\n")
+        # Log training hyperparameters.
         f.write("Hyperparameters:\n")
         f.write(f"  Batch Size: {train_loader.batch_size}\n")
-        f.write(f"  Learning Rate: {learning_rate}\n")
+        f.write(f"  Initial Learning Rate: {learning_rate}\n")
         f.write(f"  Num Epochs: {num_epochs}\n")
         f.write(f"  Score Threshold: {score_threshold}\n")
         f.write(f"  IoU Threshold: {iou_threshold}\n")
         if best_eval_metrics and "coco" in best_eval_metrics:
-            coco_map50 = best_eval_metrics["coco"].get("mAP50", "N/A")
-            f.write(f"  COCO mAP50: {coco_map50}\n")
+            coco_mAP50 = best_eval_metrics["coco"].get("mAP50", "N/A")
+            coco_mAP50_95 = best_eval_metrics["coco"].get("mAP50-95", "N/A")
+            f.write(f"  COCO mAP50: {coco_mAP50}\n")
+            f.write(f"  COCO mAP50-95: {coco_mAP50_95}\n")
         else:
-            f.write("  COCO mAP50: N/A (pycocotools not installed or evaluation skipped)\n")
+            f.write("  COCO mAP: N/A (pycocotools not installed or evaluation skipped)\n")
 
+        # Optionally, add the average loss breakdown per component if you logged it.
+        f.write("\nLoss Breakdown per Epoch (averaged over batches):\n")
+        for key, total_val in epoch_loss_components.items():
+            avg_component = total_val / len(train_loader)
+            f.write(f"  {key}: {avg_component:.4f}\n")
+
+    # Save system summary (memory, GPU, etc.) as before.
     system_summary_path = os.path.join(run_folder, "system_summary.txt")
     with open(system_summary_path, "w") as f:
         if best_eval_metrics:
@@ -571,6 +580,7 @@ def train_model(train_loader, val_loader, model, device, num_epochs=500, learnin
 
     return model, best_epoch
 
+
 #############################################
 # Main: Running the Training Pipeline
 #############################################
@@ -582,7 +592,9 @@ if __name__ == '__main__':
 
     logging.info("[Main] Initializing datasets...")
 
+    
     # === Training with Augmentation ===
+    """
     train_dataset = AugmentedDataset(
         train_images_dir, 
         train_labels_dir, 
@@ -592,10 +604,11 @@ if __name__ == '__main__':
         mixup_prob=0.2, 
         mixup_alpha=32
     )
+    """
 
     # === Training without Augmentation ===
     # To disable augmentation, you could use AbsoluteDataset:
-    # train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
+    train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
     
     val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
 
