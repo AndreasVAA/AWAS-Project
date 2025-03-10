@@ -1,0 +1,14 @@
+EarlyStopping: Training stopped early as no improvement observed in last 100 epochs. Best results observed at epoch 381, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+481 epochs completed in 2.492 hours.
+Optimizer stripped from runs/YOLO11_modelType_N_1280x960_No_Augment/weights/last.pt, 5.6MB
+Optimizer stripped from runs/YOLO11_modelType_N_1280x960_No_Augment/weights/best.pt, 5.6MB
+
+Validating runs/YOLO11_modelType_N_1280x960_No_Augment/weights/best.pt...
+Ultralytics 8.3.85 🚀 Python-3.9.21 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 3070, 7871MiB)
+YOLO11n summary (fused): 100 layers, 2,582,347 parameters, 0 gradients, 6.3 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 17/17 [00:00<00:00, 22.41it/s]
+                   all         99        359      0.855      0.727      0.851      0.616
+Speed: 0.3ms preprocess, 3.6ms inference, 0.0ms loss, 1.2ms postprocess per image
+Results saved to runs/YOLO11_modelType_N_1280x960_No_Augment
