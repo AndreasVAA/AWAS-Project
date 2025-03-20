@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import os
 
-def train_model(model_path="yolo11x.pt", config_path="./dataConf.yaml", **kwargs):
+def train_model(model_path="yolo11x.pt", config_path="./dataConf.yaml"):
     """
     Train the YOLO model using the specified configuration.
     Allows overriding default parameters via keyword arguments.
@@ -61,17 +61,17 @@ def train_model(model_path="yolo11x.pt", config_path="./dataConf.yaml", **kwargs
         val=True,
         split="val",
 
-        **kwargs
+        
     )
     return results
 
-def predict_model(model_path,
-                  source,
+def predict_model(model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs/YOLO11_modelType_M_1280x960/weights/best.pt",
+                  source = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images/gunnerus_vertikal_2_ny_126.jpg",
                   imgsz=(1280, 960),
                   device="cuda",
                   visualize=True,
                   project="Interference",
-                  name="YOLO11M_1280x960",
+                  name="Testing_Image_when cosndiering_cropping_input",
                   show=True,
                   save=True,
                   save_txt=True,
@@ -82,7 +82,7 @@ def predict_model(model_path,
     Run inference on the given source (image path, video, etc.) using the YOLO model.
     Returns a list of Results objects.
     """
-    model = YOLO(model_path)
+    model = YOLO(model_path, "detect")
     results = model(source,
                     imgsz=imgsz,
                     device=device,
@@ -103,8 +103,5 @@ if __name__ == "__main__":
     #print("Training completed. Results:", train_results)
 
     # Example usage for prediction:
-    pred_results = predict_model(model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs/YOLO11_modelType_M_1280x960/weights/best.pt",
-                                 source="/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images/zooplanktonhoristontal2_onsdag_4.jpg", 
-                                 
-                            )
+    pred_results = predict_model()
     print("Prediction completed. Results:", pred_results)
