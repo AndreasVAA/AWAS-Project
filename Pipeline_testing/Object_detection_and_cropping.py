@@ -473,7 +473,11 @@ def predict_with_model(model_path,
             project,
             name,
             save,
-            save_txt
+            save_txt,
+            visualize,
+            show_conf,
+            show_boxes,
+            show_labels,
             
             ):
     """
@@ -486,20 +490,21 @@ def predict_with_model(model_path,
                     device=device,
                     project=project,
                     name=name,
-                    save =save,
+                    save=save,
                     save_txt=save_txt,
-                    save_conf=True
+                    save_conf=True,
+                    visualize = visualize,
+                    show_conf = show_conf,
+                    show_boxes = show_boxes,
+                    show_labels = show_labels
                    
                     
                     )
     return results
 
-# =============================================================================
-# Main Block - Mode Switch
-# Set mode = "evaluation" for sample testing, or "production" for full processing.
-# =============================================================================
-if __name__ == '__main__':
-
+def run_interference_and_cropping():
+    
+    
     YOLO_results = predict_with_model(model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs/YOLO11_modelType_M_1280x960/weights/best.pt",
                   source="/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
                   imgsz=(1280,960),
@@ -508,12 +513,17 @@ if __name__ == '__main__':
                   name = "YOLO_OUTPUT_BEFORE_CROPPING",
                   save = True,
                   save_txt=True,
+                  visualize = False,
+                  show_conf = False,
+                  show_boxes = False,
+                  show_labels = False
+                 
                   
                   )
 
 
     # Updated paths:
-    image_folder = "/home/itk/Desktop/Andreas/AWAS-Project/Pipeline_testing/Testing_pipeline_Object_part/YOLO_OUTPUT_BEFORE_CROPPING"
+    image_folder = "/home/itk/Desktop/Andreas/AWAS-Project/Pipeline_testing/Testing_pipeline_Object_part/YOLO_OUTPUT_BEFORE_CROPPING" ## Use same path as the input for YOLO
     label_folder = "/home/itk/Desktop/Andreas/AWAS-Project/Pipeline_testing/Testing_pipeline_Object_part/YOLO_OUTPUT_BEFORE_CROPPING/labels"
 
     output_dir = "/home/itk/Desktop/Andreas/AWAS-Project/Pipeline_testing/Testing_pipeline_Object_part/Cropped_results"
@@ -541,5 +551,12 @@ if __name__ == '__main__':
                        fixed_pad_ratio=FIXED_PAD_RATIO, fill_mode=FILL_MODE, conf_threshold=CONF_THRESHOLD)
     else:
         print("Invalid mode. Choose 'evaluation' or 'production'.")
+    print("Interference and cropping complete.")
 
+# =============================================================================
+# Main Block - Mode Switch
+# Set mode = "evaluation" for sample testing, or "production" for full processing.
+# =============================================================================
+if __name__ == '__main__':
+    run_interference_and_cropping()
 
