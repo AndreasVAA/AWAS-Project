@@ -1,0 +1,4 @@
+# Ignore all common image file types
+
+# Option 1: Ignore the entire folder named "provided"
+AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/
