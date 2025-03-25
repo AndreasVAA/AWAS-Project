@@ -1,0 +1,13 @@
+EarlyStopping: Training stopped early as no improvement observed in last 100 epochs. Best results observed at epoch 126, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+226 epochs completed in 9.653 hours.
+Optimizer stripped from runs/RT_DETR_TESTING/weights/last.pt, 66.2MB
+Optimizer stripped from runs/RT_DETR_TESTING/weights/best.pt, 66.2MB
+
+Validating runs/RT_DETR_TESTING/weights/best.pt...
+Ultralytics 8.3.85 🚀 Python-3.9.21 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 3070, 7871MiB)
+rt-detr-l summary: 302 layers, 31,985,795 parameters, 0 gradients, 103.4 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 50/50 [00:03<00:00, 13.97it/s]
+                   all         99        359      0.899      0.867       0.93      0.674
+Speed: 0.4ms preprocess, 33.2ms inference, 0.0ms loss, 0.2ms postprocess per image

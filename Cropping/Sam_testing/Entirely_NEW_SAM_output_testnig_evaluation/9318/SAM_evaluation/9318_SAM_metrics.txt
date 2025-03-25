@@ -1,0 +1,14 @@
+Global target size: (1280, 960)
+Resized image size: 1280x960
+Classifier target size: (224, 224)
+Using no padding for segmentation.
+
+
+Detection 1:
+  Normalized bbox: (0.3316175, 0.3261725, 0.5698525, 0.6445315)
+  Absolute bbox: (424, 313, 729, 618)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/9318/SAM_evaluation/9318_d1_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/9318/SAM_evaluation/9318_d1_roi_masked.jpg
+
+
+Composite segmentation overlay saved as: Entirely_NEW_SAM_output_testnig_evaluation/9318/SAM_evaluation/composite_segmentation_9318.jpg

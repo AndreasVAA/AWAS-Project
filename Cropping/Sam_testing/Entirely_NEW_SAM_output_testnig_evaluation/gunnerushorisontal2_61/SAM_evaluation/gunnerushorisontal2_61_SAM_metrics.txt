@@ -1,0 +1,21 @@
+Global target size: (1280, 960)
+Resized image size: 1280x960
+Classifier target size: (224, 224)
+Using no padding for segmentation.
+
+
+Detection 1:
+  Normalized bbox: (0.553172, 0.6355725, 0.6166039999999999, 0.7562194999999999)
+  Absolute bbox: (708, 610, 789, 725)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerushorisontal2_61/SAM_evaluation/gunnerushorisontal2_61_d1_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerushorisontal2_61/SAM_evaluation/gunnerushorisontal2_61_d1_roi_masked.jpg
+
+
+Detection 2:
+  Normalized bbox: (0.3843285, 0.0024874999999999967, 0.4589555, 0.08955250000000001)
+  Absolute bbox: (491, 2, 587, 85)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerushorisontal2_61/SAM_evaluation/gunnerushorisontal2_61_d2_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerushorisontal2_61/SAM_evaluation/gunnerushorisontal2_61_d2_roi_masked.jpg
+
+
+Composite segmentation overlay saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerushorisontal2_61/SAM_evaluation/composite_segmentation_gunnerushorisontal2_61.jpg

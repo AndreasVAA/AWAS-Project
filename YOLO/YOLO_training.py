@@ -1,26 +1,26 @@
 from ultralytics import YOLO
 import os
 
-def train_model(model_path="yolo11x.pt", config_path="./dataConf.yaml"):
+def train_model(model_path="yolo11m.pt", config_path="./dataConf_multiple_Classes.yaml"):
     """
     Train the YOLO model using the specified configuration.
     Allows overriding default parameters via keyword arguments.
     """
     print("Working dir -", os.getcwd())
-    model = YOLO(model_path)
+    model = YOLO(model_path, task="detect")
     results = model.train(
         # Data and model settings
         data=config_path,
-        epochs=500,
-        batch=1,
-        imgsz=(1280, 960),
+        epochs=1000,
+        batch=6,
+        imgsz=960,
 
         # Experiment output
-        project="runs",
-        name="YOLO11_modelType_X_1280x960",
+        project="runs_with_mutiple_classes",
+        name="YOLO11M_960x960",
 
         # Optimization settings
-        optimizer="SGD",
+        optimizer="auto",
         seed=0,
         pretrained=True,
 
@@ -33,11 +33,11 @@ def train_model(model_path="yolo11x.pt", config_path="./dataConf.yaml"):
         patience=100,
         save=True,
         save_period=-1,
-        verbose=True,
+        verbose=False,
         deterministic=True,
 
         # Data augmentation and scheduling
-        single_cls=True,
+        single_cls=False,
         rect=False,
         cos_lr=False,
         mosaic=1,
@@ -60,7 +60,6 @@ def train_model(model_path="yolo11x.pt", config_path="./dataConf.yaml"):
         # Inference/validation settings
         val=True,
         split="val",
-
         
     )
     return results
@@ -71,7 +70,7 @@ def predict_model(model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs
                   device="cuda",
                   visualize=True,
                   project="Interference",
-                  name="Testing_Image_when cosndiering_cropping_input",
+                  name="DUM_Testing",
                   show=True,
                   save=True,
                   save_txt=True,
@@ -99,9 +98,9 @@ def predict_model(model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs
 
 if __name__ == "__main__":
     # Example usage for training:
-    #train_results = train_model()
-    #print("Training completed. Results:", train_results)
+    train_results = train_model()
+    print("Training completed. Results:", train_results)
 
     # Example usage for prediction:
-    pred_results = predict_model()
-    print("Prediction completed. Results:", pred_results)
+    #pred_results = predict_model()
+    #print("Prediction completed. Results:", pred_results)

@@ -2,6 +2,7 @@
 
 
 /**/*.pt
+/**/*.pth
 Cropping/**/*.jpg
 
 # Option 1: Ignore the entire folder named "provided"
@@ -12,4 +13,5 @@ Pipeline_testing/
 Nalia_some_images_with_labels_labels_could_be_better/
 Cropping/Padding_testing/Cropped_images_multiple_classes_train_use_for_classifier/
 Cropping/Padding_testing/Cropped_images_multiple_classes_val_used_for_classifier/
+
 

@@ -488,9 +488,9 @@ def run_production(image_folder, label_folder, output_dir,
 # =============================================================================
 if __name__ == '__main__':
     # Updated paths:
-    image_folder = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images"
-    label_folder = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/labels"
-    output_dir = "/home/itk/Desktop/Andreas/AWAS-Project/Cropping/Cropped_images_multiple_classes_train"
+    image_folder = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images"
+    label_folder = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels"
+    output_dir = "/home/itk/Desktop/Andreas/AWAS-Project/Cropping/Cropped_images_multiple_classes_val"
     
     GLOBAL_TARGET_SIZE = (1280,960)
     CLASSIFIER_TARGET_SIZE = (224,224)  # For padding reference; final crop is not resized further.

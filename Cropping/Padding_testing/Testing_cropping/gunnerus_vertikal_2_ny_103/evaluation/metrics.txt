@@ -1,0 +1,50 @@
+Global target size (input resize): (1280, 960)
+Resized image size: 1280x960
+Classifier target size (for padding reference): (224, 224)
+Fixed padding ratio: 12.5%
+
+
+Detection 1:
+  Normalized bbox: (0.20343099999999997, 0.489107, 0.367647, 0.679739)
+  Absolute bbox: (260, 469, 470, 652)
+  Fixed padded bbox: (234, 443, 496, 678) (fixed_pad: 26)
+  Dynamic extra padding (pixels): left=0, right=0, top=0, bottom=0
+  Final padded bbox: (234, 443, 496, 678)
+  Final crop size (extracted from resized image): 262x235
+
+
+Detection 2:
+  Normalized bbox: (0.715686, 0.4270155, 0.832516, 0.6928105)
+  Absolute bbox: (916, 409, 1065, 665)
+  Fixed padded bbox: (884, 377, 1097, 697) (fixed_pad: 32)
+  Dynamic extra padding (pixels): left=5, right=6, top=0, bottom=0
+  Final padded bbox: (879, 377, 1103, 697)
+  Final crop size (extracted from resized image): 224x320
+
+
+Detection 3:
+  Normalized bbox: (0.8325165, 0.4793029999999999, 0.9975495, 0.679739)
+  Absolute bbox: (1065, 460, 1276, 652)
+  Fixed padded bbox: (1039, 434, 1302, 678) (fixed_pad: 26)
+  Dynamic extra padding (pixels): left=0, right=0, top=0, bottom=0
+  Final padded bbox: (1039, 434, 1302, 678)
+  Final crop size (extracted from resized image): 263x244
+
+
+Detection 4:
+  Normalized bbox: (0.053921, 0.38888900000000004, 0.223039, 0.691721)
+  Absolute bbox: (69, 373, 285, 664)
+  Fixed padded bbox: (33, 337, 321, 700) (fixed_pad: 36)
+  Dynamic extra padding (pixels): left=0, right=0, top=0, bottom=0
+  Final padded bbox: (33, 337, 321, 700)
+  Final crop size (extracted from resized image): 288x363
+
+
+Detection 5:
+  Normalized bbox: (0.761438, 0.1274515, 0.93219, 0.2930285)
+  Absolute bbox: (974, 122, 1193, 281)
+  Fixed padded bbox: (947, 95, 1220, 308) (fixed_pad: 27)
+  Dynamic extra padding (pixels): left=0, right=0, top=5, bottom=6
+  Final padded bbox: (947, 90, 1220, 314)
+  Final crop size (extracted from resized image): 273x224
+

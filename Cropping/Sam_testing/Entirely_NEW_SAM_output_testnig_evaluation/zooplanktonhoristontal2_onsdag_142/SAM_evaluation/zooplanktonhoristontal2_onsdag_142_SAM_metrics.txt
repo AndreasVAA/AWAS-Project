@@ -1,0 +1,14 @@
+Global target size: (1280, 960)
+Resized image size: 1280x960
+Classifier target size: (224, 224)
+Using no padding for segmentation.
+
+
+Detection 1:
+  Normalized bbox: (0.08905199999999999, 0.4978214999999999, 0.125, 0.5544665)
+  Absolute bbox: (113, 477, 160, 532)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/zooplanktonhoristontal2_onsdag_142/SAM_evaluation/zooplanktonhoristontal2_onsdag_142_d1_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/zooplanktonhoristontal2_onsdag_142/SAM_evaluation/zooplanktonhoristontal2_onsdag_142_d1_roi_masked.jpg
+
+
+Composite segmentation overlay saved as: Entirely_NEW_SAM_output_testnig_evaluation/zooplanktonhoristontal2_onsdag_142/SAM_evaluation/composite_segmentation_zooplanktonhoristontal2_onsdag_142.jpg

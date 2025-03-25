@@ -1,0 +1,14 @@
+Global target size (input resize): (1280, 960)
+Resized image size: 1280x960
+Classifier target size (for padding reference): (224, 224)
+Fixed padding ratio: 12.5%
+
+
+Detection 1:
+  Normalized bbox: (0.34687500000000004, 0.4956145, 0.574449, 0.7127195)
+  Absolute bbox: (444, 475, 735, 684)
+  Fixed padded bbox: (408, 439, 771, 720) (fixed_pad: 36)
+  Dynamic extra padding (pixels): left=0, right=0, top=0, bottom=0
+  Final padded bbox: (408, 439, 771, 720)
+  Final crop size (extracted from resized image): 363x281
+

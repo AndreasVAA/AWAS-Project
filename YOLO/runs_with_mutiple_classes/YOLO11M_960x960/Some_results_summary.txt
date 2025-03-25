@@ -1,0 +1,74 @@
+EarlyStopping: Training stopped early as no improvement observed in last 100 epochs. Best results observed at epoch 580, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+680 epochs completed in 6.294 hours.
+Optimizer stripped from runs_with_mutiple_classes/YOLO11M_960x960/weights/last.pt, 40.6MB
+Optimizer stripped from runs_with_mutiple_classes/YOLO11M_960x960/weights/best.pt, 40.6MB
+
+Validating runs_with_mutiple_classes/YOLO11M_960x960/weights/best.pt...
+Ultralytics 8.3.85 🚀 Python-3.9.21 torch-2.6.0+cu124 CUDA:0 (NVIDIA GeForce RTX 3070, 7871MiB)
+YOLO11m summary (fused): 125 layers, 20,033,887 parameters, 0 gradients, 67.7 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 9/9 [00:01<00:00,  6.60it/s]
+                   all         99        359      0.868      0.833      0.868      0.623
+Speed: 0.2ms preprocess, 8.6ms inference, 0.0ms loss, 1.5ms postprocess per image
+Results saved to runs_with_mutiple_classes/YOLO11M_960x960
+Training completed. Results: ultralytics.utils.metrics.DetMetrics object with attributes:
+
+
+model = YOLO(model_path, task="detect")
+    results = model.train(
+        # Data and model settings
+        data=config_path,
+        epochs=1000,
+        batch=6,
+        imgsz=960,
+
+        # Experiment output
+        project="runs_with_mutiple_classes",
+        name="YOLO11M_960x960",
+
+        # Optimization settings
+        optimizer="auto",
+        seed=0,
+        pretrained=True,
+
+        # Hardware and performance
+        device=None,
+        workers=8,
+        amp=True,
+
+        # Additional training hyperparameters
+        patience=100,
+        save=True,
+        save_period=-1,
+        verbose=False,
+        deterministic=True,
+
+        # Data augmentation and scheduling
+        single_cls=False,
+        rect=False,
+        cos_lr=False,
+        mosaic=1,
+        mixup=0.0,
+        auto_augment="randaugment",
+        erasing=0.4,
+        hsv_h=0.7,
+        hsv_s=0.015,
+        hsv_v=0.4,
+        translate=0.1,
+        scale=0.5,
+        fliplr=0.5,
+        crop_fraction=1,
+                                     
+        # Loss function weights and other parameters
+        lr0=0.005,
+        momentum=0.9,
+        weight_decay=0.005,
+
+        # Inference/validation settings
+        val=True,
+        split="val",
+
+        
+    )
+    return results

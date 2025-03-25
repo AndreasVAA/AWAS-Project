@@ -1,0 +1,21 @@
+Global target size: (1280, 960)
+Resized image size: 1280x960
+Classifier target size: (224, 224)
+Using no padding for segmentation.
+
+
+Detection 1:
+  Normalized bbox: (0.04338249999999999, 0.5917965, 0.2029415, 0.7802735)
+  Absolute bbox: (55, 568, 259, 749)
+  Mask saved at: SAM_output_testnig_evaluation/6145/SAM_evaluation/detection_1_mask.png
+  Cropped instance saved at: SAM_output_testnig_evaluation/6145/SAM_evaluation/detection_1_crop.jpg
+
+
+Detection 2:
+  Normalized bbox: (0.7441180000000001, 0.267578, 0.960294, 0.545898)
+  Absolute bbox: (952, 256, 1229, 524)
+  Mask saved at: SAM_output_testnig_evaluation/6145/SAM_evaluation/detection_2_mask.png
+  Cropped instance saved at: SAM_output_testnig_evaluation/6145/SAM_evaluation/detection_2_crop.jpg
+
+
+Composite segmentation overlay saved at: SAM_output_testnig_evaluation/6145/SAM_evaluation/all_segmentations.jpg

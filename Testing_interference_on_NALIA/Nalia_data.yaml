@@ -1,0 +1,10 @@
+# data.yaml
+train: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train
+val: /home/itk/Desktop/Andreas/AWAS-Project/Nalia_some_images_with_labels_labels_could_be_better/val
+
+
+# Number of classes
+nc: 1 # This will be filled by the script below
+
+# Class names (if available)
+names: [Plankton]

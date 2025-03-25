@@ -1,15 +1,16 @@
 import json
 from ultralytics import YOLO
 import time
+from ultralytics import RTDETR
 
 # Load model
-model = YOLO("/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs/YOLO11_modelType_M_1280x960/weights/best.pt")
+model = RTDETR("/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/runs/RT_DETR_TESTING/weights/best.pt")
 
 # Measure inference time
 start_time = time.time()
 
 # Run test
-results = model.val(data="/home/itk/Desktop/Andreas/AWAS-Project/Testing_interference_on_NALIA/Nalia_data.yaml", batch = 3, imgsz = (1280,960))
+results = model.val(data="/home/itk/Desktop/Andreas/AWAS-Project/Testing_interference_on_NALIA/Nalia_data.yaml", batch = 6, imgsz = (1280,960))
 
 end_time = time.time()
 inference_time = end_time - start_time

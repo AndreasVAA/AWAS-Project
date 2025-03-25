@@ -1,0 +1,10 @@
+train: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images # Change depending on computer
+val: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images #
+
+nc: 5
+names:
+  0: "Tripos longipes"
+  1: "Tripos lusus"
+  2: "Chaetoceros"
+  3: "Tripos lineatum"
+  4: "Coscinodiscus"

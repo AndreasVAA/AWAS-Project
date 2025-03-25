@@ -1,0 +1,56 @@
+Global target size: (1280, 960)
+Resized image size: 1280x960
+Classifier target size: (224, 224)
+Using no padding for segmentation.
+
+
+Detection 1:
+  Normalized bbox: (0.449347, 0.35511950000000003, 0.538399, 0.6241825)
+  Absolute bbox: (575, 340, 689, 599)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d1_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d1_roi_masked.jpg
+
+
+Detection 2:
+  Normalized bbox: (0.6428985, 0.1039265, 0.7990195, 0.33986950000000005)
+  Absolute bbox: (822, 99, 1022, 326)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d2_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d2_roi_masked.jpg
+
+
+Detection 3:
+  Normalized bbox: (0.23120900000000003, 0.59695, 0.45150100000000004, 0.767974)
+  Absolute bbox: (295, 573, 577, 737)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d3_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d3_roi_masked.jpg
+
+
+Detection 4:
+  Normalized bbox: (0.31781000000000004, 0.5435725, 0.54157, 0.6775595000000001)
+  Absolute bbox: (406, 521, 693, 650)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d4_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d4_roi_masked.jpg
+
+
+Detection 5:
+  Normalized bbox: (0.3285215, 0.6408780000000001, 0.4107965, 1.0)
+  Absolute bbox: (420, 615, 525, 960)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d5_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d5_roi_masked.jpg
+
+
+Detection 6:
+  Normalized bbox: (0.8611120000000001, 0.0, 1.0, 0.22549)
+  Absolute bbox: (1102, 0, 1280, 216)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d6_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d6_roi_masked.jpg
+
+
+Detection 7:
+  Normalized bbox: (0.851308, 0.0010895000000000002, 1.0, 0.1056645)
+  Absolute bbox: (1089, 1, 1280, 101)
+  Segmentation mask saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d7_segmask.png
+  ROI masked image saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/gunnerus_vertikal_2_ny_126_d7_roi_masked.jpg
+
+
+Composite segmentation overlay saved as: Entirely_NEW_SAM_output_testnig_evaluation/gunnerus_vertikal_2_ny_126/SAM_evaluation/composite_segmentation_gunnerus_vertikal_2_ny_126.jpg
