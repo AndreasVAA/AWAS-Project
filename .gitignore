@@ -4,6 +4,8 @@
 /**/*.pt
 /**/*.pth
 Cropping/**/*.jpg
+Generating_light_augmented_validation_set/**/*.jpg
+Generating_light_augmented_validation_set/**/*.txt
 
 # Option 1: Ignore the entire folder named "provided"
 AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/ 

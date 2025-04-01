@@ -1,0 +1,5 @@
+train: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images # Change depending on computer
+val: /home/itk/Desktop/Andreas/AWAS-Project/Generating_light_augmented_validation_set/val_augmetnted_lightning_conditions/images
+
+nc: 1  # number of classes
+names: ['plankton']  # class names
