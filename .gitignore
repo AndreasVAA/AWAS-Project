@@ -3,9 +3,11 @@
 
 /**/*.pt
 /**/*.pth
+/**/labels/
 Cropping/**/*.jpg
-Generating_light_augmented_validation_set/**/*.jpg
-Generating_light_augmented_validation_set/**/*.txt
+Generating_light_augmented_validation_set_ignore_Inference_Time/**/*.jpg
+Generating_light_augmented_validation_set_ignore_Inference_Time/**/*.txt
+
 
 
 # Option 1: Ignore the entire folder named "provided"
@@ -19,7 +21,5 @@ Cropping/Padding_testing/Cropped_images_multiple_classes_val_used_for_classifier
 RT_DETR_MODEL/validation_results
 RT_DETR_MODEL/predictions_rt_detr/predict
 rDifferent_optimizers_tetsing
-YOLO/YOLO11M_1280_validation_for_optimizers/**/labels/
-RT_DETR_MODEL/validation_results_RT_DETR/RT_DETR_Validation_for_single_class/**/labels/
 RT_DETR_MODEL/validation_results_old
 YOLO/Interference_early_testing

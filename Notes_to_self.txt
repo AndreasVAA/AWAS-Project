@@ -1,0 +1,11 @@
+Run the faster r-cnn lables conversion file for training and validation of mutilcalss - is set up. just run train and validation
+    - Train RTDETR for multiclass
+    - Train Faster RCNN for multiclass
+
+Set up prediction for YOLO, RTDETR and Faster R-CNN wiht torch event for total inference when doing a prediction
+
+    - Then i will have forward pass+NMS infernece + total inference with overhead to compare - 
+            - Then use these metrics along with the normal metrics and write the section on model results
+
+
+Tune for YOLO single class 

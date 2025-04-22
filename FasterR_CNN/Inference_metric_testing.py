@@ -8,7 +8,7 @@ from pycocotools.cocoeval import COCOeval
 import logging
 
 # Import your dataset and model functions
-from Faster_R_CNN import AbsoluteDataset, get_model, collate_fn
+from Faster_R_CNN_training import AbsoluteDataset, get_model, collate_fn
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

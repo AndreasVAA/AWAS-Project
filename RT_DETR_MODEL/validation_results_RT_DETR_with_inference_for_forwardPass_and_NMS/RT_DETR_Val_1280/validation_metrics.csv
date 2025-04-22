@@ -8,6 +8,7 @@ F1,0.8784925912189937
 Ground Truth Count,359
 Prediction Count - TP + FP,445
 Confidence Threshold,0.4
-Inference Time (s),18.71263074874878
-FPS,5.290544196016888
-Avg Time per Image (s),0.18901647220958362
+Core GPU Time (s),5.176932785034177
+Core Avg Time per Image (ms),52.292250353880576
+Core FPS,19.123292519113985
+Num Images,99
