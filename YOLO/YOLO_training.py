@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import os
 
-def train_model(model_path="yolo11m.pt", config_path="./dataConf_multiple_Classes.yaml"):
+def train_model(model_path="yolo11m.pt", config_path="./dataConf.yaml"):
     """
     Train the YOLO model using the specified configuration.
     Allows overriding default parameters via keyword arguments.
@@ -11,19 +11,19 @@ def train_model(model_path="yolo11m.pt", config_path="./dataConf_multiple_Classe
     results = model.train(
         # Data and model settings
         data=config_path,
-        epochs=1000,
+        epochs=1500,
         batch=3,
-        imgsz= 1280,
+        imgsz= (1280,960),
 
         # Experiment output
-        project="runs_with_higher_hsv",
-        name="YOLO11M_1280",
+        project="rDifferent_optimizers_tetsing",
+        name="YOLO11M_1280_ADAM_default_learning_rates_longer_training",
 
         # Overwrite folder
         exist_ok=True,
 
         # Optimization settings
-        optimizer="auto",
+        optimizer="adam",
         seed=0,
         pretrained=True,
 
@@ -47,9 +47,9 @@ def train_model(model_path="yolo11m.pt", config_path="./dataConf_multiple_Classe
         mixup=0.0,
         auto_augment="randaugment",
         erasing=0.4,
-        hsv_h=0.85, # Default is 0.7
-        hsv_s = 0.0225, # Default is 0.015
-        hsv_v=0.6, # Defaut is 0.4
+        hsv_h=0.7, # Default is 0.7
+        hsv_s = 0.015, # Default is 0.015
+        hsv_v=0.4, # Defaut is 0.4
         translate=0.1,
         scale=0.5,
         fliplr=0.5,
@@ -57,9 +57,9 @@ def train_model(model_path="yolo11m.pt", config_path="./dataConf_multiple_Classe
         
                                      
         # Loss function weights and other parameters
-        lr0=0.005,
-        momentum=0.9,
-        weight_decay=0.005,
+        #lr0=0.005,
+        #momentum=0.9,
+        #weight_decay=0.005,
 
         # Inference/validation settings
         val=True,

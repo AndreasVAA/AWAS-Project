@@ -21,8 +21,8 @@ def run_validation_on_model(model_path, data, imgsz=1280, device="cuda",
     Returns:
       results: The results from the model's validation/inference.
     """
-    #model = YOLO(model_path, task="detect")
-    model = RTDETR(model_path)
+    model = YOLO(model_path, task="detect")
+    #model = RTDETR(model_path)
     results = model.val(
         data=data,
         imgsz=imgsz,
@@ -192,17 +192,18 @@ def count_ground_truth_instances(labels_dir):
 
 if __name__ == "__main__":
 
-    ## Now set to RT_DETR_MODEL - switch to YOLO in train setup above
+    ## Now set to YOLO - switch to YOLO in train setup above
 
     # ----------------------------
     # Configuration
     # ----------------------------
     
-    model_path = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/runs/RT_DETR_TESTING/weights/best.pt"
+    #model_path = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/runs/RT_DETR_TESTING/weights/best.pt"
+    model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs_with_higher_hsv_single_class/YOLO11M_1280/weights/best.pt"
     imgsz = 1280  # For non-square images, use a tuple e.g., (1280, 960)
     device = "cuda"
-    project = "Interference_RT_DETR_1280"
-    base_name = "Default_augmented_model"
+    project = "Interference_YOLO11M_1280_more_HSV_augmentation"
+    base_name = ""
 
     # Common saving parameters (ensure these keys are supported by your YOLO version)
     common_save_params = {
@@ -216,7 +217,7 @@ if __name__ == "__main__":
     # Run inference on normal dataset
     # ----------------------------
     normal_data = "/home/itk/Desktop/Andreas/AWAS-Project/Generating_light_augmented_validation_set/dataConf.yaml"
-    normal_run_name = f"{base_name}_normal_val"
+    normal_run_name = f"{base_name}Normal_val"
     normal_gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/Generating_light_augmented_validation_set/val_augmetnted_lightning_conditions/labels"
     normal_results = run_and_process_inference(
         model_path=model_path,
@@ -234,7 +235,7 @@ if __name__ == "__main__":
     # Run inference on augmented dataset
     # ----------------------------
     augmented_data = "/home/itk/Desktop/Andreas/AWAS-Project/Generating_light_augmented_validation_set/dataConf_light_augmented_dataset.yaml"
-    augmented_run_name = f"{base_name}_augmented_val"
+    augmented_run_name = f"{base_name}Augmented_val"
     augmented_gt_labels_dir = normal_gt_labels_dir  # Adjust if necessary.
     augmented_results = run_and_process_inference(
         model_path=model_path,

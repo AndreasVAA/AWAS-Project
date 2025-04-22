@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Configuration: Define file paths and toggles directly in the code.
-CSV_FILE = "/home/andreas/AWAS/AWAS-Project/YOLO/runs/YOLO11M_960x960/results.csv"  # Path to your YOLO training CSV file.
+CSV_FILE = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/rDifferent_optimizers_tetsing/YOLO11M_1280_ADAM_default_learning_rates/results.csv"  # Path to your YOLO training CSV file.
 OUTPUT_DIR = "plots"                         # Base folder for saving all plots.
-RUN_FOLDER_NAME = "YOLO11M_960"                   # Manually set run-specific folder name; change per run.
+RUN_FOLDER_NAME = "Checking_ADAM_lr"                   # Manually set run-specific folder name; change per run.
 PLOT_LOSS = True                             # Set to True to generate loss curves.
 PLOT_MAP = True                              # Set to True to generate mAP curves.
 PLOT_LR = True                               # Set to True to generate learning rate curves.

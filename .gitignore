@@ -7,6 +7,7 @@ Cropping/**/*.jpg
 Generating_light_augmented_validation_set/**/*.jpg
 Generating_light_augmented_validation_set/**/*.txt
 
+
 # Option 1: Ignore the entire folder named "provided"
 AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/ 
 ## I seems that the above might still be tracked
@@ -15,5 +16,10 @@ Pipeline_testing/
 Nalia_some_images_with_labels_labels_could_be_better/
 Cropping/Padding_testing/Cropped_images_multiple_classes_train_use_for_classifier/
 Cropping/Padding_testing/Cropped_images_multiple_classes_val_used_for_classifier/
-
-
+RT_DETR_MODEL/validation_results
+RT_DETR_MODEL/predictions_rt_detr/predict
+rDifferent_optimizers_tetsing
+YOLO/YOLO11M_1280_validation_for_optimizers/**/labels/
+RT_DETR_MODEL/validation_results_RT_DETR/RT_DETR_Validation_for_single_class/**/labels/
+RT_DETR_MODEL/validation_results_old
+YOLO/Interference_early_testing

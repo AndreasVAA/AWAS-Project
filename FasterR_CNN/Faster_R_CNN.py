@@ -594,7 +594,7 @@ if __name__ == '__main__':
 
     
     # === Training with Augmentation ===
-    """
+    
     train_dataset = AugmentedDataset(
         train_images_dir, 
         train_labels_dir, 
@@ -604,11 +604,11 @@ if __name__ == '__main__':
         mixup_prob=0.2, 
         mixup_alpha=32
     )
-    """
+    
 
     # === Training without Augmentation ===
     # To disable augmentation, you could use AbsoluteDataset:
-    train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
+    #train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
     
     val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
 

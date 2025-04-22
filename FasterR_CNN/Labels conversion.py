@@ -172,15 +172,17 @@ def visualize_samples(images_dir, yolo_labels_dir, output_labels_dir, sample_siz
     plt.show()
 
 # --- Example Usage ---
+
+
 if __name__ == '__main__':
     # Define your paths:
-    #images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images"              # Folder with image files.
-    #yolo_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels"    # Folder with original YOLO label files.
-    #output_base_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train"  # Base folder where "labels_minmax" will be created.
+    #images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images"              # Folder with image files.
+    #yolo_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/labels"    # Folder with original YOLO label files.
+    #output_base_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train"  # Base folder where "labels_minmax" will be created.
     
-    images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"              # Folder with image files.
-    yolo_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels"    # Folder with original YOLO label files.
-    output_base_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val"  # Base folder where "labels_minmax" will be created.
+    images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images"              # Folder with image files.
+    yolo_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels"    # Folder with original YOLO label files.
+    output_base_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val"  # Base folder where "labels_minmax" will be created.
     # Convert labels (original YOLO files remain unchanged).
     converted_folder = convert_labels(images_dir, yolo_labels_dir, output_base_dir)
     

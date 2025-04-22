@@ -42,6 +42,6 @@ if __name__ == "__main__":
     # Example usage for prediction:
     pred_results = predict_model()
     print("Prediction completed. Results:")
-    for result in pred_results:
-        print(result.summary())
+    #for result in pred_results:
+     #   print(result.summary())
     
