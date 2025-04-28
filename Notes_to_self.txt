@@ -1,11 +1,22 @@
-Run the faster r-cnn lables conversion file for training and validation of mutilcalss - is set up. just run train and validation
-    - Train RTDETR for multiclass
-    - Train Faster RCNN for multiclass
+- Train RTDETR for multiclass - This is being doen now - run valdiation afterwards
+- Train Faster RCNN for multiclass - I have done and run valdiation
 
-Set up prediction for YOLO, RTDETR and Faster R-CNN wiht torch event for total inference when doing a prediction
+Set up prediction for YOLO, RTDETR and Faster R-CNN wiht torch event (timing hte entire prediction precess, nice ot have this and the f(orward pass+NMS)  for total inference when doing a prediction
 
     - Then i will have forward pass+NMS infernece + total inference with overhead to compare - 
             - Then use these metrics along with the normal metrics and write the section on model results
 
 
+    - I have generated som code snippets, test ifthey work - cosnider iamge size a tupple scenario - run for both Faster and YOLO. Not genrated for RTDWETR yet, should be very simialr ot YOLO
+
+Potentialytrain a FAsterR_CNN with 1280x1280, this is what Ultaltyics is trianed with evne though when working with them later we use 1280x960 
+    - Better comparison
+
+
+Check that ultalytics validation as set up works with mutiple classes
+
 Tune for YOLO single class 
+
+
+Just finished runing hte AFAM - check loss plot and validation
+Chekc loss of the other optimizers

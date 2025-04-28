@@ -183,6 +183,7 @@ if __name__ == '__main__':
     images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images"              # Folder with image files.
     yolo_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels"    # Folder with original YOLO label files.
     output_base_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val"  # Base folder where "labels_minmax" will be created.
+    
     # Convert labels (original YOLO files remain unchanged).
     converted_folder = convert_labels(images_dir, yolo_labels_dir, output_base_dir)
     

@@ -1,0 +1,18 @@
+Best Epoch: 45
+Best F1: 0.8470
+Overall Precision: 0.8045
+Overall Recall:    0.8942
+Hyperparameters:
+  Batch Size: 6
+  Initial Learning Rate: 0.01
+  Num Epochs: 400
+  Score Threshold: 0.4
+  IoU Threshold: 0.6
+  COCO mAP50: 0.8950189422127248
+  COCO mAP50-95: 0.6461035525165573
+
+Loss Breakdown per Epoch (averaged over batches):
+  loss_classifier: 0.0252
+  loss_box_reg: 0.0441
+  loss_objectness: 0.0030
+  loss_rpn_box_reg: 0.0085

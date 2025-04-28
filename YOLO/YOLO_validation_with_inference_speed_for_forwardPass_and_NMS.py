@@ -168,7 +168,7 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
 if __name__ == "__main__":
     model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs/YOLO11_modelType_M_1280x960/weights/best.pt"
     imgsz         = 1280
-    device        = "cuda"
+    device        = "cuda:0"
     project       = "Validation_testing_with_inference_on_forwardPass_and_NMS"
     run_name      = "YOLO11M_1280_SGD_optimizer"
     common_params = {

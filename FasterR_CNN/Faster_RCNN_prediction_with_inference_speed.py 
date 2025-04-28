@@ -1,0 +1,110 @@
+import os
+import glob
+import torch
+import numpy as np
+import csv
+import time
+import cv2
+from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights, FastRCNNPredictor
+
+# ----------------- Hardcoded Configuration -----------------
+MODEL_CHECKPOINT = "/path/to/fasterrcnn_best.pth"
+DEVICE           = "cuda"
+CONF_THRESH      = 0.4
+IOU_THRESH       = 0.6
+WARMUP_ITERS     = 10
+IMG_DIR          = "/path/to/images"
+OUTPUT_CSV       = "fasterrcnn_full_timings.csv"
+NUM_CLASSES      = 7   # e.g. 6 species + background
+TARGET_SIZE      = (1280, 960)  # width, height for cv2.resize
+
+# ----------------- Build Model & Load Checkpoint -----------------
+weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
+model = fasterrcnn_resnet50_fpn(weights=weights)
+in_feats = model.roi_heads.box_predictor.cls_score.in_features
+model.roi_heads.box_predictor = FastRCNNPredictor(in_feats, NUM_CLASSES)
+ckpt = torch.load(MODEL_CHECKPOINT, map_location="cpu")
+state = ckpt.get('model_state_dict', ckpt)
+model.load_state_dict(state)
+model.to(DEVICE).eval()
+
+# ----------------- Timer -----------------
+def time_full_prediction(fn, *args):
+    if DEVICE.startswith("cuda"): torch.cuda.synchronize()
+    t0 = time.perf_counter()
+    outputs = fn(*args)
+    if DEVICE.startswith("cuda"): torch.cuda.synchronize()
+    return (time.perf_counter() - t0) * 1000.0, outputs
+
+# ----------------- Prediction Wrapper -----------------
+def predict_frcnn(img_path):
+    # 1) Load image
+    img = cv2.imread(img_path)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # 2) Resize to training size
+    img = cv2.resize(img, (TARGET_SIZE[0], TARGET_SIZE[1]), interpolation=cv2.INTER_LINEAR)
+    # 3) To tensor and normalize to [0,1]
+    tensor = torch.from_numpy(img).float().permute(2, 0, 1) / 255.0
+    tensor = tensor.to(DEVICE).unsqueeze(0)
+    # 4) Inference
+    with torch.no_grad():
+        output = model(tensor)[0]
+    scores = output['scores']
+    boxes = output['boxes']
+    labels = output['labels']
+    # 5) Confidence threshold
+    mask = scores >= CONF_THRESH
+    scores = scores[mask]
+    boxes = boxes[mask]
+    labels = labels[mask]
+    # 6) NMS
+    keep = torch.ops.torchvision.nms(boxes.cpu(), scores.cpu(), IOU_THRESH)
+    b = boxes[keep]
+    s = scores[keep]
+    l = labels[keep]
+    return list(zip(b.cpu().numpy(), s.cpu().numpy(), l.cpu().numpy()))
+
+# ----------------- Benchmark Loop -----------------
+# Gather image paths
+img_paths = []
+for ext in ["jpg", "png", "jpeg"]:
+    img_paths += glob.glob(os.path.join(IMG_DIR, f"*.{ext}"))
+img_paths = sorted(img_paths)
+if not img_paths:
+    raise RuntimeError(f"No images in {IMG_DIR}")
+
+# Warm-up
+first = img_paths[0]
+print(f"Warm-up full-pipeline: {WARMUP_ITERS} runs on {first}")
+for _ in range(WARMUP_ITERS):
+    _ = predict_frcnn(first)
+
+# Timing
+times = []
+print(f"Timing Faster R-CNN full prediction over {len(img_paths)} images…")
+for path in img_paths:
+    t_ms, _ = time_full_prediction(predict_frcnn, path)
+    times.append(t_ms)
+
+# Write CSV
+os.makedirs(os.path.dirname(OUTPUT_CSV) or ".", exist_ok=True)
+with open(OUTPUT_CSV, "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["image_path", "full_latency_ms"])
+    for p, t in zip(img_paths, times):
+        writer.writerow([p, f"{t:.3f}"])
+    writer.writerow([])
+    arr = np.array(times)
+    writer.writerow(["metric", "value"])
+    stats = [
+        ("mean_ms", arr.mean()),
+        ("std_ms", arr.std()),
+        ("p50_ms", np.percentile(arr, 50)),
+        ("p90_ms", np.percentile(arr, 90)),
+        ("p99_ms", np.percentile(arr, 99)),
+        ("fps", 1000.0 / arr.mean()),
+    ]
+    for m, v in stats:
+        writer.writerow([m, f"{v:.3f}"])
+
+print(f"Results saved to {OUTPUT_CSV}")

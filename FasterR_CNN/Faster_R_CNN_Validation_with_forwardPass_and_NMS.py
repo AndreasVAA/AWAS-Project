@@ -231,12 +231,12 @@ def validate_with_timing(weights_path, images_dir, labels_dir, output_dir,
 
 if __name__=='__main__':
     validate_with_timing(
-        weights_path='/home/itk/Desktop/Andreas/AWAS-Project/FasterR_CNN/runs/Testing_new_learning_rate_set_to_0.01/best_model_absolute.pth',
-        images_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images',
-        labels_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax',
-        output_dir='Validation_FasterRCNN__lr_set_0.01_with_forwardPass_and_NMS',
+        weights_path='/home/itk/Desktop/Andreas/AWAS-Project/FasterR_CNN/runs/RCNN_multiclass_training/best_model_absolute.pth',
+        images_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images',
+        labels_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels_minmax',
+        output_dir='Validation_FasterRCNN_multiclass',
         device='cuda',
         confidence_threshold=0.4,
-        num_classes=2
+        num_classes=6
     )
     print("Validation completed. Results saved in the output directory.")

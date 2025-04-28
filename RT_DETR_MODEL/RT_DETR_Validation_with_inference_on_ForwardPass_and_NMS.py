@@ -188,7 +188,7 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
 if __name__ == "__main__":
     model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/runs/RT_DETR_TESTING/weights/best.pt"
     imgsz         = 1280
-    device        = "cuda"
+    device        = "cuda:0"
     project       = "validation_results_RT_DETR_with_inference_for_forwardPass_and_NMS" 
     run_name      = "RT_DETR_Val_1280"
     common_params = {

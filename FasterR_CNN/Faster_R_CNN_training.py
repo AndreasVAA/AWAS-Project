@@ -27,7 +27,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "Testing_new_learning_rate_set_to_0.01"  # Change as desired for each run
+run_name = "RCNN_multiclass_training"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -418,7 +418,7 @@ def train_model(train_loader, val_loader, model, device, num_epochs=500, learnin
     best_epoch = 0
     best_eval_metrics = None
     epochs_without_improvement = 0
-    early_stop_patience = 50
+    early_stop_patience = 75
     target_decay_epoch = 20
     warmup_epochs = 3
 
@@ -583,10 +583,10 @@ def train_model(train_loader, val_loader, model, device, num_epochs=500, learnin
 # Main: Running the Training Pipeline
 #############################################
 if __name__ == '__main__':
-    train_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images"
-    train_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax"
-    val_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"
-    val_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax"
+    train_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images"
+    train_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/labels_minmax"
+    val_images_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images"
+    val_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels_minmax"
 
     logging.info("[Main] Initializing datasets...")
 
@@ -614,13 +614,13 @@ if __name__ == '__main__':
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, collate_fn=collate_fn)
 
-    num_classes = 2  # One object class + background
+    num_classes = 6  # One object class + background
     model = get_model(num_classes)
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model.to(device)
 
     logging.info("[Main] Starting training with detection metric-based model selection...")
     trained_model, best_epoch = train_model(
-        train_loader, val_loader, model, device, num_epochs=300,
+        train_loader, val_loader, model, device, num_epochs=400,
         learning_rate=0.01, score_threshold=0.4, iou_threshold=0.6
     )

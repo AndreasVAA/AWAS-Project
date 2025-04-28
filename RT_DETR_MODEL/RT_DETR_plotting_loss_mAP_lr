@@ -1,0 +1,136 @@
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# CONFIGURATION
+CSV_FILE            = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/runs/RT_DETR_multiple_classes3/results.csv"
+OUTPUT_DIR          = "plots"
+RUN_FOLDER_NAME     = "RT_DETR_Multiclass"
+PLOT_LOSS           = True
+PLOT_MAP            = True
+PLOT_LR             = True
+PLOT_TRIMMED_LOSS   = True
+PLOT_TRIMMED_MAP    = True
+PLOT_TRIMMED_LR     = True
+TRIM_PCT            = 0.1  # fraction of initial epochs to drop
+
+def ensure_dir(path):
+    os.makedirs(path, exist_ok=True)
+
+def plot_loss_curves_full(df, save_folder):
+    plt.figure()
+    plt.plot(df['epoch'], df['train/giou_loss'], label='Train GIoU')
+    plt.plot(df['epoch'], df['train/cls_loss'], label='Train Cls')
+    plt.plot(df['epoch'], df['train/l1_loss'], label='Train L1')
+    if 'val/giou_loss' in df:
+        plt.plot(df['epoch'], df['val/giou_loss'], '--', label='Val GIoU')
+        plt.plot(df['epoch'], df['val/cls_loss'], '--', label='Val Cls')
+        plt.plot(df['epoch'], df['val/l1_loss'], '--', label='Val L1')
+    plt.title("Loss Curves (full)")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.legend()
+    plt.grid(True)
+    out = os.path.join(save_folder, "loss_curves_full.png")
+    plt.savefig(out); plt.close()
+    print(f"Saved {out}")
+
+def plot_loss_curves_trimmed(df, save_folder, trim_pct):
+    start = int(df['epoch'].max() * trim_pct)
+    df2 = df[df['epoch'] > start]
+    plt.figure()
+    plt.plot(df2['epoch'], df2['train/giou_loss'], label='Train GIoU')
+    plt.plot(df2['epoch'], df2['train/cls_loss'], label='Train Cls')
+    plt.plot(df2['epoch'], df2['train/l1_loss'], label='Train L1')
+    if 'val/giou_loss' in df2:
+        plt.plot(df2['epoch'], df2['val/giou_loss'], '--', label='Val GIoU')
+        plt.plot(df2['epoch'], df2['val/cls_loss'], '--', label='Val Cls')
+        plt.plot(df2['epoch'], df2['val/l1_loss'], '--', label='Val L1')
+    plt.title(f"Loss Curves (>{trim_pct*100:.0f}% trimmed)")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.legend()
+    plt.grid(True)
+    out = os.path.join(save_folder, "loss_curves_trimmed.png")
+    plt.savefig(out); plt.close()
+    print(f"Saved {out}")
+
+def plot_map_curves_full(df, save_folder):
+    plt.figure()
+    plt.plot(df['epoch'], df['metrics/mAP50(B)'], label='mAP50')
+    plt.plot(df['epoch'], df['metrics/mAP50-95(B)'], label='mAP50-95')
+    plt.title("mAP Curves (full)")
+    plt.xlabel("Epoch")
+    plt.ylabel("mAP")
+    plt.legend()
+    plt.grid(True)
+    out = os.path.join(save_folder, "map_curves_full.png")
+    plt.savefig(out); plt.close()
+    print(f"Saved {out}")
+
+def plot_map_curves_trimmed(df, save_folder, trim_pct):
+    start = int(df['epoch'].max() * trim_pct)
+    df2 = df[df['epoch'] > start]
+    plt.figure()
+    plt.plot(df2['epoch'], df2['metrics/mAP50(B)'], label='mAP50')
+    plt.plot(df2['epoch'], df2['metrics/mAP50-95(B)'], label='mAP50-95')
+    plt.title(f"mAP Curves (>{trim_pct*100:.0f}% trimmed)")
+    plt.xlabel("Epoch")
+    plt.ylabel("mAP")
+    plt.legend()
+    plt.grid(True)
+    out = os.path.join(save_folder, "map_curves_trimmed.png")
+    plt.savefig(out); plt.close()
+    print(f"Saved {out}")
+
+def plot_lr_curves_full(df, save_folder):
+    plt.figure()
+    for lr in ['lr/pg0','lr/pg1','lr/pg2']:
+        if lr in df:
+            plt.plot(df['epoch'], df[lr], label=lr)
+    plt.title("LR Curves (full)")
+    plt.xlabel("Epoch")
+    plt.ylabel("Learning Rate")
+    plt.legend()
+    plt.grid(True)
+    out = os.path.join(save_folder, "lr_curves_full.png")
+    plt.savefig(out); plt.close()
+    print(f"Saved {out}")
+
+def plot_lr_curves_trimmed(df, save_folder, trim_pct):
+    start = int(df['epoch'].max() * trim_pct)
+    df2 = df[df['epoch'] > start]
+    plt.figure()
+    for lr in ['lr/pg0','lr/pg1','lr/pg2']:
+        if lr in df2:
+            plt.plot(df2['epoch'], df2[lr], label=lr)
+    plt.title(f"LR Curves (>{trim_pct*100:.0f}% trimmed)")
+    plt.xlabel("Epoch")
+    plt.ylabel("Learning Rate")
+    plt.legend()
+    plt.grid(True)
+    out = os.path.join(save_folder, "lr_curves_trimmed.png")
+    plt.savefig(out); plt.close()
+    print(f"Saved {out}")
+
+if __name__ == "__main__":
+    df = pd.read_csv(CSV_FILE)
+    save_dir = os.path.join(OUTPUT_DIR, RUN_FOLDER_NAME)
+    ensure_dir(save_dir)
+
+    if PLOT_LOSS:
+        plot_loss_curves_full(df, save_dir)
+        if PLOT_TRIMMED_LOSS:
+            plot_loss_curves_trimmed(df, save_dir, TRIM_PCT)
+
+    if PLOT_MAP:
+        plot_map_curves_full(df, save_dir)
+        if PLOT_TRIMMED_MAP:
+            plot_map_curves_trimmed(df, save_dir, TRIM_PCT)
+
+    if PLOT_LR:
+        plot_lr_curves_full(df, save_dir)
+        if PLOT_TRIMMED_LR:
+            plot_lr_curves_trimmed(df, save_dir, TRIM_PCT)
+
+    print(f"All requested plots saved under {save_dir}")

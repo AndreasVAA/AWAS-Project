@@ -28,7 +28,7 @@ def train_model(model_path="yolo11m.pt", config_path="./dataConf.yaml"):
         pretrained=True,
 
         # Hardware and performance
-        device=None,
+        device=0,
         workers=8,
         amp=True,
 
