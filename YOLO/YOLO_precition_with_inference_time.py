@@ -7,16 +7,16 @@ import time
 from ultralytics import YOLO
 
 # ----------------- Hardcoded Configuration -----------------
-MODEL_PATH   = "/path/to/best.pt"        # update with your model path
+MODEL_PATH   = "path"        # update with your model path
 DEVICE       = "cuda:0"                    # or "cpu"
-IMG_SIZE     = 1280 # Consider TUPPLE (1280x960)
+IMG_SIZE     = (1280,960) # Consider TUPPLE (1280x960)
 CONF_THRESH  = 0.4
 IOU_THRESH   = 0.6
 WARMUP_ITERS = 10
 
 # Set your source folder and output CSV path directly
-SOURCE_DIR   = "/path/to/images"         # update to your images folder
-OUTPUT_CSV   = "yolo_full_timings.csv"
+SOURCE_DIR   = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"         # update to your images folder
+OUTPUT_CSV   = "_predictions_timing_inference_1280_960.csv"
 
 # ----------------- Full-Prediction Timer -----------------
 def time_full_prediction(fn, *args):

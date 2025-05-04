@@ -1,0 +1,3 @@
+config/model_path,mean,count
+yolo11m.pt,0.6938985298939018,17
+yolo11n.pt,0.7262287883629165,52

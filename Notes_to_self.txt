@@ -18,5 +18,41 @@ Check that ultalytics validation as set up works with mutiple classes
 Tune for YOLO single class 
 
 
-Just finished runing hte AFAM - check loss plot and validation
+Just finished runing hte ADAM - check loss plot and validation
 Chekc loss of the other optimizers
+
+- coudl be intresting to freeze some of the YOLO layers - should be better fro small datasets
+
+
+- The best plotting function is in RT_DETR mappen - plotter uten de første epochs pga søtrre outliers
+
+
+
+Need to run a couple training session on lower image resoltuion, higher batch size
+    - batch size affects normlaization with batch mean and batch variance being computed from few images being problematic for the activation functions.
+    one batch normalozation might center around +1.5 and another on -08 as mean. This meanthe activation function sess largly different inputs. 
+    Shifting inputs cause unstacble activations and gradients, with the signal passed forward become erratic (feature being on for one batch and off for hte next)
+    The gradient being back prpagate bounce in undpredictible ways. 
+    The gradient being back-progated is somewhat being considered for small batch sizes trough the use og gradient accumleation (default yolo - nbs = 64) which averages teh gradients of nbs (64)samples before updating, reducing hte overall variance when updating the wights. 
+    However teh gradinet accumulating still averages on a set of numbers, which were derived from a forward pass where the batch normallization for teh activation function might have provided rgeat varaivnee and therby more unstable and noisy valuse.
+
+    The gradient is clacualte after te forward pass and nbs ensure the gradienst 
+
+    The gradient is calculated after the forward pass, and nbs ensures the gradients are accumulated over multiple micro-batches so that each weight update uses an “effective” batch of N = nbs samples, smoothing out noisy fluctuations. This makes the step size more consistent with the original learning-rate tuning (since LR is scaled by b/nbs) and reduces update variance, speeding convergence. 
+    However, because BatchNorm still normalizes on each small micro-batch, some instability in the activations can persist. In practice, nbs gives you the optimization benefits of a large batch without needing all those images in GPU memory at once.
+
+    What to look for:
+    1. Training‐loss smoothness
+Plot: training loss vs. iteration (or epoch), overlaid for each config (e.g. batch=3,1280; batch=8,640; batch=16,416).
+
+What to look for: does the loss curve for larger batch/lower res appear visibly smoother, with fewer spikes?
+
+Why: noisy BN → jagged loss; better BN stability → smoother downward trend.
+
+5. Validation‐metric stability
+Plot: validation mAP@0.5:0.95 vs. epoch, with error bars if you rerun each setting a couple times.
+
+What to look for: tighter confidence intervals (less run‐to‐run variance) when batch size is larger.
+
+Why: even if mean mAP is similar, a more stable training yields more reproducible final results.
+

@@ -23,3 +23,4 @@ RT_DETR_MODEL/predictions_rt_detr/predict
 rDifferent_optimizers_tetsing
 RT_DETR_MODEL/validation_results_old
 YOLO/Interference_early_testing
+YOLO/Tuning/ray_results/plankton_hpo_sweep/plankton_hpo

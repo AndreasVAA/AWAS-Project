@@ -5,18 +5,18 @@ import numpy as np
 import csv
 import time
 import cv2
-from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights, FastRCNNPredictor
+from torchvision.models.detection.faster_rcnn import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights, FastRCNNPredictor
 
 # ----------------- Hardcoded Configuration -----------------
-MODEL_CHECKPOINT = "/path/to/fasterrcnn_best.pth"
+MODEL_CHECKPOINT = "/home/itk/Desktop/Andreas/AWAS-Project/FasterR_CNN/runs/Relevant_MoreMetrics_testing_agumentations_YOLO_MosaicReducesWithEpochs_rand/best_model_absolute.pth"
 DEVICE           = "cuda"
 CONF_THRESH      = 0.4
 IOU_THRESH       = 0.6
 WARMUP_ITERS     = 10
-IMG_DIR          = "/path/to/images"
-OUTPUT_CSV       = "fasterrcnn_full_timings.csv"
-NUM_CLASSES      = 7   # e.g. 6 species + background
-TARGET_SIZE      = (1280, 960)  # width, height for cv2.resize
+IMG_DIR          = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"
+OUTPUT_CSV       = "fasterrcnn_inference_timings_1280x1280.csv"
+NUM_CLASSES      = 2   # e.g. 6 species + background
+TARGET_SIZE      = (1280, 1280)  # width, height for cv2.resize
 
 # ----------------- Build Model & Load Checkpoint -----------------
 weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT

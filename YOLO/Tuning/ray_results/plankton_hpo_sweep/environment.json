@@ -1,0 +1,9 @@
+{
+  "python_version": "3.9.21 (main, Feb 11 2025, 11:48:11) \n[GCC 11.4.0]",
+  "torch_version": "2.6.0+cu124",
+  "ultralytics": "unknown",
+  "ray_version": "2.45.0",
+  "cuda_available": true,
+  "cuda_devices": 1,
+  "seed": 0
+}
