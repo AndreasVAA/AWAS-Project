@@ -190,11 +190,11 @@ if __name__ == "__main__":
 # ----------------------------
 
     # Model and validation configuration
-    model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/rDifferent_optimizers_tetsing/YOLO11M_1280_ADAM_default_learning_rates/weights/best.pt"
-    imgsz = 1280  # For non-square images, use a tuple e.g., (1280, 960)
+    model_path = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs_same_config_preproject/YOLO11n_640_single_class/weights/best.pt"
+    imgsz = 640  # For non-square images, use a tuple e.g., (1280, 960)
     device = "cuda"
-    project = "YOLO11M_1280_validation_for_optimizers"  # Single project folder for validation results
-    run_name = "Val_ADAM_optimizer_default_loss"  # Single run name for simplicity
+    project = "Validating_varations_of_YOLO"  # Single project folder for validation results
+    run_name = "YOLO11n_1280_single_class"  # Single run name for simplicity
 
     # Common saving parameters (ensure these keys are supported by your YOLO version)
     common_save_params = {
@@ -206,7 +206,7 @@ if __name__ == "__main__":
 
     # Validation dataset configuration
     data_yaml = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml"
-    gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels"
+    gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels" # Multiclass #"/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels"
 
     # Run validation
     validation_results = run_and_process_inference(

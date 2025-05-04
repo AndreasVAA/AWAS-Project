@@ -56,3 +56,7 @@ What to look for: tighter confidence intervals (less run‐to‐run variance) wh
 
 Why: even if mean mAP is similar, a more stable training yields more reproducible final results.
 
+
+
+
+YOLO traiing model M with 640 image size and max batch avaailablity
