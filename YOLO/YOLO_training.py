@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import os
 
-def train_model(optimizer = "auto", model_path="yolo11n.pt", config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", imgsz=640, batch=16, epochs=500, name="Dum_DUm_testing"):    
+def train_model(optimizer = "auto", model_path="yolo11n.pt", config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", imgsz=640, batch=16, epochs=500, name="Dum_DUm_testing", freeze=None):    
     """
     Train the YOLO model using the specified configuration.
     Allows overriding default parameters via keyword arguments.
@@ -14,9 +14,10 @@ def train_model(optimizer = "auto", model_path="yolo11n.pt", config_path="/home/
         epochs=epochs,
         batch=batch,
         imgsz= imgsz,
+        freeze=freeze,
 
         # Experiment output
-        project="Testing_batch_resolution_variations_single_class",
+        project="Runing_variations_for_yolo11m_batch_resolution",
         name=name,
 
         # Overwrite folder
@@ -139,10 +140,54 @@ def train_model_custom_lr(lr, lrf, optimizer = "auto", model_path="yolo11n.pt", 
 
 if __name__ == "__main__":
     # Example usage for training:
-    train_results = train_model(imgsz=1280, name="YOLO11n_1280_batch8", batch=8)
-    train_results = train_model(imgsz=1024, name="YOLO11n_1024_batch16")
-    train_results = train_model_custom_lr(lr= 0.003, lrf= 0.0005, imgsz=1280, model_path="yolo11m.pt", name="YOLO11m_1280_batch3_SGD_lr_lrf_custom", batch=3, epochs=1000, optimizer="SGD")
+    #Need to run - hvis det ikke går - lavere batch size til 4
+    train_results = train_model(imgsz=1024, name="YOLO11m_1024_batch6", batch=6, model_path="yolo11m.pt")
+    train_results = train_model(imgsz=640, name="YOLO11m_640_batch8", batch=8, model_path="yolo11m.pt")
+    train_results = train_model(imgsz=640, name="YOLO11m_640_batch12", batch=12, model_path="yolo11m.pt")
+    train_results = train_model(imgsz=1024, name="YOLO11m_1024_batch6", batch=4, model_path="yolo11m.pt")
+    train_results = train_model(imgsz=960, name="YOLO11m_640_batch4", batch=4, model_path="yolo11m.pt")
     
+   
+   
+    #Might wnat to run and maybe at 1024 as well
+    #train_results = train_model(imgsz=960, name="YOLO11m_960_batch4", batch=4, model_path="yolo11m.pt")
+   
+
+    #backbone of YOLO 0-9
+    #Neck: 10-22
+    #Detect/Head: 23
+    # 1. Load YOLO11x
+    """
+
+    model_11m = YOLO('yolo11m.pt')
+
+    layers11 = model_11m.model.model  # a nn.Sequential of 24 modules
+    print("YOLO11m modules (index: module):")
+    for idx, layer in enumerate(layers11):
+        print(f"{idx:3d}:", layer)
+
+    
+    model_11x = YOLO('yolo11x.pt')
+
+    layers11 = model_11x.model.model  # a nn.Sequential of 24 modules
+    print("YOLO11x modules (index: module):")
+    for idx, layer in enumerate(layers11):
+        print(f"{idx:3d}:", layer)
+
+    
+
+    model_v5x = YOLO('yolov5x.pt')
+
+    layersv5 = model_v5x.model.model  # a nn.Sequential of 24 modules
+    print("YOLO5vx modules (index: module):")
+    for idx, layer in enumerate(layersv5):
+        print(f"{idx:3d}:", layer)
+   
+    
+    """
+    
+
+
     print("Training completed.")
    
 

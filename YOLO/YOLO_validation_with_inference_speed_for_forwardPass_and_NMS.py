@@ -166,11 +166,11 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
     return results
 
 if __name__ == "__main__":
-    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs/YOLO11_modelType_M_1280x960/weights/best.pt"
-    imgsz         = 1280
+    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/New_new_Testing_batch_resolution_variations_single_class/YOLO11x_640_batch4/weights/best.pt"
+    imgsz         = 640
     device        = "cuda:0"
-    project       = "Validation_testing_with_inference_on_forwardPass_and_NMS"
-    run_name      = "YOLO11M_1280_SGD_optimizer"
+    project       = "Validation_Batch4_resolution640_ALL_YOLO_MODELS"
+    run_name      = "YOLO11x_640_batch4"
     common_params = {
         'save_txt': True,
         'save_conf': True,
