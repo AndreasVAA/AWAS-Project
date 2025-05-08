@@ -25,25 +25,28 @@ def get_memory_usage():
         return None
 
 
-
 def measure_memory_for_yolo_model(
     model_path, img_size=(640,640), device="cuda"
 ):
-    # load & warm model
+    """
+    Measure memory usage for YOLO model during inference using `model.predict`.
+    """
+    # Load & warm up model
     model = YOLO(model_path).model.to(device).eval()
-    # dummy input
-    H,W = img_size
-    x = torch.randn(1,3,H,W, device=device)
+    
+    # Create dummy input
+    H, W = img_size
+    img = torch.randn(1, 3, H, W, device=device)  # Random tensor simulating image input
 
-    # measure peak memory
+    # Measure peak memory during prediction
     torch.cuda.reset_peak_memory_stats(device)
     with torch.no_grad():
-        model(x)
-        torch.cuda.synchronize()
+        model.predict(img)  # Use model.predict for inference instead of direct forward pass
+        torch.cuda.synchronize()  # Ensure all operations are completed before measuring
     peak_bytes = torch.cuda.max_memory_allocated(device)
-    return peak_bytes / 1024**2  # MB
+    
+    return peak_bytes / 1024**2  # Convert from bytes to MB
 
-    return mem_after - mem_before if mem_before is not None else None
 
 def process_directory(root_folder):
     """
@@ -86,5 +89,5 @@ def process_directory(root_folder):
         print(f"Results saved to {output_file}")
 
 # Usage example
-root_folder = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/New_new_Testing_batch_resolution_variations_single_class"  # Replace this with the actual folder path
+root_folder = "/home/andreas/AWAS/AWAS-Project/YOLO/New_new_Testing_batch_resolution_variations_single_class"  # Replace this with the actual folder path
 process_directory(root_folder)
