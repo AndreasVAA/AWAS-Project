@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import os
 
-def train_model(optimizer = "auto", model_path="yolo11n.pt", config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", imgsz=640, batch=16, epochs=500, name="Dum_DUm_testing", freeze=None):    
+def train_model(project= "DUMDUMTESTING", optimizer = "auto", model_path="yolo11n.pt", config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", imgsz=640, batch=16, epochs=500, name="Dum_DUm_testing", freeze=None):    
     """
     Train the YOLO model using the specified configuration.
     Allows overriding default parameters via keyword arguments.
@@ -17,7 +17,7 @@ def train_model(optimizer = "auto", model_path="yolo11n.pt", config_path="/home/
         freeze=freeze,
 
         # Experiment output
-        project="Runing_variations_for_yolo11m_batch_resolution",
+        project=project,
         name=name,
 
         # Overwrite folder
@@ -141,11 +141,15 @@ def train_model_custom_lr(lr, lrf, optimizer = "auto", model_path="yolo11n.pt", 
 if __name__ == "__main__":
     # Example usage for training:
     #Need to run - hvis det ikke går - lavere batch size til 4
-    train_results = train_model(imgsz=1024, name="YOLO11m_1024_batch6", batch=6, model_path="yolo11m.pt")
-    train_results = train_model(imgsz=640, name="YOLO11m_640_batch8", batch=8, model_path="yolo11m.pt")
-    train_results = train_model(imgsz=640, name="YOLO11m_640_batch12", batch=12, model_path="yolo11m.pt")
-    train_results = train_model(imgsz=1024, name="YOLO11m_1024_batch6", batch=4, model_path="yolo11m.pt")
-    train_results = train_model(imgsz=960, name="YOLO11m_640_batch4", batch=4, model_path="yolo11m.pt")
+
+    project = "Runing_variations_for_yolo11m_batch_resolution"
+
+    train_results = train_model(imgsz=960, name="YOLO11m_freezed_1280_batch16", batch=8, model_path="yolo11m.pt", project="Frezzing_backbone", freeze=10)
+    train_results = train_model(imgsz=1024, name="YOLO11m_1024_batch6", batch=4, model_path="yolo11m.pt",project=project)
+    train_results = train_model(imgsz=960, name="YOLO11m_640_batch4", batch=4, model_path="yolo11m.pt", project=project)
+    train_results = train_model(imgsz=640, name="YOLO11m_640_batch8", batch=8, model_path="yolo11m.pt", project=project)
+    train_results = train_model(imgsz=640, name="YOLO11m_640_batch12", batch=12, model_path="yolo11m.pt", project=project)
+    
     
    
    
