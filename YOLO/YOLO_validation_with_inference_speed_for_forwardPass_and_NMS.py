@@ -187,6 +187,10 @@ if __name__ == "__main__":
     )
     print("Validation completed. Results saved in the project folder.")
 
+
+
+    ## There is no warmup iterations for the inference speed
+
 """
 Core GPU Time (s):
 The sum of just the model’s forward pass plus NMS (via ultralytics.utils.ops.non_max_suppression) across all images.

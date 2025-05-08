@@ -60,3 +60,6 @@ Why: even if mean mAP is similar, a more stable training yields more reproducibl
 
 
 YOLO traiing model M with 640 image size and max batch avaailablity
+
+
+run prediction wit hinference time for all models with batch4 to get memro yconsumtpion and e2e inferecne time. likely better. 

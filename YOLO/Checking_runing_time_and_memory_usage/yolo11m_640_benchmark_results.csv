@@ -1,0 +1,15 @@
+run_id,latency_ms,peak_gpu_mem_mb
+0,257.526,1065.502
+1,301.098,1065.502
+2,262.563,1065.502
+3,300.658,1065.502
+4,257.011,1065.502
+5,255.404,1065.502
+6,70.712,288.548
+
+metric,value
+mean_latency_ms,243.567
+p50_latency_ms,257.526
+p90_latency_ms,300.834
+max_peak_gpu_mem_mb,1065.502
+fps_images_per_sec,65.69
