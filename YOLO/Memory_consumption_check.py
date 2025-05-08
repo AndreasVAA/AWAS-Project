@@ -3,6 +3,7 @@ import torch
 import pandas as pd
 import subprocess
 from pathlib import Path
+from ultralytics import YOLO 
 
 def get_memory_usage():
     """
@@ -23,32 +24,26 @@ def get_memory_usage():
         print(f"Error getting GPU memory usage: {e}")
         return None
 
-def measure_memory_for_yolo_model(model_path):
-    """
-    Measure the memory consumption for a YOLO model during inference.
-    """
-    # Load the model
-    model = torch.load(model_path)
-    model.eval()  # Set the model to evaluation mode
 
-    # Dummy input for inference (adjust according to the YOLO model input)
-    input_tensor = torch.randn(1, 3, 640, 640).to("cuda")  # Example input size for YOLO
 
-    # Measure memory before inference
-    memory_before = get_memory_usage()
+def measure_memory_for_yolo_model(
+    model_path, img_size=(640,640), device="cuda"
+):
+    # load & warm model
+    model = YOLO(model_path).model.to(device).eval()
+    # dummy input
+    H,W = img_size
+    x = torch.randn(1,3,H,W, device=device)
 
-    # Perform inference (dummy run)
+    # measure peak memory
+    torch.cuda.reset_peak_memory_stats(device)
     with torch.no_grad():
-        model(input_tensor)  # Inference step
-    
-    # Measure memory after inference
-    memory_after = get_memory_usage()
+        model(x)
+        torch.cuda.synchronize()
+    peak_bytes = torch.cuda.max_memory_allocated(device)
+    return peak_bytes / 1024**2  # MB
 
-    if memory_before is not None and memory_after is not None:
-        memory_consumption = memory_after - memory_before  # Memory usage during inference
-        return memory_consumption
-    else:
-        return None
+    return mem_after - mem_before if mem_before is not None else None
 
 def process_directory(root_folder):
     """
@@ -91,5 +86,5 @@ def process_directory(root_folder):
         print(f"Results saved to {output_file}")
 
 # Usage example
-root_folder = "/path/to/main/folder"  # Replace this with the actual folder path
+root_folder = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/New_new_Testing_batch_resolution_variations_single_class"  # Replace this with the actual folder path
 process_directory(root_folder)
