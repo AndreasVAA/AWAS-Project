@@ -21,7 +21,7 @@ Tune for YOLO single class
 Just finished runing hte ADAM - check loss plot and validation
 Chekc loss of the other optimizers
 
-- coudl be intresting to freeze some of the YOLO layers - should be better fro small datasets
+
 
 
 - The best plotting function is in RT_DETR mappen - plotter uten de første epochs pga søtrre outliers
@@ -58,8 +58,13 @@ Why: even if mean mAP is similar, a more stable training yields more reproducibl
 
 
 
+######################
+Input batch varaince and resoltion variance into the report
 
-YOLO traiing model M with 640 image size and max batch avaailablity
+
+Could be relevant to wirte about momentum affecting optimizers somewhere
 
 
-run prediction wit hinference time for all models with batch4 to get memro yconsumtpion and e2e inferecne time. likely better. 
+Need a longer run for RT_DETR modelfor 640 at least
+
+

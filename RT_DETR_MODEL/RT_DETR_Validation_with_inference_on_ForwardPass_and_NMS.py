@@ -186,11 +186,11 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
     return results
 
 if __name__ == "__main__":
-    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/runs/RT_DETR_TESTING/weights/best.pt"
+    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/Testing_RT_DETR_variations/RT_DETR_640_batch4/weights/best.pt"
     imgsz         = 1280
     device        = "cuda:0"
-    project       = "validation_results_RT_DETR_with_inference_for_forwardPass_and_NMS" 
-    run_name      = "RT_DETR_Val_1280"
+    project       = "New_validation_folder" 
+    run_name      = "RT_DETR_Val_640_batch4"
     common_params = {
         'save_txt': True,
         'save_conf': True,

@@ -166,11 +166,11 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
     return results
 
 if __name__ == "__main__":
-    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Frezzing_backbone/YOLO11m_freezed_960_batch8/weights/best.pt"
-    imgsz         = 960
+    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/rDifferent_optimizers_tetsing/YOLO11M_1280_adamW_default_learning_rates/weights/best.pt"
+    imgsz         = 1280
     device        = "cuda:0"
-    project       = "Validation_freezing_layers"
-    run_name      = "YOLO11m_960_batch8"
+    project       = "Validation_yolo11m_batch_resolution_variations"
+    run_name      = "YOLO11m_1280_batch3_optimizer_AdamW"
     common_params = {
         'save_txt': True,
         'save_conf': True,
@@ -189,7 +189,7 @@ if __name__ == "__main__":
 
 
 
-    ## There is no warmup iterations for the inference speed
+    ## There is no warmup iterations for the inference speed - better to use the prediction for e2e metrics for the inference speed
 
 """
 Core GPU Time (s):
