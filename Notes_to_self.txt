@@ -68,3 +68,5 @@ Could be relevant to wirte about momentum affecting optimizers somewhere
 Need a longer run for RT_DETR modelfor 640 at least
 
 
+I ran a couple of training session on RTDETR- validatate and check - varous image sizes
+Should test on faster RCNN as well

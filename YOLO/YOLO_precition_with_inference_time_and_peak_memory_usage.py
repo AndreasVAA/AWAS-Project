@@ -7,9 +7,9 @@ import time
 from ultralytics import YOLO
 
 # ----------------- Hardcoded Configuration -----------------
-MODEL_PATH   = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/New_new_Testing_batch_resolution_variations_single_class/YOLO11n_640_batch4/weights/best.pt"  # update with your model path
+MODEL_PATH   = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Batch_resolution_variations_single_class/YOLO11n_1024_batch16/weights/best.pt"  # update with your model path
 DEVICE       = "cuda:0"  # or "cpu"
-IMG_SIZE     = (640, 640)
+IMG_SIZE     = (1024, 1024)
 CONF_THRESH  = 0.4
 IOU_THRESH   = 0.6
 WARMUP_ITERS = 10

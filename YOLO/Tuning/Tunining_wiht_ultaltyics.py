@@ -93,9 +93,9 @@ model.tune(
 
     epochs=20,
 
-    iterations=200,
+    iterations=400,
 
-    optimizer="SGD",
+    optimizer="adamW",
 
     space=search_space,
 
@@ -105,14 +105,24 @@ model.tune(
 
     val=False,
 
-    project = "Coarse_tuning_with_ultaltyics",
+    project ="Tuning_YOLO11m_640_adamW_batch_4_all_parameters",
 
     workers=8,
 
-    imgsz=1280,
+    imgsz=640,
 
     exist_ok=True,
     
-    batch=3,
+    batch=4,
+
+    ### parameters for the custom fitness function that need a start value
+
+    perspective = 0.001, # default: 0.0
+    shear = 10,
+    degrees = 10,
+    bgr = 0.1,
+    mixup = 0.1,
+    copy_paste = 0.1,
+    flipud = 0.5,
 
 )

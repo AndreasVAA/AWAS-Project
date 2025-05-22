@@ -35,7 +35,7 @@ def train_model(lr0 = 0.01, rect=False , project= "DUMDUMTESTING", optimizer = "
         amp=True,
 
         # Additional training hyperparameters
-        patience=20,
+        patience=75,
         save=True,
         save_period=-1,
         verbose=False,
@@ -43,7 +43,7 @@ def train_model(lr0 = 0.01, rect=False , project= "DUMDUMTESTING", optimizer = "
 
         # Data augmentation and scheduling
         single_cls=False,
-        rect=False,
+    
         cos_lr=False,
         mosaic=1,
         mixup=0.0,
@@ -78,12 +78,15 @@ if __name__ == "__main__":
 
     project = "Runing_variations_for_yolo11m_batch_resolution"
 
+
+    #train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch4_with_rect=true", batch=4, rect=True, model_path="yolo11m.pt",project=project)
+    train_results = train_model(imgsz=640, name="YOLO11m_640_batch4_with_SGD", batch=4, model_path="yolo11m.pt",project=project, optimizer="SGD")
+    
     train_results = train_model(imgsz=960, name="YOLO11m_freezed_960_batch8_optimizer_SGD", batch=8, model_path="yolo11m.pt", project="Frezzing_backbone", freeze=10, optimizer="SGD")
-    train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch4", batch=4, model_path="yolo11m.pt", project=project)
-    train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch4_with_rect=true", batch=4, rect=True, model_path="yolo11m.pt",project=project)
-    train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch4_lr=0.0025", batch=4, model_path="yolo11m.pt", project=project, lr0=0.0025, optimizer="adamW")
     train_results = train_model(imgsz=640, name="YOLO11m_640_batch4_lr=0.0025", batch=4, model_path="yolo11m.pt", project=project, lr0=0.0025,optimizer="adamW")
     
+    train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch3_lr=0.0025", batch=3, model_path="yolo11m.pt", project=project, lr0=0.0025, optimizer="adamW")
+   
     
     
     

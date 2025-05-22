@@ -80,9 +80,12 @@ if __name__ == "__main__":
 
     project = "Testing_RT_DETR_variations_longer_patience"
     
-    train_results = train_model(imgsz=1024, name="RT_DETR_1280_batch4", batch=4, project=project)
+    train_results = train_model(imgsz=640, name="RT_DETR_640_batch8", batch=8, project=project)
     train_results = train_model(imgsz=640, name="RT_DETR_640_batch4", batch=4, project=project)
     train_results = train_model(imgsz=960, name="RT_DETR_960_batch4", batch=4, project=project)
+    train_results = train_model(imgsz=1024, name="RT_DETR_1280_batch4", batch=4, project=project)
+    
+   
     
     
     

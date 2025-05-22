@@ -166,11 +166,11 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
     return results
 
 if __name__ == "__main__":
-    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/rDifferent_optimizers_tetsing/YOLO11M_1280_adamW_default_learning_rates/weights/best.pt"
-    imgsz         = 1280
+    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Batch_resolution_variations_single_class/YOLO11n_1024_batch16/weights/best.pt"
+    imgsz         = 1024
     device        = "cuda:0"
-    project       = "Validation_yolo11m_batch_resolution_variations"
-    run_name      = "YOLO11m_1280_batch3_optimizer_AdamW"
+    project       = "Dum_verifisering"
+    run_name      = "Verifisering_yolo11n_1024_batch16"
     common_params = {
         'save_txt': True,
         'save_conf': True,
