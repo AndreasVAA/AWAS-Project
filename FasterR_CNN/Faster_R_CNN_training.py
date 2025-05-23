@@ -18,7 +18,7 @@ from augmentations import get_train_transforms, mixup_augment, get_randaugment_p
 #############################################
 # SINGLE PLACE TO CHANGE IMAGE SIZE
 #############################################
-TARGET_SIZE = (1280, 960)  # (width, height)
+TARGET_SIZE = (640, 640)  # (width, height)
 
 #############################################
 # Setup Run Folder and Logging
@@ -27,7 +27,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "RCNN_multiclass_training"  # Change as desired for each run
+run_name = "_stupid_testing_RCNN_multiclass_training"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -592,7 +592,7 @@ if __name__ == '__main__':
 
     
     # === Training with Augmentation ===
-    
+    """
     train_dataset = AugmentedDataset(
         train_images_dir, 
         train_labels_dir, 
@@ -603,10 +603,10 @@ if __name__ == '__main__':
         mixup_alpha=32
     )
     
-
+    """
     # === Training without Augmentation ===
     # To disable augmentation, you could use AbsoluteDataset:
-    #train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
+    train_dataset = AbsoluteDataset(train_images_dir, train_labels_dir)
     
     val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
 
