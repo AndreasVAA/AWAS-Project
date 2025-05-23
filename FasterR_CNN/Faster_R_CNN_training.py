@@ -27,7 +27,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "_stupid_testing_RCNN_multiclass_training"  # Change as desired for each run
+run_name = "_stupid_testing_RCNN_multiclass_training_adamW_batch4_image_size_no_effect"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -406,10 +406,10 @@ def evaluate_model(model, data_loader, device, score_threshold=0.3, iou_threshol
 #############################################
 # Modified Training Function: Detailed Loss Tracking
 #############################################
-def train_model(train_loader, val_loader, model, device, num_epochs=500, learning_rate=0.01,
+def train_model(train_loader, val_loader, model, device, num_epochs=500, learning_rate=0.001,
                 score_threshold=0.3, iou_threshold=0.3):
     params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = optim.SGD(params, lr=learning_rate, momentum=0.9, weight_decay=0.0005)
+    optimizer = optim.AdamW(params, lr=learning_rate)
     
     lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, mode='max', factor=0.1, patience=10, verbose=True)
@@ -610,7 +610,7 @@ if __name__ == '__main__':
     
     val_dataset = AbsoluteDataset(val_images_dir, val_labels_dir)
 
-    batch_size = 6
+    batch_size = 4
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, collate_fn=collate_fn)
 
@@ -622,5 +622,5 @@ if __name__ == '__main__':
     logging.info("[Main] Starting training with detection metric-based model selection...")
     trained_model, best_epoch = train_model(
         train_loader, val_loader, model, device, num_epochs=400,
-        learning_rate=0.01, score_threshold=0.4, iou_threshold=0.6
+        learning_rate=0.001, score_threshold=0.4, iou_threshold=0.6
     )
