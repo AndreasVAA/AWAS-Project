@@ -43,25 +43,14 @@ def train_model(lr0 = 0.01, rect=False , project= "DUMDUMTESTING", optimizer = "
 
         # Data augmentation and scheduling
         single_cls=False,
-    
-        cos_lr=False,
-        mosaic=1,
-        mixup=0.0,
-        auto_augment="randaugment",
-        erasing=0.4,
-        hsv_h=0.7, # Default is 0.7
-        hsv_s = 0.015, # Default is 0.015
-        hsv_v=0.4, # Defaut is 0.4
-        translate=0.1,
-        scale=0.5,
-        fliplr=0.5,
-        crop_fraction=1,
+      
         
+
                                      
         # Loss function weights and other parameters
         lr0=lr0,
         #momentum=0.9,
-        #weight_decay=0.005,
+        weight_decay=0.0005,
 
         # Inference/validation settings
         val=True,
@@ -76,20 +65,27 @@ if __name__ == "__main__":
     # Example usage for training:
     #Need to run - hvis det ikke går - lavere batch size til 4
 
-    project = "Runing_variations_for_yolo11m_batch_resolution"
+    project = "Testing_configruation_from_annetes_paper"
+
+    
 
 
     #train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch4_with_rect=true", batch=4, rect=True, model_path="yolo11m.pt",project=project)
-    train_results = train_model(imgsz=640, name="YOLO11m_640_batch4_with_SGD", batch=4, model_path="yolo11m.pt",project=project, optimizer="SGD")
-    
-    train_results = train_model(imgsz=960, name="YOLO11m_freezed_960_batch8_optimizer_SGD", batch=8, model_path="yolo11m.pt", project="Frezzing_backbone", freeze=10, optimizer="SGD")
-    train_results = train_model(imgsz=640, name="YOLO11m_640_batch4_lr=0.0025", batch=4, model_path="yolo11m.pt", project=project, lr0=0.0025,optimizer="adamW")
-    
-    train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch3_lr=0.0025", batch=3, model_path="yolo11m.pt", project=project, lr0=0.0025, optimizer="adamW")
-   
-    
-    
-    
+    train_results = train_model(imgsz=640, name="YOLO11m_multiclass_640_batch4_lr0=0.0001_weight_decay_0.0005", batch=4, model_path="yolo11m.pt",project=project, config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", lr0=0.001)
+    """
+    cos_lr=False,
+    mosaic=1,
+    mixup=0.0,
+    auto_augment="randaugment",
+    erasing=0.4,
+    hsv_h=0.7, # Default is 0.7
+    hsv_s = 0.015, # Default is 0.015
+    hsv_v=0.4, # Defaut is 0.4
+    translate=0.1,
+    scale=0.5,
+    fliplr=0.5,
+    crop_fraction=1,
+    """
    
    
     #Might wnat to run and maybe at 1024 as well

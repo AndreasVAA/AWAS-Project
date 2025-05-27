@@ -1,0 +1,999 @@
+2025-05-23 03:51:25,162 - INFO - [Main] Initializing datasets...
+2025-05-23 03:51:25,177 - INFO - [AbsoluteDataset] Initialized with 763 images.
+2025-05-23 03:51:25,179 - INFO - [AbsoluteDataset] Initialized with 99 images.
+2025-05-23 03:51:25,902 - INFO - [Main] Starting training with detection metric-based model selection...
+2025-05-23 03:51:25,903 - INFO - Epoch 1: Warmup learning rate set to 0.000333
+2025-05-23 03:51:25,904 - INFO - [Training] Epoch 1/400 started...
+2025-05-23 03:52:44,011 - INFO - [Training] Epoch 1 finished: Average Total Loss = 0.3117, Time = 78.11s, LR = 0.000333
+2025-05-23 03:52:44,011 - INFO - [Training] Epoch 1: Average loss_classifier = 0.1512
+2025-05-23 03:52:44,011 - INFO - [Training] Epoch 1: Average loss_box_reg = 0.1172
+2025-05-23 03:52:44,011 - INFO - [Training] Epoch 1: Average loss_objectness = 0.0290
+2025-05-23 03:52:44,011 - INFO - [Training] Epoch 1: Average loss_rpn_box_reg = 0.0142
+2025-05-23 03:52:44,011 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 03:52:48,886 - INFO - [Eval] Overall Precision: 0.3977
+2025-05-23 03:52:48,886 - INFO - [Eval] Overall Recall:    0.5682
+2025-05-23 03:52:48,886 - INFO - [Eval] Overall F1 Score:  0.4679
+2025-05-23 03:52:48,886 - INFO - [Eval] Inference - Total time: 4.2773s, Avg time per image: 0.0432s, Max time per image: 0.0444s, FPS: 23.15
+2025-05-23 03:52:48,959 - INFO - [Eval] COCO mAP50: 0.4555
+2025-05-23 03:52:48,959 - INFO - [Eval] COCO mAP50-95: 0.2223
+2025-05-23 03:52:49,446 - INFO - --> [Checkpoint] Best model updated at epoch 1 with F1 = 0.4679
+2025-05-23 03:52:49,447 - INFO - Epoch 2: Warmup learning rate set to 0.000667
+2025-05-23 03:52:49,447 - INFO - [Training] Epoch 2/400 started...
+2025-05-23 03:54:07,568 - INFO - [Training] Epoch 2 finished: Average Total Loss = 0.3376, Time = 78.12s, LR = 0.000667
+2025-05-23 03:54:07,568 - INFO - [Training] Epoch 2: Average loss_classifier = 0.1637
+2025-05-23 03:54:07,568 - INFO - [Training] Epoch 2: Average loss_box_reg = 0.1108
+2025-05-23 03:54:07,568 - INFO - [Training] Epoch 2: Average loss_objectness = 0.0464
+2025-05-23 03:54:07,568 - INFO - [Training] Epoch 2: Average loss_rpn_box_reg = 0.0166
+2025-05-23 03:54:07,568 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 03:54:12,618 - INFO - [Eval] Overall Precision: 0.3036
+2025-05-23 03:54:12,618 - INFO - [Eval] Overall Recall:    0.0947
+2025-05-23 03:54:12,618 - INFO - [Eval] Overall F1 Score:  0.1444
+2025-05-23 03:54:12,618 - INFO - [Eval] Inference - Total time: 4.2752s, Avg time per image: 0.0432s, Max time per image: 0.0442s, FPS: 23.16
+2025-05-23 03:54:12,649 - INFO - [Eval] COCO mAP50: 0.0822
+2025-05-23 03:54:12,649 - INFO - [Eval] COCO mAP50-95: 0.0229
+2025-05-23 03:54:12,650 - INFO - No improvement for 1 epochs
+2025-05-23 03:54:12,650 - INFO - Epoch 3: Warmup learning rate set to 0.001000
+2025-05-23 03:54:12,651 - INFO - [Training] Epoch 3/400 started...
+2025-05-23 03:55:30,972 - INFO - [Training] Epoch 3 finished: Average Total Loss = 0.3212, Time = 78.32s, LR = 0.001000
+2025-05-23 03:55:30,972 - INFO - [Training] Epoch 3: Average loss_classifier = 0.1433
+2025-05-23 03:55:30,972 - INFO - [Training] Epoch 3: Average loss_box_reg = 0.0952
+2025-05-23 03:55:30,972 - INFO - [Training] Epoch 3: Average loss_objectness = 0.0601
+2025-05-23 03:55:30,972 - INFO - [Training] Epoch 3: Average loss_rpn_box_reg = 0.0227
+2025-05-23 03:55:30,972 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 03:55:36,024 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 03:55:36,024 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 03:55:36,024 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 03:55:36,024 - INFO - [Eval] Inference - Total time: 4.3108s, Avg time per image: 0.0435s, Max time per image: 0.0446s, FPS: 22.97
+2025-05-23 03:55:36,029 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 03:55:36,030 - INFO - No improvement for 2 epochs
+2025-05-23 03:55:36,030 - INFO - [Training] Epoch 4/400 started...
+2025-05-23 03:56:53,295 - INFO - [Training] Epoch 4 finished: Average Total Loss = 38.7962, Time = 77.26s, LR = 0.001000
+2025-05-23 03:56:53,295 - INFO - [Training] Epoch 4: Average loss_classifier = 17.8737
+2025-05-23 03:56:53,295 - INFO - [Training] Epoch 4: Average loss_box_reg = 6.6489
+2025-05-23 03:56:53,295 - INFO - [Training] Epoch 4: Average loss_objectness = 13.0493
+2025-05-23 03:56:53,295 - INFO - [Training] Epoch 4: Average loss_rpn_box_reg = 1.2244
+2025-05-23 03:56:53,295 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 03:56:58,291 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 03:56:58,291 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 03:56:58,291 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 03:56:58,291 - INFO - [Eval] Inference - Total time: 4.2603s, Avg time per image: 0.0430s, Max time per image: 0.0439s, FPS: 23.24
+2025-05-23 03:56:58,297 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 03:56:58,297 - INFO - No improvement for 3 epochs
+2025-05-23 03:56:58,298 - INFO - [Training] Epoch 5/400 started...
+2025-05-23 03:58:16,186 - INFO - [Training] Epoch 5 finished: Average Total Loss = 3274.2269, Time = 77.89s, LR = 0.001000
+2025-05-23 03:58:16,186 - INFO - [Training] Epoch 5: Average loss_classifier = 1197.4161
+2025-05-23 03:58:16,186 - INFO - [Training] Epoch 5: Average loss_box_reg = 2029.0963
+2025-05-23 03:58:16,186 - INFO - [Training] Epoch 5: Average loss_objectness = 31.1955
+2025-05-23 03:58:16,186 - INFO - [Training] Epoch 5: Average loss_rpn_box_reg = 16.5190
+2025-05-23 03:58:16,187 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 03:58:21,236 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 03:58:21,236 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 03:58:21,245 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 03:58:21,245 - INFO - [Eval] Inference - Total time: 4.3144s, Avg time per image: 0.0436s, Max time per image: 0.0444s, FPS: 22.95
+2025-05-23 03:58:21,250 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 03:58:21,251 - INFO - No improvement for 4 epochs
+2025-05-23 03:58:21,251 - INFO - [Training] Epoch 6/400 started...
+2025-05-23 03:59:38,771 - INFO - [Training] Epoch 6 finished: Average Total Loss = 118083.6018, Time = 77.52s, LR = 0.001000
+2025-05-23 03:59:38,771 - INFO - [Training] Epoch 6: Average loss_classifier = 57.9447
+2025-05-23 03:59:38,771 - INFO - [Training] Epoch 6: Average loss_box_reg = 95.7710
+2025-05-23 03:59:38,771 - INFO - [Training] Epoch 6: Average loss_objectness = 64030.4429
+2025-05-23 03:59:38,771 - INFO - [Training] Epoch 6: Average loss_rpn_box_reg = 53899.4427
+2025-05-23 03:59:38,771 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 03:59:43,829 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 03:59:43,829 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 03:59:43,830 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 03:59:43,830 - INFO - [Eval] Inference - Total time: 4.2826s, Avg time per image: 0.0433s, Max time per image: 0.0448s, FPS: 23.12
+2025-05-23 03:59:43,835 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 03:59:43,835 - INFO - No improvement for 5 epochs
+2025-05-23 03:59:43,836 - INFO - [Training] Epoch 7/400 started...
+2025-05-23 04:01:01,703 - INFO - [Training] Epoch 7 finished: Average Total Loss = 1.1018, Time = 77.87s, LR = 0.001000
+2025-05-23 04:01:01,703 - INFO - [Training] Epoch 7: Average loss_classifier = 0.6432
+2025-05-23 04:01:01,703 - INFO - [Training] Epoch 7: Average loss_box_reg = 0.0039
+2025-05-23 04:01:01,703 - INFO - [Training] Epoch 7: Average loss_objectness = 0.4391
+2025-05-23 04:01:01,703 - INFO - [Training] Epoch 7: Average loss_rpn_box_reg = 0.0156
+2025-05-23 04:01:01,703 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:01:06,754 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:01:06,754 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:01:06,754 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:01:06,754 - INFO - [Eval] Inference - Total time: 4.3168s, Avg time per image: 0.0436s, Max time per image: 0.0445s, FPS: 22.93
+2025-05-23 04:01:06,760 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:01:06,760 - INFO - No improvement for 6 epochs
+2025-05-23 04:01:06,761 - INFO - [Training] Epoch 8/400 started...
+2025-05-23 04:02:24,668 - INFO - [Training] Epoch 8 finished: Average Total Loss = 0.8686, Time = 77.91s, LR = 0.001000
+2025-05-23 04:02:24,668 - INFO - [Training] Epoch 8: Average loss_classifier = 0.4861
+2025-05-23 04:02:24,668 - INFO - [Training] Epoch 8: Average loss_box_reg = 0.0040
+2025-05-23 04:02:24,668 - INFO - [Training] Epoch 8: Average loss_objectness = 0.3630
+2025-05-23 04:02:24,668 - INFO - [Training] Epoch 8: Average loss_rpn_box_reg = 0.0155
+2025-05-23 04:02:24,668 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:02:29,702 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:02:29,702 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:02:29,702 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:02:29,702 - INFO - [Eval] Inference - Total time: 4.2977s, Avg time per image: 0.0434s, Max time per image: 0.0447s, FPS: 23.04
+2025-05-23 04:02:29,711 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:02:29,711 - INFO - No improvement for 7 epochs
+2025-05-23 04:02:29,712 - INFO - [Training] Epoch 9/400 started...
+2025-05-23 04:03:47,597 - INFO - [Training] Epoch 9 finished: Average Total Loss = 0.7158, Time = 77.89s, LR = 0.001000
+2025-05-23 04:03:47,597 - INFO - [Training] Epoch 9: Average loss_classifier = 0.3813
+2025-05-23 04:03:47,597 - INFO - [Training] Epoch 9: Average loss_box_reg = 0.0044
+2025-05-23 04:03:47,598 - INFO - [Training] Epoch 9: Average loss_objectness = 0.3146
+2025-05-23 04:03:47,598 - INFO - [Training] Epoch 9: Average loss_rpn_box_reg = 0.0155
+2025-05-23 04:03:47,598 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:03:52,663 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:03:52,663 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:03:52,663 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:03:52,663 - INFO - [Eval] Inference - Total time: 4.3041s, Avg time per image: 0.0435s, Max time per image: 0.0447s, FPS: 23.00
+2025-05-23 04:03:52,669 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:03:52,669 - INFO - No improvement for 8 epochs
+2025-05-23 04:03:52,669 - INFO - [Training] Epoch 10/400 started...
+2025-05-23 04:05:10,632 - INFO - [Training] Epoch 10 finished: Average Total Loss = 0.6105, Time = 77.96s, LR = 0.001000
+2025-05-23 04:05:10,632 - INFO - [Training] Epoch 10: Average loss_classifier = 0.3087
+2025-05-23 04:05:10,633 - INFO - [Training] Epoch 10: Average loss_box_reg = 0.0064
+2025-05-23 04:05:10,633 - INFO - [Training] Epoch 10: Average loss_objectness = 0.2799
+2025-05-23 04:05:10,633 - INFO - [Training] Epoch 10: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:05:10,633 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:05:15,583 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:05:15,583 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:05:15,583 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:05:15,583 - INFO - [Eval] Inference - Total time: 4.2639s, Avg time per image: 0.0431s, Max time per image: 0.0441s, FPS: 23.22
+2025-05-23 04:05:15,588 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:05:15,589 - INFO - No improvement for 9 epochs
+2025-05-23 04:05:15,589 - INFO - [Training] Epoch 11/400 started...
+2025-05-23 04:06:33,504 - INFO - [Training] Epoch 11 finished: Average Total Loss = 0.5346, Time = 77.91s, LR = 0.001000
+2025-05-23 04:06:33,504 - INFO - [Training] Epoch 11: Average loss_classifier = 0.2571
+2025-05-23 04:06:33,504 - INFO - [Training] Epoch 11: Average loss_box_reg = 0.0086
+2025-05-23 04:06:33,504 - INFO - [Training] Epoch 11: Average loss_objectness = 0.2535
+2025-05-23 04:06:33,504 - INFO - [Training] Epoch 11: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:06:33,504 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:06:38,470 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:06:38,470 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:06:38,470 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:06:38,470 - INFO - [Eval] Inference - Total time: 4.2176s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.47
+2025-05-23 04:06:38,476 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:06:38,476 - INFO - No improvement for 10 epochs
+2025-05-23 04:06:38,477 - INFO - [Training] Epoch 12/400 started...
+2025-05-23 04:07:56,439 - INFO - [Training] Epoch 12 finished: Average Total Loss = 0.4741, Time = 77.96s, LR = 0.001000
+2025-05-23 04:07:56,439 - INFO - [Training] Epoch 12: Average loss_classifier = 0.2171
+2025-05-23 04:07:56,439 - INFO - [Training] Epoch 12: Average loss_box_reg = 0.0087
+2025-05-23 04:07:56,439 - INFO - [Training] Epoch 12: Average loss_objectness = 0.2328
+2025-05-23 04:07:56,439 - INFO - [Training] Epoch 12: Average loss_rpn_box_reg = 0.0155
+2025-05-23 04:07:56,439 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:08:01,366 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:08:01,366 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:08:01,366 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:08:01,367 - INFO - [Eval] Inference - Total time: 4.2009s, Avg time per image: 0.0424s, Max time per image: 0.0434s, FPS: 23.57
+2025-05-23 04:08:01,372 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:08:01,372 - INFO - No improvement for 11 epochs
+2025-05-23 04:08:01,373 - INFO - [Training] Epoch 13/400 started...
+2025-05-23 04:09:19,371 - INFO - [Training] Epoch 13 finished: Average Total Loss = 0.4475, Time = 78.00s, LR = 0.000100
+2025-05-23 04:09:19,371 - INFO - [Training] Epoch 13: Average loss_classifier = 0.1995
+2025-05-23 04:09:19,371 - INFO - [Training] Epoch 13: Average loss_box_reg = 0.0096
+2025-05-23 04:09:19,371 - INFO - [Training] Epoch 13: Average loss_objectness = 0.2230
+2025-05-23 04:09:19,371 - INFO - [Training] Epoch 13: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:09:19,371 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:09:24,355 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:09:24,355 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:09:24,355 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:09:24,355 - INFO - [Eval] Inference - Total time: 4.2106s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-05-23 04:09:24,361 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:09:24,361 - INFO - No improvement for 12 epochs
+2025-05-23 04:09:24,362 - INFO - [Training] Epoch 14/400 started...
+2025-05-23 04:10:42,320 - INFO - [Training] Epoch 14 finished: Average Total Loss = 0.4431, Time = 77.96s, LR = 0.000100
+2025-05-23 04:10:42,320 - INFO - [Training] Epoch 14: Average loss_classifier = 0.1965
+2025-05-23 04:10:42,320 - INFO - [Training] Epoch 14: Average loss_box_reg = 0.0099
+2025-05-23 04:10:42,320 - INFO - [Training] Epoch 14: Average loss_objectness = 0.2213
+2025-05-23 04:10:42,320 - INFO - [Training] Epoch 14: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:10:42,320 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:10:47,284 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:10:47,284 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:10:47,284 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:10:47,284 - INFO - [Eval] Inference - Total time: 4.2216s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.45
+2025-05-23 04:10:47,290 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:10:47,290 - INFO - No improvement for 13 epochs
+2025-05-23 04:10:47,291 - INFO - [Training] Epoch 15/400 started...
+2025-05-23 04:12:05,283 - INFO - [Training] Epoch 15 finished: Average Total Loss = 0.4377, Time = 77.99s, LR = 0.000100
+2025-05-23 04:12:05,283 - INFO - [Training] Epoch 15: Average loss_classifier = 0.1930
+2025-05-23 04:12:05,283 - INFO - [Training] Epoch 15: Average loss_box_reg = 0.0096
+2025-05-23 04:12:05,283 - INFO - [Training] Epoch 15: Average loss_objectness = 0.2196
+2025-05-23 04:12:05,283 - INFO - [Training] Epoch 15: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:12:05,283 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:12:10,304 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:12:10,304 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:12:10,304 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:12:10,304 - INFO - [Eval] Inference - Total time: 4.2258s, Avg time per image: 0.0427s, Max time per image: 0.0441s, FPS: 23.43
+2025-05-23 04:12:10,310 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:12:10,310 - INFO - No improvement for 14 epochs
+2025-05-23 04:12:10,311 - INFO - [Training] Epoch 16/400 started...
+2025-05-23 04:13:28,266 - INFO - [Training] Epoch 16 finished: Average Total Loss = 0.4330, Time = 77.96s, LR = 0.000100
+2025-05-23 04:13:28,267 - INFO - [Training] Epoch 16: Average loss_classifier = 0.1898
+2025-05-23 04:13:28,267 - INFO - [Training] Epoch 16: Average loss_box_reg = 0.0097
+2025-05-23 04:13:28,267 - INFO - [Training] Epoch 16: Average loss_objectness = 0.2181
+2025-05-23 04:13:28,267 - INFO - [Training] Epoch 16: Average loss_rpn_box_reg = 0.0155
+2025-05-23 04:13:28,267 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:13:33,264 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:13:33,265 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:13:33,273 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:13:33,273 - INFO - [Eval] Inference - Total time: 4.2306s, Avg time per image: 0.0427s, Max time per image: 0.0438s, FPS: 23.40
+2025-05-23 04:13:33,279 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:13:33,279 - INFO - No improvement for 15 epochs
+2025-05-23 04:13:33,280 - INFO - [Training] Epoch 17/400 started...
+2025-05-23 04:14:51,159 - INFO - [Training] Epoch 17 finished: Average Total Loss = 0.4268, Time = 77.88s, LR = 0.000100
+2025-05-23 04:14:51,159 - INFO - [Training] Epoch 17: Average loss_classifier = 0.1860
+2025-05-23 04:14:51,159 - INFO - [Training] Epoch 17: Average loss_box_reg = 0.0094
+2025-05-23 04:14:51,159 - INFO - [Training] Epoch 17: Average loss_objectness = 0.2160
+2025-05-23 04:14:51,159 - INFO - [Training] Epoch 17: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:14:51,159 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:14:56,097 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:14:56,097 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:14:56,097 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:14:56,097 - INFO - [Eval] Inference - Total time: 4.2147s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.49
+2025-05-23 04:14:56,103 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:14:56,103 - INFO - No improvement for 16 epochs
+2025-05-23 04:14:56,104 - INFO - [Training] Epoch 18/400 started...
+2025-05-23 04:16:14,299 - INFO - [Training] Epoch 18 finished: Average Total Loss = 0.4218, Time = 78.19s, LR = 0.000100
+2025-05-23 04:16:14,299 - INFO - [Training] Epoch 18: Average loss_classifier = 0.1826
+2025-05-23 04:16:14,307 - INFO - [Training] Epoch 18: Average loss_box_reg = 0.0096
+2025-05-23 04:16:14,307 - INFO - [Training] Epoch 18: Average loss_objectness = 0.2143
+2025-05-23 04:16:14,308 - INFO - [Training] Epoch 18: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:16:14,308 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:16:19,344 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:16:19,344 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:16:19,353 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:16:19,353 - INFO - [Eval] Inference - Total time: 4.2311s, Avg time per image: 0.0427s, Max time per image: 0.0438s, FPS: 23.40
+2025-05-23 04:16:19,362 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:16:19,362 - INFO - No improvement for 17 epochs
+2025-05-23 04:16:19,363 - INFO - [Training] Epoch 19/400 started...
+2025-05-23 04:17:37,245 - INFO - [Training] Epoch 19 finished: Average Total Loss = 0.4168, Time = 77.88s, LR = 0.000100
+2025-05-23 04:17:37,245 - INFO - [Training] Epoch 19: Average loss_classifier = 0.1791
+2025-05-23 04:17:37,245 - INFO - [Training] Epoch 19: Average loss_box_reg = 0.0097
+2025-05-23 04:17:37,245 - INFO - [Training] Epoch 19: Average loss_objectness = 0.2126
+2025-05-23 04:17:37,245 - INFO - [Training] Epoch 19: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:17:37,245 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:17:42,225 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:17:42,225 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:17:42,225 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:17:42,225 - INFO - [Eval] Inference - Total time: 4.2094s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.52
+2025-05-23 04:17:42,230 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:17:42,235 - INFO - No improvement for 18 epochs
+2025-05-23 04:17:42,236 - INFO - [Training] Epoch 20/400 started...
+2025-05-23 04:19:00,394 - INFO - [Training] Epoch 20 finished: Average Total Loss = 0.4108, Time = 78.16s, LR = 0.000100
+2025-05-23 04:19:00,394 - INFO - [Training] Epoch 20: Average loss_classifier = 0.1752
+2025-05-23 04:19:00,394 - INFO - [Training] Epoch 20: Average loss_box_reg = 0.0095
+2025-05-23 04:19:00,394 - INFO - [Training] Epoch 20: Average loss_objectness = 0.2107
+2025-05-23 04:19:00,394 - INFO - [Training] Epoch 20: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:19:00,394 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:19:05,327 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:19:05,327 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:19:05,327 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:19:05,327 - INFO - [Eval] Inference - Total time: 4.2030s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.55
+2025-05-23 04:19:05,333 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:19:05,333 - INFO - No improvement for 19 epochs
+2025-05-23 04:19:05,333 - INFO - [Training] Epoch 21/400 started...
+2025-05-23 04:20:23,342 - INFO - [Training] Epoch 21 finished: Average Total Loss = 0.4061, Time = 78.01s, LR = 0.000100
+2025-05-23 04:20:23,342 - INFO - [Training] Epoch 21: Average loss_classifier = 0.1718
+2025-05-23 04:20:23,342 - INFO - [Training] Epoch 21: Average loss_box_reg = 0.0098
+2025-05-23 04:20:23,342 - INFO - [Training] Epoch 21: Average loss_objectness = 0.2090
+2025-05-23 04:20:23,342 - INFO - [Training] Epoch 21: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:20:23,343 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:20:28,326 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:20:28,326 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:20:28,326 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:20:28,326 - INFO - [Eval] Inference - Total time: 4.2199s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.46
+2025-05-23 04:20:28,332 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:20:28,332 - INFO - No improvement for 20 epochs
+2025-05-23 04:20:28,333 - INFO - [Training] Epoch 22/400 started...
+2025-05-23 04:21:46,281 - INFO - [Training] Epoch 22 finished: Average Total Loss = 0.4002, Time = 77.95s, LR = 0.000100
+2025-05-23 04:21:46,282 - INFO - [Training] Epoch 22: Average loss_classifier = 0.1680
+2025-05-23 04:21:46,290 - INFO - [Training] Epoch 22: Average loss_box_reg = 0.0096
+2025-05-23 04:21:46,290 - INFO - [Training] Epoch 22: Average loss_objectness = 0.2072
+2025-05-23 04:21:46,290 - INFO - [Training] Epoch 22: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:21:46,290 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:21:51,229 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:21:51,230 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:21:51,230 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:21:51,230 - INFO - [Eval] Inference - Total time: 4.2028s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.56
+2025-05-23 04:21:51,235 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:21:51,235 - INFO - No improvement for 21 epochs
+2025-05-23 04:21:51,236 - INFO - [Training] Epoch 23/400 started...
+2025-05-23 04:23:09,220 - INFO - [Training] Epoch 23 finished: Average Total Loss = 0.3948, Time = 77.98s, LR = 0.000100
+2025-05-23 04:23:09,220 - INFO - [Training] Epoch 23: Average loss_classifier = 0.1644
+2025-05-23 04:23:09,220 - INFO - [Training] Epoch 23: Average loss_box_reg = 0.0096
+2025-05-23 04:23:09,220 - INFO - [Training] Epoch 23: Average loss_objectness = 0.2054
+2025-05-23 04:23:09,220 - INFO - [Training] Epoch 23: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:23:09,220 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:23:14,209 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:23:14,209 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:23:14,209 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:23:14,209 - INFO - [Eval] Inference - Total time: 4.2146s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.49
+2025-05-23 04:23:14,214 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:23:14,215 - INFO - No improvement for 22 epochs
+2025-05-23 04:23:14,215 - INFO - [Training] Epoch 24/400 started...
+2025-05-23 04:24:32,209 - INFO - [Training] Epoch 24 finished: Average Total Loss = 0.3918, Time = 77.99s, LR = 0.000010
+2025-05-23 04:24:32,209 - INFO - [Training] Epoch 24: Average loss_classifier = 0.1623
+2025-05-23 04:24:32,209 - INFO - [Training] Epoch 24: Average loss_box_reg = 0.0095
+2025-05-23 04:24:32,209 - INFO - [Training] Epoch 24: Average loss_objectness = 0.2045
+2025-05-23 04:24:32,209 - INFO - [Training] Epoch 24: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:24:32,209 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:24:37,158 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:24:37,158 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:24:37,159 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:24:37,159 - INFO - [Eval] Inference - Total time: 4.2153s, Avg time per image: 0.0426s, Max time per image: 0.0445s, FPS: 23.49
+2025-05-23 04:24:37,164 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:24:37,165 - INFO - No improvement for 23 epochs
+2025-05-23 04:24:37,165 - INFO - [Training] Epoch 25/400 started...
+2025-05-23 04:25:55,113 - INFO - [Training] Epoch 25 finished: Average Total Loss = 0.3915, Time = 77.95s, LR = 0.000010
+2025-05-23 04:25:55,113 - INFO - [Training] Epoch 25: Average loss_classifier = 0.1622
+2025-05-23 04:25:55,113 - INFO - [Training] Epoch 25: Average loss_box_reg = 0.0097
+2025-05-23 04:25:55,113 - INFO - [Training] Epoch 25: Average loss_objectness = 0.2042
+2025-05-23 04:25:55,113 - INFO - [Training] Epoch 25: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:25:55,113 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:26:00,164 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:26:00,164 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:26:00,173 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:26:00,173 - INFO - [Eval] Inference - Total time: 4.2051s, Avg time per image: 0.0425s, Max time per image: 0.0438s, FPS: 23.54
+2025-05-23 04:26:00,179 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:26:00,179 - INFO - No improvement for 24 epochs
+2025-05-23 04:26:00,179 - INFO - [Training] Epoch 26/400 started...
+2025-05-23 04:27:18,052 - INFO - [Training] Epoch 26 finished: Average Total Loss = 0.3908, Time = 77.87s, LR = 0.000010
+2025-05-23 04:27:18,052 - INFO - [Training] Epoch 26: Average loss_classifier = 0.1617
+2025-05-23 04:27:18,052 - INFO - [Training] Epoch 26: Average loss_box_reg = 0.0097
+2025-05-23 04:27:18,052 - INFO - [Training] Epoch 26: Average loss_objectness = 0.2041
+2025-05-23 04:27:18,052 - INFO - [Training] Epoch 26: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:27:18,052 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:27:23,022 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:27:23,022 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:27:23,022 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:27:23,022 - INFO - [Eval] Inference - Total time: 4.2020s, Avg time per image: 0.0424s, Max time per image: 0.0434s, FPS: 23.56
+2025-05-23 04:27:23,028 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:27:23,028 - INFO - No improvement for 25 epochs
+2025-05-23 04:27:23,028 - INFO - [Training] Epoch 27/400 started...
+2025-05-23 04:28:40,997 - INFO - [Training] Epoch 27 finished: Average Total Loss = 0.3899, Time = 77.97s, LR = 0.000010
+2025-05-23 04:28:40,997 - INFO - [Training] Epoch 27: Average loss_classifier = 0.1611
+2025-05-23 04:28:40,997 - INFO - [Training] Epoch 27: Average loss_box_reg = 0.0095
+2025-05-23 04:28:40,997 - INFO - [Training] Epoch 27: Average loss_objectness = 0.2039
+2025-05-23 04:28:40,997 - INFO - [Training] Epoch 27: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:28:40,997 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:28:45,954 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:28:45,954 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:28:45,954 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:28:45,954 - INFO - [Eval] Inference - Total time: 4.2264s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.42
+2025-05-23 04:28:45,960 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:28:45,960 - INFO - No improvement for 26 epochs
+2025-05-23 04:28:45,960 - INFO - [Training] Epoch 28/400 started...
+2025-05-23 04:30:03,944 - INFO - [Training] Epoch 28 finished: Average Total Loss = 0.3894, Time = 77.98s, LR = 0.000010
+2025-05-23 04:30:03,944 - INFO - [Training] Epoch 28: Average loss_classifier = 0.1607
+2025-05-23 04:30:03,944 - INFO - [Training] Epoch 28: Average loss_box_reg = 0.0095
+2025-05-23 04:30:03,944 - INFO - [Training] Epoch 28: Average loss_objectness = 0.2038
+2025-05-23 04:30:03,944 - INFO - [Training] Epoch 28: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:30:03,944 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:30:08,874 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:30:08,874 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:30:08,874 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:30:08,874 - INFO - [Eval] Inference - Total time: 4.1994s, Avg time per image: 0.0424s, Max time per image: 0.0434s, FPS: 23.57
+2025-05-23 04:30:08,879 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:30:08,880 - INFO - No improvement for 27 epochs
+2025-05-23 04:30:08,880 - INFO - [Training] Epoch 29/400 started...
+2025-05-23 04:31:26,930 - INFO - [Training] Epoch 29 finished: Average Total Loss = 0.3888, Time = 78.05s, LR = 0.000010
+2025-05-23 04:31:26,930 - INFO - [Training] Epoch 29: Average loss_classifier = 0.1603
+2025-05-23 04:31:26,930 - INFO - [Training] Epoch 29: Average loss_box_reg = 0.0095
+2025-05-23 04:31:26,930 - INFO - [Training] Epoch 29: Average loss_objectness = 0.2036
+2025-05-23 04:31:26,930 - INFO - [Training] Epoch 29: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:31:26,930 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:31:31,970 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:31:31,970 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:31:31,979 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:31:31,979 - INFO - [Eval] Inference - Total time: 4.2225s, Avg time per image: 0.0427s, Max time per image: 0.0435s, FPS: 23.45
+2025-05-23 04:31:31,984 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:31:31,985 - INFO - No improvement for 28 epochs
+2025-05-23 04:31:31,985 - INFO - [Training] Epoch 30/400 started...
+2025-05-23 04:32:50,040 - INFO - [Training] Epoch 30 finished: Average Total Loss = 0.3885, Time = 78.05s, LR = 0.000010
+2025-05-23 04:32:50,040 - INFO - [Training] Epoch 30: Average loss_classifier = 0.1600
+2025-05-23 04:32:50,040 - INFO - [Training] Epoch 30: Average loss_box_reg = 0.0096
+2025-05-23 04:32:50,040 - INFO - [Training] Epoch 30: Average loss_objectness = 0.2034
+2025-05-23 04:32:50,040 - INFO - [Training] Epoch 30: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:32:50,040 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:32:54,986 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:32:54,986 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:32:54,994 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:32:54,994 - INFO - [Eval] Inference - Total time: 4.2154s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.49
+2025-05-23 04:32:55,004 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:32:55,004 - INFO - No improvement for 29 epochs
+2025-05-23 04:32:55,005 - INFO - [Training] Epoch 31/400 started...
+2025-05-23 04:34:12,983 - INFO - [Training] Epoch 31 finished: Average Total Loss = 0.3875, Time = 77.98s, LR = 0.000010
+2025-05-23 04:34:12,983 - INFO - [Training] Epoch 31: Average loss_classifier = 0.1595
+2025-05-23 04:34:12,983 - INFO - [Training] Epoch 31: Average loss_box_reg = 0.0094
+2025-05-23 04:34:12,983 - INFO - [Training] Epoch 31: Average loss_objectness = 0.2032
+2025-05-23 04:34:12,983 - INFO - [Training] Epoch 31: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:34:12,983 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:34:17,931 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:34:17,931 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:34:17,931 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:34:17,931 - INFO - [Eval] Inference - Total time: 4.2109s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.51
+2025-05-23 04:34:17,937 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:34:17,937 - INFO - No improvement for 30 epochs
+2025-05-23 04:34:17,938 - INFO - [Training] Epoch 32/400 started...
+2025-05-23 04:35:35,931 - INFO - [Training] Epoch 32 finished: Average Total Loss = 0.3869, Time = 77.99s, LR = 0.000010
+2025-05-23 04:35:35,931 - INFO - [Training] Epoch 32: Average loss_classifier = 0.1591
+2025-05-23 04:35:35,931 - INFO - [Training] Epoch 32: Average loss_box_reg = 0.0095
+2025-05-23 04:35:35,931 - INFO - [Training] Epoch 32: Average loss_objectness = 0.2030
+2025-05-23 04:35:35,931 - INFO - [Training] Epoch 32: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:35:35,932 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:35:40,904 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:35:40,904 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:35:40,904 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:35:40,904 - INFO - [Eval] Inference - Total time: 4.2104s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-05-23 04:35:40,910 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:35:40,910 - INFO - No improvement for 31 epochs
+2025-05-23 04:35:40,911 - INFO - [Training] Epoch 33/400 started...
+2025-05-23 04:36:58,871 - INFO - [Training] Epoch 33 finished: Average Total Loss = 0.3863, Time = 77.96s, LR = 0.000010
+2025-05-23 04:36:58,871 - INFO - [Training] Epoch 33: Average loss_classifier = 0.1586
+2025-05-23 04:36:58,871 - INFO - [Training] Epoch 33: Average loss_box_reg = 0.0095
+2025-05-23 04:36:58,871 - INFO - [Training] Epoch 33: Average loss_objectness = 0.2028
+2025-05-23 04:36:58,871 - INFO - [Training] Epoch 33: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:36:58,871 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:37:03,867 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:37:03,867 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:37:03,867 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:37:03,867 - INFO - [Eval] Inference - Total time: 4.2169s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.48
+2025-05-23 04:37:03,873 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:37:03,873 - INFO - No improvement for 32 epochs
+2025-05-23 04:37:03,873 - INFO - [Training] Epoch 34/400 started...
+2025-05-23 04:38:21,826 - INFO - [Training] Epoch 34 finished: Average Total Loss = 0.3856, Time = 77.95s, LR = 0.000010
+2025-05-23 04:38:21,826 - INFO - [Training] Epoch 34: Average loss_classifier = 0.1582
+2025-05-23 04:38:21,834 - INFO - [Training] Epoch 34: Average loss_box_reg = 0.0095
+2025-05-23 04:38:21,834 - INFO - [Training] Epoch 34: Average loss_objectness = 0.2026
+2025-05-23 04:38:21,835 - INFO - [Training] Epoch 34: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:38:21,835 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:38:26,786 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:38:26,786 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:38:26,786 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:38:26,786 - INFO - [Eval] Inference - Total time: 4.2093s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.52
+2025-05-23 04:38:26,792 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:38:26,792 - INFO - No improvement for 33 epochs
+2025-05-23 04:38:26,793 - INFO - [Training] Epoch 35/400 started...
+2025-05-23 04:39:44,755 - INFO - [Training] Epoch 35 finished: Average Total Loss = 0.3854, Time = 77.96s, LR = 0.000001
+2025-05-23 04:39:44,755 - INFO - [Training] Epoch 35: Average loss_classifier = 0.1580
+2025-05-23 04:39:44,755 - INFO - [Training] Epoch 35: Average loss_box_reg = 0.0095
+2025-05-23 04:39:44,755 - INFO - [Training] Epoch 35: Average loss_objectness = 0.2025
+2025-05-23 04:39:44,755 - INFO - [Training] Epoch 35: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:39:44,755 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:39:49,692 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:39:49,692 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:39:49,692 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:39:49,692 - INFO - [Eval] Inference - Total time: 4.2045s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.55
+2025-05-23 04:39:49,698 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:39:49,698 - INFO - No improvement for 34 epochs
+2025-05-23 04:39:49,698 - INFO - [Training] Epoch 36/400 started...
+2025-05-23 04:41:07,742 - INFO - [Training] Epoch 36 finished: Average Total Loss = 0.3854, Time = 78.04s, LR = 0.000001
+2025-05-23 04:41:07,742 - INFO - [Training] Epoch 36: Average loss_classifier = 0.1580
+2025-05-23 04:41:07,742 - INFO - [Training] Epoch 36: Average loss_box_reg = 0.0095
+2025-05-23 04:41:07,742 - INFO - [Training] Epoch 36: Average loss_objectness = 0.2025
+2025-05-23 04:41:07,742 - INFO - [Training] Epoch 36: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:41:07,742 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:41:12,689 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:41:12,689 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:41:12,689 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:41:12,689 - INFO - [Eval] Inference - Total time: 4.2254s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.43
+2025-05-23 04:41:12,695 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:41:12,695 - INFO - No improvement for 35 epochs
+2025-05-23 04:41:12,696 - INFO - [Training] Epoch 37/400 started...
+2025-05-23 04:42:30,647 - INFO - [Training] Epoch 37 finished: Average Total Loss = 0.3855, Time = 77.95s, LR = 0.000001
+2025-05-23 04:42:30,647 - INFO - [Training] Epoch 37: Average loss_classifier = 0.1579
+2025-05-23 04:42:30,647 - INFO - [Training] Epoch 37: Average loss_box_reg = 0.0095
+2025-05-23 04:42:30,647 - INFO - [Training] Epoch 37: Average loss_objectness = 0.2026
+2025-05-23 04:42:30,647 - INFO - [Training] Epoch 37: Average loss_rpn_box_reg = 0.0155
+2025-05-23 04:42:30,647 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:42:35,617 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:42:35,617 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:42:35,617 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:42:35,617 - INFO - [Eval] Inference - Total time: 4.2268s, Avg time per image: 0.0427s, Max time per image: 0.0435s, FPS: 23.42
+2025-05-23 04:42:35,623 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:42:35,623 - INFO - No improvement for 36 epochs
+2025-05-23 04:42:35,623 - INFO - [Training] Epoch 38/400 started...
+2025-05-23 04:43:53,593 - INFO - [Training] Epoch 38 finished: Average Total Loss = 0.3851, Time = 77.97s, LR = 0.000001
+2025-05-23 04:43:53,593 - INFO - [Training] Epoch 38: Average loss_classifier = 0.1578
+2025-05-23 04:43:53,593 - INFO - [Training] Epoch 38: Average loss_box_reg = 0.0095
+2025-05-23 04:43:53,593 - INFO - [Training] Epoch 38: Average loss_objectness = 0.2024
+2025-05-23 04:43:53,593 - INFO - [Training] Epoch 38: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:43:53,593 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:43:58,632 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:43:58,632 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:43:58,632 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:43:58,632 - INFO - [Eval] Inference - Total time: 4.2172s, Avg time per image: 0.0426s, Max time per image: 0.0437s, FPS: 23.48
+2025-05-23 04:43:58,638 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:43:58,638 - INFO - No improvement for 37 epochs
+2025-05-23 04:43:58,638 - INFO - [Training] Epoch 39/400 started...
+2025-05-23 04:45:16,538 - INFO - [Training] Epoch 39 finished: Average Total Loss = 0.3856, Time = 77.90s, LR = 0.000001
+2025-05-23 04:45:16,538 - INFO - [Training] Epoch 39: Average loss_classifier = 0.1580
+2025-05-23 04:45:16,538 - INFO - [Training] Epoch 39: Average loss_box_reg = 0.0096
+2025-05-23 04:45:16,538 - INFO - [Training] Epoch 39: Average loss_objectness = 0.2025
+2025-05-23 04:45:16,538 - INFO - [Training] Epoch 39: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:45:16,538 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:45:21,451 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:45:21,451 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:45:21,451 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:45:21,451 - INFO - [Eval] Inference - Total time: 4.1930s, Avg time per image: 0.0424s, Max time per image: 0.0432s, FPS: 23.61
+2025-05-23 04:45:21,457 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:45:21,457 - INFO - No improvement for 38 epochs
+2025-05-23 04:45:21,457 - INFO - [Training] Epoch 40/400 started...
+2025-05-23 04:46:39,480 - INFO - [Training] Epoch 40 finished: Average Total Loss = 0.3852, Time = 78.02s, LR = 0.000001
+2025-05-23 04:46:39,480 - INFO - [Training] Epoch 40: Average loss_classifier = 0.1578
+2025-05-23 04:46:39,480 - INFO - [Training] Epoch 40: Average loss_box_reg = 0.0096
+2025-05-23 04:46:39,480 - INFO - [Training] Epoch 40: Average loss_objectness = 0.2024
+2025-05-23 04:46:39,480 - INFO - [Training] Epoch 40: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:46:39,480 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:46:44,428 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:46:44,428 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:46:44,428 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:46:44,428 - INFO - [Eval] Inference - Total time: 4.2224s, Avg time per image: 0.0427s, Max time per image: 0.0435s, FPS: 23.45
+2025-05-23 04:46:44,434 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:46:44,434 - INFO - No improvement for 39 epochs
+2025-05-23 04:46:44,434 - INFO - [Training] Epoch 41/400 started...
+2025-05-23 04:48:02,432 - INFO - [Training] Epoch 41 finished: Average Total Loss = 0.3855, Time = 78.00s, LR = 0.000001
+2025-05-23 04:48:02,432 - INFO - [Training] Epoch 41: Average loss_classifier = 0.1579
+2025-05-23 04:48:02,432 - INFO - [Training] Epoch 41: Average loss_box_reg = 0.0097
+2025-05-23 04:48:02,432 - INFO - [Training] Epoch 41: Average loss_objectness = 0.2026
+2025-05-23 04:48:02,432 - INFO - [Training] Epoch 41: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:48:02,432 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:48:07,439 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:48:07,439 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:48:07,439 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:48:07,439 - INFO - [Eval] Inference - Total time: 4.2249s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.43
+2025-05-23 04:48:07,446 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:48:07,446 - INFO - No improvement for 40 epochs
+2025-05-23 04:48:07,447 - INFO - [Training] Epoch 42/400 started...
+2025-05-23 04:49:25,410 - INFO - [Training] Epoch 42 finished: Average Total Loss = 0.3849, Time = 77.96s, LR = 0.000001
+2025-05-23 04:49:25,410 - INFO - [Training] Epoch 42: Average loss_classifier = 0.1576
+2025-05-23 04:49:25,410 - INFO - [Training] Epoch 42: Average loss_box_reg = 0.0095
+2025-05-23 04:49:25,410 - INFO - [Training] Epoch 42: Average loss_objectness = 0.2024
+2025-05-23 04:49:25,410 - INFO - [Training] Epoch 42: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:49:25,410 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:49:30,369 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:49:30,369 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:49:30,369 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:49:30,369 - INFO - [Eval] Inference - Total time: 4.2079s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.53
+2025-05-23 04:49:30,380 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:49:30,380 - INFO - No improvement for 41 epochs
+2025-05-23 04:49:30,381 - INFO - [Training] Epoch 43/400 started...
+2025-05-23 04:50:48,326 - INFO - [Training] Epoch 43 finished: Average Total Loss = 0.3848, Time = 77.94s, LR = 0.000001
+2025-05-23 04:50:48,326 - INFO - [Training] Epoch 43: Average loss_classifier = 0.1576
+2025-05-23 04:50:48,326 - INFO - [Training] Epoch 43: Average loss_box_reg = 0.0095
+2025-05-23 04:50:48,326 - INFO - [Training] Epoch 43: Average loss_objectness = 0.2023
+2025-05-23 04:50:48,326 - INFO - [Training] Epoch 43: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:50:48,326 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:50:53,359 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:50:53,359 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:50:53,359 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:50:53,359 - INFO - [Eval] Inference - Total time: 4.2141s, Avg time per image: 0.0426s, Max time per image: 0.0444s, FPS: 23.49
+2025-05-23 04:50:53,365 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:50:53,365 - INFO - No improvement for 42 epochs
+2025-05-23 04:50:53,365 - INFO - [Training] Epoch 44/400 started...
+2025-05-23 04:52:11,669 - INFO - [Training] Epoch 44 finished: Average Total Loss = 0.3849, Time = 78.30s, LR = 0.000001
+2025-05-23 04:52:11,669 - INFO - [Training] Epoch 44: Average loss_classifier = 0.1576
+2025-05-23 04:52:11,669 - INFO - [Training] Epoch 44: Average loss_box_reg = 0.0096
+2025-05-23 04:52:11,669 - INFO - [Training] Epoch 44: Average loss_objectness = 0.2023
+2025-05-23 04:52:11,669 - INFO - [Training] Epoch 44: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:52:11,669 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:52:16,637 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:52:16,637 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:52:16,637 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:52:16,637 - INFO - [Eval] Inference - Total time: 4.2251s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.43
+2025-05-23 04:52:16,643 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:52:16,643 - INFO - No improvement for 43 epochs
+2025-05-23 04:52:16,643 - INFO - [Training] Epoch 45/400 started...
+2025-05-23 04:53:34,626 - INFO - [Training] Epoch 45 finished: Average Total Loss = 0.3847, Time = 77.98s, LR = 0.000001
+2025-05-23 04:53:34,626 - INFO - [Training] Epoch 45: Average loss_classifier = 0.1575
+2025-05-23 04:53:34,626 - INFO - [Training] Epoch 45: Average loss_box_reg = 0.0095
+2025-05-23 04:53:34,626 - INFO - [Training] Epoch 45: Average loss_objectness = 0.2023
+2025-05-23 04:53:34,626 - INFO - [Training] Epoch 45: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:53:34,626 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:53:39,626 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:53:39,627 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:53:39,627 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:53:39,627 - INFO - [Eval] Inference - Total time: 4.2159s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.48
+2025-05-23 04:53:39,632 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:53:39,633 - INFO - No improvement for 44 epochs
+2025-05-23 04:53:39,633 - INFO - [Training] Epoch 46/400 started...
+2025-05-23 04:54:57,555 - INFO - [Training] Epoch 46 finished: Average Total Loss = 0.3847, Time = 77.92s, LR = 0.000000
+2025-05-23 04:54:57,556 - INFO - [Training] Epoch 46: Average loss_classifier = 0.1575
+2025-05-23 04:54:57,556 - INFO - [Training] Epoch 46: Average loss_box_reg = 0.0095
+2025-05-23 04:54:57,556 - INFO - [Training] Epoch 46: Average loss_objectness = 0.2023
+2025-05-23 04:54:57,556 - INFO - [Training] Epoch 46: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:54:57,556 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:55:02,529 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:55:02,529 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:55:02,529 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:55:02,529 - INFO - [Eval] Inference - Total time: 4.2102s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.51
+2025-05-23 04:55:02,535 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:55:02,535 - INFO - No improvement for 45 epochs
+2025-05-23 04:55:02,536 - INFO - [Training] Epoch 47/400 started...
+2025-05-23 04:56:20,498 - INFO - [Training] Epoch 47 finished: Average Total Loss = 0.3846, Time = 77.96s, LR = 0.000000
+2025-05-23 04:56:20,498 - INFO - [Training] Epoch 47: Average loss_classifier = 0.1575
+2025-05-23 04:56:20,498 - INFO - [Training] Epoch 47: Average loss_box_reg = 0.0095
+2025-05-23 04:56:20,498 - INFO - [Training] Epoch 47: Average loss_objectness = 0.2023
+2025-05-23 04:56:20,498 - INFO - [Training] Epoch 47: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:56:20,498 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:56:25,472 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:56:25,473 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:56:25,473 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:56:25,473 - INFO - [Eval] Inference - Total time: 4.2104s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-05-23 04:56:25,478 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:56:25,478 - INFO - No improvement for 46 epochs
+2025-05-23 04:56:25,479 - INFO - [Training] Epoch 48/400 started...
+2025-05-23 04:57:43,443 - INFO - [Training] Epoch 48 finished: Average Total Loss = 0.3846, Time = 77.96s, LR = 0.000000
+2025-05-23 04:57:43,443 - INFO - [Training] Epoch 48: Average loss_classifier = 0.1575
+2025-05-23 04:57:43,444 - INFO - [Training] Epoch 48: Average loss_box_reg = 0.0095
+2025-05-23 04:57:43,444 - INFO - [Training] Epoch 48: Average loss_objectness = 0.2023
+2025-05-23 04:57:43,444 - INFO - [Training] Epoch 48: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:57:43,444 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:57:48,449 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:57:48,449 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:57:48,449 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:57:48,457 - INFO - [Eval] Inference - Total time: 4.2270s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.42
+2025-05-23 04:57:48,463 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:57:48,463 - INFO - No improvement for 47 epochs
+2025-05-23 04:57:48,464 - INFO - [Training] Epoch 49/400 started...
+2025-05-23 04:59:06,400 - INFO - [Training] Epoch 49 finished: Average Total Loss = 0.3846, Time = 77.94s, LR = 0.000000
+2025-05-23 04:59:06,400 - INFO - [Training] Epoch 49: Average loss_classifier = 0.1575
+2025-05-23 04:59:06,400 - INFO - [Training] Epoch 49: Average loss_box_reg = 0.0095
+2025-05-23 04:59:06,400 - INFO - [Training] Epoch 49: Average loss_objectness = 0.2023
+2025-05-23 04:59:06,400 - INFO - [Training] Epoch 49: Average loss_rpn_box_reg = 0.0154
+2025-05-23 04:59:06,400 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 04:59:11,377 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 04:59:11,377 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 04:59:11,377 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 04:59:11,377 - INFO - [Eval] Inference - Total time: 4.2104s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.51
+2025-05-23 04:59:11,382 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 04:59:11,387 - INFO - No improvement for 48 epochs
+2025-05-23 04:59:11,388 - INFO - [Training] Epoch 50/400 started...
+2025-05-23 05:00:29,328 - INFO - [Training] Epoch 50 finished: Average Total Loss = 0.3846, Time = 77.94s, LR = 0.000000
+2025-05-23 05:00:29,328 - INFO - [Training] Epoch 50: Average loss_classifier = 0.1575
+2025-05-23 05:00:29,328 - INFO - [Training] Epoch 50: Average loss_box_reg = 0.0095
+2025-05-23 05:00:29,328 - INFO - [Training] Epoch 50: Average loss_objectness = 0.2023
+2025-05-23 05:00:29,328 - INFO - [Training] Epoch 50: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:00:29,328 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:00:34,287 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:00:34,287 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:00:34,287 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:00:34,287 - INFO - [Eval] Inference - Total time: 4.2108s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.51
+2025-05-23 05:00:34,292 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:00:34,292 - INFO - No improvement for 49 epochs
+2025-05-23 05:00:34,293 - INFO - [Training] Epoch 51/400 started...
+2025-05-23 05:01:52,326 - INFO - [Training] Epoch 51 finished: Average Total Loss = 0.3848, Time = 78.03s, LR = 0.000000
+2025-05-23 05:01:52,326 - INFO - [Training] Epoch 51: Average loss_classifier = 0.1575
+2025-05-23 05:01:52,326 - INFO - [Training] Epoch 51: Average loss_box_reg = 0.0095
+2025-05-23 05:01:52,326 - INFO - [Training] Epoch 51: Average loss_objectness = 0.2023
+2025-05-23 05:01:52,326 - INFO - [Training] Epoch 51: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:01:52,326 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:01:57,298 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:01:57,298 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:01:57,298 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:01:57,298 - INFO - [Eval] Inference - Total time: 4.2113s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.51
+2025-05-23 05:01:57,303 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:01:57,304 - INFO - No improvement for 50 epochs
+2025-05-23 05:01:57,304 - INFO - [Training] Epoch 52/400 started...
+2025-05-23 05:03:15,209 - INFO - [Training] Epoch 52 finished: Average Total Loss = 0.3846, Time = 77.91s, LR = 0.000000
+2025-05-23 05:03:15,209 - INFO - [Training] Epoch 52: Average loss_classifier = 0.1574
+2025-05-23 05:03:15,209 - INFO - [Training] Epoch 52: Average loss_box_reg = 0.0095
+2025-05-23 05:03:15,209 - INFO - [Training] Epoch 52: Average loss_objectness = 0.2023
+2025-05-23 05:03:15,209 - INFO - [Training] Epoch 52: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:03:15,209 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:03:20,183 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:03:20,184 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:03:20,184 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:03:20,184 - INFO - [Eval] Inference - Total time: 4.2111s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.51
+2025-05-23 05:03:20,189 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:03:20,189 - INFO - No improvement for 51 epochs
+2025-05-23 05:03:20,190 - INFO - [Training] Epoch 53/400 started...
+2025-05-23 05:04:38,161 - INFO - [Training] Epoch 53 finished: Average Total Loss = 0.3847, Time = 77.97s, LR = 0.000000
+2025-05-23 05:04:38,161 - INFO - [Training] Epoch 53: Average loss_classifier = 0.1575
+2025-05-23 05:04:38,161 - INFO - [Training] Epoch 53: Average loss_box_reg = 0.0095
+2025-05-23 05:04:38,162 - INFO - [Training] Epoch 53: Average loss_objectness = 0.2022
+2025-05-23 05:04:38,162 - INFO - [Training] Epoch 53: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:04:38,162 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:04:43,190 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:04:43,190 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:04:43,191 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:04:43,191 - INFO - [Eval] Inference - Total time: 4.2392s, Avg time per image: 0.0428s, Max time per image: 0.0445s, FPS: 23.35
+2025-05-23 05:04:43,196 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:04:43,196 - INFO - No improvement for 52 epochs
+2025-05-23 05:04:43,197 - INFO - [Training] Epoch 54/400 started...
+2025-05-23 05:06:01,135 - INFO - [Training] Epoch 54 finished: Average Total Loss = 0.3850, Time = 77.94s, LR = 0.000000
+2025-05-23 05:06:01,136 - INFO - [Training] Epoch 54: Average loss_classifier = 0.1576
+2025-05-23 05:06:01,136 - INFO - [Training] Epoch 54: Average loss_box_reg = 0.0097
+2025-05-23 05:06:01,136 - INFO - [Training] Epoch 54: Average loss_objectness = 0.2023
+2025-05-23 05:06:01,136 - INFO - [Training] Epoch 54: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:06:01,136 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:06:06,132 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:06:06,132 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:06:06,133 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:06:06,133 - INFO - [Eval] Inference - Total time: 4.2486s, Avg time per image: 0.0429s, Max time per image: 0.0439s, FPS: 23.30
+2025-05-23 05:06:06,138 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:06:06,143 - INFO - No improvement for 53 epochs
+2025-05-23 05:06:06,144 - INFO - [Training] Epoch 55/400 started...
+2025-05-23 05:07:24,058 - INFO - [Training] Epoch 55 finished: Average Total Loss = 0.3847, Time = 77.91s, LR = 0.000000
+2025-05-23 05:07:24,059 - INFO - [Training] Epoch 55: Average loss_classifier = 0.1575
+2025-05-23 05:07:24,059 - INFO - [Training] Epoch 55: Average loss_box_reg = 0.0095
+2025-05-23 05:07:24,059 - INFO - [Training] Epoch 55: Average loss_objectness = 0.2023
+2025-05-23 05:07:24,059 - INFO - [Training] Epoch 55: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:07:24,059 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:07:29,065 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:07:29,065 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:07:29,074 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:07:29,074 - INFO - [Eval] Inference - Total time: 4.2210s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.45
+2025-05-23 05:07:29,080 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:07:29,087 - INFO - No improvement for 54 epochs
+2025-05-23 05:07:29,087 - INFO - [Training] Epoch 56/400 started...
+2025-05-23 05:08:47,031 - INFO - [Training] Epoch 56 finished: Average Total Loss = 0.3846, Time = 77.94s, LR = 0.000000
+2025-05-23 05:08:47,031 - INFO - [Training] Epoch 56: Average loss_classifier = 0.1574
+2025-05-23 05:08:47,031 - INFO - [Training] Epoch 56: Average loss_box_reg = 0.0095
+2025-05-23 05:08:47,031 - INFO - [Training] Epoch 56: Average loss_objectness = 0.2023
+2025-05-23 05:08:47,032 - INFO - [Training] Epoch 56: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:08:47,032 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:08:52,051 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:08:52,051 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:08:52,051 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:08:52,051 - INFO - [Eval] Inference - Total time: 4.2256s, Avg time per image: 0.0427s, Max time per image: 0.0436s, FPS: 23.43
+2025-05-23 05:08:52,056 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:08:52,056 - INFO - No improvement for 55 epochs
+2025-05-23 05:08:52,057 - INFO - [Training] Epoch 57/400 started...
+2025-05-23 05:10:09,942 - INFO - [Training] Epoch 57 finished: Average Total Loss = 0.3847, Time = 77.88s, LR = 0.000000
+2025-05-23 05:10:09,942 - INFO - [Training] Epoch 57: Average loss_classifier = 0.1575
+2025-05-23 05:10:09,942 - INFO - [Training] Epoch 57: Average loss_box_reg = 0.0095
+2025-05-23 05:10:09,942 - INFO - [Training] Epoch 57: Average loss_objectness = 0.2023
+2025-05-23 05:10:09,942 - INFO - [Training] Epoch 57: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:10:09,942 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:10:14,954 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:10:14,954 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:10:14,954 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:10:14,954 - INFO - [Eval] Inference - Total time: 4.2220s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.45
+2025-05-23 05:10:14,960 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:10:14,960 - INFO - No improvement for 56 epochs
+2025-05-23 05:10:14,961 - INFO - [Training] Epoch 58/400 started...
+2025-05-23 05:11:32,933 - INFO - [Training] Epoch 58 finished: Average Total Loss = 0.3846, Time = 77.97s, LR = 0.000000
+2025-05-23 05:11:32,933 - INFO - [Training] Epoch 58: Average loss_classifier = 0.1575
+2025-05-23 05:11:32,933 - INFO - [Training] Epoch 58: Average loss_box_reg = 0.0095
+2025-05-23 05:11:32,933 - INFO - [Training] Epoch 58: Average loss_objectness = 0.2022
+2025-05-23 05:11:32,933 - INFO - [Training] Epoch 58: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:11:32,933 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:11:37,892 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:11:37,892 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:11:37,892 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:11:37,892 - INFO - [Eval] Inference - Total time: 4.2239s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.44
+2025-05-23 05:11:37,898 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:11:37,898 - INFO - No improvement for 57 epochs
+2025-05-23 05:11:37,899 - INFO - [Training] Epoch 59/400 started...
+2025-05-23 05:12:55,830 - INFO - [Training] Epoch 59 finished: Average Total Loss = 0.3848, Time = 77.93s, LR = 0.000000
+2025-05-23 05:12:55,830 - INFO - [Training] Epoch 59: Average loss_classifier = 0.1575
+2025-05-23 05:12:55,830 - INFO - [Training] Epoch 59: Average loss_box_reg = 0.0095
+2025-05-23 05:12:55,830 - INFO - [Training] Epoch 59: Average loss_objectness = 0.2023
+2025-05-23 05:12:55,830 - INFO - [Training] Epoch 59: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:12:55,830 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:13:00,834 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:13:00,834 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:13:00,834 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:13:00,834 - INFO - [Eval] Inference - Total time: 4.2280s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.42
+2025-05-23 05:13:00,840 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:13:00,840 - INFO - No improvement for 58 epochs
+2025-05-23 05:13:00,841 - INFO - [Training] Epoch 60/400 started...
+2025-05-23 05:14:18,821 - INFO - [Training] Epoch 60 finished: Average Total Loss = 0.3850, Time = 77.98s, LR = 0.000000
+2025-05-23 05:14:18,821 - INFO - [Training] Epoch 60: Average loss_classifier = 0.1576
+2025-05-23 05:14:18,821 - INFO - [Training] Epoch 60: Average loss_box_reg = 0.0097
+2025-05-23 05:14:18,821 - INFO - [Training] Epoch 60: Average loss_objectness = 0.2023
+2025-05-23 05:14:18,822 - INFO - [Training] Epoch 60: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:14:18,822 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:14:23,804 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:14:23,804 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:14:23,804 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:14:23,804 - INFO - [Eval] Inference - Total time: 4.2172s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.48
+2025-05-23 05:14:23,810 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:14:23,813 - INFO - No improvement for 59 epochs
+2025-05-23 05:14:23,814 - INFO - [Training] Epoch 61/400 started...
+2025-05-23 05:15:41,745 - INFO - [Training] Epoch 61 finished: Average Total Loss = 0.3844, Time = 77.93s, LR = 0.000000
+2025-05-23 05:15:41,745 - INFO - [Training] Epoch 61: Average loss_classifier = 0.1574
+2025-05-23 05:15:41,745 - INFO - [Training] Epoch 61: Average loss_box_reg = 0.0094
+2025-05-23 05:15:41,745 - INFO - [Training] Epoch 61: Average loss_objectness = 0.2023
+2025-05-23 05:15:41,745 - INFO - [Training] Epoch 61: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:15:41,745 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:15:46,690 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:15:46,690 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:15:46,690 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:15:46,690 - INFO - [Eval] Inference - Total time: 4.2152s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.49
+2025-05-23 05:15:46,696 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:15:46,696 - INFO - No improvement for 60 epochs
+2025-05-23 05:15:46,697 - INFO - [Training] Epoch 62/400 started...
+2025-05-23 05:17:04,667 - INFO - [Training] Epoch 62 finished: Average Total Loss = 0.3847, Time = 77.97s, LR = 0.000000
+2025-05-23 05:17:04,667 - INFO - [Training] Epoch 62: Average loss_classifier = 0.1575
+2025-05-23 05:17:04,667 - INFO - [Training] Epoch 62: Average loss_box_reg = 0.0096
+2025-05-23 05:17:04,667 - INFO - [Training] Epoch 62: Average loss_objectness = 0.2022
+2025-05-23 05:17:04,667 - INFO - [Training] Epoch 62: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:17:04,667 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:17:09,602 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:17:09,602 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:17:09,602 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:17:09,602 - INFO - [Eval] Inference - Total time: 4.2134s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.50
+2025-05-23 05:17:09,608 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:17:09,608 - INFO - No improvement for 61 epochs
+2025-05-23 05:17:09,609 - INFO - [Training] Epoch 63/400 started...
+2025-05-23 05:18:27,672 - INFO - [Training] Epoch 63 finished: Average Total Loss = 0.3849, Time = 78.06s, LR = 0.000000
+2025-05-23 05:18:27,672 - INFO - [Training] Epoch 63: Average loss_classifier = 0.1576
+2025-05-23 05:18:27,672 - INFO - [Training] Epoch 63: Average loss_box_reg = 0.0097
+2025-05-23 05:18:27,672 - INFO - [Training] Epoch 63: Average loss_objectness = 0.2022
+2025-05-23 05:18:27,672 - INFO - [Training] Epoch 63: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:18:27,672 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:18:32,659 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:18:32,660 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:18:32,660 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:18:32,660 - INFO - [Eval] Inference - Total time: 4.2275s, Avg time per image: 0.0427s, Max time per image: 0.0439s, FPS: 23.42
+2025-05-23 05:18:32,665 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:18:32,666 - INFO - No improvement for 62 epochs
+2025-05-23 05:18:32,667 - INFO - [Training] Epoch 64/400 started...
+2025-05-23 05:19:50,557 - INFO - [Training] Epoch 64 finished: Average Total Loss = 0.3848, Time = 77.89s, LR = 0.000000
+2025-05-23 05:19:50,557 - INFO - [Training] Epoch 64: Average loss_classifier = 0.1575
+2025-05-23 05:19:50,557 - INFO - [Training] Epoch 64: Average loss_box_reg = 0.0095
+2025-05-23 05:19:50,558 - INFO - [Training] Epoch 64: Average loss_objectness = 0.2024
+2025-05-23 05:19:50,558 - INFO - [Training] Epoch 64: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:19:50,558 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:19:55,541 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:19:55,541 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:19:55,541 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:19:55,541 - INFO - [Eval] Inference - Total time: 4.2211s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.45
+2025-05-23 05:19:55,547 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:19:55,547 - INFO - No improvement for 63 epochs
+2025-05-23 05:19:55,547 - INFO - [Training] Epoch 65/400 started...
+2025-05-23 05:21:13,498 - INFO - [Training] Epoch 65 finished: Average Total Loss = 0.3847, Time = 77.95s, LR = 0.000000
+2025-05-23 05:21:13,498 - INFO - [Training] Epoch 65: Average loss_classifier = 0.1575
+2025-05-23 05:21:13,498 - INFO - [Training] Epoch 65: Average loss_box_reg = 0.0095
+2025-05-23 05:21:13,498 - INFO - [Training] Epoch 65: Average loss_objectness = 0.2023
+2025-05-23 05:21:13,498 - INFO - [Training] Epoch 65: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:21:13,498 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:21:18,461 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:21:18,461 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:21:18,461 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:21:18,461 - INFO - [Eval] Inference - Total time: 4.2186s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.47
+2025-05-23 05:21:18,466 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:21:18,467 - INFO - No improvement for 64 epochs
+2025-05-23 05:21:18,467 - INFO - [Training] Epoch 66/400 started...
+2025-05-23 05:22:36,444 - INFO - [Training] Epoch 66 finished: Average Total Loss = 0.3846, Time = 77.98s, LR = 0.000000
+2025-05-23 05:22:36,444 - INFO - [Training] Epoch 66: Average loss_classifier = 0.1574
+2025-05-23 05:22:36,444 - INFO - [Training] Epoch 66: Average loss_box_reg = 0.0095
+2025-05-23 05:22:36,444 - INFO - [Training] Epoch 66: Average loss_objectness = 0.2023
+2025-05-23 05:22:36,444 - INFO - [Training] Epoch 66: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:22:36,444 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:22:41,386 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:22:41,386 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:22:41,395 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:22:41,395 - INFO - [Eval] Inference - Total time: 4.2046s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.55
+2025-05-23 05:22:41,400 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:22:41,401 - INFO - No improvement for 65 epochs
+2025-05-23 05:22:41,401 - INFO - [Training] Epoch 67/400 started...
+2025-05-23 05:23:59,379 - INFO - [Training] Epoch 67 finished: Average Total Loss = 0.3846, Time = 77.98s, LR = 0.000000
+2025-05-23 05:23:59,379 - INFO - [Training] Epoch 67: Average loss_classifier = 0.1574
+2025-05-23 05:23:59,379 - INFO - [Training] Epoch 67: Average loss_box_reg = 0.0095
+2025-05-23 05:23:59,379 - INFO - [Training] Epoch 67: Average loss_objectness = 0.2023
+2025-05-23 05:23:59,379 - INFO - [Training] Epoch 67: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:23:59,379 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:24:04,338 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:24:04,338 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:24:04,338 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:24:04,338 - INFO - [Eval] Inference - Total time: 4.2253s, Avg time per image: 0.0427s, Max time per image: 0.0436s, FPS: 23.43
+2025-05-23 05:24:04,344 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:24:04,344 - INFO - No improvement for 66 epochs
+2025-05-23 05:24:04,345 - INFO - [Training] Epoch 68/400 started...
+2025-05-23 05:25:22,323 - INFO - [Training] Epoch 68 finished: Average Total Loss = 0.3849, Time = 77.98s, LR = 0.000000
+2025-05-23 05:25:22,323 - INFO - [Training] Epoch 68: Average loss_classifier = 0.1575
+2025-05-23 05:25:22,323 - INFO - [Training] Epoch 68: Average loss_box_reg = 0.0095
+2025-05-23 05:25:22,323 - INFO - [Training] Epoch 68: Average loss_objectness = 0.2025
+2025-05-23 05:25:22,323 - INFO - [Training] Epoch 68: Average loss_rpn_box_reg = 0.0155
+2025-05-23 05:25:22,323 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:25:27,291 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:25:27,292 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:25:27,292 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:25:27,292 - INFO - [Eval] Inference - Total time: 4.2148s, Avg time per image: 0.0426s, Max time per image: 0.0435s, FPS: 23.49
+2025-05-23 05:25:27,297 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:25:27,297 - INFO - No improvement for 67 epochs
+2025-05-23 05:25:27,298 - INFO - [Training] Epoch 69/400 started...
+2025-05-23 05:26:45,267 - INFO - [Training] Epoch 69 finished: Average Total Loss = 0.3852, Time = 77.97s, LR = 0.000000
+2025-05-23 05:26:45,267 - INFO - [Training] Epoch 69: Average loss_classifier = 0.1577
+2025-05-23 05:26:45,267 - INFO - [Training] Epoch 69: Average loss_box_reg = 0.0098
+2025-05-23 05:26:45,267 - INFO - [Training] Epoch 69: Average loss_objectness = 0.2023
+2025-05-23 05:26:45,267 - INFO - [Training] Epoch 69: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:26:45,267 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:26:50,209 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:26:50,210 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:26:50,210 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:26:50,210 - INFO - [Eval] Inference - Total time: 4.2191s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.46
+2025-05-23 05:26:50,215 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:26:50,215 - INFO - No improvement for 68 epochs
+2025-05-23 05:26:50,216 - INFO - [Training] Epoch 70/400 started...
+2025-05-23 05:28:08,260 - INFO - [Training] Epoch 70 finished: Average Total Loss = 0.3844, Time = 78.04s, LR = 0.000000
+2025-05-23 05:28:08,261 - INFO - [Training] Epoch 70: Average loss_classifier = 0.1574
+2025-05-23 05:28:08,261 - INFO - [Training] Epoch 70: Average loss_box_reg = 0.0094
+2025-05-23 05:28:08,261 - INFO - [Training] Epoch 70: Average loss_objectness = 0.2023
+2025-05-23 05:28:08,261 - INFO - [Training] Epoch 70: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:28:08,261 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:28:13,210 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:28:13,210 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:28:13,210 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:28:13,210 - INFO - [Eval] Inference - Total time: 4.2189s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.47
+2025-05-23 05:28:13,216 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:28:13,216 - INFO - No improvement for 69 epochs
+2025-05-23 05:28:13,216 - INFO - [Training] Epoch 71/400 started...
+2025-05-23 05:29:31,157 - INFO - [Training] Epoch 71 finished: Average Total Loss = 0.3846, Time = 77.94s, LR = 0.000000
+2025-05-23 05:29:31,157 - INFO - [Training] Epoch 71: Average loss_classifier = 0.1574
+2025-05-23 05:29:31,157 - INFO - [Training] Epoch 71: Average loss_box_reg = 0.0095
+2025-05-23 05:29:31,157 - INFO - [Training] Epoch 71: Average loss_objectness = 0.2023
+2025-05-23 05:29:31,157 - INFO - [Training] Epoch 71: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:29:31,157 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:29:36,121 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:29:36,121 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:29:36,121 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:29:36,121 - INFO - [Eval] Inference - Total time: 4.2180s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.47
+2025-05-23 05:29:36,126 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:29:36,127 - INFO - No improvement for 70 epochs
+2025-05-23 05:29:36,127 - INFO - [Training] Epoch 72/400 started...
+2025-05-23 05:30:54,096 - INFO - [Training] Epoch 72 finished: Average Total Loss = 0.3846, Time = 77.97s, LR = 0.000000
+2025-05-23 05:30:54,097 - INFO - [Training] Epoch 72: Average loss_classifier = 0.1575
+2025-05-23 05:30:54,105 - INFO - [Training] Epoch 72: Average loss_box_reg = 0.0095
+2025-05-23 05:30:54,105 - INFO - [Training] Epoch 72: Average loss_objectness = 0.2022
+2025-05-23 05:30:54,105 - INFO - [Training] Epoch 72: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:30:54,105 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:30:59,035 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:30:59,035 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:30:59,035 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:30:59,035 - INFO - [Eval] Inference - Total time: 4.2048s, Avg time per image: 0.0425s, Max time per image: 0.0434s, FPS: 23.54
+2025-05-23 05:30:59,041 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:30:59,041 - INFO - No improvement for 71 epochs
+2025-05-23 05:30:59,042 - INFO - [Training] Epoch 73/400 started...
+2025-05-23 05:32:17,062 - INFO - [Training] Epoch 73 finished: Average Total Loss = 0.3845, Time = 78.02s, LR = 0.000000
+2025-05-23 05:32:17,062 - INFO - [Training] Epoch 73: Average loss_classifier = 0.1574
+2025-05-23 05:32:17,062 - INFO - [Training] Epoch 73: Average loss_box_reg = 0.0094
+2025-05-23 05:32:17,062 - INFO - [Training] Epoch 73: Average loss_objectness = 0.2023
+2025-05-23 05:32:17,062 - INFO - [Training] Epoch 73: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:32:17,062 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:32:22,000 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:32:22,001 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:32:22,001 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:32:22,001 - INFO - [Eval] Inference - Total time: 4.2128s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.50
+2025-05-23 05:32:22,006 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:32:22,006 - INFO - No improvement for 72 epochs
+2025-05-23 05:32:22,007 - INFO - [Training] Epoch 74/400 started...
+2025-05-23 05:33:39,992 - INFO - [Training] Epoch 74 finished: Average Total Loss = 0.3847, Time = 77.98s, LR = 0.000000
+2025-05-23 05:33:39,992 - INFO - [Training] Epoch 74: Average loss_classifier = 0.1575
+2025-05-23 05:33:39,992 - INFO - [Training] Epoch 74: Average loss_box_reg = 0.0095
+2025-05-23 05:33:39,992 - INFO - [Training] Epoch 74: Average loss_objectness = 0.2023
+2025-05-23 05:33:39,992 - INFO - [Training] Epoch 74: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:33:39,992 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:33:44,918 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:33:44,918 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:33:44,918 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:33:44,918 - INFO - [Eval] Inference - Total time: 4.2082s, Avg time per image: 0.0425s, Max time per image: 0.0435s, FPS: 23.53
+2025-05-23 05:33:44,923 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:33:44,924 - INFO - No improvement for 73 epochs
+2025-05-23 05:33:44,924 - INFO - [Training] Epoch 75/400 started...
+2025-05-23 05:35:02,924 - INFO - [Training] Epoch 75 finished: Average Total Loss = 0.3846, Time = 78.00s, LR = 0.000000
+2025-05-23 05:35:02,924 - INFO - [Training] Epoch 75: Average loss_classifier = 0.1574
+2025-05-23 05:35:02,933 - INFO - [Training] Epoch 75: Average loss_box_reg = 0.0095
+2025-05-23 05:35:02,933 - INFO - [Training] Epoch 75: Average loss_objectness = 0.2023
+2025-05-23 05:35:02,933 - INFO - [Training] Epoch 75: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:35:02,933 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:35:07,886 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:35:07,887 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:35:07,887 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:35:07,887 - INFO - [Eval] Inference - Total time: 4.2188s, Avg time per image: 0.0426s, Max time per image: 0.0434s, FPS: 23.47
+2025-05-23 05:35:07,892 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:35:07,892 - INFO - No improvement for 74 epochs
+2025-05-23 05:35:07,893 - INFO - [Training] Epoch 76/400 started...
+2025-05-23 05:36:25,910 - INFO - [Training] Epoch 76 finished: Average Total Loss = 0.3845, Time = 78.02s, LR = 0.000000
+2025-05-23 05:36:25,910 - INFO - [Training] Epoch 76: Average loss_classifier = 0.1574
+2025-05-23 05:36:25,910 - INFO - [Training] Epoch 76: Average loss_box_reg = 0.0094
+2025-05-23 05:36:25,910 - INFO - [Training] Epoch 76: Average loss_objectness = 0.2023
+2025-05-23 05:36:25,910 - INFO - [Training] Epoch 76: Average loss_rpn_box_reg = 0.0154
+2025-05-23 05:36:25,910 - INFO - [Validation] Evaluating model on validation set...
+2025-05-23 05:36:30,875 - INFO - [Eval] Overall Precision: 0.0000
+2025-05-23 05:36:30,876 - INFO - [Eval] Overall Recall:    0.0000
+2025-05-23 05:36:30,876 - INFO - [Eval] Overall F1 Score:  0.0000
+2025-05-23 05:36:30,876 - INFO - [Eval] Inference - Total time: 4.2227s, Avg time per image: 0.0427s, Max time per image: 0.0434s, FPS: 23.44
+2025-05-23 05:36:30,881 - WARNING - COCO evaluation skipped: list index out of range
+2025-05-23 05:36:30,881 - INFO - No improvement for 75 epochs
+2025-05-23 05:36:30,881 - INFO - Early stopping triggered after 75 epochs with no improvement
+2025-05-23 05:36:30,881 - INFO - [Training] Complete. Best epoch: 1 with F1 Score = 0.4679

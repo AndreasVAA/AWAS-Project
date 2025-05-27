@@ -1,0 +1,20 @@
+Metric,Value
+Precision,0.6361379374042506
+Recall,0.5162115104092602
+mAP50,0.5645397177420287
+mAP50-95,0.40232480140163657
+mAP75,0.46057342663561446
+F1,0.5699342783895236
+Ground Truth Count,359
+Prediction Count - TP + FP,610
+Confidence Threshold Used,0.4
+Validation Image Size,960
+Num Images Validated,99
+Core GPU Time (s),4.320349639892579
+Core Avg Time per Image (ms),43.639895352450296
+Core FPS,22.914812052679498
+Training Image Size (from args.yaml),960
+Training lr0 (from args.yaml),0.01
+Training lrf (from args.yaml),0.01
+Training Optimizer (from args.yaml),auto
+Training Batch (from args.yaml),4

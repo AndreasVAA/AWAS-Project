@@ -26,9 +26,11 @@ def run_validation_on_model(model_path, data, imgsz=1280, device="cuda",
 
 def process_metrics_and_save(results, run_folder, ground_truth_count, predicted_count,
                              core_gpu_time, core_avg_ms, core_fps,
-                             num_images, conf_threshold, csv_filename="metrics_results.csv"):
+                             num_images_validated, conf_threshold, csv_filename="metrics_results.csv",
+                             validation_imgsz=None, train_imgsz=None, lr0=None, lrf=None, optimizer=None, tr_batch=None):
     """
-    Save both detection and core timing (forward+NMS) metrics to CSV.
+    Save both detection and core timing (forward+NMS) metrics to CSV,
+    including parameters from training args.yaml.
     """
     # Detection metrics
     base      = results.mean_results()
@@ -37,9 +39,9 @@ def process_metrics_and_save(results, run_folder, ground_truth_count, predicted_
     mAP50     = base[2] if len(base)>2 else None
     mAP50_95  = getattr(results.box, "map", None)
     mAP75     = getattr(results.box, "map75", None)
-    f1        = 2*precision*recall/(precision+recall) if precision and recall else None
+    f1        = 2*precision*recall/(precision+recall) if precision and recall and (precision+recall) > 0 else None
 
-    # Core timing + counts
+    # Core timing + counts + training params
     metrics = {
         "Precision": precision,
         "Recall": recall,
@@ -49,11 +51,17 @@ def process_metrics_and_save(results, run_folder, ground_truth_count, predicted_
         "F1": f1,
         "Ground Truth Count": ground_truth_count,
         "Prediction Count - TP + FP": predicted_count,
-        "Confidence Threshold": conf_threshold,
+        "Confidence Threshold Used": conf_threshold, # Clarified name
+        "Validation Image Size": validation_imgsz,
+        "Num Images Validated": num_images_validated,
         "Core GPU Time (s)": core_gpu_time,
         "Core Avg Time per Image (ms)": core_avg_ms,
         "Core FPS": core_fps,
-        "Num Images": num_images
+        "Training Image Size (from args.yaml)": train_imgsz,
+        "Training lr0 (from args.yaml)": lr0,
+        "Training lrf (from args.yaml)": lrf,
+        "Training Optimizer (from args.yaml)": optimizer,
+        "Training Batch (from args.yaml)": tr_batch, # Corrected "BAtch" to "Batch" and using the passed tr_batch
     }
 
     os.makedirs(run_folder, exist_ok=True)
@@ -62,7 +70,7 @@ def process_metrics_and_save(results, run_folder, ground_truth_count, predicted_
         writer = csv.writer(f)
         writer.writerow(["Metric","Value"])
         for k, v in metrics.items():
-            writer.writerow([k, v])
+            writer.writerow([k, v if v is not None else "N/A"])
     print(f"Metrics saved to {csv_path}")
 
 def count_instances_from_labels(labels_dir):
@@ -99,122 +107,158 @@ def count_predictions_with_conf(labels_dir, conf_threshold):
                             count += 1
     return count
 
-def run_and_process_inference(model_path, data, imgsz, device, project, run_name,
-                              save_params, gt_labels_dir=None, csv_filename="validation_metrics.csv"):
-    print(f"\nRunning inference on {run_name} (forward + NMS timing only)…")
-    device     = torch.device(device)
-    rtdetr     = RTDETR(model_path)
-    core       = rtdetr.model.to(device).eval()
-    conf_thres = save_params.get("conf", 0.25)
-    iou_thres  = save_params.get("iou", 0.5)
+def run_and_process_inference(model_path, data_yaml_path, validation_imgsz, device_str,
+                              project_name, run_name_str,
+                              save_params_dict, gt_labels_dir_path=None, csv_filename_str="validation_metrics.csv",
+                              train_imgsz_from_yaml=None, lr0_from_yaml=None, lrf_from_yaml=None, optimizer_from_yaml=None, tr_batch_from_yaml=None): # Added tr_batch_from_yaml
+    print(f"\nRunning inference on {run_name_str} (forward + NMS timing only)…")
+    selected_device = torch.device(device_str)
+    rtdetr_model    = RTDETR(model_path)
+    core_model      = rtdetr_model.model.to(selected_device).eval()
 
-    # 1) gather validation images
-    with open(data, "r") as f:
-        cfg     = yaml.safe_load(f)
-    val_dir    = cfg["val"]
-    img_paths  = sorted(glob.glob(os.path.join(val_dir, "*.jpg")) +
-                        glob.glob(os.path.join(val_dir, "*.png")))
-    num_images = len(img_paths)
-    if num_images == 0:
-        raise RuntimeError(f"No images found in {val_dir}")
+    conf_thres_for_timing_and_counting = save_params_dict.get("conf", 0.25)
+    iou_thres_for_timing = save_params_dict.get("iou", 0.5)
 
-    # 2) GPU warm‑up (forward + NMS)
-    # Create dummy input with batch size = 1
-    dummy   = torch.zeros((1,3,imgsz,imgsz), device=device)  # batch = 1
-    starter = torch.cuda.Event(enable_timing=True)
-    ender   = torch.cuda.Event(enable_timing=True)
+    with open(data_yaml_path, "r") as f:
+        cfg_data   = yaml.safe_load(f)
+    val_img_dir    = cfg_data["val"]
+    img_paths_list  = sorted(glob.glob(os.path.join(val_img_dir, "*.jpg")) +
+                             glob.glob(os.path.join(val_img_dir, "*.png")) +
+                             glob.glob(os.path.join(val_img_dir, "*.jpeg")))
+    num_images_found = len(img_paths_list)
+    if num_images_found == 0:
+        raise RuntimeError(f"No images found in {val_img_dir}")
+
+    dummy_input = torch.zeros((1,3,validation_imgsz,validation_imgsz), device=selected_device)
+    starter_event = torch.cuda.Event(enable_timing=True)
+    ender_event   = torch.cuda.Event(enable_timing=True)
     with torch.no_grad():
         for _ in range(10):
-            preds = core(dummy)
-            _     = non_max_suppression(preds, conf_thres, iou_thres)
+            preds_warmup = core_model(dummy_input)
+            _ = non_max_suppression(preds_warmup[0] if isinstance(preds_warmup, tuple) else preds_warmup,
+                                    conf_thres_for_timing_and_counting, iou_thres_for_timing)
             torch.cuda.synchronize()
 
-    # 3) time forward + NMS per image
-    times = []
+    times_list = []
     with torch.no_grad():
-        for path in img_paths:
-            img = cv2.imread(path)
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            # Load one image and unsqueeze to batch size = 1
-            tensor = (torch.from_numpy(img)
-                      .float()
-                      .permute(2,0,1)
-                      .div(255.0)
-                      .unsqueeze(0)   # batch = 1
-                      .to(device))
+        for img_path_single in img_paths_list:
+            img_orig = cv2.imread(img_path_single)
+            img_rgb = cv2.cvtColor(img_orig, cv2.COLOR_BGR2RGB)
+            img_resized = cv2.resize(img_rgb, (validation_imgsz, validation_imgsz))
+
+            tensor_input = (torch.from_numpy(img_resized)
+                                .float()
+                                .permute(2,0,1)
+                                .div(255.0)
+                                .unsqueeze(0)
+                                .to(selected_device))
 
             torch.cuda.synchronize()
-            starter.record()
+            starter_event.record()
 
-            preds = core(tensor)
-            _     = non_max_suppression(preds, conf_thres, iou_thres)
+            preds_infer = core_model(tensor_input)
+            _ = non_max_suppression(preds_infer[0] if isinstance(preds_infer, tuple) else preds_infer,
+                                    conf_thres_for_timing_and_counting, iou_thres_for_timing)
 
-            ender.record()
+            ender_event.record()
             torch.cuda.synchronize()
+            times_list.append(starter_event.elapsed_time(ender_event) / 1000.0)
 
-            times.append(starter.elapsed_time(ender) / 1000.0)
+    core_gpu_total_time = sum(times_list)
+    core_avg_ms_per_image = (core_gpu_total_time / num_images_found) * 1000.0 if num_images_found > 0 else 0
+    core_fps_calc = num_images_found / core_gpu_total_time if core_gpu_total_time > 0 else 0
 
-    core_gpu_time = sum(times)
-    core_avg_ms   = (core_gpu_time / num_images) * 1000.0
-    core_fps      = num_images / core_gpu_time if core_gpu_time > 0 else 0
-
-    # 4) high‑level val() for metrics
-    results = run_validation_on_model(
+    val_results = run_validation_on_model(
         model_path=model_path,
-        data=data,
-        imgsz=imgsz,
-        device=device.type,
-        project=project,
-        name=run_name,
-        **save_params
+        data=data_yaml_path,
+        imgsz=validation_imgsz,
+        device=selected_device.type,
+        project=project_name,
+        name=run_name_str,
+        **save_params_dict
     )
 
-    # 5) counts
-    run_folder      = os.path.join(project, run_name)
-    pred_labels_dir = os.path.join(run_folder, "labels")
-    predicted_count = count_predictions_with_conf(pred_labels_dir, conf_thres)
-    gt_count        = count_instances_from_labels(gt_labels_dir) if gt_labels_dir else None
+    current_run_folder = os.path.join(project_name, run_name_str)
+    pred_labels_dir_path = os.path.join(current_run_folder, "labels")
+    predicted_count_val = count_predictions_with_conf(pred_labels_dir_path, conf_thres_for_timing_and_counting)
+    gt_count_val = count_instances_from_labels(gt_labels_dir_path) if gt_labels_dir_path else None
 
-    # 6) save CSV
     process_metrics_and_save(
-        results, run_folder, gt_count, predicted_count,
-        core_gpu_time, core_avg_ms, core_fps,
-        num_images, conf_thres, csv_filename
+        val_results, current_run_folder, gt_count_val, predicted_count_val,
+        core_gpu_total_time, core_avg_ms_per_image, core_fps_calc,
+        num_images_found, conf_thres_for_timing_and_counting,
+        csv_filename_str,
+        validation_imgsz=validation_imgsz,
+        train_imgsz=train_imgsz_from_yaml,
+        lr0=lr0_from_yaml,
+        lrf=lrf_from_yaml,
+        optimizer=optimizer_from_yaml,
+        tr_batch=tr_batch_from_yaml
     )
 
     print("Core forward+NMS timing complete. Detection metrics appended to CSV.")
-    return results
+    return val_results
 
 if __name__ == "__main__":
-    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/Testing_RT_DETR_variations/RT_DETR_640_batch4/weights/best.pt"
-    imgsz         = 1280
-    device        = "cuda:0"
-    project       = "New_validation_folder" 
-    run_name      = "RT_DETR_Val_640_batch4"
-    common_params = {
+    input_training_folder = "/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/Runing_new_config_more_similar_to_paper/RT_DETR_1280_batch2_lr0=0.0002"
+
+    model_file_path = os.path.join(input_training_folder, "weights", "best.pt")
+    args_yaml_file_path = os.path.join(input_training_folder, "args.yaml")
+
+    if not os.path.isfile(model_file_path):
+        raise FileNotFoundError(f"Model file not found: {model_file_path}")
+    if not os.path.isfile(args_yaml_file_path):
+        print(f"Warning: args.yaml not found at {args_yaml_file_path}. Some training parameters will be missing in the CSV.")
+        training_args_dict = {}
+    else:
+        with open(args_yaml_file_path, 'r') as f:
+            training_args_dict = yaml.safe_load(f)
+
+    train_imgsz_from_args = training_args_dict.get('imgsz')
+    train_lr0_from_args = training_args_dict.get('lr0')
+    train_lrf_from_args = training_args_dict.get('lrf')
+    train_optimizer_from_args = training_args_dict.get('optimizer')
+    train_batch_from_args = training_args_dict.get('batch') # <-- Added: Extract batch size (usually 'batch' key)
+
+    validation_run_imgsz = 1280
+    device_to_use = "cuda:0"
+    validation_project_folder = "Lower_learning_rater_validation_results"
+    input_folder_basename = os.path.basename(input_training_folder.rstrip('/\\'))
+    current_run_name = f"{input_folder_basename}conf=0.01ValAt{validation_run_imgsz}"
+
+    val_common_params = {
         'save_txt': True,
         'save_conf': True,
-        'conf': 0.4,
-        'plots': True,
+        'conf': 0.01,
         'iou': 0.6,
+        'plots': True,
     }
-    data_yaml = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml"
-    gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels"
 
+    data_config_yaml = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml"
+    ground_truth_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels"
+
+    print(f"Starting validation for model from: {input_training_folder}")
+    print(f"Model: {model_file_path}")
+    print(f"Using validation image size: {validation_run_imgsz}")
+    print(f"Output project/run: {validation_project_folder}/{current_run_name}")
+    print(f"Params for model.val(): conf={val_common_params['conf']}, iou={val_common_params['iou']}")
+    # Updated print statement to include batch size
+    print(f"Training args loaded: imgsz={train_imgsz_from_args}, batch={train_batch_from_args}, lr0={train_lr0_from_args}, lrf={train_lrf_from_args}, optimizer={train_optimizer_from_args}")
 
     run_and_process_inference(
-        model_path, data_yaml, imgsz, device, project, run_name,
-        common_params, gt_labels_dir, csv_filename="validation_metrics.csv"
+        model_path=model_file_path,
+        data_yaml_path=data_config_yaml,
+        validation_imgsz=validation_run_imgsz,
+        device_str=device_to_use,
+        project_name=validation_project_folder,
+        run_name_str=current_run_name,
+        save_params_dict=val_common_params,
+        gt_labels_dir_path=ground_truth_labels_dir,
+        csv_filename_str="validation_and_timing_metrics.csv",
+        train_imgsz_from_yaml=train_imgsz_from_args,
+        lr0_from_yaml=train_lr0_from_args,
+        lrf_from_yaml=train_lrf_from_args,
+        optimizer_from_yaml=train_optimizer_from_args,
+        tr_batch_from_yaml=train_batch_from_args # <-- Added: Pass the extracted batch size
     )
     print("Validation completed. Results saved in the project folder.")
-
-"""
-Core GPU Time (s):
-The sum of just the model’s forward pass plus NMS across all images.
-
-Core Avg Time per Image (ms):
-The average of those per-image forward+NMS times, in milliseconds.
-
-Core FPS:
-How many images/second the forward + NMS stage can run, at batch size 1.
-"""

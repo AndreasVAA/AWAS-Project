@@ -11,6 +11,7 @@ import logging
 import json
 import random
 from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights  # Pre-trained weights
+import albumentations as A  # For image augmentations
 
 # Import augmentation functions from augmentations.py (assumed to be in same folder)
 from augmentations import get_train_transforms, mixup_augment, get_randaugment_pipeline, mosaic_augment
@@ -27,7 +28,7 @@ runs_dir = os.path.join(os.getcwd(), "runs")
 if not os.path.exists(runs_dir):
     os.makedirs(runs_dir)
 
-run_name = "_stupid_testing_RCNN_multiclass_training_adamW_batch4_image_size_no_effect"  # Change as desired for each run
+run_name = "_stupid_testing_RCNN_multiclass_training_adamW_batch4_image_size_640"  # Change as desired for each run
 run_folder = os.path.join(runs_dir, run_name)
 os.makedirs(run_folder, exist_ok=True)
 
@@ -45,6 +46,14 @@ logging.getLogger('').addHandler(console)
 #############################################
 # Dataset Definitions
 #############################################
+
+transform = A.Compose(
+    [ A.Resize(TARGET_SIZE[0], TARGET_SIZE[1]) ],
+    bbox_params=A.BboxParams(
+        format='pascal_voc',
+        label_fields=['labels']
+    )
+)
 class AbsoluteDataset(Dataset):
     def __init__(self, images_dir, labels_dir):
         self.images_dir = images_dir
@@ -75,9 +84,11 @@ class AbsoluteDataset(Dataset):
         if img is None:
             raise RuntimeError(f"Failed to load image: {img_path}")
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+        # --- read your annotations into parallel lists ---
         label_file = os.path.join(self.labels_dir, os.path.splitext(img_file)[0] + ".txt")
-        boxes = []
-        labels = []
+        boxes_list = []
+        labels_list = []
         with open(label_file, 'r') as f:
             for line in f:
                 parts = line.strip().split()
@@ -86,17 +97,41 @@ class AbsoluteDataset(Dataset):
                     continue
                 class_id = int(parts[0])
                 xmin, ymin, xmax, ymax = map(float, parts[1:])
-                boxes.append([xmin, ymin, xmax, ymax])
-                labels.append(class_id)
-        boxes = torch.as_tensor(boxes, dtype=torch.float32) if boxes else torch.empty((0,4), dtype=torch.float32)
-        labels = torch.as_tensor(labels, dtype=torch.int64) if labels else torch.empty((0,), dtype=torch.int64)
-        target = {"boxes": boxes, "labels": labels, "image_id": torch.tensor([idx])}
-        if boxes.numel() > 0:
-            area = (boxes[:,2]-boxes[:,0])*(boxes[:,3]-boxes[:,1])
+                boxes_list.append((xmin, ymin, xmax, ymax))
+                labels_list.append(class_id)
+
+        # --- apply Albumentations (if provided) ---
+        if hasattr(self, 'transforms') and self.transforms is not None and boxes_list:
+            augmented = self.transforms(
+                image=img,
+                bboxes=boxes_list,
+                labels=labels_list
+            )
+            img = augmented['image']
+            boxes_list = augmented['bboxes']
+            labels_list = augmented['labels']
+
+        # --- convert back to tensors for PyTorch ---
+        if boxes_list:
+            boxes = torch.as_tensor(boxes_list, dtype=torch.float32)
+            labels = torch.as_tensor(labels_list, dtype=torch.int64)
+            area = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+            iscrowd = torch.zeros((boxes.shape[0],), dtype=torch.int64)
         else:
+            boxes = torch.empty((0, 4), dtype=torch.float32)
+            labels = torch.empty((0,), dtype=torch.int64)
             area = torch.empty((0,), dtype=torch.float32)
-        target["area"] = area
-        target["iscrowd"] = torch.zeros((boxes.shape[0],), dtype=torch.int64)
+            iscrowd = torch.empty((0,), dtype=torch.int64)
+
+        target = {
+            "boxes": boxes,
+            "labels": labels,
+            "image_id": torch.tensor([idx]),
+            "area": area,
+            "iscrowd": iscrowd,
+        }
+
+        # finally, to tensor and return
         img = TF.to_tensor(img)
         return img, target
 

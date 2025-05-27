@@ -70,3 +70,34 @@ Need a longer run for RT_DETR modelfor 640 at least
 
 I ran a couple of training session on RTDETR- validatate and check - varous image sizes
 Should test on faster RCNN as well
+
+Load mutlicalss and single class yolo11m 640 batch 4 to afti scope - today
+
+I need memory peak memory usage for the Faster RCNN as well
+
+Need to run validation on the variations of RT_DETR
+
+Could be intrseting to run optimizers with 640 image size. Should just take a day
+
+
+Lets us rather move on to create a validation script that will provide us all the information we might need and more. This includes species specifi metrics, as well as total metrics. THis at least means f1, precision, recall, map50, map75, map50-95.
+
+this means peak memory usage during the prediction part. FPS cabalitly, mean time spent on prediction for an image. 
+
+and other best practises metrics and inforamtion for a master report.
+
+
+Started runing a Faste RCNN 640. Could hvae implemtner accumualte here
+
+
+
+Run RT_DETR with AdamW
+
+
+The RT-DETR:
+run with 640 image size, batch 8, learning rate 0.0002, weight decay = 0.001, optimizer AdamW
+run with 1280 image size, batch 8, learning rate 0.0002, weight decay = 0.001, optimizer AdamW
+
+
+Need to consider runin yolo11 wiht a lot lower learning rate. just testnig a bit more with learning rate variations and if that affects iamge size
+

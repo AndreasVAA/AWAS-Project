@@ -166,21 +166,20 @@ def run_and_process_inference(model_path, data, imgsz, device, project, run_name
     return results
 
 if __name__ == "__main__":
-    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Batch_resolution_variations_single_class/YOLO11n_1024_batch16/weights/best.pt"
-    imgsz         = 1024
+    model_path    = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs_same_config_preproject/YOLO11n_640_multiclass/weights/best.pt"
+    imgsz         = 640
     device        = "cuda:0"
-    project       = "Dum_verifisering"
-    run_name      = "Verifisering_yolo11n_1024_batch16"
+    project       = "Validation_multiclass_old_config_verifciation_wiht_higher_tresholds"
+    run_name      = "Yolo11n_Multiclass_640_batch16_iou_0.7_conf_0.01"
     common_params = {
         'save_txt': True,
         'save_conf': True,
-        'conf': 0.4,
+        'conf': 0.01,
         'plots': True,
-        'iou': 0.6,          # for NMS
+        'iou': 0.7,          # for NMS
     }
-    data_yaml     = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml"
-    gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels"
-
+    data_yaml     = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml"
+    gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels"
     run_and_process_inference(
         model_path, data_yaml, imgsz, device, project, run_name,
         common_params, gt_labels_dir, csv_filename="validation_metrics.csv"
