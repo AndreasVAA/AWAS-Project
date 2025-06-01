@@ -1,0 +1,16 @@
+run_id,latency_ms_total_batch,peak_gpu_mem_mb,num_images_in_batch
+0,571.240,4873.812,16
+1,569.388,4873.812,16
+2,573.717,4873.812,16
+3,573.335,4873.812,16
+4,571.095,4873.812,16
+5,564.977,4873.812,16
+6,116.322,1053.241,3
+
+metric,value
+mean_latency_ms_per_image,35.758
+p50_latency_ms_per_image,35.703
+p90_latency_ms_per_image,35.857
+max_peak_gpu_mem_mb,4873.812
+fps_images_per_sec,27.97
+mean_latency_ms_per_batch,505.725

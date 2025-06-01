@@ -1,0 +1,2662 @@
+[
+  {
+    "epoch": 1,
+    "avg_train_loss": 1.3717235896768124e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7902731895446777,
+          "avg_time_per_image": 0.028184577672168462,
+          "fps": 35.48039681955121
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 2,
+    "avg_train_loss": 1.4530831555032755e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7860114574432373,
+          "avg_time_per_image": 0.02814152987316401,
+          "fps": 35.53467080528582
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 3,
+    "avg_train_loss": 1.3787503309957878e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7977185249328613,
+          "avg_time_per_image": 0.028259783080129906,
+          "fps": 35.3859757933925
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 4,
+    "avg_train_loss": 1.3122228538863216e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7765841484069824,
+          "avg_time_per_image": 0.028046304529363453,
+          "fps": 35.65532132595353
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 5,
+    "avg_train_loss": 1.2538600722478994e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.787818431854248,
+          "avg_time_per_image": 0.028159782139941896,
+          "fps": 35.51163837242894
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 6,
+    "avg_train_loss": 1.1772045580579061e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.771747350692749,
+          "avg_time_per_image": 0.02799744798679545,
+          "fps": 35.71754112987849
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 7,
+    "avg_train_loss": 1.1237413021199818e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7982966899871826,
+          "avg_time_per_image": 0.028265623131183658,
+          "fps": 35.378664583437526
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 8,
+    "avg_train_loss": 1.0728897619252547e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7910313606262207,
+          "avg_time_per_image": 0.028192235965921422,
+          "fps": 35.47075872977202
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 9,
+    "avg_train_loss": 1.0163620054971092e+32,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.797893524169922,
+          "avg_time_per_image": 0.02826155074919113,
+          "fps": 35.38376251446927
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 10,
+    "avg_train_loss": 9.659279357438514e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7960240840911865,
+          "avg_time_per_image": 0.028242667516072587,
+          "fps": 35.407420330636654
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 11,
+    "avg_train_loss": 9.233177345119392e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7821168899536133,
+          "avg_time_per_image": 0.02810219080761225,
+          "fps": 35.58441428449494
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.01
+  },
+  {
+    "epoch": 12,
+    "avg_train_loss": 8.713236787804254e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7862515449523926,
+          "avg_time_per_image": 0.028143954999519112,
+          "fps": 35.531608830993605
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 13,
+    "avg_train_loss": 8.433878034714758e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.8018906116485596,
+          "avg_time_per_image": 0.028301925370187466,
+          "fps": 35.33328517124049
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 14,
+    "avg_train_loss": 8.41800861991937e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7934484481811523,
+          "avg_time_per_image": 0.028216650991728813,
+          "fps": 35.440066941081405
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 15,
+    "avg_train_loss": 8.399696110354102e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.771120309829712,
+          "avg_time_per_image": 0.027991114240704166,
+          "fps": 35.72562318886965
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 16,
+    "avg_train_loss": 8.365716869053029e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.782742500305176,
+          "avg_time_per_image": 0.02810851010409268,
+          "fps": 35.57641427086514
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 17,
+    "avg_train_loss": 8.260909097023067e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7934694290161133,
+          "avg_time_per_image": 0.028216862919354675,
+          "fps": 35.43980076233329
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 18,
+    "avg_train_loss": 8.231915598720632e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.8069162368774414,
+          "avg_time_per_image": 0.028352689261388293,
+          "fps": 35.27002291672683
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 19,
+    "avg_train_loss": 8.176340216710472e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.78342604637146,
+          "avg_time_per_image": 0.02811541460981273,
+          "fps": 35.56767751349411
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 20,
+    "avg_train_loss": 8.141149238046073e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7896504402160645,
+          "avg_time_per_image": 0.02817828727490974,
+          "fps": 35.48831730771696
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 21,
+    "avg_train_loss": 8.095484067849551e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7759318351745605,
+          "avg_time_per_image": 0.028039715506813747,
+          "fps": 35.663699931513094
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 22,
+    "avg_train_loss": 8.07416373312261e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7742109298706055,
+          "avg_time_per_image": 0.028022332624955612,
+          "fps": 35.68582292501369
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.001
+  },
+  {
+    "epoch": 23,
+    "avg_train_loss": 8.030113618197093e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.782682180404663,
+          "avg_time_per_image": 0.028107900812168313,
+          "fps": 35.577185456947596
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 24,
+    "avg_train_loss": 7.98702977172843e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.782407760620117,
+          "avg_time_per_image": 0.028105128895152695,
+          "fps": 35.58069431848328
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 25,
+    "avg_train_loss": 7.9545505427983e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.778691053390503,
+          "avg_time_per_image": 0.028067586397883863,
+          "fps": 35.62828615984573
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 26,
+    "avg_train_loss": 7.990947609154892e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.792135715484619,
+          "avg_time_per_image": 0.028203391065501203,
+          "fps": 35.45672921662298
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 27,
+    "avg_train_loss": 8.013967585983484e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.795621156692505,
+          "avg_time_per_image": 0.028238597542348535,
+          "fps": 35.4125235327403
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 28,
+    "avg_train_loss": 7.972427825143706e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.789715051651001,
+          "avg_time_per_image": 0.02817893991566667,
+          "fps": 35.48749537749747
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 29,
+    "avg_train_loss": 7.985787966924195e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.788745403289795,
+          "avg_time_per_image": 0.0281691454877757,
+          "fps": 35.49983439980316
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 30,
+    "avg_train_loss": 7.93479865956849e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7886157035827637,
+          "avg_time_per_image": 0.02816783538972488,
+          "fps": 35.50148551225849
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 31,
+    "avg_train_loss": 8.02272787768463e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.8023412227630615,
+          "avg_time_per_image": 0.02830647699760668,
+          "fps": 35.32760364649229
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 32,
+    "avg_train_loss": 8.04315088690549e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7838053703308105,
+          "avg_time_per_image": 0.028119246164957683,
+          "fps": 35.56283102803104
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 33,
+    "avg_train_loss": 7.960425950131227e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.789158344268799,
+          "avg_time_per_image": 0.028173316608775742,
+          "fps": 35.4945785718572
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 34,
+    "avg_train_loss": 8.0141569556683625e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.780076026916504,
+          "avg_time_per_image": 0.02808157602945963,
+          "fps": 35.61053692110894
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 35,
+    "avg_train_loss": 7.924807105402611e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.786513328552246,
+          "avg_time_per_image": 0.028146599278305515,
+          "fps": 35.52827075527975
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 36,
+    "avg_train_loss": 7.90431294425134e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7783091068267822,
+          "avg_time_per_image": 0.028063728351785684,
+          "fps": 35.63318413949694
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 37,
+    "avg_train_loss": 7.905673318727716e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.78840708732605,
+          "avg_time_per_image": 0.02816572815480858,
+          "fps": 35.504141576019414
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 38,
+    "avg_train_loss": 7.9273768867371485e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7882626056671143,
+          "avg_time_per_image": 0.02816426874411226,
+          "fps": 35.505981322843674
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 39,
+    "avg_train_loss": 7.950538363585836e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.792860984802246,
+          "avg_time_per_image": 0.028210717018204507,
+          "fps": 35.44752156971747
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 40,
+    "avg_train_loss": 7.8889610674346e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.784633159637451,
+          "avg_time_per_image": 0.02812760767310557,
+          "fps": 35.55225924727889
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 41,
+    "avg_train_loss": 7.914391752480013e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7958104610443115,
+          "avg_time_per_image": 0.0282405097075183,
+          "fps": 35.41012575044905
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 42,
+    "avg_train_loss": 8.040011183760533e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7939207553863525,
+          "avg_time_per_image": 0.028221421771579325,
+          "fps": 35.434075862437965
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 43,
+    "avg_train_loss": 7.931134943412875e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.783478260040283,
+          "avg_time_per_image": 0.028115942020608915,
+          "fps": 35.56701031987483
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 44,
+    "avg_train_loss": 7.917118559986663e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7883670330047607,
+          "avg_time_per_image": 0.02816532356570466,
+          "fps": 35.50465158574085
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1e-05
+  },
+  {
+    "epoch": 45,
+    "avg_train_loss": 8.001091844955278e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7752418518066406,
+          "avg_time_per_image": 0.02803274597784485,
+          "fps": 35.67256667578449
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 46,
+    "avg_train_loss": 7.9126287107638865e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7831428050994873,
+          "avg_time_per_image": 0.02811255358686351,
+          "fps": 35.57129724662516
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 47,
+    "avg_train_loss": 7.978930878912577e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7897391319274902,
+          "avg_time_per_image": 0.02817918315078273,
+          "fps": 35.487189058999505
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 48,
+    "avg_train_loss": 7.988389255017605e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.776923894882202,
+          "avg_time_per_image": 0.02804973631194143,
+          "fps": 35.65095902788492
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 49,
+    "avg_train_loss": 7.9221774702140405e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.785460948944092,
+          "avg_time_per_image": 0.028135969181253457,
+          "fps": 35.54169375001605
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 50,
+    "avg_train_loss": 7.9108524746668e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.8014228343963623,
+          "avg_time_per_image": 0.028297200347438003,
+          "fps": 35.33918506855181
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 51,
+    "avg_train_loss": 7.936610854562783e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.788405179977417,
+          "avg_time_per_image": 0.028165708888660778,
+          "fps": 35.50416586186438
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 52,
+    "avg_train_loss": 7.9510767824350555e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7831785678863525,
+          "avg_time_per_image": 0.02811291482713487,
+          "fps": 35.570840168974215
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 53,
+    "avg_train_loss": 7.975675615118173e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7937493324279785,
+          "avg_time_per_image": 0.028219690226545243,
+          "fps": 35.43625007829945
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 54,
+    "avg_train_loss": 7.9070344502068565e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7707583904266357,
+          "avg_time_per_image": 0.027987458489157933,
+          "fps": 35.73028970770569
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 55,
+    "avg_train_loss": 7.919898667830103e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7912187576293945,
+          "avg_time_per_image": 0.02819412886494338,
+          "fps": 35.468377291961716
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-06
+  },
+  {
+    "epoch": 56,
+    "avg_train_loss": 7.947848631492174e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.780146360397339,
+          "avg_time_per_image": 0.028082286468659994,
+          "fps": 35.60963602860495
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 57,
+    "avg_train_loss": 7.975735022112717e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7970151901245117,
+          "avg_time_per_image": 0.028252678688126375,
+          "fps": 35.3948739175753
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 58,
+    "avg_train_loss": 7.978014766319491e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.797980308532715,
+          "avg_time_per_image": 0.028262427358916306,
+          "fps": 35.38266502379942
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 59,
+    "avg_train_loss": 7.940359784165045e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7841074466705322,
+          "avg_time_per_image": 0.02812229744111648,
+          "fps": 35.55897245215606
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 60,
+    "avg_train_loss": 8.0051626260556665e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7927193641662598,
+          "avg_time_per_image": 0.02820928650672989,
+          "fps": 35.44931913685338
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 61,
+    "avg_train_loss": 8.0025154405555105e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.795596122741699,
+          "avg_time_per_image": 0.02823834467415858,
+          "fps": 35.412840644130185
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 62,
+    "avg_train_loss": 7.968956589599883e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7941689491271973,
+          "avg_time_per_image": 0.0282239287790626,
+          "fps": 35.43092840929472
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 63,
+    "avg_train_loss": 7.943983100678139e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7769782543182373,
+          "avg_time_per_image": 0.02805028539715391,
+          "fps": 35.65026115924881
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 64,
+    "avg_train_loss": 8.00037595832752e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.780494451522827,
+          "avg_time_per_image": 0.028085802540634613,
+          "fps": 35.605178045142104
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 65,
+    "avg_train_loss": 7.979306064926549e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.780399799346924,
+          "avg_time_per_image": 0.02808484645804974,
+          "fps": 35.6063901397395
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 66,
+    "avg_train_loss": 7.9943457667152825e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.787278890609741,
+          "avg_time_per_image": 0.028154332228381224,
+          "fps": 35.51851245798475
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000002e-07
+  },
+  {
+    "epoch": 67,
+    "avg_train_loss": 7.903512636624646e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.776324510574341,
+          "avg_time_per_image": 0.028043681924993336,
+          "fps": 35.65865575977636
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 68,
+    "avg_train_loss": 8.002112737870815e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.783317804336548,
+          "avg_time_per_image": 0.02811432125592473,
+          "fps": 35.56906072520826
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 69,
+    "avg_train_loss": 7.93539706519029e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7894582748413086,
+          "avg_time_per_image": 0.028176346210518264,
+          "fps": 35.490762092733604
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 70,
+    "avg_train_loss": 7.995686866736654e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.782555341720581,
+          "avg_time_per_image": 0.028106619613339198,
+          "fps": 35.57880719050992
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 71,
+    "avg_train_loss": 7.873758958171492e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.776667833328247,
+          "avg_time_per_image": 0.02804714983159846,
+          "fps": 35.65424672397125
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 72,
+    "avg_train_loss": 7.980039736055709e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7871127128601074,
+          "avg_time_per_image": 0.02815265366525361,
+          "fps": 35.5206302002789
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 73,
+    "avg_train_loss": 7.925517786686945e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.783918857574463,
+          "avg_time_per_image": 0.028120392500752146,
+          "fps": 35.561381299114245
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 74,
+    "avg_train_loss": 7.929226320444358e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7747678756713867,
+          "avg_time_per_image": 0.02802795834011501,
+          "fps": 35.67866013874974
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 75,
+    "avg_train_loss": 7.8963299943839875e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.781323194503784,
+          "avg_time_per_image": 0.02809417368185641,
+          "fps": 35.59456887126078
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  },
+  {
+    "epoch": 76,
+    "avg_train_loss": 7.908473294728998e+31,
+    "val_custom_eval": {
+      "overall": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 359,
+        "inference": {
+          "total_time": 2.7746164798736572,
+          "avg_time_per_image": 0.0280264290896329,
+          "fps": 35.68060693004605
+        }
+      },
+      "per_class": {
+        "Plankton": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 359
+        }
+      }
+    },
+    "val_coco_eval": {
+      "mAP@.50": 0,
+      "mAP@.50:95": 0,
+      "info": "No Dets >0.01"
+    },
+    "learning_rate": 1.0000000000000004e-08
+  }
+]

@@ -1,138 +1,124 @@
 from ultralytics import YOLO
 import os
 
-def train_model(lr0 = 0.01, rect=False , project= "DUMDUMTESTING", optimizer = "auto", model_path="yolo11n.pt", config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", imgsz=640, batch=16, epochs=500, name="Dum_DUm_testing", freeze=None):    
+def train_model(
+    # --- Core settings that usually need to be specified per run ---
+    model_path: str,                # Path to the model file (e.g., "yolo11m.pt", "yolov8n.pt")
+    config_path: str,               # Path to data.yaml
+    project: str,                   # Project name for organizing experiments
+    name: str,                      # Specific name for this run
+    
+    # --- Common training parameters with sensible defaults ---
+    epochs: int = 100,
+    imgsz: int = 640,
+    batch: int = 16,                # Ultralytics default is often 16; can be overridden
+    optimizer: str = 'auto',        # Ultralytics 'auto' picks based on context
+    
+    rect: bool = False,             # Rectangular training
+    freeze: int = None,             # Freeze first N layers
+    device: any = 0,                # CUDA device, e.g., 0, '0', '0,1,2,3', or 'cpu'
+    workers: int = 8,               # Number of worker threads for data loading
+    exist_ok: bool = False,         # False to prevent accidental overwrites
+    seed: int = 0,                  # Random seed
+    pretrained: bool = True,        # Start from pretrained model
+    amp: bool = True,               # Automatic Mixed Precision
+    patience: int = 75,             # Early stopping patience (user's previous preference)
+    save: bool = True,              # Save checkpoints
+    save_period: int = -1,          # Save checkpoint every X epochs
+    verbose: bool = True,           # Verbose output
+    deterministic: bool = True,     # For reproducibility
+    single_cls: bool = False,       # Single-class training
+    val: bool = True,               # Validate during training
+    split: str = "val",             # Validation split
+    
+    # --- All other Ultralytics train() arguments (hyperparameters, specific controls) via kwargs ---
+    **other_yolo_train_args
+):
     """
-    Train the YOLO model using the specified configuration.
-    Allows overriding default parameters via keyword arguments.
+    Trains a YOLO model using Ultralytics.
+    - Core parameters (model_path, config_path, project, name) are required.
+    - Common training parameters have defaults and can be overridden.
+    - Any other keyword arguments provided in `**other_yolo_train_args` will be passed directly
+      to the Ultralytics `model.train()` method. If a hyperparameter (e.g., lr0, mosaic)
+      is NOT provided in the call to this function, it will NOT be passed to `model.train()`,
+      allowing Ultralytics to use its own internal default for that parameter.
     """
-    print("Working dir -", os.getcwd())
-    model = YOLO(model_path, task="detect")
-    results = model.train(
-        # Data and model settings
-        data=config_path,
-        epochs=epochs,
-        batch=batch,
-        imgsz= imgsz,
-        freeze=freeze,
-        rect=rect,
+    print(f"--- Training Run: {project}/{name} ---")
+    print(f"Working directory: {os.getcwd()}")
+    print(f"Model: {model_path}, Data: {config_path}")
+    print(f"Settings: Epochs={epochs}, ImgSz={imgsz}, Batch={batch}, Optimizer={optimizer}")
 
-        # Experiment output
-        project=project,
-        name=name,
+    yolo_instance = YOLO(model_path, task="detect")
 
-        # Overwrite folder
-        exist_ok=True,
+    # Start with parameters explicitly defined in this function's signature
+    train_params_to_pass = {
+        'data': config_path, 'project': project, 'name': name, 'epochs': epochs,
+        'imgsz': imgsz, 'batch': batch, 'optimizer': optimizer, 'rect': rect,
+        'freeze': freeze, 'device': device, 'workers': workers, 'exist_ok': exist_ok,
+        'seed': seed, 'pretrained': pretrained, 'amp': amp, 'patience': patience,
+        'save': save, 'save_period': save_period, 'verbose': verbose,
+        'deterministic': deterministic, 'single_cls': single_cls, 'val': val, 'split': split
+    }
 
-        # Optimization settings
-        optimizer=optimizer,
-        seed=0,
-        pretrained=True,
-
-        # Hardware and performance
-        device=0,
-        workers=8,
-        amp=True,
-
-        # Additional training hyperparameters
-        patience=75,
-        save=True,
-        save_period=-1,
-        verbose=False,
-        deterministic=True,
-
-        # Data augmentation and scheduling
-        single_cls=False,
-      
-        
-
-                                     
-        # Loss function weights and other parameters
-        lr0=lr0,
-        #momentum=0.9,
-        weight_decay=0.0005,
-
-        # Inference/validation settings
-        val=True,
-        split="val",
-        
-    )
+    # Add all other arguments passed via **other_yolo_train_args
+    # These will directly override any Ultralytics defaults if their names match.
+    # If a hyperparameter key (e.g., 'lr0') is not in other_yolo_train_args,
+    # it's not added here, so Ultralytics uses its internal default.
+    if other_yolo_train_args:
+        print("Applying additional/hyperparameter arguments from kwargs:")
+        for k, v_ in other_yolo_train_args.items():
+            print(f"  {k}: {v_}")
+        train_params_to_pass.update(other_yolo_train_args)
+    else:
+        print("No additional kwargs for hyperparameters provided; Ultralytics defaults will apply for unspecified ones.")
+    
+    results = yolo_instance.train(**train_params_to_pass)
     return results
 
 
-
 if __name__ == "__main__":
-    # Example usage for training:
-    #Need to run - hvis det ikke går - lavere batch size til 4
+    # Define your specific tuned hyperparameters from the tuning run
+    user_tuned_hyperparameters = {
+        'lr0': 0.00038, 'lrf': 0.00939, 'momentum': 0.75246, 'weight_decay': 0.00083,
+        'warmup_epochs': 2.77389, 'warmup_momentum': 0.94291,
+        'box': 8.2063, 'cls': 0.84574, 'dfl': 0.75034,
+        'hsv_h': 0.0256, 'hsv_s': 0.27606, 'hsv_v': 0.19502,
+        'degrees': 1.2906, 'translate': 0.11209, 'scale': 0.36401, 'shear': 1.94656,
+        'perspective': 0.00037, 'flipud': 0.24353, 'fliplr': 0.59228,
+        'bgr': 0.0542, 'mosaic': 0.44041, 'mixup': 0.03207, 'copy_paste': 0.0651,
+    }
 
-    project = "Testing_configruation_from_annetes_paper"
+    #data_config_file = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml" # Verify this path
+    data_config_file = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml"
 
-    
+    run_configurations = [
+        {
+            # Run 1: Uses YOUR specific tuned hyperparameters
+            "model_path": "yolo11m.pt",
+            "config_path": data_config_file,
+            "project": "Training_for_full_tuned_hyperparamters_multiclass", # Changed project name slightly for clarity
+            "name": "Run1_YOLO11m_UserTuned_multiclass",
+            "imgsz": 640,
+            "batch": 4,
+            "optimizer": 'AdamW', # This was part of your tuned setup
+            "epochs": 500,
+            **user_tuned_hyperparameters # These will be caught by **other_yolo_train_args
+        },
+    ]
 
+    for i, current_run_config in enumerate(run_configurations):
+        print(f"\n>>> Processing Run {i+1} of {len(run_configurations)}: {current_run_config.get('project')}/{current_run_config.get('name')} <<<")
+        try:
+            train_results = train_model(**current_run_config)
+            if hasattr(train_results, 'save_dir'):
+                 print(f"Run '{current_run_config['name']}' completed. Results saved to: {train_results.save_dir}")
+            else:
+                 print(f"Run '{current_run_config['name']}' completed, but no save_dir attribute found in results object.")
 
-    #train_results = train_model(imgsz=1280, name="YOLO11m_1280_batch4_with_rect=true", batch=4, rect=True, model_path="yolo11m.pt",project=project)
-    train_results = train_model(imgsz=640, name="YOLO11m_multiclass_640_batch4_lr0=0.0001_weight_decay_0.0005", batch=4, model_path="yolo11m.pt",project=project, config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml", lr0=0.001)
-    """
-    cos_lr=False,
-    mosaic=1,
-    mixup=0.0,
-    auto_augment="randaugment",
-    erasing=0.4,
-    hsv_h=0.7, # Default is 0.7
-    hsv_s = 0.015, # Default is 0.015
-    hsv_v=0.4, # Defaut is 0.4
-    translate=0.1,
-    scale=0.5,
-    fliplr=0.5,
-    crop_fraction=1,
-    """
-   
-   
-    #Might wnat to run and maybe at 1024 as well
-    #train_results = train_model(imgsz=960, name="YOLO11m_960_batch4", batch=4, model_path="yolo11m.pt")
-   
+        except Exception as e:
+            print(f"!!! Error during run '{current_run_config.get('name', 'UnnamedRun')}': {e}")
+            import traceback
+            traceback.print_exc()
+            print(f"Problematic configuration: {current_run_config}")
 
-    #backbone of YOLO 0-9
-    #Neck: 10-22
-    #Detect/Head: 23
-    # 1. Load YOLO11x
-    """
-
-    model_11m = YOLO('yolo11m.pt')
-
-    layers11 = model_11m.model.model  # a nn.Sequential of 24 modules
-    print("YOLO11m modules (index: module):")
-    for idx, layer in enumerate(layers11):
-        print(f"{idx:3d}:", layer)
-
-    
-    model_11x = YOLO('yolo11x.pt')
-
-    layers11 = model_11x.model.model  # a nn.Sequential of 24 modules
-    print("YOLO11x modules (index: module):")
-    for idx, layer in enumerate(layers11):
-        print(f"{idx:3d}:", layer)
-
-    
-
-    model_v5x = YOLO('yolov5x.pt')
-
-    layersv5 = model_v5x.model.model  # a nn.Sequential of 24 modules
-    print("YOLO5vx modules (index: module):")
-    for idx, layer in enumerate(layersv5):
-        print(f"{idx:3d}:", layer)
-   
-    
-    """
-    
-
-
-    print("Training completed.")
-   
-
-    # Example usage for prediction:
-    #pred_results = predict_model()
-    #print("Prediction completed. Results:")
-    #for result in pred_results:
-     #   print(result.summary())
-    
+    print("\n--- All configured training runs attempted. ---")

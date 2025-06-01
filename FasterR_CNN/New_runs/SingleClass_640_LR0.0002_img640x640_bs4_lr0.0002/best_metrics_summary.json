@@ -1,0 +1,67 @@
+{
+  "best_epoch": 17,
+  "best_metric_value": 0.8045016145443618,
+  "final_custom_eval_at_best": {
+    "overall": {
+      "precision": 0.5948275862068966,
+      "recall": 0.7688022284122563,
+      "f1": 0.6707168894289185,
+      "tp": 276,
+      "fp": 188,
+      "fn": 83,
+      "inference": {
+        "total_time": 3.3370022773742676,
+        "avg_time_per_image": 0.03370709371085119,
+        "fps": 29.66734565068937
+      }
+    },
+    "per_class": {
+      "Plankton": {
+        "precision": 0.5948275862068966,
+        "recall": 0.7688022284122563,
+        "f1": 0.6707168894289185,
+        "tp": 276,
+        "fp": 188,
+        "fn": 83
+      }
+    }
+  },
+  "final_coco_eval_at_best": {
+    "mAP@.50": 0.8045016145443618,
+    "mAP@.75": 0.4924759692385407,
+    "mAP@.50:95": 0.47078892415783014,
+    "AR@1": 0.19498607242339833,
+    "AR@10": 0.5222841225626741,
+    "AR@100": 0.5532033426183844,
+    "per_class_ap_at_0.50": {
+      "Plankton": 0.8045016145443618
+    }
+  },
+  "config_summary": {
+    "EFFECTIVE_BATCH": 64,
+    "NUM_EPOCHS": 400,
+    "SCORE_THRESHOLD": 0.4,
+    "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+    "IOU_THRESHOLD": 0.6,
+    "EARLY_STOPPING_PATIENCE": 75,
+    "NUM_WORKERS": 4,
+    "SEED": 42,
+    "SCHEDULER_PATIENCE": 10,
+    "DEBUG_LOGGING": false,
+    "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images",
+    "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax",
+    "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
+    "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax",
+    "CLASS_NAMES": [
+      "Plankton"
+    ],
+    "VARIATION_NAME": "SingleClass_640_LR0.0002",
+    "TARGET_SIZE": [
+      640,
+      640
+    ],
+    "BATCH_SIZE": 4,
+    "LEARNING_RATE": 0.0002,
+    "NUM_CLASSES_MODEL": 2
+  }
+}

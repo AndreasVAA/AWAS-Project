@@ -1,0 +1,306 @@
+2025-05-29 21:07:08,959 [INFO] Third_iteration_training.py:648 - ===== Starting Training Run: SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280 =====
+2025-05-29 21:07:08,959 [INFO] Third_iteration_training.py:649 - Outputting to folder: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280
+2025-05-29 21:07:08,959 [INFO] Third_iteration_training.py:650 - Full Run Configuration: {
+  "BATCH_SIZE": 4,
+  "CLASS_NAMES": [
+    "Tripos longipes",
+    "Tripos fusus",
+    "Tripos lineatum/furca",
+    "Chaetoceros",
+    "Coscinodiscus"
+  ],
+  "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+  "DEBUG_LOGGING": false,
+  "EARLY_STOPPING_PATIENCE": 40,
+  "IOU_THRESHOLD": 0.6,
+  "LEARNING_RATE": 0.005,
+  "NUM_CLASSES_MODEL": 6,
+  "NUM_EPOCHS": 400,
+  "NUM_WORKERS": 4,
+  "OPTIMIZER_TYPE": "SGD",
+  "OUTPUT_BASE_DIR": "FasterRCNN_Runs_Third_iteraion",
+  "SCHEDULER_PATIENCE": 10,
+  "SCORE_THRESHOLD": 0.4,
+  "SEED": 42,
+  "SGD_MOMENTUM": 0.937,
+  "TARGET_SIZE": [
+    1280,
+    1280
+  ],
+  "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images",
+  "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/labels_minmax",
+  "USE_GRADIENT_ACCUMULATION": false,
+  "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images",
+  "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels_minmax",
+  "VARIATION_NAME": "SGD_MultiClass_1280_NoAccum_F1Opt",
+  "WARMUP_EPOCHS": 3,
+  "WEIGHT_DECAY": 0.0005
+}
+2025-05-29 21:07:08,959 [INFO] Third_iteration_training.py:651 - Using device: cuda
+2025-05-29 21:07:08,965 [INFO] Third_iteration_training.py:147 - AbsoluteDataset: Initialized with 763 images from /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images.
+2025-05-29 21:07:08,966 [INFO] Third_iteration_training.py:147 - AbsoluteDataset: Initialized with 99 images from /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images.
+2025-05-29 21:07:08,966 [INFO] Third_iteration_training.py:674 - Training dataset size: 763, Validation dataset size: 99
+2025-05-29 21:07:08,966 [INFO] Third_iteration_training.py:675 - Number of object classes: 5 -> Model configured for 6 outputs (incl. background).
+2025-05-29 21:07:09,383 [INFO] Third_iteration_training.py:689 - Using SGD optimizer with LR=0.005, Momentum=0.937, WeightDecay=0.0005
+2025-05-29 21:07:09,384 [INFO] Third_iteration_training.py:707 - Physical Batch Size: 4, Gradient Accumulation Steps: 1, Effective Batch Size: 4
+2025-05-29 21:07:09,384 [INFO] Third_iteration_training.py:728 - Epoch 1/400 (Warmup): LR set to 1.67e-03
+2025-05-29 21:08:18,361 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:08:18,545 [INFO] Third_iteration_training.py:802 - [E1/400] TrainLoss: 0.3207 | Val F1(S:0.4/I:0.6): 0.5017 (P:0.416 R:0.632) | mAP@.50:0.3830 | mAP@.50-.95:0.1895 | LR:1.67e-03
+2025-05-29 21:08:18,724 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 1, Metric (F1): 0.5017
+2025-05-29 21:08:18,725 [INFO] Third_iteration_training.py:728 - Epoch 2/400 (Warmup): LR set to 3.33e-03
+2025-05-29 21:09:27,064 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:09:27,199 [INFO] Third_iteration_training.py:802 - [E2/400] TrainLoss: 0.1557 | Val F1(S:0.4/I:0.6): 0.6376 (P:0.577 R:0.713) | mAP@.50:0.5645 | mAP@.50-.95:0.3192 | LR:3.33e-03
+2025-05-29 21:09:27,441 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 2, Metric (F1): 0.6376
+2025-05-29 21:09:27,441 [INFO] Third_iteration_training.py:728 - Epoch 3/400 (Warmup): LR set to 5.00e-03
+2025-05-29 21:10:35,902 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:10:36,091 [INFO] Third_iteration_training.py:802 - [E3/400] TrainLoss: 0.1175 | Val F1(S:0.4/I:0.6): 0.6847 (P:0.576 R:0.844) | mAP@.50:0.7598 | mAP@.50-.95:0.4482 | LR:5.00e-03
+2025-05-29 21:10:36,348 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 3, Metric (F1): 0.6847
+2025-05-29 21:10:36,348 [INFO] Third_iteration_training.py:732 - Epoch 4/400: Warmup complete. LR set to 5.00e-03
+2025-05-29 21:11:44,794 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:11:44,893 [INFO] Third_iteration_training.py:802 - [E4/400] TrainLoss: 0.0958 | Val F1(S:0.4/I:0.6): 0.7190 (P:0.643 R:0.816) | mAP@.50:0.7423 | mAP@.50-.95:0.4230 | LR:5.00e-03
+2025-05-29 21:11:45,146 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 4, Metric (F1): 0.7190
+2025-05-29 21:12:53,661 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:12:53,773 [INFO] Third_iteration_training.py:802 - [E5/400] TrainLoss: 0.0814 | Val F1(S:0.4/I:0.6): 0.7056 (P:0.599 R:0.858) | mAP@.50:0.8181 | mAP@.50-.95:0.5013 | LR:5.00e-03
+2025-05-29 21:12:53,773 [INFO] Third_iteration_training.py:839 - E5: Metric (F1): 0.7056 did not improve from best (F1): 0.7190. No improvement for 1 epochs.
+2025-05-29 21:14:02,198 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:14:02,300 [INFO] Third_iteration_training.py:802 - [E6/400] TrainLoss: 0.0686 | Val F1(S:0.4/I:0.6): 0.7571 (P:0.656 R:0.894) | mAP@.50:0.8322 | mAP@.50-.95:0.5132 | LR:5.00e-03
+2025-05-29 21:14:02,548 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 6, Metric (F1): 0.7571
+2025-05-29 21:15:10,867 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:15:10,959 [INFO] Third_iteration_training.py:802 - [E7/400] TrainLoss: 0.0633 | Val F1(S:0.4/I:0.6): 0.7731 (P:0.700 R:0.864) | mAP@.50:0.8181 | mAP@.50-.95:0.5029 | LR:5.00e-03
+2025-05-29 21:15:11,219 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 7, Metric (F1): 0.7731
+2025-05-29 21:16:19,717 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:16:19,806 [INFO] Third_iteration_training.py:802 - [E8/400] TrainLoss: 0.0563 | Val F1(S:0.4/I:0.6): 0.7686 (P:0.724 R:0.819) | mAP@.50:0.8280 | mAP@.50-.95:0.5073 | LR:5.00e-03
+2025-05-29 21:16:19,807 [INFO] Third_iteration_training.py:839 - E8: Metric (F1): 0.7686 did not improve from best (F1): 0.7731. No improvement for 1 epochs.
+2025-05-29 21:17:28,327 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:17:28,411 [INFO] Third_iteration_training.py:802 - [E9/400] TrainLoss: 0.0541 | Val F1(S:0.4/I:0.6): 0.8107 (P:0.782 R:0.841) | mAP@.50:0.7978 | mAP@.50-.95:0.4818 | LR:5.00e-03
+2025-05-29 21:17:28,652 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 9, Metric (F1): 0.8107
+2025-05-29 21:18:36,967 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:18:37,050 [INFO] Third_iteration_training.py:802 - [E10/400] TrainLoss: 0.0521 | Val F1(S:0.4/I:0.6): 0.8206 (P:0.779 R:0.866) | mAP@.50:0.8510 | mAP@.50-.95:0.5057 | LR:5.00e-03
+2025-05-29 21:18:37,300 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 10, Metric (F1): 0.8206
+2025-05-29 21:19:45,858 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:19:45,942 [INFO] Third_iteration_training.py:802 - [E11/400] TrainLoss: 0.0457 | Val F1(S:0.4/I:0.6): 0.8091 (P:0.777 R:0.844) | mAP@.50:0.8349 | mAP@.50-.95:0.4919 | LR:5.00e-03
+2025-05-29 21:19:45,944 [INFO] Third_iteration_training.py:839 - E11: Metric (F1): 0.8091 did not improve from best (F1): 0.8206. No improvement for 1 epochs.
+2025-05-29 21:20:54,348 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:20:54,434 [INFO] Third_iteration_training.py:802 - [E12/400] TrainLoss: 0.0460 | Val F1(S:0.4/I:0.6): 0.8000 (P:0.729 R:0.886) | mAP@.50:0.8468 | mAP@.50-.95:0.5293 | LR:5.00e-03
+2025-05-29 21:20:54,435 [INFO] Third_iteration_training.py:839 - E12: Metric (F1): 0.8000 did not improve from best (F1): 0.8206. No improvement for 2 epochs.
+2025-05-29 21:22:02,912 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:22:02,996 [INFO] Third_iteration_training.py:802 - [E13/400] TrainLoss: 0.0428 | Val F1(S:0.4/I:0.6): 0.8220 (P:0.791 R:0.855) | mAP@.50:0.8452 | mAP@.50-.95:0.5051 | LR:5.00e-03
+2025-05-29 21:22:03,238 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 13, Metric (F1): 0.8220
+2025-05-29 21:23:11,786 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:23:11,866 [INFO] Third_iteration_training.py:802 - [E14/400] TrainLoss: 0.0420 | Val F1(S:0.4/I:0.6): 0.8178 (P:0.793 R:0.844) | mAP@.50:0.8454 | mAP@.50-.95:0.4993 | LR:5.00e-03
+2025-05-29 21:23:11,868 [INFO] Third_iteration_training.py:839 - E14: Metric (F1): 0.8178 did not improve from best (F1): 0.8220. No improvement for 1 epochs.
+2025-05-29 21:24:20,330 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:24:20,420 [INFO] Third_iteration_training.py:802 - [E15/400] TrainLoss: 0.0409 | Val F1(S:0.4/I:0.6): 0.8103 (P:0.755 R:0.875) | mAP@.50:0.8545 | mAP@.50-.95:0.5420 | LR:5.00e-03
+2025-05-29 21:24:20,422 [INFO] Third_iteration_training.py:839 - E15: Metric (F1): 0.8103 did not improve from best (F1): 0.8220. No improvement for 2 epochs.
+2025-05-29 21:25:28,971 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:25:29,053 [INFO] Third_iteration_training.py:802 - [E16/400] TrainLoss: 0.0378 | Val F1(S:0.4/I:0.6): 0.8151 (P:0.791 R:0.841) | mAP@.50:0.8330 | mAP@.50-.95:0.5169 | LR:5.00e-03
+2025-05-29 21:25:29,055 [INFO] Third_iteration_training.py:839 - E16: Metric (F1): 0.8151 did not improve from best (F1): 0.8220. No improvement for 3 epochs.
+2025-05-29 21:26:37,576 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:26:37,659 [INFO] Third_iteration_training.py:802 - [E17/400] TrainLoss: 0.0372 | Val F1(S:0.4/I:0.6): 0.8280 (P:0.800 R:0.858) | mAP@.50:0.8345 | mAP@.50-.95:0.5291 | LR:5.00e-03
+2025-05-29 21:26:37,907 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 17, Metric (F1): 0.8280
+2025-05-29 21:27:46,392 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:27:46,477 [INFO] Third_iteration_training.py:802 - [E18/400] TrainLoss: 0.0366 | Val F1(S:0.4/I:0.6): 0.8183 (P:0.771 R:0.872) | mAP@.50:0.8462 | mAP@.50-.95:0.5295 | LR:5.00e-03
+2025-05-29 21:27:46,479 [INFO] Third_iteration_training.py:839 - E18: Metric (F1): 0.8183 did not improve from best (F1): 0.8280. No improvement for 1 epochs.
+2025-05-29 21:28:54,887 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:28:54,966 [INFO] Third_iteration_training.py:802 - [E19/400] TrainLoss: 0.0368 | Val F1(S:0.4/I:0.6): 0.8375 (P:0.842 R:0.833) | mAP@.50:0.8238 | mAP@.50-.95:0.5382 | LR:5.00e-03
+2025-05-29 21:28:55,217 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 19, Metric (F1): 0.8375
+2025-05-29 21:30:03,732 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:30:03,815 [INFO] Third_iteration_training.py:802 - [E20/400] TrainLoss: 0.0349 | Val F1(S:0.4/I:0.6): 0.8185 (P:0.780 R:0.861) | mAP@.50:0.8335 | mAP@.50-.95:0.5255 | LR:5.00e-03
+2025-05-29 21:30:03,818 [INFO] Third_iteration_training.py:839 - E20: Metric (F1): 0.8185 did not improve from best (F1): 0.8375. No improvement for 1 epochs.
+2025-05-29 21:31:12,330 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:31:12,406 [INFO] Third_iteration_training.py:802 - [E21/400] TrainLoss: 0.0342 | Val F1(S:0.4/I:0.6): 0.8218 (P:0.803 R:0.841) | mAP@.50:0.8349 | mAP@.50-.95:0.5213 | LR:5.00e-03
+2025-05-29 21:31:12,408 [INFO] Third_iteration_training.py:839 - E21: Metric (F1): 0.8218 did not improve from best (F1): 0.8375. No improvement for 2 epochs.
+2025-05-29 21:32:20,885 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:32:20,964 [INFO] Third_iteration_training.py:802 - [E22/400] TrainLoss: 0.0338 | Val F1(S:0.4/I:0.6): 0.8114 (P:0.761 R:0.869) | mAP@.50:0.8471 | mAP@.50-.95:0.5388 | LR:5.00e-03
+2025-05-29 21:32:20,967 [INFO] Third_iteration_training.py:839 - E22: Metric (F1): 0.8114 did not improve from best (F1): 0.8375. No improvement for 3 epochs.
+2025-05-29 21:33:29,453 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:33:29,608 [INFO] Third_iteration_training.py:802 - [E23/400] TrainLoss: 0.0334 | Val F1(S:0.4/I:0.6): 0.7995 (P:0.789 R:0.811) | mAP@.50:0.8025 | mAP@.50-.95:0.4865 | LR:5.00e-03
+2025-05-29 21:33:29,611 [INFO] Third_iteration_training.py:839 - E23: Metric (F1): 0.7995 did not improve from best (F1): 0.8375. No improvement for 4 epochs.
+2025-05-29 21:34:38,161 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:34:38,233 [INFO] Third_iteration_training.py:802 - [E24/400] TrainLoss: 0.0352 | Val F1(S:0.4/I:0.6): 0.8202 (P:0.827 R:0.813) | mAP@.50:0.8052 | mAP@.50-.95:0.5135 | LR:5.00e-03
+2025-05-29 21:34:38,236 [INFO] Third_iteration_training.py:839 - E24: Metric (F1): 0.8202 did not improve from best (F1): 0.8375. No improvement for 5 epochs.
+2025-05-29 21:35:46,674 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:35:46,756 [INFO] Third_iteration_training.py:802 - [E25/400] TrainLoss: 0.0344 | Val F1(S:0.4/I:0.6): 0.8322 (P:0.816 R:0.850) | mAP@.50:0.8387 | mAP@.50-.95:0.5253 | LR:5.00e-03
+2025-05-29 21:35:46,758 [INFO] Third_iteration_training.py:839 - E25: Metric (F1): 0.8322 did not improve from best (F1): 0.8375. No improvement for 6 epochs.
+2025-05-29 21:36:55,164 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:36:55,240 [INFO] Third_iteration_training.py:802 - [E26/400] TrainLoss: 0.0317 | Val F1(S:0.4/I:0.6): 0.8242 (P:0.813 R:0.836) | mAP@.50:0.8362 | mAP@.50-.95:0.5283 | LR:5.00e-03
+2025-05-29 21:36:55,243 [INFO] Third_iteration_training.py:839 - E26: Metric (F1): 0.8242 did not improve from best (F1): 0.8375. No improvement for 7 epochs.
+2025-05-29 21:38:03,697 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:38:03,778 [INFO] Third_iteration_training.py:802 - [E27/400] TrainLoss: 0.0342 | Val F1(S:0.4/I:0.6): 0.8129 (P:0.786 R:0.841) | mAP@.50:0.8278 | mAP@.50-.95:0.5163 | LR:5.00e-03
+2025-05-29 21:38:03,780 [INFO] Third_iteration_training.py:839 - E27: Metric (F1): 0.8129 did not improve from best (F1): 0.8375. No improvement for 8 epochs.
+2025-05-29 21:39:12,197 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:39:12,275 [INFO] Third_iteration_training.py:802 - [E28/400] TrainLoss: 0.0320 | Val F1(S:0.4/I:0.6): 0.8253 (P:0.797 R:0.855) | mAP@.50:0.8270 | mAP@.50-.95:0.5427 | LR:5.00e-03
+2025-05-29 21:39:12,278 [INFO] Third_iteration_training.py:839 - E28: Metric (F1): 0.8253 did not improve from best (F1): 0.8375. No improvement for 9 epochs.
+2025-05-29 21:40:20,761 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:40:20,842 [INFO] Third_iteration_training.py:802 - [E29/400] TrainLoss: 0.0306 | Val F1(S:0.4/I:0.6): 0.8010 (P:0.743 R:0.869) | mAP@.50:0.8324 | mAP@.50-.95:0.5253 | LR:5.00e-03
+2025-05-29 21:40:20,845 [INFO] Third_iteration_training.py:839 - E29: Metric (F1): 0.8010 did not improve from best (F1): 0.8375. No improvement for 10 epochs.
+2025-05-29 21:41:29,269 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:41:29,349 [INFO] Third_iteration_training.py:802 - [E30/400] TrainLoss: 0.0294 | Val F1(S:0.4/I:0.6): 0.8204 (P:0.791 R:0.852) | mAP@.50:0.8328 | mAP@.50-.95:0.5167 | LR:5.00e-04
+2025-05-29 21:41:29,352 [INFO] Third_iteration_training.py:839 - E30: Metric (F1): 0.8204 did not improve from best (F1): 0.8375. No improvement for 11 epochs.
+2025-05-29 21:42:37,917 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:42:37,994 [INFO] Third_iteration_training.py:802 - [E31/400] TrainLoss: 0.0226 | Val F1(S:0.4/I:0.6): 0.8242 (P:0.813 R:0.836) | mAP@.50:0.8363 | mAP@.50-.95:0.5446 | LR:5.00e-04
+2025-05-29 21:42:37,997 [INFO] Third_iteration_training.py:839 - E31: Metric (F1): 0.8242 did not improve from best (F1): 0.8375. No improvement for 12 epochs.
+2025-05-29 21:43:46,547 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:43:46,622 [INFO] Third_iteration_training.py:802 - [E32/400] TrainLoss: 0.0187 | Val F1(S:0.4/I:0.6): 0.8293 (P:0.807 R:0.852) | mAP@.50:0.8425 | mAP@.50-.95:0.5438 | LR:5.00e-04
+2025-05-29 21:43:46,625 [INFO] Third_iteration_training.py:839 - E32: Metric (F1): 0.8293 did not improve from best (F1): 0.8375. No improvement for 13 epochs.
+2025-05-29 21:44:55,158 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:44:55,233 [INFO] Third_iteration_training.py:802 - [E33/400] TrainLoss: 0.0174 | Val F1(S:0.4/I:0.6): 0.8286 (P:0.804 R:0.855) | mAP@.50:0.8375 | mAP@.50-.95:0.5454 | LR:5.00e-04
+2025-05-29 21:44:55,236 [INFO] Third_iteration_training.py:839 - E33: Metric (F1): 0.8286 did not improve from best (F1): 0.8375. No improvement for 14 epochs.
+2025-05-29 21:46:03,780 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:46:03,853 [INFO] Third_iteration_training.py:802 - [E34/400] TrainLoss: 0.0168 | Val F1(S:0.4/I:0.6): 0.8354 (P:0.816 R:0.855) | mAP@.50:0.8377 | mAP@.50-.95:0.5451 | LR:5.00e-04
+2025-05-29 21:46:03,856 [INFO] Third_iteration_training.py:839 - E34: Metric (F1): 0.8354 did not improve from best (F1): 0.8375. No improvement for 15 epochs.
+2025-05-29 21:47:12,401 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:47:12,476 [INFO] Third_iteration_training.py:802 - [E35/400] TrainLoss: 0.0159 | Val F1(S:0.4/I:0.6): 0.8338 (P:0.816 R:0.852) | mAP@.50:0.8344 | mAP@.50-.95:0.5418 | LR:5.00e-04
+2025-05-29 21:47:12,479 [INFO] Third_iteration_training.py:839 - E35: Metric (F1): 0.8338 did not improve from best (F1): 0.8375. No improvement for 16 epochs.
+2025-05-29 21:48:20,897 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:48:20,977 [INFO] Third_iteration_training.py:802 - [E36/400] TrainLoss: 0.0155 | Val F1(S:0.4/I:0.6): 0.8347 (P:0.813 R:0.858) | mAP@.50:0.8345 | mAP@.50-.95:0.5409 | LR:5.00e-04
+2025-05-29 21:48:20,980 [INFO] Third_iteration_training.py:839 - E36: Metric (F1): 0.8347 did not improve from best (F1): 0.8375. No improvement for 17 epochs.
+2025-05-29 21:49:29,409 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:49:29,486 [INFO] Third_iteration_training.py:802 - [E37/400] TrainLoss: 0.0150 | Val F1(S:0.4/I:0.6): 0.8331 (P:0.812 R:0.855) | mAP@.50:0.8335 | mAP@.50-.95:0.5394 | LR:5.00e-04
+2025-05-29 21:49:29,490 [INFO] Third_iteration_training.py:839 - E37: Metric (F1): 0.8331 did not improve from best (F1): 0.8375. No improvement for 18 epochs.
+2025-05-29 21:50:37,966 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:50:38,044 [INFO] Third_iteration_training.py:802 - [E38/400] TrainLoss: 0.0148 | Val F1(S:0.4/I:0.6): 0.8320 (P:0.810 R:0.855) | mAP@.50:0.8375 | mAP@.50-.95:0.5434 | LR:5.00e-04
+2025-05-29 21:50:38,048 [INFO] Third_iteration_training.py:839 - E38: Metric (F1): 0.8320 did not improve from best (F1): 0.8375. No improvement for 19 epochs.
+2025-05-29 21:51:46,614 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:51:46,687 [INFO] Third_iteration_training.py:802 - [E39/400] TrainLoss: 0.0145 | Val F1(S:0.4/I:0.6): 0.8338 (P:0.816 R:0.852) | mAP@.50:0.8301 | mAP@.50-.95:0.5376 | LR:5.00e-04
+2025-05-29 21:51:46,691 [INFO] Third_iteration_training.py:839 - E39: Metric (F1): 0.8338 did not improve from best (F1): 0.8375. No improvement for 20 epochs.
+2025-05-29 21:52:55,236 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:52:55,313 [INFO] Third_iteration_training.py:802 - [E40/400] TrainLoss: 0.0143 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8318 | mAP@.50-.95:0.5400 | LR:5.00e-04
+2025-05-29 21:52:55,317 [INFO] Third_iteration_training.py:839 - E40: Metric (F1): 0.8363 did not improve from best (F1): 0.8375. No improvement for 21 epochs.
+2025-05-29 21:54:03,720 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:54:03,796 [INFO] Third_iteration_training.py:802 - [E41/400] TrainLoss: 0.0140 | Val F1(S:0.4/I:0.6): 0.8327 (P:0.814 R:0.852) | mAP@.50:0.8334 | mAP@.50-.95:0.5395 | LR:5.00e-05
+2025-05-29 21:54:03,800 [INFO] Third_iteration_training.py:839 - E41: Metric (F1): 0.8327 did not improve from best (F1): 0.8375. No improvement for 22 epochs.
+2025-05-29 21:55:12,290 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:55:12,367 [INFO] Third_iteration_training.py:802 - [E42/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8327 (P:0.814 R:0.852) | mAP@.50:0.8323 | mAP@.50-.95:0.5441 | LR:5.00e-05
+2025-05-29 21:55:12,372 [INFO] Third_iteration_training.py:839 - E42: Metric (F1): 0.8327 did not improve from best (F1): 0.8375. No improvement for 23 epochs.
+2025-05-29 21:56:20,682 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:56:20,756 [INFO] Third_iteration_training.py:802 - [E43/400] TrainLoss: 0.0135 | Val F1(S:0.4/I:0.6): 0.8327 (P:0.814 R:0.852) | mAP@.50:0.8330 | mAP@.50-.95:0.5447 | LR:5.00e-05
+2025-05-29 21:56:20,760 [INFO] Third_iteration_training.py:839 - E43: Metric (F1): 0.8327 did not improve from best (F1): 0.8375. No improvement for 24 epochs.
+2025-05-29 21:57:29,155 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:57:29,231 [INFO] Third_iteration_training.py:802 - [E44/400] TrainLoss: 0.0135 | Val F1(S:0.4/I:0.6): 0.8342 (P:0.814 R:0.855) | mAP@.50:0.8324 | mAP@.50-.95:0.5448 | LR:5.00e-05
+2025-05-29 21:57:29,235 [INFO] Third_iteration_training.py:839 - E44: Metric (F1): 0.8342 did not improve from best (F1): 0.8375. No improvement for 25 epochs.
+2025-05-29 21:58:37,755 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:58:37,832 [INFO] Third_iteration_training.py:802 - [E45/400] TrainLoss: 0.0135 | Val F1(S:0.4/I:0.6): 0.8385 (P:0.817 R:0.861) | mAP@.50:0.8323 | mAP@.50-.95:0.5425 | LR:5.00e-05
+2025-05-29 21:58:38,088 [INFO] Third_iteration_training.py:824 - <<< Best Model Saved! Epoch: 45, Metric (F1): 0.8385
+2025-05-29 21:59:46,391 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 21:59:46,465 [INFO] Third_iteration_training.py:802 - [E46/400] TrainLoss: 0.0136 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8324 | mAP@.50-.95:0.5444 | LR:5.00e-05
+2025-05-29 21:59:46,469 [INFO] Third_iteration_training.py:839 - E46: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 1 epochs.
+2025-05-29 22:00:54,895 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:00:54,973 [INFO] Third_iteration_training.py:802 - [E47/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8313 | mAP@.50-.95:0.5404 | LR:5.00e-05
+2025-05-29 22:00:54,978 [INFO] Third_iteration_training.py:839 - E47: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 2 epochs.
+2025-05-29 22:02:03,537 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:02:03,611 [INFO] Third_iteration_training.py:802 - [E48/400] TrainLoss: 0.0134 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8312 | mAP@.50-.95:0.5412 | LR:5.00e-05
+2025-05-29 22:02:03,617 [INFO] Third_iteration_training.py:839 - E48: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 3 epochs.
+2025-05-29 22:03:12,166 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:03:12,239 [INFO] Third_iteration_training.py:802 - [E49/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8327 | mAP@.50-.95:0.5445 | LR:5.00e-05
+2025-05-29 22:03:12,243 [INFO] Third_iteration_training.py:839 - E49: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 4 epochs.
+2025-05-29 22:04:20,588 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:04:20,662 [INFO] Third_iteration_training.py:802 - [E50/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8315 | mAP@.50-.95:0.5425 | LR:5.00e-05
+2025-05-29 22:04:20,667 [INFO] Third_iteration_training.py:839 - E50: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 5 epochs.
+2025-05-29 22:05:29,044 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:05:29,120 [INFO] Third_iteration_training.py:802 - [E51/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8309 | mAP@.50-.95:0.5413 | LR:5.00e-05
+2025-05-29 22:05:29,125 [INFO] Third_iteration_training.py:839 - E51: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 6 epochs.
+2025-05-29 22:06:37,551 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:06:37,626 [INFO] Third_iteration_training.py:802 - [E52/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8305 | mAP@.50-.95:0.5423 | LR:5.00e-05
+2025-05-29 22:06:37,631 [INFO] Third_iteration_training.py:839 - E52: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 7 epochs.
+2025-05-29 22:07:45,969 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:07:46,045 [INFO] Third_iteration_training.py:802 - [E53/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8308 | mAP@.50-.95:0.5418 | LR:5.00e-05
+2025-05-29 22:07:46,050 [INFO] Third_iteration_training.py:839 - E53: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 8 epochs.
+2025-05-29 22:08:54,602 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:08:54,679 [INFO] Third_iteration_training.py:802 - [E54/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8319 | mAP@.50-.95:0.5436 | LR:5.00e-05
+2025-05-29 22:08:54,684 [INFO] Third_iteration_training.py:839 - E54: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 9 epochs.
+2025-05-29 22:10:03,112 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:10:03,186 [INFO] Third_iteration_training.py:802 - [E55/400] TrainLoss: 0.0130 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8303 | mAP@.50-.95:0.5399 | LR:5.00e-05
+2025-05-29 22:10:03,191 [INFO] Third_iteration_training.py:839 - E55: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 10 epochs.
+2025-05-29 22:11:11,671 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:11:11,751 [INFO] Third_iteration_training.py:802 - [E56/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8351 (P:0.811 R:0.861) | mAP@.50:0.8309 | mAP@.50-.95:0.5418 | LR:5.00e-06
+2025-05-29 22:11:11,757 [INFO] Third_iteration_training.py:839 - E56: Metric (F1): 0.8351 did not improve from best (F1): 0.8385. No improvement for 11 epochs.
+2025-05-29 22:12:20,142 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:12:20,219 [INFO] Third_iteration_training.py:802 - [E57/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5419 | LR:5.00e-06
+2025-05-29 22:12:20,224 [INFO] Third_iteration_training.py:839 - E57: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 12 epochs.
+2025-05-29 22:13:28,701 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:13:28,775 [INFO] Third_iteration_training.py:802 - [E58/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8311 | mAP@.50-.95:0.5419 | LR:5.00e-06
+2025-05-29 22:13:28,781 [INFO] Third_iteration_training.py:839 - E58: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 13 epochs.
+2025-05-29 22:14:37,323 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:14:37,400 [INFO] Third_iteration_training.py:802 - [E59/400] TrainLoss: 0.0134 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8308 | mAP@.50-.95:0.5403 | LR:5.00e-06
+2025-05-29 22:14:37,406 [INFO] Third_iteration_training.py:839 - E59: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 14 epochs.
+2025-05-29 22:15:45,758 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:15:45,834 [INFO] Third_iteration_training.py:802 - [E60/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8308 | mAP@.50-.95:0.5419 | LR:5.00e-06
+2025-05-29 22:15:45,839 [INFO] Third_iteration_training.py:839 - E60: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 15 epochs.
+2025-05-29 22:16:54,097 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:16:54,176 [INFO] Third_iteration_training.py:802 - [E61/400] TrainLoss: 0.0130 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8311 | mAP@.50-.95:0.5420 | LR:5.00e-06
+2025-05-29 22:16:54,182 [INFO] Third_iteration_training.py:839 - E61: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 16 epochs.
+2025-05-29 22:18:02,631 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:18:02,709 [INFO] Third_iteration_training.py:802 - [E62/400] TrainLoss: 0.0134 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8311 | mAP@.50-.95:0.5420 | LR:5.00e-06
+2025-05-29 22:18:02,715 [INFO] Third_iteration_training.py:839 - E62: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 17 epochs.
+2025-05-29 22:19:11,019 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:19:11,096 [INFO] Third_iteration_training.py:802 - [E63/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5406 | LR:5.00e-06
+2025-05-29 22:19:11,102 [INFO] Third_iteration_training.py:839 - E63: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 18 epochs.
+2025-05-29 22:20:19,402 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:20:19,478 [INFO] Third_iteration_training.py:802 - [E64/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5420 | LR:5.00e-06
+2025-05-29 22:20:19,484 [INFO] Third_iteration_training.py:839 - E64: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 19 epochs.
+2025-05-29 22:21:27,953 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:21:28,029 [INFO] Third_iteration_training.py:802 - [E65/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8363 (P:0.813 R:0.861) | mAP@.50:0.8311 | mAP@.50-.95:0.5420 | LR:5.00e-06
+2025-05-29 22:21:28,035 [INFO] Third_iteration_training.py:839 - E65: Metric (F1): 0.8363 did not improve from best (F1): 0.8385. No improvement for 20 epochs.
+2025-05-29 22:22:36,248 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:22:36,324 [INFO] Third_iteration_training.py:802 - [E66/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5419 | LR:5.00e-06
+2025-05-29 22:22:36,330 [INFO] Third_iteration_training.py:839 - E66: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 21 epochs.
+2025-05-29 22:23:44,532 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:23:44,606 [INFO] Third_iteration_training.py:802 - [E67/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8310 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:23:44,612 [INFO] Third_iteration_training.py:839 - E67: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 22 epochs.
+2025-05-29 22:24:52,920 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:24:52,993 [INFO] Third_iteration_training.py:802 - [E68/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:24:52,999 [INFO] Third_iteration_training.py:839 - E68: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 23 epochs.
+2025-05-29 22:26:01,219 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:26:01,299 [INFO] Third_iteration_training.py:802 - [E69/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:26:01,306 [INFO] Third_iteration_training.py:839 - E69: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 24 epochs.
+2025-05-29 22:27:09,476 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:27:09,550 [INFO] Third_iteration_training.py:802 - [E70/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:27:09,556 [INFO] Third_iteration_training.py:839 - E70: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 25 epochs.
+2025-05-29 22:28:17,851 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:28:17,928 [INFO] Third_iteration_training.py:802 - [E71/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:28:17,935 [INFO] Third_iteration_training.py:839 - E71: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 26 epochs.
+2025-05-29 22:29:26,175 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:29:26,252 [INFO] Third_iteration_training.py:802 - [E72/400] TrainLoss: 0.0130 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:29:26,259 [INFO] Third_iteration_training.py:839 - E72: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 27 epochs.
+2025-05-29 22:30:34,485 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:30:34,559 [INFO] Third_iteration_training.py:802 - [E73/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8310 | mAP@.50-.95:0.5423 | LR:5.00e-07
+2025-05-29 22:30:34,566 [INFO] Third_iteration_training.py:839 - E73: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 28 epochs.
+2025-05-29 22:31:42,813 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:31:42,888 [INFO] Third_iteration_training.py:802 - [E74/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:31:42,895 [INFO] Third_iteration_training.py:839 - E74: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 29 epochs.
+2025-05-29 22:32:51,221 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:32:51,296 [INFO] Third_iteration_training.py:802 - [E75/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:32:51,303 [INFO] Third_iteration_training.py:839 - E75: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 30 epochs.
+2025-05-29 22:33:59,762 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:33:59,836 [INFO] Third_iteration_training.py:802 - [E76/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:33:59,843 [INFO] Third_iteration_training.py:839 - E76: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 31 epochs.
+2025-05-29 22:35:08,143 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:35:08,218 [INFO] Third_iteration_training.py:802 - [E77/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8310 | mAP@.50-.95:0.5421 | LR:5.00e-07
+2025-05-29 22:35:08,226 [INFO] Third_iteration_training.py:839 - E77: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 32 epochs.
+2025-05-29 22:36:16,613 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:36:16,686 [INFO] Third_iteration_training.py:802 - [E78/400] TrainLoss: 0.0133 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8310 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:36:16,693 [INFO] Third_iteration_training.py:839 - E78: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 33 epochs.
+2025-05-29 22:37:25,082 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:37:25,157 [INFO] Third_iteration_training.py:802 - [E79/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:37:25,165 [INFO] Third_iteration_training.py:839 - E79: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 34 epochs.
+2025-05-29 22:38:33,551 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:38:33,625 [INFO] Third_iteration_training.py:802 - [E80/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:38:33,632 [INFO] Third_iteration_training.py:839 - E80: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 35 epochs.
+2025-05-29 22:39:42,181 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:39:42,255 [INFO] Third_iteration_training.py:802 - [E81/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8310 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:39:42,263 [INFO] Third_iteration_training.py:839 - E81: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 36 epochs.
+2025-05-29 22:40:50,569 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:40:50,644 [INFO] Third_iteration_training.py:802 - [E82/400] TrainLoss: 0.0129 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8310 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:40:50,652 [INFO] Third_iteration_training.py:839 - E82: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 37 epochs.
+2025-05-29 22:41:58,931 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:41:59,005 [INFO] Third_iteration_training.py:802 - [E83/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:41:59,012 [INFO] Third_iteration_training.py:839 - E83: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 38 epochs.
+2025-05-29 22:43:07,366 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:43:07,443 [INFO] Third_iteration_training.py:802 - [E84/400] TrainLoss: 0.0131 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:43:07,451 [INFO] Third_iteration_training.py:839 - E84: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 39 epochs.
+2025-05-29 22:44:15,699 [INFO] Third_iteration_training.py:527 - COCO evaluation summary saved to: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280/coco_evaluation_summary.txt
+2025-05-29 22:44:15,777 [INFO] Third_iteration_training.py:802 - [E85/400] TrainLoss: 0.0132 | Val F1(S:0.4/I:0.6): 0.8378 (P:0.814 R:0.864) | mAP@.50:0.8311 | mAP@.50-.95:0.5421 | LR:5.00e-08
+2025-05-29 22:44:15,786 [INFO] Third_iteration_training.py:839 - E85: Metric (F1): 0.8378 did not improve from best (F1): 0.8385. No improvement for 40 epochs.
+2025-05-29 22:44:15,786 [INFO] Third_iteration_training.py:842 - ===== Early stopping triggered at epoch 85. F1 did not improve from 0.8385 for 40 consecutive epochs. =====
+2025-05-29 22:44:15,786 [INFO] Third_iteration_training.py:845 - ===== Finished Training Run: SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280. Best model from Epoch 45 with F1: 0.8385. Log files saved in: FasterRCNN_Runs_Third_iteraion/SGD_MultiClass_1280_NoAccum_F1Opt_LR0.005_BS4_ImgSz1280 =====

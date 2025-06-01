@@ -78,10 +78,9 @@ if __name__ == "__main__":
     # Example usage for training:
     #Need to run - hvis det ikke går - lavere batch size til 4
 
-    project = "Runing_new_config_more_similar_to_paper"
-    train_results = train_model(imgsz=1280, name="RT_DETR_1280_batch2_lr0=0.0001", batch=2, project=project, model_path="rtdetr-l.pt", lr0=0.0002, weight_decay =0.001, optimizer="adamW")
-    train_results = train_model(imgsz=1024, name="RT_DETR_1024_batch4_lr0=0.0001", batch=4, project=project, model_path="rtdetr-l.pt", lr0=0.0002, weight_decay =0.001, optimizer="adamW")
-    train_results = train_model(imgsz=640, name="RT_DETR_640_batch8_lr0=0.0001", batch=8, project=project, model_path="rtdetr-l.pt", lr0=0.0002, weight_decay =0.001, optimizer="adamW")
+    project = "Runing_multiclass_new_config_more_similar_to_paper"
+    train_results = train_model(imgsz=640, name="RT_DETR_640_batch8_lr0=0.0002", batch=8, project=project, model_path="rtdetr-l.pt", lr0=0.0002, weight_decay=0.001, optimizer="adamW", config_path="/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml")
+    
     
     
 

@@ -1,0 +1,20 @@
+Metric,Value
+Precision_at_F1max,0.8934307202963329
+Recall_at_F1max,0.8640457773171696
+F1_at_F1max,0.8784925912189937
+mAP50,0.9276234920431855
+mAP50-95,0.6740318625540009
+mAP75,0.7534452069796201
+Ground Truth Count,359
+Prediction_Count_from_txt_files,29700
+Conf_Filter_for_Timing_Counting_pred_txt,0.001
+Validation Image Size,1280
+Num Images Validated,99
+Core GPU Time (s),6.505991394042968
+Core Avg Time per Image (ms),65.71708478831282
+Core FPS,15.21674315318748
+Training Image Size (from args.yaml),"[1280, 960]"
+Training lr0 (from args.yaml),0.005
+Training lrf (from args.yaml),0.01
+Training Optimizer (from args.yaml),SGD
+Training Batch (from args.yaml),1

@@ -101,3 +101,23 @@ run with 1280 image size, batch 8, learning rate 0.0002, weight decay = 0.001, o
 
 Need to consider runin yolo11 wiht a lot lower learning rate. just testnig a bit more with learning rate variations and if that affects iamge size
 
+
+
+Need to run validation on multiclass RT_DETR
+
+
+
+muticlass RTDETR - to latex
+anything else YOLO to latex, frezzing backbone, needs to run 10-20 full training
+Add sped infenrece from rcnn and rtdetr no in coamprison also to the specifics sections
+
+Set up one more runing tonight with Faster RCNN some simple class some multiclass
+
+
+go trough the resutl of valdiation on optimzer adn crate tables for that
+
+Consider adding the augmetnions to the faster RCNN code simlar to the YOLO augmetniaons
+
+
+
+if no more GPU use is needed by ISAk set a new tuning ot run with SGD instead

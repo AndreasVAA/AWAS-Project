@@ -1,0 +1,10 @@
+Batch Cropping Summary:
+------------------------
+Total images processed (with detections): 99
+Total crops saved: 359
+Crops per class:
+  Class 0: 201 crops
+  Class 1: 18 crops
+  Class 2: 33 crops
+  Class 3: 30 crops
+  Class 4: 77 crops

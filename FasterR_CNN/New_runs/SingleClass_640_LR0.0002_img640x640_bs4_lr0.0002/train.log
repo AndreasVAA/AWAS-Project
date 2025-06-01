@@ -1,0 +1,1518 @@
+2025-05-27 23:20:22,515 [INFO] Second_training_iteration.py:333 - =� Starting run: SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002
+2025-05-27 23:20:22,515 [INFO] Second_training_iteration.py:334 - Config: {
+  "BATCH_SIZE": 4,
+  "CLASS_NAMES": [
+    "Plankton"
+  ],
+  "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+  "DEBUG_LOGGING": false,
+  "EARLY_STOPPING_PATIENCE": 75,
+  "EFFECTIVE_BATCH": 64,
+  "IOU_THRESHOLD": 0.6,
+  "LEARNING_RATE": 0.0002,
+  "NUM_CLASSES_MODEL": 2,
+  "NUM_EPOCHS": 400,
+  "NUM_WORKERS": 4,
+  "SCHEDULER_PATIENCE": 10,
+  "SCORE_THRESHOLD": 0.4,
+  "SEED": 42,
+  "TARGET_SIZE": [
+    640,
+    640
+  ],
+  "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images",
+  "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax",
+  "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
+  "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax",
+  "VARIATION_NAME": "SingleClass_640_LR0.0002"
+}
+2025-05-27 23:20:22,613 [INFO] Second_training_iteration.py:335 - Device: cuda
+2025-05-27 23:20:22,614 [INFO] Second_training_iteration.py:347 - Train ds: 763, Val ds: 99. Classes: ['Plankton'] (Model outputs: 2)
+2025-05-27 23:20:23,132 [INFO] Second_training_iteration.py:354 - Batch: 4, Target effective: 64, Accum steps: 16
+2025-05-27 23:21:28,356 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:21:28,357 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.041
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.189
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.003
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.030
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.043
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.020
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.128
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.323
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.300
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.140
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.334
+
+2025-05-27 23:21:28,359 [INFO] Second_training_iteration.py:381 - [E1/400] L_train: 0.3976 | F1: 0.1336 (P:0.086 R:0.301) | mAP@.50:0.1891 | mAP@.50.95:0.0412 | LR:2.00e-04
+2025-05-27 23:21:28,542 [INFO] Second_training_iteration.py:390 - <� Best model saved! E1, Metric: 0.1891
+2025-05-27 23:22:34,721 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:22:34,722 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.068
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.287
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.038
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.071
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.034
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.194
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.318
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.255
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.322
+
+2025-05-27 23:22:34,723 [INFO] Second_training_iteration.py:381 - [E2/400] L_train: 0.2444 | F1: 0.1989 (P:0.126 R:0.468) | mAP@.50:0.2871 | mAP@.50.95:0.0678 | LR:2.00e-04
+2025-05-27 23:22:34,965 [INFO] Second_training_iteration.py:390 - <� Best model saved! E2, Metric: 0.2871
+2025-05-27 23:23:41,600 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:23:41,600 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.133
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.427
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.033
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.057
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.139
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.067
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.270
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.402
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.260
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.412
+
+2025-05-27 23:23:41,602 [INFO] Second_training_iteration.py:381 - [E3/400] L_train: 0.2218 | F1: 0.2216 (P:0.133 R:0.666) | mAP@.50:0.4273 | mAP@.50.95:0.1326 | LR:2.00e-04
+2025-05-27 23:23:41,851 [INFO] Second_training_iteration.py:390 - <� Best model saved! E3, Metric: 0.4273
+2025-05-27 23:24:48,204 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:24:48,204 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.176
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.528
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.050
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.020
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.186
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.078
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.318
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.409
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.423
+
+2025-05-27 23:24:48,205 [INFO] Second_training_iteration.py:381 - [E4/400] L_train: 0.2035 | F1: 0.3710 (P:0.258 R:0.663) | mAP@.50:0.5275 | mAP@.50.95:0.1759 | LR:2.00e-04
+2025-05-27 23:24:48,468 [INFO] Second_training_iteration.py:390 - <� Best model saved! E4, Metric: 0.5275
+2025-05-27 23:25:54,935 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:25:54,935 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.242
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.612
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.120
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.164
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.246
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.088
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.382
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.450
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.320
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.458
+
+2025-05-27 23:25:54,936 [INFO] Second_training_iteration.py:381 - [E5/400] L_train: 0.1873 | F1: 0.4388 (P:0.321 R:0.694) | mAP@.50:0.6115 | mAP@.50.95:0.2416 | LR:2.00e-04
+2025-05-27 23:25:55,198 [INFO] Second_training_iteration.py:390 - <� Best model saved! E5, Metric: 0.6115
+2025-05-27 23:27:01,448 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:27:01,448 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.265
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.621
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.147
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.175
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.272
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.114
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.401
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.469
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.295
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.481
+
+2025-05-27 23:27:01,449 [INFO] Second_training_iteration.py:381 - [E6/400] L_train: 0.1694 | F1: 0.4143 (P:0.288 R:0.741) | mAP@.50:0.6215 | mAP@.50.95:0.2654 | LR:2.00e-04
+2025-05-27 23:27:01,702 [INFO] Second_training_iteration.py:390 - <� Best model saved! E6, Metric: 0.6215
+2025-05-27 23:28:08,145 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:28:08,145 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.298
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.685
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.228
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.015
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.250
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.303
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.124
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.423
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.492
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.480
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.494
+
+2025-05-27 23:28:08,147 [INFO] Second_training_iteration.py:381 - [E7/400] L_train: 0.1663 | F1: 0.2546 (P:0.152 R:0.786) | mAP@.50:0.6846 | mAP@.50.95:0.2982 | LR:2.00e-04
+2025-05-27 23:28:08,390 [INFO] Second_training_iteration.py:390 - <� Best model saved! E7, Metric: 0.6846
+2025-05-27 23:29:14,644 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:29:14,644 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.324
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.655
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.264
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.203
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.334
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.135
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.497
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.405
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.504
+
+2025-05-27 23:29:14,645 [INFO] Second_training_iteration.py:381 - [E8/400] L_train: 0.1580 | F1: 0.4995 (P:0.384 R:0.713) | mAP@.50:0.6548 | mAP@.50.95:0.3244 | LR:2.00e-04
+2025-05-27 23:30:21,091 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:30:21,091 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.375
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.760
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.333
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.050
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.284
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.383
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.162
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.450
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.494
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.390
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.501
+
+2025-05-27 23:30:21,092 [INFO] Second_training_iteration.py:381 - [E9/400] L_train: 0.1439 | F1: 0.5878 (P:0.515 R:0.685) | mAP@.50:0.7598 | mAP@.50.95:0.3749 | LR:2.00e-04
+2025-05-27 23:30:21,338 [INFO] Second_training_iteration.py:390 - <� Best model saved! E9, Metric: 0.7598
+2025-05-27 23:31:27,629 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:31:27,629 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.413
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.761
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.403
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.271
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.423
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.171
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.480
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.519
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.400
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.528
+
+2025-05-27 23:31:27,630 [INFO] Second_training_iteration.py:381 - [E10/400] L_train: 0.1292 | F1: 0.6007 (P:0.512 R:0.727) | mAP@.50:0.7608 | mAP@.50.95:0.4133 | LR:2.00e-04
+2025-05-27 23:31:27,894 [INFO] Second_training_iteration.py:390 - <� Best model saved! E10, Metric: 0.7608
+2025-05-27 23:32:34,338 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:32:34,338 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.401
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.771
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.389
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.309
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.409
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.163
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.475
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.517
+
+2025-05-27 23:32:34,339 [INFO] Second_training_iteration.py:381 - [E11/400] L_train: 0.1237 | F1: 0.5466 (P:0.429 R:0.752) | mAP@.50:0.7714 | mAP@.50.95:0.4015 | LR:2.00e-04
+2025-05-27 23:32:34,668 [INFO] Second_training_iteration.py:390 - <� Best model saved! E11, Metric: 0.7714
+2025-05-27 23:33:41,033 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:33:41,033 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.435
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.768
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.451
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.274
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.447
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.188
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.502
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.545
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.553
+
+2025-05-27 23:33:41,034 [INFO] Second_training_iteration.py:381 - [E12/400] L_train: 0.1167 | F1: 0.5861 (P:0.470 R:0.777) | mAP@.50:0.7682 | mAP@.50.95:0.4354 | LR:2.00e-04
+2025-05-27 23:34:47,479 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:34:47,480 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.431
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.785
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.410
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.311
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.181
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.496
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.527
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.425
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.534
+
+2025-05-27 23:34:47,480 [INFO] Second_training_iteration.py:381 - [E13/400] L_train: 0.1091 | F1: 0.6554 (P:0.577 R:0.758) | mAP@.50:0.7854 | mAP@.50.95:0.4314 | LR:2.00e-04
+2025-05-27 23:34:47,732 [INFO] Second_training_iteration.py:390 - <� Best model saved! E13, Metric: 0.7854
+2025-05-27 23:35:54,113 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:35:54,113 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.449
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.795
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.469
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.285
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.458
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.189
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.516
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.536
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.543
+
+2025-05-27 23:35:54,114 [INFO] Second_training_iteration.py:381 - [E14/400] L_train: 0.1011 | F1: 0.6383 (P:0.554 R:0.752) | mAP@.50:0.7947 | mAP@.50.95:0.4488 | LR:2.00e-04
+2025-05-27 23:35:54,369 [INFO] Second_training_iteration.py:390 - <� Best model saved! E14, Metric: 0.7947
+2025-05-27 23:37:00,664 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:37:00,664 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.463
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.496
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.326
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.474
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.199
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.514
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.545
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.425
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.554
+
+2025-05-27 23:37:00,665 [INFO] Second_training_iteration.py:381 - [E15/400] L_train: 0.0955 | F1: 0.6619 (P:0.578 R:0.774) | mAP@.50:0.7898 | mAP@.50.95:0.4625 | LR:2.00e-04
+2025-05-27 23:38:06,971 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:38:06,971 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.417
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.777
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.388
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.300
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.429
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.182
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.492
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.519
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.523
+
+2025-05-27 23:38:06,972 [INFO] Second_training_iteration.py:381 - [E16/400] L_train: 0.0958 | F1: 0.6193 (P:0.532 R:0.741) | mAP@.50:0.7768 | mAP@.50.95:0.4173 | LR:2.00e-04
+2025-05-27 23:39:13,188 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:39:13,189 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.471
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.805
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.492
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.353
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.479
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.195
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.522
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.553
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.450
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.561
+
+2025-05-27 23:39:13,190 [INFO] Second_training_iteration.py:381 - [E17/400] L_train: 0.0975 | F1: 0.6707 (P:0.595 R:0.769) | mAP@.50:0.8045 | mAP@.50.95:0.4708 | LR:2.00e-04
+2025-05-27 23:39:13,455 [INFO] Second_training_iteration.py:390 - <� Best model saved! E17, Metric: 0.8045
+2025-05-27 23:40:19,852 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:40:19,852 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.494
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.798
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.553
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.298
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.507
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.199
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.534
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.375
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.570
+
+2025-05-27 23:40:19,852 [INFO] Second_training_iteration.py:381 - [E18/400] L_train: 0.0878 | F1: 0.7278 (P:0.726 R:0.730) | mAP@.50:0.7978 | mAP@.50.95:0.4942 | LR:2.00e-04
+2025-05-27 23:41:26,403 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:41:26,403 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.464
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.788
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.318
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.473
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.193
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.511
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.536
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.544
+
+2025-05-27 23:41:26,404 [INFO] Second_training_iteration.py:381 - [E19/400] L_train: 0.0803 | F1: 0.7129 (P:0.710 R:0.716) | mAP@.50:0.7878 | mAP@.50.95:0.4635 | LR:2.00e-04
+2025-05-27 23:42:33,136 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:42:33,136 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.483
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.793
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.531
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.288
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.497
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.204
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.526
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.551
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.370
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.563
+
+2025-05-27 23:42:33,136 [INFO] Second_training_iteration.py:381 - [E20/400] L_train: 0.0751 | F1: 0.7290 (P:0.710 R:0.749) | mAP@.50:0.7934 | mAP@.50.95:0.4831 | LR:2.00e-04
+2025-05-27 23:43:39,962 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:43:39,962 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.482
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.777
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.521
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.371
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.491
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.204
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.538
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.563
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.510
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.567
+
+2025-05-27 23:43:39,963 [INFO] Second_training_iteration.py:381 - [E21/400] L_train: 0.0739 | F1: 0.7115 (P:0.675 R:0.752) | mAP@.50:0.7773 | mAP@.50.95:0.4821 | LR:2.00e-04
+2025-05-27 23:44:46,654 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:44:46,654 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.469
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.799
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.514
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.352
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.479
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.204
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.523
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.542
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.450
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.549
+
+2025-05-27 23:44:46,655 [INFO] Second_training_iteration.py:381 - [E22/400] L_train: 0.0768 | F1: 0.7255 (P:0.719 R:0.733) | mAP@.50:0.7991 | mAP@.50.95:0.4694 | LR:2.00e-04
+2025-05-27 23:45:53,344 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:45:53,345 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.453
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.767
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.488
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.323
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.461
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.193
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.496
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.516
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.395
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.524
+
+2025-05-27 23:45:53,345 [INFO] Second_training_iteration.py:381 - [E23/400] L_train: 0.0718 | F1: 0.7112 (P:0.727 R:0.696) | mAP@.50:0.7670 | mAP@.50.95:0.4532 | LR:2.00e-04
+2025-05-27 23:47:00,128 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:47:00,129 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.483
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.785
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.513
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.313
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.495
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.201
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.529
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.546
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.390
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.556
+
+2025-05-27 23:47:00,130 [INFO] Second_training_iteration.py:381 - [E24/400] L_train: 0.0682 | F1: 0.7352 (P:0.765 R:0.708) | mAP@.50:0.7855 | mAP@.50.95:0.4829 | LR:2.00e-04
+2025-05-27 23:48:06,600 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:48:06,601 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.496
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.786
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.560
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.357
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.507
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.206
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.543
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.562
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.425
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.571
+
+2025-05-27 23:48:06,601 [INFO] Second_training_iteration.py:381 - [E25/400] L_train: 0.0637 | F1: 0.7203 (P:0.706 R:0.735) | mAP@.50:0.7864 | mAP@.50.95:0.4964 | LR:2.00e-04
+2025-05-27 23:49:13,373 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:49:13,374 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.500
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.802
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.552
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.372
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.511
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.208
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.550
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.565
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.575
+
+2025-05-27 23:49:13,374 [INFO] Second_training_iteration.py:381 - [E26/400] L_train: 0.0588 | F1: 0.7423 (P:0.746 R:0.738) | mAP@.50:0.8015 | mAP@.50.95:0.4999 | LR:2.00e-04
+2025-05-27 23:50:20,258 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:50:20,259 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.503
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.559
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.337
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.515
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.208
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.565
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.586
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.425
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.597
+
+2025-05-27 23:50:20,259 [INFO] Second_training_iteration.py:381 - [E27/400] L_train: 0.0577 | F1: 0.6945 (P:0.621 R:0.788) | mAP@.50:0.7910 | mAP@.50.95:0.5026 | LR:2.00e-04
+2025-05-27 23:51:27,023 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:51:27,023 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.469
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.786
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.516
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.326
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.481
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.201
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.542
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.550
+
+2025-05-27 23:51:27,023 [INFO] Second_training_iteration.py:381 - [E28/400] L_train: 0.0640 | F1: 0.7010 (P:0.652 R:0.758) | mAP@.50:0.7860 | mAP@.50.95:0.4694 | LR:2.00e-05
+2025-05-27 23:52:33,855 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:52:33,855 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.490
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.778
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.514
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.343
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.502
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.212
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.543
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.553
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.405
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.563
+
+2025-05-27 23:52:33,856 [INFO] Second_training_iteration.py:381 - [E29/400] L_train: 0.0526 | F1: 0.7308 (P:0.779 R:0.688) | mAP@.50:0.7775 | mAP@.50.95:0.4900 | LR:2.00e-05
+2025-05-27 23:53:40,642 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:53:40,642 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.493
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.796
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.544
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.329
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.504
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.205
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.544
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.556
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.200
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.420
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.565
+
+2025-05-27 23:53:40,643 [INFO] Second_training_iteration.py:381 - [E30/400] L_train: 0.0456 | F1: 0.7436 (P:0.761 R:0.727) | mAP@.50:0.7964 | mAP@.50.95:0.4930 | LR:2.00e-05
+2025-05-27 23:54:47,502 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:54:47,503 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.799
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.558
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.354
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.582
+
+2025-05-27 23:54:47,503 [INFO] Second_training_iteration.py:381 - [E31/400] L_train: 0.0423 | F1: 0.7507 (P:0.764 R:0.738) | mAP@.50:0.7986 | mAP@.50.95:0.5096 | LR:2.00e-05
+2025-05-27 23:55:54,415 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:55:54,415 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.508
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.792
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.556
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.334
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.211
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.556
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.571
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.400
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.583
+
+2025-05-27 23:55:54,416 [INFO] Second_training_iteration.py:381 - [E32/400] L_train: 0.0404 | F1: 0.7695 (P:0.797 R:0.744) | mAP@.50:0.7918 | mAP@.50.95:0.5081 | LR:2.00e-05
+2025-05-27 23:57:01,244 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:57:01,244 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.796
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.567
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.348
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.524
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.213
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.575
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.585
+
+2025-05-27 23:57:01,244 [INFO] Second_training_iteration.py:381 - [E33/400] L_train: 0.0391 | F1: 0.7493 (P:0.767 R:0.733) | mAP@.50:0.7965 | mAP@.50.95:0.5116 | LR:2.00e-05
+2025-05-27 23:58:08,067 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:58:08,067 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.517
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.799
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.570
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.358
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.528
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.560
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.578
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.588
+
+2025-05-27 23:58:08,068 [INFO] Second_training_iteration.py:381 - [E34/400] L_train: 0.0378 | F1: 0.7666 (P:0.794 R:0.741) | mAP@.50:0.7994 | mAP@.50.95:0.5168 | LR:2.00e-05
+2025-05-27 23:59:14,981 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-27 23:59:14,981 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.798
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.558
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.368
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.519
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.559
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.445
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.581
+
+2025-05-27 23:59:14,982 [INFO] Second_training_iteration.py:381 - [E35/400] L_train: 0.0371 | F1: 0.7550 (P:0.782 R:0.730) | mAP@.50:0.7984 | mAP@.50.95:0.5097 | LR:2.00e-05
+2025-05-28 00:00:21,824 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:00:21,825 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.504
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.793
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.559
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.342
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.516
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.555
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.565
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.420
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.575
+
+2025-05-28 00:00:21,825 [INFO] Second_training_iteration.py:381 - [E36/400] L_train: 0.0362 | F1: 0.7699 (P:0.801 R:0.741) | mAP@.50:0.7925 | mAP@.50.95:0.5036 | LR:2.00e-05
+2025-05-28 00:01:28,602 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:01:28,602 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.795
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.575
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.522
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.555
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.571
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.580
+
+2025-05-28 00:01:28,603 [INFO] Second_training_iteration.py:381 - [E37/400] L_train: 0.0356 | F1: 0.7626 (P:0.789 R:0.738) | mAP@.50:0.7952 | mAP@.50.95:0.5106 | LR:2.00e-05
+2025-05-28 00:02:35,366 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:02:35,367 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.507
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.564
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.353
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.518
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.556
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.566
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.430
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:02:35,367 [INFO] Second_training_iteration.py:381 - [E38/400] L_train: 0.0352 | F1: 0.7638 (P:0.801 R:0.730) | mAP@.50:0.7896 | mAP@.50.95:0.5074 | LR:2.00e-05
+2025-05-28 00:03:42,267 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:03:42,267 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.571
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.384
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.560
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.570
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.460
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.578
+
+2025-05-28 00:03:42,267 [INFO] Second_training_iteration.py:381 - [E39/400] L_train: 0.0347 | F1: 0.7594 (P:0.792 R:0.730) | mAP@.50:0.7906 | mAP@.50.95:0.5119 | LR:2.00e-06
+2025-05-28 00:04:49,233 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:04:49,233 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.516
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.577
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.389
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.526
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.216
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.564
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.574
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.465
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.582
+
+2025-05-28 00:04:49,234 [INFO] Second_training_iteration.py:381 - [E40/400] L_train: 0.0340 | F1: 0.7612 (P:0.792 R:0.733) | mAP@.50:0.7912 | mAP@.50.95:0.5159 | LR:2.00e-06
+2025-05-28 00:05:56,190 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:05:56,191 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.516
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.578
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.378
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.525
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.564
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.573
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.455
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.581
+
+2025-05-28 00:05:56,191 [INFO] Second_training_iteration.py:381 - [E41/400] L_train: 0.0338 | F1: 0.7677 (P:0.796 R:0.741) | mAP@.50:0.7906 | mAP@.50.95:0.5156 | LR:2.00e-06
+2025-05-28 00:07:03,152 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:07:03,152 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.568
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.362
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.560
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.569
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.578
+
+2025-05-28 00:07:03,153 [INFO] Second_training_iteration.py:381 - [E42/400] L_train: 0.0337 | F1: 0.7641 (P:0.795 R:0.735) | mAP@.50:0.7897 | mAP@.50.95:0.5102 | LR:2.00e-06
+2025-05-28 00:08:10,143 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:08:10,143 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.569
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.362
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.559
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.570
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.579
+
+2025-05-28 00:08:10,143 [INFO] Second_training_iteration.py:381 - [E43/400] L_train: 0.0338 | F1: 0.7652 (P:0.798 R:0.735) | mAP@.50:0.7909 | mAP@.50.95:0.5113 | LR:2.00e-06
+2025-05-28 00:09:17,113 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:09:17,113 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.514
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.792
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.570
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.361
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.525
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.563
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.573
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.582
+
+2025-05-28 00:09:17,113 [INFO] Second_training_iteration.py:381 - [E44/400] L_train: 0.0335 | F1: 0.7688 (P:0.799 R:0.741) | mAP@.50:0.7916 | mAP@.50.95:0.5144 | LR:2.00e-06
+2025-05-28 00:10:24,018 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:10:24,018 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.513
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.571
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.361
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.523
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.563
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.570
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.579
+
+2025-05-28 00:10:24,018 [INFO] Second_training_iteration.py:381 - [E45/400] L_train: 0.0338 | F1: 0.7710 (P:0.804 R:0.741) | mAP@.50:0.7909 | mAP@.50.95:0.5131 | LR:2.00e-06
+2025-05-28 00:11:30,905 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:11:30,905 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.513
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.569
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.361
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.524
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.560
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.572
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.581
+
+2025-05-28 00:11:30,905 [INFO] Second_training_iteration.py:381 - [E46/400] L_train: 0.0339 | F1: 0.7681 (P:0.801 R:0.738) | mAP@.50:0.7913 | mAP@.50.95:0.5126 | LR:2.00e-06
+2025-05-28 00:12:37,787 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:12:37,787 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.513
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.575
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.366
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.524
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.560
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.571
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.580
+
+2025-05-28 00:12:37,788 [INFO] Second_training_iteration.py:381 - [E47/400] L_train: 0.0337 | F1: 0.7699 (P:0.801 R:0.741) | mAP@.50:0.7907 | mAP@.50.95:0.5129 | LR:2.00e-06
+2025-05-28 00:13:44,579 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:13:44,579 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.791
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.568
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.361
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.523
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.569
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.578
+
+2025-05-28 00:13:44,580 [INFO] Second_training_iteration.py:381 - [E48/400] L_train: 0.0336 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7906 | mAP@.50.95:0.5112 | LR:2.00e-06
+2025-05-28 00:14:51,404 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:14:51,404 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.573
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.361
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.522
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.568
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:14:51,405 [INFO] Second_training_iteration.py:381 - [E49/400] L_train: 0.0333 | F1: 0.7641 (P:0.795 R:0.735) | mAP@.50:0.7902 | mAP@.50.95:0.5124 | LR:2.00e-06
+2025-05-28 00:15:58,256 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:15:58,256 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.569
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.214
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.568
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:15:58,257 [INFO] Second_training_iteration.py:381 - [E50/400] L_train: 0.0334 | F1: 0.7656 (P:0.802 R:0.733) | mAP@.50:0.7899 | mAP@.50.95:0.5117 | LR:2.00e-07
+2025-05-28 00:17:05,209 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:17:05,209 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.570
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.522
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.569
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.578
+
+2025-05-28 00:17:05,210 [INFO] Second_training_iteration.py:381 - [E51/400] L_train: 0.0334 | F1: 0.7656 (P:0.802 R:0.733) | mAP@.50:0.7900 | mAP@.50.95:0.5120 | LR:2.00e-07
+2025-05-28 00:18:12,246 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:18:12,246 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.512
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.569
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.522
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.558
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.569
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.578
+
+2025-05-28 00:18:12,247 [INFO] Second_training_iteration.py:381 - [E52/400] L_train: 0.0334 | F1: 0.7656 (P:0.802 R:0.733) | mAP@.50:0.7900 | mAP@.50.95:0.5121 | LR:2.00e-07
+2025-05-28 00:19:19,081 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:19:19,081 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.568
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.556
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:19:19,082 [INFO] Second_training_iteration.py:381 - [E53/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7901 | mAP@.50.95:0.5097 | LR:2.00e-07
+2025-05-28 00:20:25,967 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:20:25,967 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.558
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.568
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:20:25,968 [INFO] Second_training_iteration.py:381 - [E54/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7902 | mAP@.50.95:0.5103 | LR:2.00e-07
+2025-05-28 00:21:32,829 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:21:32,829 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:21:32,829 [INFO] Second_training_iteration.py:381 - [E55/400] L_train: 0.0335 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7899 | mAP@.50.95:0.5102 | LR:2.00e-07
+2025-05-28 00:22:39,641 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:22:39,641 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:22:39,641 [INFO] Second_training_iteration.py:381 - [E56/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7900 | mAP@.50.95:0.5101 | LR:2.00e-07
+2025-05-28 00:23:46,412 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:23:46,413 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.519
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:23:46,413 [INFO] Second_training_iteration.py:381 - [E57/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-07
+2025-05-28 00:24:53,262 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:24:53,262 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:24:53,262 [INFO] Second_training_iteration.py:381 - [E58/400] L_train: 0.0329 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7900 | mAP@.50.95:0.5099 | LR:2.00e-07
+2025-05-28 00:26:00,077 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:26:00,077 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:26:00,078 [INFO] Second_training_iteration.py:381 - [E59/400] L_train: 0.0332 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7900 | mAP@.50.95:0.5099 | LR:2.00e-07
+2025-05-28 00:27:07,061 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:27:07,061 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:27:07,062 [INFO] Second_training_iteration.py:381 - [E60/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7897 | mAP@.50.95:0.5099 | LR:2.00e-07
+2025-05-28 00:28:14,132 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:28:14,132 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:28:14,133 [INFO] Second_training_iteration.py:381 - [E61/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:29:20,987 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:29:20,987 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:29:20,988 [INFO] Second_training_iteration.py:381 - [E62/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:30:27,872 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:30:27,872 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:30:27,873 [INFO] Second_training_iteration.py:381 - [E63/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:31:34,739 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:31:34,740 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:31:34,740 [INFO] Second_training_iteration.py:381 - [E64/400] L_train: 0.0332 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:32:41,631 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:32:41,631 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:32:41,632 [INFO] Second_training_iteration.py:381 - [E65/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:33:48,544 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:33:48,544 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:33:48,545 [INFO] Second_training_iteration.py:381 - [E66/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5105 | LR:2.00e-08
+2025-05-28 00:34:55,516 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:34:55,516 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:34:55,517 [INFO] Second_training_iteration.py:381 - [E67/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:36:02,452 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:36:02,452 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:36:02,453 [INFO] Second_training_iteration.py:381 - [E68/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:37:09,343 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:37:09,344 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:37:09,344 [INFO] Second_training_iteration.py:381 - [E69/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-08
+2025-05-28 00:38:16,192 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:38:16,192 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:38:16,193 [INFO] Second_training_iteration.py:381 - [E70/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5104 | LR:2.00e-08
+2025-05-28 00:39:23,099 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:39:23,100 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:39:23,100 [INFO] Second_training_iteration.py:381 - [E71/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5106 | LR:2.00e-08
+2025-05-28 00:40:30,064 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:40:30,064 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:40:30,065 [INFO] Second_training_iteration.py:381 - [E72/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:41:36,968 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:41:36,968 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:41:36,969 [INFO] Second_training_iteration.py:381 - [E73/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5100 | LR:2.00e-09
+2025-05-28 00:42:43,815 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:42:43,816 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:42:43,816 [INFO] Second_training_iteration.py:381 - [E74/400] L_train: 0.0329 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7897 | mAP@.50.95:0.5106 | LR:2.00e-09
+2025-05-28 00:43:50,788 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:43:50,789 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.521
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.577
+
+2025-05-28 00:43:50,790 [INFO] Second_training_iteration.py:381 - [E75/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5109 | LR:2.00e-09
+2025-05-28 00:44:57,674 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:44:57,674 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:44:57,675 [INFO] Second_training_iteration.py:381 - [E76/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5106 | LR:2.00e-09
+2025-05-28 00:46:04,635 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:46:04,635 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:46:04,636 [INFO] Second_training_iteration.py:381 - [E77/400] L_train: 0.0332 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5104 | LR:2.00e-09
+2025-05-28 00:47:11,477 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:47:11,477 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:47:11,478 [INFO] Second_training_iteration.py:381 - [E78/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7899 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:48:18,309 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:48:18,309 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:48:18,310 [INFO] Second_training_iteration.py:381 - [E79/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5100 | LR:2.00e-09
+2025-05-28 00:49:25,136 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:49:25,136 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:49:25,137 [INFO] Second_training_iteration.py:381 - [E80/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:50:32,117 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:50:32,118 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:50:32,118 [INFO] Second_training_iteration.py:381 - [E81/400] L_train: 0.0334 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7899 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:51:39,006 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:51:39,007 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:51:39,007 [INFO] Second_training_iteration.py:381 - [E82/400] L_train: 0.0330 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5106 | LR:2.00e-09
+2025-05-28 00:52:46,003 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:52:46,003 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:52:46,004 [INFO] Second_training_iteration.py:381 - [E83/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7899 | mAP@.50.95:0.5104 | LR:2.00e-09
+2025-05-28 00:53:52,822 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:53:52,822 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:53:52,822 [INFO] Second_training_iteration.py:381 - [E84/400] L_train: 0.0335 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:54:59,650 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:54:59,650 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:54:59,650 [INFO] Second_training_iteration.py:381 - [E85/400] L_train: 0.0333 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5105 | LR:2.00e-09
+2025-05-28 00:56:06,470 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:56:06,470 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:56:06,471 [INFO] Second_training_iteration.py:381 - [E86/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:57:13,251 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:57:13,251 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:57:13,252 [INFO] Second_training_iteration.py:381 - [E87/400] L_train: 0.0330 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5104 | LR:2.00e-09
+2025-05-28 00:58:20,083 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:58:20,083 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:58:20,083 [INFO] Second_training_iteration.py:381 - [E88/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 00:59:26,964 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 00:59:26,965 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 00:59:26,965 [INFO] Second_training_iteration.py:381 - [E89/400] L_train: 0.0330 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 01:00:33,826 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 01:00:33,826 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.511
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 01:00:33,827 [INFO] Second_training_iteration.py:381 - [E90/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7899 | mAP@.50.95:0.5106 | LR:2.00e-09
+2025-05-28 01:01:40,642 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 01:01:40,643 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 01:01:40,643 [INFO] Second_training_iteration.py:381 - [E91/400] L_train: 0.0331 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5100 | LR:2.00e-09
+2025-05-28 01:02:47,488 [INFO] Second_training_iteration.py:302 - COCO summary: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002/coco_summary.txt
+2025-05-28 01:02:47,488 [INFO] Second_training_iteration.py:303 - COCO Summary:
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.510
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.790
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.572
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.360
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.520
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.215
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.557
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.567
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.100
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.435
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.576
+
+2025-05-28 01:02:47,489 [INFO] Second_training_iteration.py:381 - [E92/400] L_train: 0.0332 | F1: 0.7645 (P:0.799 R:0.733) | mAP@.50:0.7898 | mAP@.50.95:0.5099 | LR:2.00e-09
+2025-05-28 01:02:47,494 [INFO] Second_training_iteration.py:395 - =� Early stopping E92.
+2025-05-28 01:02:47,494 [INFO] Second_training_iteration.py:396 - <� Finished: SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002. Best E17 (Metric: 0.8045). Logs: New_runs/SingleClass_640_LR0.0002_img640x640_bs4_lr0.0002

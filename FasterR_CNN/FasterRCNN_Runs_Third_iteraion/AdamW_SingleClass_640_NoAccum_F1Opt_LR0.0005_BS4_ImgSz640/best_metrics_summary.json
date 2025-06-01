@@ -1,0 +1,76 @@
+{
+  "best_epoch": 44,
+  "best_metric_name": "F1",
+  "best_metric_value": 0.8011283497884344,
+  "final_custom_eval_at_best": {
+    "overall": {
+      "precision": 0.8114285714285714,
+      "recall": 0.7910863509749304,
+      "f1": 0.8011283497884344,
+      "tp": 284,
+      "fp": 66,
+      "fn": 75,
+      "inference": {
+        "total_time": 3.338576078414917,
+        "avg_time_per_image": 0.033722990691059766,
+        "fps": 29.65336049703053
+      }
+    },
+    "per_class": {
+      "Plankton": {
+        "precision": 0.8114285714285714,
+        "recall": 0.7910863509749304,
+        "f1": 0.8011283497884344,
+        "tp": 284,
+        "fp": 66,
+        "fn": 75
+      }
+    }
+  },
+  "final_coco_eval_at_best": {
+    "mAP@.50": 0.7991557405687335,
+    "mAP@.75": 0.6501999555392518,
+    "mAP@.50:95": 0.5530454973262108,
+    "AR@1": 0.20752089136490254,
+    "AR@10": 0.588857938718663,
+    "AR@100": 0.6100278551532032,
+    "per_class_ap_at_0.50": {
+      "Plankton": 0.7991557405687335
+    }
+  },
+  "config_summary": {
+    "NUM_EPOCHS": 400,
+    "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+    "EARLY_STOPPING_PATIENCE": 40,
+    "NUM_WORKERS": 4,
+    "SEED": 42,
+    "SCHEDULER_PATIENCE": 10,
+    "DEBUG_LOGGING": false,
+    "WARMUP_EPOCHS": 3,
+    "OUTPUT_BASE_DIR": "FasterRCNN_Runs_Third_iteraion",
+    "SCORE_THRESHOLD": 0.4,
+    "IOU_THRESHOLD": 0.6,
+    "VARIATION_NAME": "AdamW_SingleClass_640_NoAccum_F1Opt",
+    "CLASS_NAMES": [
+      "Plankton"
+    ],
+    "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images",
+    "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax",
+    "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
+    "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax",
+    "TARGET_SIZE": [
+      640,
+      640
+    ],
+    "BATCH_SIZE": 4,
+    "OPTIMIZER_TYPE": "AdamW",
+    "LEARNING_RATE": 0.0005,
+    "ADAMW_BETAS": [
+      0.9,
+      0.999
+    ],
+    "WEIGHT_DECAY": 0.0005,
+    "USE_GRADIENT_ACCUMULATION": false,
+    "NUM_CLASSES_MODEL": 2
+  }
+}

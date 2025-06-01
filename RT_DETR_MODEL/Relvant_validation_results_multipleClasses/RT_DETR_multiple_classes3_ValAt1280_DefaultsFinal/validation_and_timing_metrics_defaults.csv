@@ -1,0 +1,45 @@
+Metric,Value
+mAP50-95_Overall,0.6070544326851165
+mAP50_Overall,0.8695270735394557
+mAP75_Overall,0.7123903783394328
+Precision(B)_Overall_at_F1max,0.888193456938987
+Recall(B)_Overall_at_F1max,0.8207108080953635
+F1-score(B)_Overall_at_F1max,0.8531197267212133
+Precision_Tripos longipes,0.8769535225115551
+Recall_Tripos longipes,0.900497512437811
+F1-score_Tripos longipes,0.8885695864670917
+mAP50_Tripos longipes,0.9279956242855435
+mAP50-95_Tripos longipes,0.7104920525464543
+Precision_Tripos lusus,0.9510168053711994
+Recall_Tripos lusus,0.8333333333333334
+F1-score_Tripos lusus,0.8882942728397215
+mAP50_Tripos lusus,0.8891823409383053
+mAP50-95_Tripos lusus,0.699684438870103
+Precision_Chaetoceros,0.8342171058999945
+Recall_Chaetoceros,0.6666666666666666
+F1-score_Chaetoceros,0.7410896798698808
+mAP50_Chaetoceros,0.7125553075371479
+mAP50-95_Chaetoceros,0.32092317834957645
+Precision_Tripos lineatum,0.83628907088179
+Recall_Tripos lineatum,0.8516589061337649
+F1-score_Tripos lineatum,0.8439040124661904
+mAP50_Tripos lineatum,0.8681555312549603
+mAP50-95_Tripos lineatum,0.6075001760798363
+Precision_Coscinodiscus,0.9424907800303963
+Recall_Coscinodiscus,0.8513976219052416
+F1-score_Coscinodiscus,0.8946313582491021
+mAP50_Coscinodiscus,0.9497465636813212
+mAP50-95_Coscinodiscus,0.6966723175796122
+Ground_Truth_Count_Total,359
+Prediction_Count_Total_from_txt_files,29700
+Conf_Filter_for_Timing_Counting_pred_txt,0.001
+Validation_Image_Size,1280
+Num_Images_Validated,99
+Core_GPU_Time_s,6.467104675292968
+Core_Avg_Time_per_Image_ms,65.32428964942393
+Core_FPS,15.308241472914643
+Training_Image_Size_from_args_yaml,"[1280, 960]"
+Training_lr0_from_args_yaml,0.01
+Training_lrf_from_args_yaml,0.01
+Training_Optimizer_from_args_yaml,SGD
+Training_Batch_from_args_yaml,2

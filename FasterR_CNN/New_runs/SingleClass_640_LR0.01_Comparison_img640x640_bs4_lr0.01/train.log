@@ -1,0 +1,186 @@
+2025-05-28 01:02:47,496 [INFO] Second_training_iteration.py:333 - =� Starting run: SingleClass_640_LR0.01_Comparison_img640x640_bs4_lr0.01
+2025-05-28 01:02:47,496 [INFO] Second_training_iteration.py:334 - Config: {
+  "BATCH_SIZE": 4,
+  "CLASS_NAMES": [
+    "Plankton"
+  ],
+  "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+  "DEBUG_LOGGING": false,
+  "EARLY_STOPPING_PATIENCE": 75,
+  "EFFECTIVE_BATCH": 64,
+  "IOU_THRESHOLD": 0.6,
+  "LEARNING_RATE": 0.01,
+  "NUM_CLASSES_MODEL": 2,
+  "NUM_EPOCHS": 400,
+  "NUM_WORKERS": 4,
+  "SCHEDULER_PATIENCE": 10,
+  "SCORE_THRESHOLD": 0.4,
+  "SEED": 42,
+  "TARGET_SIZE": [
+    640,
+    640
+  ],
+  "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images",
+  "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax",
+  "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
+  "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax",
+  "VARIATION_NAME": "SingleClass_640_LR0.01_Comparison"
+}
+2025-05-28 01:02:47,496 [INFO] Second_training_iteration.py:335 - Device: cuda
+2025-05-28 01:02:47,497 [INFO] Second_training_iteration.py:347 - Train ds: 763, Val ds: 99. Classes: ['Plankton'] (Model outputs: 2)
+2025-05-28 01:02:47,923 [INFO] Second_training_iteration.py:354 - Batch: 4, Target effective: 64, Accum steps: 16
+2025-05-28 01:03:46,320 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:03:46,321 [INFO] Second_training_iteration.py:381 - [E1/400] L_train: 137172358967681238275252945944576.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:03:46,498 [INFO] Second_training_iteration.py:390 - <� Best model saved! E1, Metric: 0.0000
+2025-05-28 01:04:44,156 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:04:44,157 [INFO] Second_training_iteration.py:381 - [E2/400] L_train: 145308315550327549463405678034944.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:05:41,824 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:05:41,824 [INFO] Second_training_iteration.py:381 - [E3/400] L_train: 137875033099578775531386950385664.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:06:39,495 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:06:39,496 [INFO] Second_training_iteration.py:381 - [E4/400] L_train: 131222285388632158325659303673856.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:07:37,369 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:07:37,370 [INFO] Second_training_iteration.py:381 - [E5/400] L_train: 125386007224789942300654209859584.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:08:34,966 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:08:34,966 [INFO] Second_training_iteration.py:381 - [E6/400] L_train: 117720455805790609429262671806464.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:09:32,677 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:09:32,677 [INFO] Second_training_iteration.py:381 - [E7/400] L_train: 112374130211998177335180640911360.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:10:30,327 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:10:30,328 [INFO] Second_training_iteration.py:381 - [E8/400] L_train: 107288976192525471186667981242368.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:11:28,108 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:11:28,108 [INFO] Second_training_iteration.py:381 - [E9/400] L_train: 101636200549710924102165176778752.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:12:25,783 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:12:25,783 [INFO] Second_training_iteration.py:381 - [E10/400] L_train: 96592793574385143844020464648192.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:13:23,319 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:13:23,319 [INFO] Second_training_iteration.py:381 - [E11/400] L_train: 92331773451193917897052266692608.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-02
+2025-05-28 01:14:21,095 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:14:21,095 [INFO] Second_training_iteration.py:381 - [E12/400] L_train: 87132367878042538539935516852224.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:15:18,918 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:15:18,918 [INFO] Second_training_iteration.py:381 - [E13/400] L_train: 84338780347147583434216943124480.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:16:16,630 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:16:16,630 [INFO] Second_training_iteration.py:381 - [E14/400] L_train: 84180086199193693301706351181824.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:17:14,294 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:17:14,295 [INFO] Second_training_iteration.py:381 - [E15/400] L_train: 83996961103541021853652298498048.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:18:11,908 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:18:11,909 [INFO] Second_training_iteration.py:381 - [E16/400] L_train: 83657168690530285597636759126016.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:19:09,620 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:19:09,620 [INFO] Second_training_iteration.py:381 - [E17/400] L_train: 82609090970230668249507970416640.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:20:07,460 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:20:07,461 [INFO] Second_training_iteration.py:381 - [E18/400] L_train: 82319155987206315793757862100992.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:21:05,217 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:21:05,217 [INFO] Second_training_iteration.py:381 - [E19/400] L_train: 81763402167104718923525716443136.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:22:02,834 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:22:02,835 [INFO] Second_training_iteration.py:381 - [E20/400] L_train: 81411492380460732611059882393600.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:23:00,489 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:23:00,490 [INFO] Second_training_iteration.py:381 - [E21/400] L_train: 80954840678495514493028076093440.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:23:58,230 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:23:58,231 [INFO] Second_training_iteration.py:381 - [E22/400] L_train: 80741637331226097269147558739968.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-03
+2025-05-28 01:24:55,911 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:24:55,911 [INFO] Second_training_iteration.py:381 - [E23/400] L_train: 80301136181970929394445830848512.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:25:53,551 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:25:53,551 [INFO] Second_training_iteration.py:381 - [E24/400] L_train: 79870297717284298543296164134912.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:26:51,338 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:26:51,338 [INFO] Second_training_iteration.py:381 - [E25/400] L_train: 79545505427982996883329754595328.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:27:49,080 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:27:49,081 [INFO] Second_training_iteration.py:381 - [E26/400] L_train: 79909476091548916012700500230144.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:28:46,783 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:28:46,784 [INFO] Second_training_iteration.py:381 - [E27/400] L_train: 80139675859834841156018415599616.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:29:44,656 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:29:44,656 [INFO] Second_training_iteration.py:381 - [E28/400] L_train: 79724278251437060830185618669568.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:30:42,390 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:30:42,390 [INFO] Second_training_iteration.py:381 - [E29/400] L_train: 79857879669241947031004856188928.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:31:40,187 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:31:40,187 [INFO] Second_training_iteration.py:381 - [E30/400] L_train: 79347986595684901964581242404864.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:32:37,965 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:32:37,965 [INFO] Second_training_iteration.py:381 - [E31/400] L_train: 80227278776846301425887667552256.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:33:35,759 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:33:35,760 [INFO] Second_training_iteration.py:381 - [E32/400] L_train: 80431508869054895563370152329216.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:34:33,452 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:34:33,453 [INFO] Second_training_iteration.py:381 - [E33/400] L_train: 79604259501312266540758222241792.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-04
+2025-05-28 01:35:31,137 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:35:31,137 [INFO] Second_training_iteration.py:381 - [E34/400] L_train: 80141569556683625065790226563072.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:36:28,782 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:36:28,783 [INFO] Second_training_iteration.py:381 - [E35/400] L_train: 79248071054026114364404398030848.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:37:26,413 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:37:26,414 [INFO] Second_training_iteration.py:381 - [E36/400] L_train: 79043129442513399590117869355008.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:38:24,063 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:38:24,063 [INFO] Second_training_iteration.py:381 - [E37/400] L_train: 79056733187277159353387453513728.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:39:21,831 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:39:21,832 [INFO] Second_training_iteration.py:381 - [E38/400] L_train: 79273768867371484910343063339008.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:40:19,629 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:40:19,629 [INFO] Second_training_iteration.py:381 - [E39/400] L_train: 79505383635858356528870879920128.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:41:17,289 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:41:17,290 [INFO] Second_training_iteration.py:381 - [E40/400] L_train: 78889610674345998714811963146240.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:42:15,113 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:42:15,113 [INFO] Second_training_iteration.py:381 - [E41/400] L_train: 79143917524800127298227169918976.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:43:12,892 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:43:12,893 [INFO] Second_training_iteration.py:381 - [E42/400] L_train: 80400111837605328056977476026368.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:44:10,629 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:44:10,630 [INFO] Second_training_iteration.py:381 - [E43/400] L_train: 79311349434128751388090752303104.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:45:08,414 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:45:08,415 [INFO] Second_training_iteration.py:381 - [E44/400] L_train: 79171185599866631399593574662144.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-05
+2025-05-28 01:46:06,321 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:46:06,322 [INFO] Second_training_iteration.py:381 - [E45/400] L_train: 80010918449552781951638087663616.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:47:03,965 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:47:03,965 [INFO] Second_training_iteration.py:381 - [E46/400] L_train: 79126287107638864905418750033920.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:48:01,684 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:48:01,685 [INFO] Second_training_iteration.py:381 - [E47/400] L_train: 79789308789125770962751413288960.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:48:59,583 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:48:59,584 [INFO] Second_training_iteration.py:381 - [E48/400] L_train: 79883892550176046518162300076032.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:49:57,209 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:49:57,210 [INFO] Second_training_iteration.py:381 - [E49/400] L_train: 79221774702140404720150643736576.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:50:55,120 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:50:55,120 [INFO] Second_training_iteration.py:381 - [E50/400] L_train: 79108524746667997718768064135168.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:51:52,995 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:51:52,995 [INFO] Second_training_iteration.py:381 - [E51/400] L_train: 79366108545627827075876674076672.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:52:50,838 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:52:50,839 [INFO] Second_training_iteration.py:381 - [E52/400] L_train: 79510767824350554506697386229760.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:53:48,609 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:53:48,609 [INFO] Second_training_iteration.py:381 - [E53/400] L_train: 79756756151181730716040369799168.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:54:46,427 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:54:46,428 [INFO] Second_training_iteration.py:381 - [E54/400] L_train: 79070344502068565442561107296256.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:55:44,129 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:55:44,130 [INFO] Second_training_iteration.py:381 - [E55/400] L_train: 79198986678301030697356566200320.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-06
+2025-05-28 01:56:41,848 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:56:41,848 [INFO] Second_training_iteration.py:381 - [E56/400] L_train: 79478486314921743558847838027776.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 01:57:39,628 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:57:39,628 [INFO] Second_training_iteration.py:381 - [E57/400] L_train: 79757350221127165943555649699840.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 01:58:37,356 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:58:37,356 [INFO] Second_training_iteration.py:381 - [E58/400] L_train: 79780147663194912171440056827904.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 01:59:35,115 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 01:59:35,115 [INFO] Second_training_iteration.py:381 - [E59/400] L_train: 79403597841650446150470448709632.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:00:32,931 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:00:32,932 [INFO] Second_training_iteration.py:381 - [E60/400] L_train: 80051626260556664758615970676736.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:01:30,625 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:01:30,625 [INFO] Second_training_iteration.py:381 - [E61/400] L_train: 80025154405555105228079132311552.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:02:28,486 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:02:28,487 [INFO] Second_training_iteration.py:381 - [E62/400] L_train: 79689565895998826517397418016768.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:03:26,248 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:03:26,249 [INFO] Second_training_iteration.py:381 - [E63/400] L_train: 79439831006781390687464792784896.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:04:23,954 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:04:23,955 [INFO] Second_training_iteration.py:381 - [E64/400] L_train: 80003759583275203665777792122880.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:05:21,728 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:05:21,729 [INFO] Second_training_iteration.py:381 - [E65/400] L_train: 79793060649265490511654318768128.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:06:19,440 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:06:19,441 [INFO] Second_training_iteration.py:381 - [E66/400] L_train: 79943457667152824760099451961344.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-07
+2025-05-28 02:07:17,118 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:07:17,119 [INFO] Second_training_iteration.py:381 - [E67/400] L_train: 79035126366246457728778654187520.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:08:14,828 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:08:14,828 [INFO] Second_training_iteration.py:381 - [E68/400] L_train: 80021127378708153009019256045568.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:09:12,535 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:09:12,536 [INFO] Second_training_iteration.py:381 - [E69/400] L_train: 79353970651902897519424876576768.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:10:10,356 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:10:10,357 [INFO] Second_training_iteration.py:381 - [E70/400] L_train: 79956868667366540401347739516928.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:11:07,958 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:11:07,958 [INFO] Second_training_iteration.py:381 - [E71/400] L_train: 78737589581714917574794700390400.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:12:05,689 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:12:05,689 [INFO] Second_training_iteration.py:381 - [E72/400] L_train: 79800397360557088988674245263360.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:13:03,371 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:13:03,372 [INFO] Second_training_iteration.py:381 - [E73/400] L_train: 79255177866869447299525930647552.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:14:01,303 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:14:01,303 [INFO] Second_training_iteration.py:381 - [E74/400] L_train: 79292263204443581286015578406912.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:14:59,116 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:14:59,117 [INFO] Second_training_iteration.py:381 - [E75/400] L_train: 78963299943839875353436657549312.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:15:56,726 [WARNING] Second_training_iteration.py:296 - No Dets for COCO eval (score th: 0.01). Zero metrics.
+2025-05-28 02:15:56,727 [INFO] Second_training_iteration.py:381 - [E76/400] L_train: 79084732947289977973241345474560.0000 | F1: 0.0000 (P:0.000 R:0.000) | mAP@.50:0.0000 | mAP@.50.95:0.0000 | LR:1.00e-08
+2025-05-28 02:15:56,730 [INFO] Second_training_iteration.py:395 - =� Early stopping E76.
+2025-05-28 02:15:56,730 [INFO] Second_training_iteration.py:396 - <� Finished: SingleClass_640_LR0.01_Comparison_img640x640_bs4_lr0.01. Best E1 (Metric: 0.0000). Logs: New_runs/SingleClass_640_LR0.01_Comparison_img640x640_bs4_lr0.01

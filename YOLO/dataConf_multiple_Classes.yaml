@@ -4,7 +4,7 @@ val: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD
 nc: 5
 names:
   0: "Tripos longipes"
-  1: "Tripos lusus"
+  1: "Tripos fusus"
   2: "Chaetoceros"
   3: "Tripos lineatum"
   4: "Coscinodiscus"

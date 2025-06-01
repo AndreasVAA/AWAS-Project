@@ -143,7 +143,7 @@ def validate_with_timing(weights_path, images_dir, labels_dir, output_dir,
                 found=False
                 for j,gb in enumerate(gt_cls):
                     if j in matched: continue
-                    if compute_iou(pb,gb)>=0.5:
+                    if compute_iou(pb,gb)>=0.5: #hardcoded IoU threshold
                         per_class[cls]['tp']+=1; matched.add(j); found=True; break
                 if not found: per_class[cls]['fp']+=1
             # False negatives
@@ -167,7 +167,7 @@ def validate_with_timing(weights_path, images_dir, labels_dir, output_dir,
     _per_c_stats = {}
     for cls in range(1, num_classes):
         coco_eval.params.catIds = [cls]
-        coco_eval.evaluate(); coco_eval.accumulate();
+        coco_eval.evaluate(); coco_eval.accumulate()
         cstats = getattr(coco_eval, 'stats', [])
         _per_c_stats[cls] = [
             float(cstats[0]) if len(cstats)>0 else 0.0,
@@ -231,12 +231,15 @@ def validate_with_timing(weights_path, images_dir, labels_dir, output_dir,
 
 if __name__=='__main__':
     validate_with_timing(
-        weights_path='/home/itk/Desktop/Andreas/AWAS-Project/FasterR_CNN/runs/RCNN_multiclass_training/best_model_absolute.pth',
-        images_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images',
-        labels_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels_minmax',
-        output_dir='Validation_FasterRCNN_multiclass',
+        weights_path='/home/itk/Desktop/Andreas/AWAS-Project/FasterR_CNN/runs/MoreMetrics_testing_NOAgumentations/best_model_absolute.pth',
+        images_dir="/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
+        labels_dir="/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax",
+        #weights_path="/home/itk/Desktop/Andreas/AWAS-Project/FasterR_CNN/runs/RCNN_multiclass_training/best_model_absolute.pth",
+        #images_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images',
+        #labels_dir='/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels_minmax',
+        output_dir='Version2_Validation_single_class_NOAugment',
         device='cuda',
         confidence_threshold=0.4,
-        num_classes=6
+        num_classes=2
     )
     print("Validation completed. Results saved in the output directory.")

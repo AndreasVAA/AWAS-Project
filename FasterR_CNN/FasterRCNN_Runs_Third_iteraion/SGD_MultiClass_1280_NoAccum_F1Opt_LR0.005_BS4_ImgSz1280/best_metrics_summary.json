@@ -1,0 +1,113 @@
+{
+  "best_epoch": 45,
+  "best_metric_name": "F1",
+  "best_metric_value": 0.8385345997286295,
+  "final_custom_eval_at_best": {
+    "overall": {
+      "precision": 0.8174603174603174,
+      "recall": 0.8607242339832869,
+      "f1": 0.8385345997286295,
+      "tp": 309,
+      "fp": 69,
+      "fn": 50,
+      "inference": {
+        "total_time": 3.387660503387451,
+        "avg_time_per_image": 0.0342187929635096,
+        "fps": 29.22370760027639
+      }
+    },
+    "per_class": {
+      "Tripos longipes": {
+        "precision": 0.8262910798122066,
+        "recall": 0.8756218905472637,
+        "f1": 0.8502415458937198,
+        "tp": 176,
+        "fp": 37,
+        "fn": 25
+      },
+      "Tripos fusus": {
+        "precision": 0.7272727272727273,
+        "recall": 0.8888888888888888,
+        "f1": 0.7999999999999999,
+        "tp": 16,
+        "fp": 6,
+        "fn": 2
+      },
+      "Tripos lineatum/furca": {
+        "precision": 0.7272727272727273,
+        "recall": 0.7272727272727273,
+        "f1": 0.7272727272727273,
+        "tp": 24,
+        "fp": 9,
+        "fn": 9
+      },
+      "Chaetoceros": {
+        "precision": 0.75,
+        "recall": 0.8,
+        "f1": 0.7741935483870969,
+        "tp": 24,
+        "fp": 8,
+        "fn": 6
+      },
+      "Coscinodiscus": {
+        "precision": 0.8846153846153846,
+        "recall": 0.8961038961038961,
+        "f1": 0.8903225806451613,
+        "tp": 69,
+        "fp": 9,
+        "fn": 8
+      }
+    }
+  },
+  "final_coco_eval_at_best": {
+    "mAP@.50": 0.8323487752720412,
+    "mAP@.75": 0.5830193564041726,
+    "mAP@.50:95": 0.5424713556512762,
+    "AR@1": 0.4018532015248433,
+    "AR@10": 0.6103351209321359,
+    "AR@100": 0.6158077577480562,
+    "per_class_ap_at_0.50": {
+      "Tripos longipes": 0.888213215724366,
+      "Tripos fusus": 0.8628517457008857,
+      "Tripos lineatum/furca": 0.7280505850718108,
+      "Chaetoceros": 0.7847998915571276,
+      "Coscinodiscus": 0.8978284383060154
+    }
+  },
+  "config_summary": {
+    "NUM_EPOCHS": 400,
+    "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+    "EARLY_STOPPING_PATIENCE": 40,
+    "NUM_WORKERS": 4,
+    "SEED": 42,
+    "SCHEDULER_PATIENCE": 10,
+    "DEBUG_LOGGING": false,
+    "WARMUP_EPOCHS": 3,
+    "OUTPUT_BASE_DIR": "FasterRCNN_Runs_Third_iteraion",
+    "SCORE_THRESHOLD": 0.4,
+    "IOU_THRESHOLD": 0.6,
+    "VARIATION_NAME": "SGD_MultiClass_1280_NoAccum_F1Opt",
+    "CLASS_NAMES": [
+      "Tripos longipes",
+      "Tripos fusus",
+      "Tripos lineatum/furca",
+      "Chaetoceros",
+      "Coscinodiscus"
+    ],
+    "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images",
+    "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/labels_minmax",
+    "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images",
+    "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels_minmax",
+    "TARGET_SIZE": [
+      1280,
+      1280
+    ],
+    "BATCH_SIZE": 4,
+    "OPTIMIZER_TYPE": "SGD",
+    "LEARNING_RATE": 0.005,
+    "SGD_MOMENTUM": 0.937,
+    "WEIGHT_DECAY": 0.0005,
+    "USE_GRADIENT_ACCUMULATION": false,
+    "NUM_CLASSES_MODEL": 6
+  }
+}

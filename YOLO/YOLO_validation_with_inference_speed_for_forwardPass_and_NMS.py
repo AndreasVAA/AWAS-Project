@@ -176,7 +176,7 @@ if __name__ == "__main__":
         'save_conf': True,
         'conf': 0.01,
         'plots': True,
-        'iou': 0.7,          # for NMS
+        'iou': 0.6,          # for NMS
     }
     data_yaml     = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml"
     gt_labels_dir = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/labels"

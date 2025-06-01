@@ -1,0 +1,73 @@
+{
+  "best_epoch": 11,
+  "best_metric_name": "F1",
+  "best_metric_value": 0.8422496570644719,
+  "final_custom_eval_at_best": {
+    "overall": {
+      "precision": 0.8297297297297297,
+      "recall": 0.8551532033426184,
+      "f1": 0.8422496570644719,
+      "tp": 307,
+      "fp": 63,
+      "fn": 52,
+      "inference": {
+        "total_time": 3.3238024711608887,
+        "avg_time_per_image": 0.033573762334958464,
+        "fps": 29.78516348639176
+      }
+    },
+    "per_class": {
+      "Plankton": {
+        "precision": 0.8297297297297297,
+        "recall": 0.8551532033426184,
+        "f1": 0.8422496570644719,
+        "tp": 307,
+        "fp": 63,
+        "fn": 52
+      }
+    }
+  },
+  "final_coco_eval_at_best": {
+    "mAP@.50": 0.881895566521356,
+    "mAP@.75": 0.666990282158044,
+    "mAP@.50:95": 0.5950621983488137,
+    "AR@1": 0.20696378830083567,
+    "AR@10": 0.6306406685236768,
+    "AR@100": 0.6610027855153204,
+    "per_class_ap_at_0.50": {
+      "Plankton": 0.881895566521356
+    }
+  },
+  "config_summary": {
+    "NUM_EPOCHS": 400,
+    "COCO_EVAL_MIN_SCORE_THRESHOLD": 0.01,
+    "EARLY_STOPPING_PATIENCE": 40,
+    "NUM_WORKERS": 4,
+    "SEED": 42,
+    "SCHEDULER_PATIENCE": 10,
+    "DEBUG_LOGGING": false,
+    "WARMUP_EPOCHS": 3,
+    "OUTPUT_BASE_DIR": "FasterRCNN_Runs_Third_iteraion",
+    "SCORE_THRESHOLD": 0.4,
+    "IOU_THRESHOLD": 0.6,
+    "VARIATION_NAME": "SGD_SingleClass_1280_NoAccum_F1Opt",
+    "CLASS_NAMES": [
+      "Plankton"
+    ],
+    "TRAIN_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/images",
+    "TRAIN_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train/labels_minmax",
+    "VAL_IMAGE_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images",
+    "VAL_LABEL_DIR": "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/labels_minmax",
+    "TARGET_SIZE": [
+      1280,
+      1280
+    ],
+    "BATCH_SIZE": 4,
+    "OPTIMIZER_TYPE": "SGD",
+    "LEARNING_RATE": 0.005,
+    "SGD_MOMENTUM": 0.937,
+    "WEIGHT_DECAY": 0.0005,
+    "USE_GRADIENT_ACCUMULATION": false,
+    "NUM_CLASSES_MODEL": 2
+  }
+}

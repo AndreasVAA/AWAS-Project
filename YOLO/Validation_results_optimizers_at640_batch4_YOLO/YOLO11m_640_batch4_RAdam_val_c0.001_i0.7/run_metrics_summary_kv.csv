@@ -1,0 +1,23 @@
+Metric,Value
+RunName,YOLO11m_multiclass_640_batch4_RAdam_val_c0.001_i0.7
+Timestamp,2025-05-29 19:35:52
+ModelPath,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Testing_different_optimizers_640/YOLO11m_multiclass_640_batch4_RAdam/weights/best.pt
+DataYAML,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml
+TrainingImgSz,640
+ValidationImgSz,640
+TrainingBatch,4
+TrainingOptimizer,RAdam
+TrainingLR0,0.01
+TrainingLRF,0.01
+TrainingEpochs,500
+TrainingModelDef,yolo11m.pt
+Val_Conf_Threshold,0.001
+Val_IoU_Threshold,0.7
+Precision,0.8681
+Recall,0.86072
+F1_Score,0.8644
+mAP50,0.92286
+mAP75,0.74308
+mAP50_95,0.65875
+--- Per-Class mAP50 ---,---
+mAP50_plankton,0.92286

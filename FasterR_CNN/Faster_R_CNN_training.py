@@ -446,6 +446,7 @@ def train_model(train_loader, val_loader, model, device, num_epochs=500, learnin
     params = [p for p in model.parameters() if p.requires_grad]
     optimizer = optim.AdamW(params, lr=learning_rate)
     
+    
     lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, mode='max', factor=0.1, patience=10, verbose=True)
 
