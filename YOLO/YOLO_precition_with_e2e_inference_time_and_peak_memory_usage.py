@@ -7,11 +7,11 @@ import time
 from ultralytics import YOLO
 
 # ----------------- Hardcoded Configuration -----------------
-MODEL_PATH   = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Batch_resolution_variations_single_class/YOLO11n_1024_batch16/weights/best.pt"  # update with your model path
+MODEL_PATH   = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Training_for_YOLO12m/Run1_YOLO12m_singeClass/weights/best.pt"  # update with your model path
 DEVICE       = "cuda:0"  # or "cpu"
-IMG_SIZE     = (1024, 1024)
-CONF_THRESH  = 0.4
-IOU_THRESH   = 0.6
+IMG_SIZE     = 640
+CONF_THRESH  = 0.01
+IOU_THRESH   = 0.7
 WARMUP_ITERS = 10
 
 # Toggle between single-image and batch processing
@@ -19,7 +19,7 @@ BATCH_MODE   = True  # True for batch inference, False for single-image
 BATCH_SIZE   = 16     # valid when BATCH_MODE is True
 
 SOURCE_DIR   = "/home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/val/images"  # update to your images folder
-OUTPUT_CSV   = "yolo11n_640_benchmark_results.csv"
+OUTPUT_CSV   = "yolo12m_640_benchmark_results.csv"
 
 # ----------------- Full-Prediction + GPU-Mem Timer -----------------
 def time_full_prediction(fn, *args):

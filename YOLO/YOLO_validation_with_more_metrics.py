@@ -301,14 +301,16 @@ def perform_experiment_validations(
 # --- SCRIPT ENTRY POINT & CONFIGURATION ---
 if __name__ == "__main__":
     INPUT_DIRS_LIST = [ # Replace with your actual paths
-        "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Training_for_full_tuned_hyperparamters_multiclass/Run1_YOLO11m_UserTuned_multiclass",
+        "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Training_for_YOLO12m/Run1_YOLO12m_singeClass",
+        
     ]
     DATA_YAML_PATH = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml" 
-    OUTPUT_BASE_DIR_PATH = "./Validation_results_from_tuning_adamW_at640_batch4_YOLO" # Make specific for this script
+    #DATA_YAML_PATH = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml" # Verify this path
+    OUTPUT_BASE_DIR_PATH = "./Valdation_resutls__rerun_yolo12m" # Make specific for this script
     SUMMARY_CSV_FILENAME = "run_metrics_summary_kv.csv" 
     VAL_IMAGE_SIZE = 640       
-    VAL_CONF_THRESHOLD = 0.001 
-    VAL_IOU_THRESHOLD = 0.7    
+    VAL_CONF_THRESHOLD = 0.01 
+    VAL_IOU_THRESHOLD = 0.7   
     DEVICE_SETTING = "cuda" if torch.cuda.is_available() else "cpu" 
     
     try: _ = pd.Timestamp.now(); _ = torch.cuda.is_available()

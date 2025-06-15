@@ -1,0 +1,28 @@
+Metric,Value
+RunName,RT_DETR_1024_batch4_lr0=0.0002_val_c0.01_i0.7
+Timestamp,2025-06-04 18:05:38
+ModelPath,/home/itk/Desktop/Andreas/AWAS-Project/RT_DETR_MODEL/Runing_new_config_more_similar_to_paper/RT_DETR_1024_batch4_lr0=0.0002/weights/best.pt
+DataYAML,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml
+TrainingImgSz,1024
+ValidationImgSz,1024
+TrainingBatch,4
+TrainingOptimizer,adamW
+TrainingLR0,0.0002
+TrainingLRF,0.01
+TrainingEpochs,500
+TrainingModelDef,rtdetr-l.pt
+Val_Conf_Threshold,0.01
+Val_IoU_Threshold,0.7
+--- Other Metrics ---,---
+Precision_Overall,0.84307
+Recall_Overall,0.89972
+F1_Score_Overall,0.87047
+mAP50_Overall,0.93219
+mAP75_Overall,0.79006
+mAP50-95_Overall,0.68431
+P_plankton,0.84307
+R_plankton,0.89972
+F1_plankton,0.87047
+mAP50_plankton,0.93219
+mAP75_plankton,0.79006
+mAP50-95_plankton,0.68431

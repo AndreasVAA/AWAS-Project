@@ -78,15 +78,7 @@ def train_model(
 
 if __name__ == "__main__":
     # Define your specific tuned hyperparameters from the tuning run
-    user_tuned_hyperparameters = {
-        'lr0': 0.00038, 'lrf': 0.00939, 'momentum': 0.75246, 'weight_decay': 0.00083,
-        'warmup_epochs': 2.77389, 'warmup_momentum': 0.94291,
-        'box': 8.2063, 'cls': 0.84574, 'dfl': 0.75034,
-        'hsv_h': 0.0256, 'hsv_s': 0.27606, 'hsv_v': 0.19502,
-        'degrees': 1.2906, 'translate': 0.11209, 'scale': 0.36401, 'shear': 1.94656,
-        'perspective': 0.00037, 'flipud': 0.24353, 'fliplr': 0.59228,
-        'bgr': 0.0542, 'mosaic': 0.44041, 'mixup': 0.03207, 'copy_paste': 0.0651,
-    }
+   
 
     #data_config_file = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml" # Verify this path
     data_config_file = "/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml"
@@ -96,13 +88,13 @@ if __name__ == "__main__":
             # Run 1: Uses YOUR specific tuned hyperparameters
             "model_path": "yolo11m.pt",
             "config_path": data_config_file,
-            "project": "Training_for_full_tuned_hyperparamters_multiclass", # Changed project name slightly for clarity
-            "name": "Run1_YOLO11m_UserTuned_multiclass",
+            "project": "Training_YOLO11m__Multiclass_rerun_due_to_minor_difference_in_hsv", # Changed project name slightly for clarity
+            "name": "Run1_YOLO11m_Multiclass_640_batch_4",
             "imgsz": 640,
             "batch": 4,
-            "optimizer": 'AdamW', # This was part of your tuned setup
+            "optimizer": 'auto', # This was part of your tuned setup
             "epochs": 500,
-            **user_tuned_hyperparameters # These will be caught by **other_yolo_train_args
+            
         },
     ]
 

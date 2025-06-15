@@ -1,0 +1,53 @@
+Metric,Value
+RunName,YOLO11m_multiclass_640_batch4_val_c0.01_i0.7
+Timestamp,2025-06-05 12:53:04
+ModelPath,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Multiclass_Training/YOLO11m_multiclass_640_batch4/weights/best.pt
+DataYAML,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml
+TrainingImgSz,640
+ValidationImgSz,640
+TrainingBatch,4
+TrainingOptimizer,auto
+TrainingLR0,0.01
+TrainingLRF,0.01
+TrainingEpochs,500
+TrainingModelDef,yolo11m.pt
+Val_Conf_Threshold,0.01
+Val_IoU_Threshold,0.7
+--- Overall Validation Metrics ---,---
+Precision_Overall,0.88966
+Recall_Overall,0.75307
+F1_Score_Overall,0.81569
+mAP50_Overall,0.85621
+mAP75_Overall,0.72196
+mAP50-95_Overall,0.6219
+--- Per-Class Metrics ---,---
+Precision (Tripos longipes),0.92553
+Recall (Tripos longipes),0.86559
+F1-Score (Tripos longipes),0.89455
+mAP@0.50 (Tripos longipes),0.94285
+mAP@0.75 (Tripos longipes),0.86071
+mAP@0.5:0.95 (Tripos longipes),0.7278
+Precision (Tripos lusus),1.0
+Recall (Tripos lusus),0.74529
+F1-Score (Tripos lusus),0.85406
+mAP@0.50 (Tripos lusus),0.90405
+mAP@0.75 (Tripos lusus),0.8865
+mAP@0.5:0.95 (Tripos lusus),0.77787
+Precision (Chaetoceros),0.7595
+Recall (Chaetoceros),0.47872
+F1-Score (Chaetoceros),0.58728
+mAP@0.50 (Chaetoceros),0.62156
+mAP@0.75 (Chaetoceros),0.22746
+mAP@0.5:0.95 (Chaetoceros),0.28597
+Precision (Tripos lineatum),0.80408
+Recall (Tripos lineatum),0.76667
+F1-Score (Tripos lineatum),0.78493
+mAP@0.50 (Tripos lineatum),0.86151
+mAP@0.75 (Tripos lineatum),0.76518
+mAP@0.5:0.95 (Tripos lineatum),0.58919
+Precision (Coscinodiscus),0.95919
+Recall (Coscinodiscus),0.90909
+F1-Score (Coscinodiscus),0.93347
+mAP@0.50 (Coscinodiscus),0.95107
+mAP@0.75 (Coscinodiscus),0.86994
+mAP@0.5:0.95 (Coscinodiscus),0.7287

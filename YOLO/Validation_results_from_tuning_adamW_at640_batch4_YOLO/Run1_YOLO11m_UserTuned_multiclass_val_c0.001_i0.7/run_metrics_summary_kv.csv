@@ -1,8 +1,8 @@
 Metric,Value
 RunName,Run1_YOLO11m_UserTuned_multiclass_val_c0.001_i0.7
-Timestamp,2025-06-01 13:15:54
+Timestamp,2025-06-01 15:56:15
 ModelPath,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/Training_for_full_tuned_hyperparamters_multiclass/Run1_YOLO11m_UserTuned_multiclass/weights/best.pt
-DataYAML,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml
+DataYAML,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf_multiple_Classes.yaml
 TrainingImgSz,640
 ValidationImgSz,640
 TrainingBatch,4
@@ -14,20 +14,40 @@ TrainingModelDef,yolo11m.pt
 Val_Conf_Threshold,0.001
 Val_IoU_Threshold,0.7
 --- Overall Validation Metrics ---,---
-Precision_Overall,0.88367
-Recall_Overall,0.52901
-F1_Score_Overall,0.66182
-mAP50_Overall,0.67696
-mAP75_Overall,0.58624
-mAP50-95_Overall,0.50304
+Precision_Overall,0.87491
+Recall_Overall,0.8721
+F1_Score_Overall,0.8735
+mAP50_Overall,0.90469
+mAP75_Overall,0.74449
+mAP50-95_Overall,0.63437
 --- Per-Class Metrics ---,---
-Precision (Tripos longipes),0.88367
-Recall (Tripos longipes),0.52901
-F1-Score (Tripos longipes),0.66182
-mAP@0.50 (Tripos longipes),0.67696
-mAP@0.75 (Tripos longipes),0.58624
-mAP@0.5:0.95 (Tripos longipes),0.50304
-mAP@0.5:0.95 (Tripos lusus),0.50304
-mAP@0.5:0.95 (Chaetoceros),0.50304
-mAP@0.5:0.95 (Tripos lineatum),0.50304
-mAP@0.5:0.95 (Coscinodiscus),0.50304
+Precision (Tripos longipes),0.94611
+Recall (Tripos longipes),0.88557
+F1-Score (Tripos longipes),0.91484
+mAP@0.50 (Tripos longipes),0.97514
+mAP@0.75 (Tripos longipes),0.85335
+mAP@0.5:0.95 (Tripos longipes),0.7268
+Precision (Tripos lusus),0.87787
+Recall (Tripos lusus),0.94444
+F1-Score (Tripos lusus),0.90994
+mAP@0.50 (Tripos lusus),0.92313
+mAP@0.75 (Tripos lusus),0.92313
+mAP@0.5:0.95 (Tripos lusus),0.73679
+Precision (Chaetoceros),0.7415
+Recall (Chaetoceros),0.69544
+F1-Score (Chaetoceros),0.71773
+mAP@0.50 (Chaetoceros),0.70859
+mAP@0.75 (Chaetoceros),0.33546
+mAP@0.5:0.95 (Chaetoceros),0.3425
+Precision (Tripos lineatum),0.86919
+Recall (Tripos lineatum),0.9
+F1-Score (Tripos lineatum),0.88433
+mAP@0.50 (Tripos lineatum),0.94385
+mAP@0.75 (Tripos lineatum),0.76099
+mAP@0.5:0.95 (Tripos lineatum),0.6588
+Precision (Coscinodiscus),0.93987
+Recall (Coscinodiscus),0.93506
+F1-Score (Coscinodiscus),0.93746
+mAP@0.50 (Coscinodiscus),0.97276
+mAP@0.75 (Coscinodiscus),0.8495
+mAP@0.5:0.95 (Coscinodiscus),0.70696

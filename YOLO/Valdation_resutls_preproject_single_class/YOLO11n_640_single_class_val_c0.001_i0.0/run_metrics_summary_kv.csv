@@ -1,0 +1,29 @@
+Metric,Value
+RunName,YOLO11n_640_single_class_val_c0.001_i0.0
+Timestamp,2025-06-02 19:02:27
+ModelPath,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/runs_same_config_preproject/YOLO11n_640_single_class/weights/best.pt
+DataYAML,/home/itk/Desktop/Andreas/AWAS-Project/YOLO/dataConf.yaml
+TrainingImgSz,640
+ValidationImgSz,640
+TrainingBatch,16
+TrainingOptimizer,auto
+TrainingLR0,0.01
+TrainingLRF,0.01
+TrainingEpochs,500
+TrainingModelDef,yolo11n.pt
+Val_Conf_Threshold,0.001
+Val_IoU_Threshold,0.0
+--- Overall Validation Metrics ---,---
+Precision_Overall,0.91119
+Recall_Overall,0.80018
+F1_Score_Overall,0.85208
+mAP50_Overall,0.88589
+mAP75_Overall,0.78694
+mAP50-95_Overall,0.66474
+--- Per-Class Metrics ---,---
+Precision (plankton),0.91119
+Recall (plankton),0.80018
+F1-Score (plankton),0.85208
+mAP@0.50 (plankton),0.88589
+mAP@0.75 (plankton),0.78694
+mAP@0.5:0.95 (plankton),0.66474
