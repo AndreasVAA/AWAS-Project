@@ -1,26 +1,43 @@
-# Ignore all common image file types
-
-
+# ======================
+# Model weights
+# ======================
 /**/*.pt
 /**/*.pth
+
+# ======================
+# Label directories
+# ======================
 /**/labels/
-Cropping/**/*.jpg
-Generating_light_augmented_validation_set_ignore_Inference_Time/**/*.jpg
-Generating_light_augmented_validation_set_ignore_Inference_Time/**/*.txt
 
+# ======================
+# Python cache
+# ======================
+__pycache__/
+*.pyc
 
-
-# Option 1: Ignore the entire folder named "provided"
-AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/ 
-## I seems that the above might still be tracked
+# ======================
+# Data (large datasets not tracked in git)
+# ======================
 AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/
-Pipeline_testing/
 Nalia_some_images_with_labels_labels_could_be_better/
-Cropping/Padding_testing/Cropped_images_multiple_classes_train_use_for_classifier/
-Cropping/Padding_testing/Cropped_images_multiple_classes_val_used_for_classifier/
-RT_DETR_MODEL/validation_results
-RT_DETR_MODEL/predictions_rt_detr/predict
+
+# ======================
+# Generated images
+# ======================
+outputs/cropping/**/*.jpg
+outputs/data_processing/**/*.jpg
+outputs/data_processing/**/*.txt
+
+# ======================
+# Legacy paths (kept for safety if old branches reference them)
+# ======================
+AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/
+Cropping/
+FasterR_CNN/
+RT_DETR_MODEL/
+YOLO/
+Generating_light_augmented_validation_set_ignore_Inference_Time/
+Testing_interference_on_NALIA/
+Pipeline_testing/
+validation_results_RT_DETR_without_inference_time/
 rDifferent_optimizers_tetsing
-RT_DETR_MODEL/validation_results_old
-YOLO/Interference_early_testing
-YOLO/Tuning/ray_results/plankton_hpo_sweep/plankton_hpo
