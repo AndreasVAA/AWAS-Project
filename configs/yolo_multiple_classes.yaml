@@ -1,5 +1,5 @@
-train: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/train/images # Change depending on computer
-val: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_MULTICLASS_WITHOUT_COPEPOD_IN_USE/val/images #
+train: data/multiclass_dataset/train/images  # Update path to your multiclass dataset
+val: data/multiclass_dataset/val/images      # Update path to your multiclass dataset
 
 nc: 5
 names:

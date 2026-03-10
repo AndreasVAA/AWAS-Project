@@ -1,6 +1,6 @@
 # data.yaml
-train: /home/itk/Desktop/Andreas/AWAS-Project/AFTI_PMID_SINGLE_CLASS_TESTING_backup_20250215_134318/train
-val: /home/itk/Desktop/Andreas/AWAS-Project/Nalia_some_images_with_labels_labels_could_be_better/val
+train: data/single_class_dataset/train
+val: data/nalia_dataset/val  # Update path to your NALIA dataset
 
 
 # Number of classes
